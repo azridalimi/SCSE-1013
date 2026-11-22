@@ -8,9 +8,9 @@
   "question": "List two common mistakes when drawing a flowchart.",
   "type": "explain",
   "keywords": [
-   "rectangle|segi empat|parallelogram|input|output",
-   "label|yes|no|true|false|ya|tidak",
-   "start|end|oval|mula|tamat|terminal|arrow|anak panah"
+   "rectangle|parallelogram|input|output",
+   "label|yes|no|true|false",
+   "start|end|oval|terminal|arrow"
   ],
   "answer": "Using a rectangle for input/output; a diamond without Yes/No labels; no Start/End; arrows with no direction.",
   "hint": "Think of wrong shapes and missing labels.",
@@ -21,8 +21,7 @@
     "type": "exact",
     "hint": "Input/Output.",
     "answer": [
-     "parallelogram",
-     "segi empat selari"
+     "parallelogram"
     ],
     "keywords": []
    }
@@ -48,8 +47,8 @@
   "type": "explain",
   "keywords": [
    "hello",
-   "space|ruang|whitespace|berhenti|stop",
-   "world|buffer|baki|tinggal|remain|seterusnya|next"
+   "space|whitespace|stop",
+   "world|buffer|remain|next"
   ],
   "answer": "Only 'Hello' is read because cin stops at the space; 'World' stays in the buffer for the next input.",
   "hint": "What does cin do when it meets a space?",
@@ -97,8 +96,8 @@
   "question": "Why is `const` recommended over `#define`?",
   "type": "explain",
   "keywords": [
-   "type|jenis|data type|type-checked|semak jenis",
-   "scope|skop|compiler|safe|selamat|ralat|error|debug"
+   "type|data type|type-checked",
+   "scope|compiler|safe|error|debug"
   ],
   "answer": "const has a data type that the compiler checks and follows scope; #define is only text replacement by the preprocessor.",
   "hint": "Who processes #define? Does it have a type?",
@@ -123,9 +122,7 @@
     "hint": "#define is not a statement.",
     "answer": [
      ";",
-     "semicolon",
-     "titik koma",
-     "koma bertitik"
+     "semicolon"
     ],
     "keywords": []
    },
@@ -160,7 +157,7 @@
   "question": "Between * and +, which operator is evaluated first?",
   "type": "explain",
   "keywords": [
-   "*|darab|multiply|multiplication|pendaraban"
+   "*|multiply|multiplication"
   ],
   "answer": "* (multiplication) is evaluated before +.",
   "hint": "Same as in maths.",
@@ -218,9 +215,9 @@
   "question": "What is the difference between ++x and x++?",
   "type": "explain",
   "keywords": [
-   "prefix|++x|sebelum|before|dulu|dahulu",
-   "postfix|x++|selepas|after|kemudian",
-   "value|nilai|guna|use|digunakan"
+   "prefix|++x|before",
+   "postfix|x++|after",
+   "value|use"
   ],
   "answer": "++x (prefix) adds first then uses the new value; x++ (postfix) uses the old value first then adds.",
   "hint": "Think about when the value is USED versus when it is ADDED.",
@@ -232,8 +229,7 @@
     "hint": "Postfix uses 5 first.",
     "answer": [
      "35 4",
-     "second = 35 count = 4",
-     "35 dan 4"
+     "second = 35 count = 4"
     ],
     "keywords": []
    },
@@ -244,8 +240,7 @@
     "hint": "Prefix: count becomes 3 first.",
     "answer": [
      "25 3",
-     "second = 25 count = 3",
-     "25 dan 3"
+     "second = 25 count = 3"
     ],
     "keywords": []
    },
@@ -280,8 +275,8 @@
   "question": "What does `i *= j + 3;` mean?",
   "type": "explain",
   "keywords": [
-   "i = i *|i=i*|i = i*|darab|multiply",
-   "(j + 3)|(j+3)|kurungan|j + 3 dahulu|dulu|dahulu|keseluruhan|whole"
+   "i = i *|i=i*|i = i*|multiply",
+   "(j + 3)|(j+3)|whole"
   ],
   "answer": "i = i * (j + 3): the right-hand side is evaluated first, then multiplied by i.",
   "hint": "Expand op= into its full form.",
@@ -340,7 +335,6 @@
   "keywords": [],
   "answer": [
    "6",
-   "enam",
    "six",
    "6 digits"
   ],
@@ -377,8 +371,8 @@
   "question": "Why should you fix only the first error, then recompile?",
   "type": "explain",
   "keywords": [
-   "first|pertama",
-   "hide|sembunyi|cause|sebab|menyebabkan|lain|other|cascade|berantai|palsu|false"
+   "first",
+   "hide|cause|other|cascade|false"
   ],
   "answer": "Because one mistake can cause or hide other errors; after fixing the first, the others may disappear.",
   "hint": "One mistake can produce many messages.",
@@ -390,10 +384,7 @@
     "hint": "The message says ';' should come BEFORE int.",
     "answer": [
      "using",
-     "baris using",
-     "using namespace std",
-     "baris sebelum",
-     "sebelumnya"
+     "using namespace std"
     ],
     "keywords": []
    },
@@ -519,10 +510,7 @@
     "type": "exact",
     "hint": "A century not divisible by 400.",
     "answer": [
-     "no",
-     "tidak",
-     "bukan",
-     "tak"
+     "no"
     ],
     "keywords": []
    },
@@ -532,9 +520,7 @@
     "type": "exact",
     "hint": "The part after ||.",
     "answer": [
-     "yes",
-     "ya",
-     "betul"
+     "yes"
     ],
     "keywords": []
    }
@@ -570,7 +556,7 @@
     "type": "explain",
     "hint": "k never changes.",
     "keywords": [
-     "infinite|tak berhenti|tidak berhenti|selama-lamanya|forever|tak terhingga|hang|never"
+     "infinite|forever|hang|never"
     ],
     "answer": "Infinite loop: the while's body is just ;, so k never increases."
    }
@@ -596,9 +582,7 @@
   "type": "exact",
   "keywords": [],
   "answer": [
-   "6",
-   "enam",
-   "6 kali"
+   "6"
   ],
   "hint": "Count 0, 1, 2, 3, 4, 5.",
   "followUps": [
@@ -633,8 +617,8 @@
   "question": "Name two causes of an infinite loop.",
   "type": "explain",
   "keywords": [
-   "update|kemas kini|i++|increment|tiada update|lupa",
-   "wrong|salah|arah|direction|condition|syarat|never false|tak pernah false|tidak pernah",
+   "update|i++|increment",
+   "wrong|direction|condition|never false",
    ";|semicolon"
   ],
   "answer": "No update (forgot i++), an update in the wrong direction, a condition that never becomes false, or a ; after while.",
@@ -646,8 +630,8 @@
     "type": "explain",
     "hint": "i starts at 10 and is tested with > 0.",
     "keywords": [
-     "i++|increment|tambah|naik",
-     "i--|decrement|kurang|turun|arah|direction|salah|wrong"
+     "i++|increment",
+     "i--|decrement|direction|wrong"
     ],
     "answer": "The update i++ makes i bigger; it should be i-- so that i > 0 eventually becomes false."
    }
@@ -672,9 +656,9 @@
   "question": "What is a sentinel-controlled loop?",
   "type": "explain",
   "keywords": [
-   "sentinel|nilai khas|special value|-1",
-   "stop|berhenti|tamat|end|hentikan|until|sehingga",
-   "input|baca|read|unknown|tidak diketahui"
+   "sentinel|special value|-1",
+   "stop|end|until",
+   "input|read|unknown"
   ],
   "answer": "A loop that keeps reading input until the user enters a special (sentinel) value such as -1.",
   "hint": "The number of inputs is unknown.",
@@ -721,9 +705,9 @@
   "question": "What is a breakpoint for?",
   "type": "explain",
   "keywords": [
-   "stop|berhenti|pause|hentikan|jeda",
-   "line|baris|tempat|point|titik",
-   "inspect|lihat|watch|nilai|variable|periksa|check"
+   "stop|pause",
+   "line|point",
+   "inspect|watch|variable|check"
   ],
   "answer": "It stops the program at a chosen line so you can inspect variable values and step through line by line.",
   "hint": "The program pauses…",
@@ -807,8 +791,8 @@
   "question": "Why use acos(-1.0) instead of M_PI?",
   "type": "explain",
   "keywords": [
-   "standard|piawai|not standard|bukan standard",
-   "compiler|portable|mudah alih|reject|tolak|semua"
+   "standard|not standard",
+   "compiler|portable|reject"
   ],
   "answer": "M_PI is not standard C++ and some compilers reject it; acos(-1.0) is standard and gives pi.",
   "hint": "A standards and compiler issue.",
@@ -847,9 +831,7 @@
   "answer": [
    "1 to 6",
    "1-6",
-   "1 - 6",
-   "1 hingga 6",
-   "1 sampai 6"
+   "1 - 6"
   ],
   "hint": "% 6 gives 0..5.",
   "followUps": [
@@ -859,8 +841,8 @@
     "type": "explain",
     "hint": "Lab 6 B4 mode 1.",
     "keywords": [
-     "same|sama|ulang|repeat|reproducible|tetap",
-     "test|testing|uji|semak|debug"
+     "same|repeat|reproducible",
+     "test|testing|debug"
     ],
     "answer": "It gives the same random sequence every run, so testing is easier."
    },
@@ -965,8 +947,8 @@
     "type": "explain",
     "hint": "Compare the return values.",
     "keywords": [
-     "0|sifar|zero",
-     "same|sama|both|kedua-dua|keduanya"
+     "0|zero",
+     "same|both"
     ],
     "answer": "Both return 0, so there is no way to know the input was invalid."
    }

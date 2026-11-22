@@ -39,7 +39,7 @@ Format of one statement in `data.js`:
   "text": "Full note. **bold**, `code`, ``` code block ```, | table |",
   "question": "What is 7 % 3?",
   "type": "exact",                       // or "explain"
-  "keywords": [],                        // explain: ["decomposition|break into parts|pecahkan", ...]
+  "keywords": [],                        // explain: ["decomposition|break into parts|split", ...]
   "answer": ["1"],                       // exact: list of accepted answers; explain: reference answer (text)
   "hint": "7 = 3 × 2 + ?",
   "followUps": [{ "note": "...", "question": "...", "type": "exact", "answer": ["3"], "keywords": [], "hint": "..." }],
@@ -49,7 +49,7 @@ Format of one statement in `data.js`:
 
 ## Checking rules
 
-- **explain**: lower-cased, punctuation removed, then the % of keyword groups present is counted. Near-miss spellings are accepted (Levenshtein ≤ 2 for words of ≥ 6 letters). Keywords accept English and Malay synonyms. ≥ 70% CORRECT, 40–69% ALMOST, < 40% WRONG.
+- **explain**: lower-cased, punctuation removed, then the % of keyword groups present is counted. Near-miss spellings are accepted (Levenshtein ≤ 2 for words of ≥ 6 letters). ≥ 70% CORRECT, 40–69% ALMOST, < 40% WRONG.
 - **exact**: extra spaces and commas are ignored. If the answer is code (contains `; = < > ( ) & + %` …), all spaces are ignored but symbols and letter case must match exactly.
 - Scoring: attempt 1 = 100%, 2 = 60%, 3 = 30%, failed = 0%. An item failed 3 times is marked *needs review* and repeated at the end of the session, starting again from the NOTE phase.
 

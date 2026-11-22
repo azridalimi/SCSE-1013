@@ -56,10 +56,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is computational thinking?",
    "type": "explain",
    "keywords": [
-    "computer|komputer",
-    "break|pecah|pecahkan|bahagian|parts|decompose",
-    "pattern|corak",
-    "steps|langkah|step|algorithm|algoritma"
+    "computer",
+    "break|parts|decompose",
+    "pattern",
+    "steps|step|algorithm"
    ],
    "answer": "Solving a problem the way a computer would: break it into parts, spot patterns, and design steps a computer can follow.",
    "hint": "Three actions: break, patterns, steps. And 'the way ___ would'?",
@@ -70,8 +70,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "A machine.",
      "answer": [
-      "computer",
-      "komputer"
+      "computer"
      ],
      "keywords": []
     }
@@ -96,9 +95,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is decomposition?",
    "type": "explain",
    "keywords": [
-    "break|pecah|pecahkan|bahagi|split|divide",
-    "big|besar|large|kompleks|complex",
-    "small|kecil|manageable|mudah diurus|bahagian kecil|parts"
+    "break|split|divide",
+    "big|large|complex",
+    "small|manageable|parts"
    ],
    "answer": "Breaking a big problem into small, manageable parts.",
    "hint": "A BIG problem becomes…",
@@ -109,8 +108,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "Breaking it up.",
      "answer": [
-      "decomposition",
-      "dekomposisi"
+      "decomposition"
      ],
      "keywords": []
     }
@@ -135,8 +133,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is pattern recognition?",
    "type": "explain",
    "keywords": [
-    "similar|similarities|persamaan|sama|corak|pattern",
-    "parts|bahagian|small|kecil|antara|between"
+    "similar|similarities|pattern",
+    "parts|small|between"
    ],
    "answer": "Finding similarities between the small parts.",
    "hint": "After breaking it up, what do you look for between the parts?",
@@ -147,7 +145,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "Certain times, certain places…",
      "keywords": [
-      "peak|puncak|sibuk|accident|kemalangan|hotspot|congestion|kesesakan|sesak"
+      "peak|accident|hotspot|congestion"
      ],
      "answer": "Peak hours, accident hotspots or congestion areas."
     }
@@ -172,8 +170,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is abstraction?",
    "type": "explain",
    "keywords": [
-    "remove|buang|ignore|abaikan|unnecessary|tidak perlu|tak perlu|irrelevant",
-    "keep|simpan|kekal|important|penting|matters|essential|fokus|focus"
+    "remove|ignore|unnecessary|irrelevant",
+    "keep|important|matters|essential|focus"
    ],
    "answer": "Removing unnecessary details and keeping what matters.",
    "hint": "Two actions: remove what, keep what?",
@@ -184,8 +182,8 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "Not every road…",
      "keywords": [
-      "main|utama|busy|sibuk|only|hanya",
-      "road|jalan|intersection|persimpangan|simpang"
+      "main|busy|only",
+      "road|intersection"
      ],
      "answer": "Only model the main roads and busy intersections."
     }
@@ -210,9 +208,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is algorithm design?",
    "type": "explain",
    "keywords": [
-    "step|langkah|step-by-step|langkah demi langkah",
-    "instruction|arahan|write|tulis",
-    "solve|selesai|menyelesaikan|solution|penyelesaian"
+    "step|step-by-step",
+    "instruction|write",
+    "solve|solution"
    ],
    "answer": "Writing step-by-step instructions that solve the problem.",
    "hint": "Like a recipe.",
@@ -224,8 +222,7 @@ window.SCSE_DEFAULT_DATA = {
      "hint": "A…",
      "answer": [
       "algorithm design",
-      "algorithm",
-      "algoritma"
+      "algorithm"
      ],
      "keywords": []
     }
@@ -250,10 +247,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is the D-P-A-A memory trick? Give all four steps in order.",
    "type": "explain",
    "keywords": [
-    "divide|decomposition|pecah|bahagi",
-    "pattern|corak",
-    "abstract|abstraction|simplify|ringkaskan|permudah",
-    "algorithm|algoritma"
+    "divide|decomposition",
+    "pattern",
+    "abstract|abstraction|simplify",
+    "algorithm"
    ],
    "answer": "Divide it → find the Pattern → Abstract (simplify) → write the Algorithm.",
    "hint": "D, P, A, A.",
@@ -292,9 +289,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Explain the Decomposition stage in the 5-stage version.",
    "type": "explain",
    "keywords": [
-    "divide and conquer|divide|split|pecah|pecahkan",
-    "solve|selesai|selesaikan|setiap|each",
-    "combine|gabung|gabungkan|cantum|satukan"
+    "divide and conquer|divide|split",
+    "solve|each",
+    "combine"
    ],
    "answer": "Divide and conquer: split the problem, solve each part, then combine.",
    "hint": "Three verbs: split, solve, …",
@@ -305,8 +302,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "Test and refine.",
      "answer": [
-      "evaluation",
-      "penilaian"
+      "evaluation"
      ],
      "keywords": []
     }
@@ -331,9 +327,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is Generalisation & Pattern Recognition?",
    "type": "explain",
    "keywords": [
-    "trend|trends|corak|pattern",
-    "reuse|guna semula|ulang guna|same approach|pendekatan sama|sama",
-    "similar|serupa|seumpama|similar problems"
+    "trend|trends|pattern",
+    "reuse|same approach",
+    "similar|similar problems"
    ],
    "answer": "Finding trends, then reusing the same approach on similar problems.",
    "hint": "Find trends → … on similar problems.",
@@ -345,8 +341,7 @@ window.SCSE_DEFAULT_DATA = {
      "hint": "Right after Decomposition.",
      "answer": [
       "2",
-      "two",
-      "dua"
+      "two"
      ],
      "keywords": []
     }
@@ -371,10 +366,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is Modelling?",
    "type": "explain",
    "keywords": [
-    "simplified|ringkas|simple|mudah|permudah",
-    "representation|perwakilan|model|wakil|gambaran",
-    "visual|rajah|diagram|simulate|simulasi",
-    "real|sebenar|system|sistem"
+    "simplified|simple",
+    "representation|model",
+    "visual|diagram|simulate",
+    "real|system"
    ],
    "answer": "Making a simplified (often visual) representation of the real system.",
    "hint": "Like a scale model of a building.",
@@ -385,8 +380,8 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "Simul…",
      "keywords": [
-      "simulate|simulasi|simulation",
-      "flow|aliran|signal|isyarat|timing|masa"
+      "simulate|simulation",
+      "flow|signal|timing"
      ],
      "answer": "Simulate traffic flow and signal timing."
     }
@@ -411,8 +406,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "In the 5 stages, what is Abstraction?",
    "type": "explain",
    "keywords": [
-    "focus|fokus|essential|penting|important|utama",
-    "ignore|abaikan|rest|lain|buang|tidak perlu"
+    "focus|essential|important",
+    "ignore|rest"
    ],
    "answer": "Focusing on the essential information and ignoring the rest.",
    "hint": "Essential vs the rest.",
@@ -423,8 +418,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "The last stage.",
      "answer": [
-      "evaluation",
-      "penilaian"
+      "evaluation"
      ],
      "keywords": []
     }
@@ -449,10 +443,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is Evaluation?",
    "type": "explain",
    "keywords": [
-    "test|uji|ujian",
-    "error|ralat|kesilapan|find|cari",
-    "refine|perbaiki|baiki|improve|tambah baik",
-    "repeat|ulang|ulangi"
+    "test",
+    "error|find",
+    "refine|improve",
+    "repeat"
    ],
    "answer": "Test → find errors → refine and repeat.",
    "hint": "A cycle: test, find, refine, …",
@@ -463,8 +457,8 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "Time and …",
      "keywords": [
-      "travel time|masa perjalanan|time|masa",
-      "safety|keselamatan|selamat|safe"
+      "travel time|time",
+      "safety|safe"
      ],
      "answer": "Travel time and safety."
     }
@@ -490,8 +484,7 @@ window.SCSE_DEFAULT_DATA = {
    "type": "exact",
    "keywords": [],
    "answer": [
-    "abstraction",
-    "abstraksi"
+    "abstraction"
    ],
    "hint": "Only what matters.",
    "followUps": [
@@ -503,8 +496,7 @@ window.SCSE_DEFAULT_DATA = {
      "answer": [
       "pattern",
       "pattern recognition",
-      "generalisation & pattern recognition",
-      "corak"
+      "generalisation & pattern recognition"
      ],
      "keywords": []
     },
@@ -514,8 +506,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "Testing.",
      "answer": [
-      "evaluation",
-      "penilaian"
+      "evaluation"
      ],
      "keywords": []
     },
@@ -526,8 +517,7 @@ window.SCSE_DEFAULT_DATA = {
      "hint": "Model.",
      "answer": [
       "modelling",
-      "modeling",
-      "pemodelan"
+      "modeling"
      ],
      "keywords": []
     }
@@ -552,12 +542,12 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is logical thinking and what are its steps?",
    "type": "explain",
    "keywords": [
-    "conclusion|kesimpulan|reason|alasan|jelas|clearly",
-    "fact|fakta",
-    "identify|kenal pasti|kenalpasti",
-    "analyse|analyze|analisis",
-    "formulate|rumus|solution|penyelesaian",
-    "evaluate|nilai|penilaian"
+    "conclusion|reason|clearly",
+    "fact",
+    "identify",
+    "analyse|analyze",
+    "formulate|solution",
+    "evaluate"
    ],
    "answer": "Reasoning clearly so conclusions follow from facts. Identify → Analyse → Formulate solution → Evaluate.",
    "hint": "4 steps starting with Identify.",
@@ -569,8 +559,7 @@ window.SCSE_DEFAULT_DATA = {
      "hint": "F…",
      "answer": [
       "formulate solution",
-      "formulate",
-      "rumus penyelesaian"
+      "formulate"
      ],
      "keywords": []
     }
@@ -595,12 +584,12 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is algorithmic thinking and what are its steps?",
    "type": "explain",
    "keywords": [
-    "ordered|tersusun|turutan|order|list|senarai",
-    "step|langkah",
-    "define|takrif|tentukan",
-    "sequence|susun|urutan",
-    "execute|laksana|jalankan|run",
-    "evaluate|nilai"
+    "ordered|order|list",
+    "step",
+    "define",
+    "sequence",
+    "execute|run",
+    "evaluate"
    ],
    "answer": "Solving a problem as an ordered list of steps. Define → Identify steps → Sequence → Execute → Evaluate.",
    "hint": "5 steps starting with Define.",
@@ -611,9 +600,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "Run it.",
      "answer": [
-      "execute",
-      "laksana",
-      "jalankan"
+      "execute"
      ],
      "keywords": []
     }
@@ -638,10 +625,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "List at least three areas where computational thinking is used.",
    "type": "explain",
    "keywords": [
-    "everyday|harian|daily|trip|budget|bajet|perjalanan",
-    "software|perisian|development|pembangunan",
-    "data|analysis|analisis",
-    "research|penyelidikan|kajian"
+    "everyday|daily|trip|budget",
+    "software|development",
+    "data|analysis",
+    "research"
    ],
    "answer": "Everyday life (trip planning, budgeting), software development, data analysis, research.",
    "hint": "One daily-life, one software, one data, one research.",
@@ -652,7 +639,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "Holidays or money.",
      "keywords": [
-      "trip|perjalanan|percutian|travel|budget|bajet|belanjawan"
+      "trip|travel|budget"
      ],
      "answer": "Trip planning or budgeting."
     }
@@ -677,11 +664,11 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Write the programming process in order.",
    "type": "explain",
    "keywords": [
-    "understand|faham|requirement|keperluan",
-    "analyse|analyze|analisis",
-    "design|reka|algorithm|algoritma",
-    "code|kod|coding",
-    "test|uji|testing"
+    "understand|requirement",
+    "analyse|analyze",
+    "design|algorithm",
+    "code|coding",
+    "test|testing"
    ],
    "answer": "Understand the requirements → Analyse → Design the algorithm → Code → Test.",
    "hint": "5 steps. Starts with understanding, ends with testing.",
@@ -694,8 +681,7 @@ window.SCSE_DEFAULT_DATA = {
      "answer": [
       "design the algorithm",
       "design",
-      "design algorithm",
-      "reka algoritma"
+      "design algorithm"
      ],
      "keywords": []
     }
@@ -720,9 +706,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What are the Input, Process and Output for the rectangle area problem?",
    "type": "explain",
    "keywords": [
-    "length|panjang",
-    "width|lebar",
-    "area = length|area = length × width|length × width|length * width|panjang darab lebar|area=length"
+    "length",
+    "width",
+    "area = length|area = length × width|length × width|length * width|area=length"
    ],
    "answer": "Input: length, width. Process: area = length × width. Output: area.",
    "hint": "Two inputs, one formula, one output.",
@@ -763,8 +749,8 @@ window.SCSE_DEFAULT_DATA = {
     "0.25",
     "11",
     "450",
-    "income|pendapatan",
-    "kids|anak"
+    "income",
+    "kids"
    ],
    "answer": "tax = 0.25 × (income × 11 − kids × 450)",
    "hint": "Rate 0.25; income times 11; 450 off per kid.",
@@ -788,8 +774,8 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "Two things are displayed.",
      "keywords": [
-      "name|nama",
-      "tax|cukai"
+      "name",
+      "tax"
      ],
      "answer": "name and tax."
     }
@@ -814,9 +800,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "How do you spot the input, process and output in an exam question?",
    "type": "explain",
    "keywords": [
-    "noun|nouns|kata nama|nama|given|diberi",
-    "formula|rumus",
-    "display|papar|paparkan|tunjuk"
+    "noun|nouns|given",
+    "formula",
+    "display"
    ],
    "answer": "The nouns given are the inputs, the formula is the process, and what you must display is the output.",
    "hint": "Nouns, formula, display.",
@@ -828,8 +814,7 @@ window.SCSE_DEFAULT_DATA = {
      "hint": "What is displayed?",
      "answer": [
       "area",
-      "the area",
-      "luas"
+      "the area"
      ],
      "keywords": []
     }
@@ -854,9 +839,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is the difference between procedural and object-oriented programming?",
    "type": "explain",
    "keywords": [
-    "procedural|structured|berstruktur",
-    "function|procedure|fungsi|prosedur",
-    "object|objek|oop",
+    "procedural|structured",
+    "function|procedure",
+    "object|oop",
     "data"
    ],
    "answer": "Procedural is built around functions/procedures (e.g. C); OOP is built around objects that combine data and procedures (e.g. C++).",
@@ -894,10 +879,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Define an algorithm.",
    "type": "explain",
    "keywords": [
-    "finite|terhingga|terhad",
-    "sequence|turutan|steps|langkah",
-    "logical|logik|order|susunan",
-    "solve|selesai|menyelesaikan|problem|masalah"
+    "finite",
+    "sequence|steps",
+    "logical|order",
+    "solve|problem"
    ],
    "answer": "A finite sequence of steps in a logical order that solves a problem.",
    "hint": "Finite… sequence… logical order…",
@@ -935,11 +920,11 @@ window.SCSE_DEFAULT_DATA = {
    "keywords": [
     "input",
     "output",
-    "unambiguous|jelas|tidak samar|tak samar|clear",
-    "general|umum",
-    "correct|betul",
-    "finite|terhingga|terhad",
-    "efficient|cekap"
+    "unambiguous|clear",
+    "general",
+    "correct",
+    "finite",
+    "efficient"
    ],
    "answer": "Has input, produces output, unambiguous, general, correct, finite, efficient.",
    "hint": "7 of them: input, output, and five adjectives.",
@@ -961,8 +946,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "Not specific.",
      "answer": [
-      "general",
-      "umum"
+      "general"
      ],
      "keywords": []
     }
@@ -987,9 +971,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What are the three ways to design an algorithm?",
    "type": "explain",
    "keywords": [
-    "pseudocode|pseudokod",
-    "flowchart|carta alir",
-    "top-down|top down|structure chart|carta struktur"
+    "pseudocode",
+    "flowchart",
+    "top-down|top down|structure chart"
    ],
    "answer": "Pseudocode, flowchart and top-down design (structure chart).",
    "hint": "Two common ones, plus one 'from the top down'.",
@@ -1000,8 +984,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "S… chart.",
      "answer": [
-      "structure chart",
-      "carta struktur"
+      "structure chart"
      ],
      "keywords": []
     }
@@ -1026,9 +1009,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is pseudocode?",
    "type": "explain",
    "keywords": [
-    "english|inggeris|bahasa",
-    "no syntax|tiada sintaks|tanpa sintaks|no programming syntax|bukan kod|syntax|sintaks",
-    "logic|logik|easy|mudah|read|baca|steps|langkah"
+    "english",
+    "no syntax|no programming syntax|syntax",
+    "logic|easy|read|steps"
    ],
    "answer": "English-like steps with no programming syntax, so the logic is easy to read.",
    "hint": "Like which language, and without what?",
@@ -1075,8 +1058,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is the Terminal symbol, and how does a function's flowchart end?",
    "type": "explain",
    "keywords": [
-    "oval|bujur|kapsul|rounded|capsule",
-    "start|end|mula|tamat",
+    "oval|rounded|capsule",
+    "start|end",
     "return"
    ],
    "answer": "The Terminal is an oval for Start/End; a function's flowchart ends with Return.",
@@ -1113,8 +1096,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Which symbol is used for Process, and what is it for?",
    "type": "explain",
    "keywords": [
-    "rectangle|segi empat tepat|segiempat tepat|kotak|box",
-    "calculation|kira|pengiraan|assignment|umpukan|calculations"
+    "rectangle|box",
+    "calculation|assignment|calculations"
    ],
    "answer": "A rectangle; for calculations and assignments.",
    "hint": "A plain box.",
@@ -1127,7 +1110,6 @@ window.SCSE_DEFAULT_DATA = {
      "answer": [
       "rectangle",
       "process",
-      "segi empat tepat",
       "box"
      ],
      "keywords": []
@@ -1153,7 +1135,7 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Which symbol is used for Input/Output?",
    "type": "explain",
    "keywords": [
-    "parallelogram|segi empat selari|selari|jajaran genjang"
+    "parallelogram"
    ],
    "answer": "A parallelogram (Read / Display).",
    "hint": "A slanted box.",
@@ -1165,8 +1147,7 @@ window.SCSE_DEFAULT_DATA = {
      "hint": "Same as Read.",
      "answer": [
       "parallelogram",
-      "input/output",
-      "segi empat selari"
+      "input/output"
      ],
      "keywords": []
     }
@@ -1191,9 +1172,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Describe the Decision symbol.",
    "type": "explain",
    "keywords": [
-    "diamond|berlian|wajik|rhombus",
-    "one in|satu masuk|1 masuk|one line in|satu garis|1 in",
-    "two out|dua keluar|2 keluar|2 out|yes|no|ya|tidak"
+    "diamond|rhombus",
+    "one in|one line in|1 in",
+    "two out|2 out|yes|no"
    ],
    "answer": "A diamond; one line in, two out (Yes/No).",
    "hint": "Shape, how many in, how many out.",
@@ -1205,8 +1186,7 @@ window.SCSE_DEFAULT_DATA = {
      "hint": "Yes and No.",
      "answer": [
       "2",
-      "two",
-      "dua"
+      "two"
      ],
      "keywords": []
     }
@@ -1231,8 +1211,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What does the Function/Subroutine symbol do?",
    "type": "explain",
    "keywords": [
-    "call|calls|panggil|memanggil",
-    "another|lain|separate|berasingan|flowchart|carta|chart"
+    "call|calls",
+    "another|separate|flowchart|chart"
    ],
    "answer": "It calls another flowchart (a function).",
    "hint": "It doesn't do the work itself, it…",
@@ -1243,8 +1223,8 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "Like Process, plus something on the edges.",
      "keywords": [
-      "rectangle|segi empat|kotak|box",
-      "line|lines|garis|side|sides|tepi|double|berganda|bar"
+      "rectangle|box",
+      "line|lines|side|sides|double|bar"
      ],
      "answer": "A rectangle with vertical lines on both sides."
     }
@@ -1269,10 +1249,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is the difference between a circle connector and a pentagon connector?",
    "type": "explain",
    "keywords": [
-    "circle|bulatan|bulat",
-    "same|sama",
+    "circle",
+    "same",
     "pentagon",
-    "another|lain|other|different|berbeza"
+    "another|other|different"
    ],
    "answer": "A circle connects on the same page; a pentagon connects to another page.",
    "hint": "One round, one five-sided.",
@@ -1283,8 +1263,8 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "Arrow.",
      "keywords": [
-      "direction|arah",
-      "flow|aliran"
+      "direction",
+      "flow"
      ],
      "answer": "Shows the direction of flow."
     },
@@ -1295,8 +1275,7 @@ window.SCSE_DEFAULT_DATA = {
      "hint": "C…",
      "answer": [
       "comment",
-      "comment symbol",
-      "komen"
+      "comment symbol"
      ],
      "keywords": []
     }
@@ -1321,9 +1300,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Name and explain the three control structures.",
    "type": "explain",
    "keywords": [
-    "sequence|jujukan|turutan",
-    "selection|pilihan|pemilihan|if",
-    "repetition|ulangan|loop|pengulangan|gelung"
+    "sequence",
+    "selection|if",
+    "repetition|loop"
    ],
    "answer": "Sequence (steps run in order, top to bottom), Selection (choose a path: if, if-else, nested if), Repetition (repeat while a condition is true: pre-test/post-test).",
    "hint": "S, S, R.",
@@ -1414,8 +1393,7 @@ window.SCSE_DEFAULT_DATA = {
    "keywords": [],
    "answer": [
     "not equal to",
-    "not equal",
-    "tidak sama dengan"
+    "not equal"
    ],
    "hint": "! = not.",
    "followUps": [
@@ -1451,9 +1429,9 @@ window.SCSE_DEFAULT_DATA = {
    "type": "explain",
    "keywords": [
     "&&|and",
-    "both|kedua-dua|keduanya|semua|all",
+    "both|all",
     "\\|\\||or",
-    "at least one|sekurang-kurangnya satu|salah satu|one|satu"
+    "at least one|one"
    ],
    "answer": "&& is true when both are true; || is true when at least one is true.",
    "hint": "AND = both; OR = …",
@@ -1491,11 +1469,11 @@ window.SCSE_DEFAULT_DATA = {
    "type": "explain",
    "keywords": [
     "and|&&",
-    "strict|ketat",
-    "any f|mana-mana f|f memberi f|mana-mana false|satu false|any false|f gives f|false",
+    "strict",
+    "any f|any false|f gives f|false",
     "or|\\|\\|",
-    "generous|murah hati|pemurah",
-    "any t|mana-mana t|t memberi t|mana-mana true|satu true|any true|t gives t|true"
+    "generous",
+    "any t|any true|t gives t|true"
    ],
    "answer": "AND is strict: any F gives F. OR is generous: any T gives T.",
    "hint": "Strict / generous… F gives F, T gives T.",
@@ -1555,9 +1533,9 @@ window.SCSE_DEFAULT_DATA = {
    "type": "explain",
    "keywords": [
     "pre-test|pre test|while",
-    "first|dahulu|dulu|0 times|0 kali|sifar|zero|mungkin tidak|before",
+    "first|0 times|zero|before",
     "post-test|post test|do-while|do while",
-    "at least once|sekurang-kurangnya sekali|sekali|once"
+    "at least once|once"
    ],
    "answer": "A pre-test loop (while) checks the condition first, so it may run 0 times. A post-test loop (do-while) runs the body first, so it runs at least once.",
    "hint": "When is the condition checked?",
@@ -1608,9 +1586,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What are the three parts of a counter-controlled loop?",
    "type": "explain",
    "keywords": [
-    "initialise|initialize|initialization|initialisation|inisialisasi|nilai awal|cnt = 0",
-    "test|condition|syarat|uji|cnt < n",
-    "update|kemas kini|cnt = cnt + 1|tambah|increment"
+    "initialise|initialize|initialization|initialisation|cnt = 0",
+    "test|condition|cnt < n",
+    "update|cnt = cnt + 1|increment"
    ],
    "answer": "Initialise (cnt = 0), test (cnt < n), update (cnt = cnt + 1).",
    "hint": "Start, test, change.",
@@ -1697,9 +1675,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is a sentinel, and when is it used?",
    "type": "explain",
    "keywords": [
-    "special|khas|nilai khas",
-    "end|ends|tamat|stop|berhenti|hentikan|menamatkan",
-    "don't know|dont know|do not know|tidak tahu|tak tahu|unknown|tidak diketahui|berapa banyak|how many"
+    "special",
+    "end|ends|stop",
+    "don't know|dont know|do not know|unknown|how many"
    ],
    "answer": "A special value (e.g. -999 or \"OK\") that ends the input; used when you don't know how many items there will be.",
    "hint": "For example -999.",
@@ -1721,8 +1699,7 @@ window.SCSE_DEFAULT_DATA = {
      "hint": "It's in the name.",
      "answer": [
       "user",
-      "the user",
-      "pengguna"
+      "the user"
      ],
      "keywords": []
     }
@@ -1747,9 +1724,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is a trace table and what is it for?",
    "type": "explain",
    "keywords": [
-    "column|lajur|variable|pemboleh ubah",
-    "row|baris|step|langkah|input",
-    "logic error|ralat logik|error|errors|ralat|kesilapan"
+    "column|variable",
+    "row|step|input",
+    "logic error|error|errors"
    ],
    "answer": "A table with each variable as a column and a row for each step or input; it helps you find logic errors.",
    "hint": "Columns = ?, rows = ?, purpose = ?",
@@ -1795,10 +1772,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is the difference between a function call and a function definition in a modular flowchart?",
    "type": "explain",
    "keywords": [
-    "call|panggilan|panggil",
-    "what|apa",
-    "definition|definisi|takrif",
-    "how|bagaimana|cara"
+    "call",
+    "what",
+    "definition",
+    "how"
    ],
    "answer": "The function call (main chart) says what to do; the function definition (a separate chart) says how to do it.",
    "hint": "What vs how.",
@@ -1809,7 +1786,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "Not in the main chart.",
      "keywords": [
-      "separate|berasingan|lain|another|own|sendiri|asing"
+      "separate|another|own"
      ],
      "answer": "In a separate chart (flowchart)."
     }
@@ -1834,7 +1811,7 @@ window.SCSE_DEFAULT_DATA = {
    "question": "How does a function chart start and end?",
    "type": "explain",
    "keywords": [
-    "name|nama|avrg",
+    "name|avrg",
     "return"
    ],
    "answer": "It starts with the function name (e.g. AVRG(R, a, b, c)) and ends with Return.",
@@ -1871,11 +1848,11 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is the difference between actual and formal parameters, and how are they matched?",
    "type": "explain",
    "keywords": [
-    "actual|sebenar",
-    "call|panggilan|panggil",
+    "actual",
+    "call",
     "formal",
-    "definition|definisi|takrif",
-    "order|turutan|kedudukan|susunan|position"
+    "definition",
+    "order|position"
    ],
    "answer": "Actual parameters are in the call (n1, n2, n3); formal parameters are in the definition (a, b, c); they are matched by order, not by name.",
    "hint": "One in the call, one in the definition; matched by what?",
@@ -1896,9 +1873,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "By order, not by name.",
      "answer": [
-      "no",
-      "tidak",
-      "tak"
+      "no"
      ],
      "keywords": []
     }
@@ -1923,8 +1898,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Which variables can a function chart use?",
    "type": "explain",
    "keywords": [
-    "exist|exists|wujud|ada",
-    "current|semasa|this|ini|same|sama|chart|carta"
+    "exist|exists",
+    "current|this|same|chart"
    ],
    "answer": "Only variables that exist in the current chart.",
    "hint": "Not the main chart's variables.",
@@ -1935,9 +1910,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "It doesn't exist in the AVRG chart.",
      "answer": [
-      "no",
-      "tidak",
-      "tak"
+      "no"
      ],
      "keywords": []
     }
@@ -1962,10 +1935,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is the path from a problem to complete code?",
    "type": "explain",
    "keywords": [
-    "problem|masalah",
-    "flowchart|carta alir",
-    "intermediate|rough|kasar|pertengahan",
-    "complete|lengkap|full|penuh"
+    "problem",
+    "flowchart",
+    "intermediate|rough",
+    "complete|full"
    ],
    "answer": "Problem → Flowchart → rough intermediate code → complete code.",
    "hint": "4 stages, including a 'rough' code.",
@@ -1977,8 +1950,8 @@ window.SCSE_DEFAULT_DATA = {
      "hint": "Header, variables, messages to the user.",
      "keywords": [
       "#include|include|header",
-      "declaration|declarations|pengisytiharan|isytihar|declare|variable",
-      "prompt|prompts|gesaan"
+      "declaration|declarations|declare|variable",
+      "prompt|prompts"
      ],
      "answer": "#include, variable declarations and prompts."
     }
@@ -2003,9 +1976,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "List two common mistakes when drawing a flowchart.",
    "type": "explain",
    "keywords": [
-    "rectangle|segi empat|parallelogram|input|output",
-    "label|yes|no|true|false|ya|tidak",
-    "start|end|oval|mula|tamat|terminal|arrow|anak panah"
+    "rectangle|parallelogram|input|output",
+    "label|yes|no|true|false",
+    "start|end|oval|terminal|arrow"
    ],
    "answer": "Using a rectangle for input/output; a diamond without Yes/No labels; no Start/End; arrows with no direction.",
    "hint": "Think of wrong shapes and missing labels.",
@@ -2016,8 +1989,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "Input/Output.",
      "answer": [
-      "parallelogram",
-      "segi empat selari"
+      "parallelogram"
      ],
      "keywords": []
     }
@@ -2043,8 +2015,8 @@ window.SCSE_DEFAULT_DATA = {
    "type": "explain",
    "keywords": [
     "main|int main|main()",
-    "os|operating system|sistem operasi",
-    "ok|berjaya|success|jayanya|selesai|successfully"
+    "os|operating system",
+    "ok|success|successfully"
    ],
    "answer": "The program starts at int main(); return 0 tells the OS the program ended OK.",
    "hint": "One required function; who does return 0 talk to?",
@@ -2065,8 +2037,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "(no ;)",
      "answer": [
-      "false",
-      "salah"
+      "false"
      ],
      "keywords": []
     }
@@ -2091,9 +2062,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is a keyword? Give two of its properties.",
    "type": "explain",
    "keywords": [
-    "reserved|simpanan|khas|kata kunci",
-    "lowercase|lower case|huruf kecil|kecil|small letters",
-    "cannot|can't|cant|not as name|bukan nama|tidak boleh|tak boleh|name|names|nama"
+    "reserved",
+    "lowercase|lower case|small letters",
+    "cannot|can't|cant|not as name|name|names"
    ],
    "answer": "A reserved word such as int or return; always lowercase and can't be used as a name.",
    "hint": "Reserved, which case, usable as a name?",
@@ -2104,9 +2075,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "Reserved.",
      "answer": [
-      "no",
-      "tidak",
-      "tak"
+      "no"
      ],
      "keywords": []
     }
@@ -2131,10 +2100,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What do 'syntax' and 'identifier' mean?",
    "type": "explain",
    "keywords": [
-    "syntax|sintaks",
-    "rule|rules|peraturan|tatabahasa|grammar",
-    "identifier|pengecam",
-    "name|names|nama|choose|pilih|you|anda|programmer"
+    "syntax",
+    "rule|rules|grammar",
+    "identifier",
+    "name|names|choose|you|programmer"
    ],
    "answer": "Syntax is the rules of the language; an identifier is a name you choose (num1, sum).",
    "hint": "Rules vs names.",
@@ -2145,8 +2114,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "P…",
      "answer": [
-      "punctuation",
-      "tanda baca"
+      "punctuation"
      ],
      "keywords": []
     }
@@ -2171,8 +2139,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What does 'C++ is case-sensitive' mean? Give the example from the notes.",
    "type": "explain",
    "keywords": [
-    "case|upper|lower|capital|uppercase|huruf besar|huruf kecil|besar",
-    "different|berbeza|tidak sama|≠|not same|not the same|lain|distinct",
+    "case|upper|lower|capital|uppercase",
+    "different|≠|not same|not the same|distinct",
     "main"
    ],
    "answer": "Upper and lower case letters are treated as different; e.g. Main ≠ main.",
@@ -2184,9 +2152,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "Case-sensitive.",
      "answer": [
-      "no",
-      "tidak",
-      "tak"
+      "no"
      ],
      "keywords": []
     },
@@ -2197,8 +2163,7 @@ window.SCSE_DEFAULT_DATA = {
      "hint": "One each.",
      "answer": [
       "3",
-      "three",
-      "tiga"
+      "three"
      ],
      "keywords": []
     }
@@ -2223,7 +2188,7 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What does the `#` character mean in C++?",
    "type": "explain",
    "keywords": [
-    "preprocessor|prapemproses|directive|arahan"
+    "preprocessor|directive"
    ],
    "answer": "It marks a preprocessor directive (e.g. #include).",
    "hint": "#include…",
@@ -2260,8 +2225,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What are `{ }` for?",
    "type": "explain",
    "keywords": [
-    "group|kumpulan|himpun|block|blok",
-    "statement|statements|pernyataan|arahan"
+    "group|block",
+    "statement|statements"
    ],
    "answer": "They group statements together.",
    "hint": "A block…",
@@ -2272,8 +2237,8 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "iostream is a…",
      "keywords": [
-      "file|fail",
-      "name|nama|include"
+      "file",
+      "name|include"
      ],
      "answer": "They hold the file name in #include."
     },
@@ -2286,8 +2251,7 @@ window.SCSE_DEFAULT_DATA = {
       "( )",
       "()",
       "parentheses",
-      "brackets",
-      "kurungan"
+      "brackets"
      ],
      "keywords": []
     }
@@ -2312,9 +2276,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is the difference between `\" \"` and `' '`?",
    "type": "explain",
    "keywords": [
-    "string|rentetan|text|teks",
-    "single|one|satu|tunggal",
-    "character|aksara|char"
+    "string|text",
+    "single|one",
+    "character|char"
    ],
    "answer": "\" \" is for a string; ' ' is for a single character.",
    "hint": "How many characters?",
@@ -2325,8 +2289,8 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "Like a full stop in a sentence.",
      "keywords": [
-      "end|ends|tamat|akhir|habis|tamatkan|menamatkan|terminate|terminates",
-      "statement|pernyataan|arahan"
+      "end|ends|terminate|terminates",
+      "statement"
      ],
      "answer": "It ends a statement."
     }
@@ -2351,10 +2315,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is a variable? Give two rules about it.",
    "type": "explain",
    "keywords": [
-    "named|bernama|nama|name",
-    "memory|memori|location|lokasi",
-    "declare|declared|isytihar|diisytihar|before|sebelum",
-    "overwrite|overwrites|replace|replaces|ganti|tulis ganti|old|lama"
+    "named|name",
+    "memory|location",
+    "declare|declared|before",
+    "overwrite|overwrites|replace|replaces|old"
    ],
    "answer": "A named memory location; it must be declared before use, and a new value overwrites the old one.",
    "hint": "Definition + declare + new value.",
@@ -2390,11 +2354,11 @@ window.SCSE_DEFAULT_DATA = {
    "question": "State the rules for naming an identifier.",
    "type": "explain",
    "keywords": [
-    "letter|letters|huruf|abjad",
-    "_|underscore|garis bawah",
-    "digit|digits|number|nombor|angka",
-    "keyword|keywords|kata kunci|reserved",
-    "symbol|symbols|simbol"
+    "letter|letters",
+    "_|underscore",
+    "digit|digits|number",
+    "keyword|keywords|reserved",
+    "symbol|symbols"
    ],
    "answer": "Start with a letter or _, then letters, digits or _; no keywords and no symbols.",
    "hint": "First character, following characters, two bans.",
@@ -2405,9 +2369,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "Letter or _.",
      "answer": [
-      "yes",
-      "ya",
-      "boleh"
+      "yes"
      ],
      "keywords": []
     }
@@ -2433,8 +2395,7 @@ window.SCSE_DEFAULT_DATA = {
    "type": "exact",
    "keywords": [],
    "answer": [
-    "invalid",
-    "tidak sah"
+    "invalid"
    ],
    "hint": "Look at the first character.",
    "followUps": [
@@ -2444,8 +2405,8 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "The character in the middle.",
      "keywords": [
-      ".|dot|period|full stop|titik",
-      "not allowed|tidak dibenarkan|tak boleh|tidak boleh|symbol|simbol|can't|cannot"
+      ".|dot|period|full stop",
+      "not allowed|symbol|can't|cannot"
      ],
      "answer": "The dot (.) is not allowed."
     },
@@ -2455,8 +2416,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "The symbol at the end.",
      "answer": [
-      "invalid",
-      "tidak sah"
+      "invalid"
      ],
      "keywords": []
     },
@@ -2466,8 +2426,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "Underscores are allowed.",
      "answer": [
-      "valid",
-      "sah"
+      "valid"
      ],
      "keywords": []
     }
@@ -2492,8 +2451,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is a literal? Give an example.",
    "type": "explain",
    "keywords": [
-    "value|nilai",
-    "directly|terus|written|ditulis|code|kod",
+    "value",
+    "directly|written|code",
     "12|hello|'c'|c"
    ],
    "answer": "A value written directly in the code, e.g. 12, \"hello\", 'C'.",
@@ -2531,9 +2490,9 @@ window.SCSE_DEFAULT_DATA = {
    "type": "explain",
    "keywords": [
     "cout",
-    "<<|output|screen|skrin|display|papar|print",
+    "<<|output|screen|display|print",
     "cin",
-    ">>|input|keyboard|papan kekunci|read|reads|baca"
+    ">>|input|keyboard|read|reads"
    ],
    "answer": "cout << sends output to the screen; cin >> reads input from the keyboard.",
    "hint": "One goes out, one comes in.",
@@ -2557,8 +2516,7 @@ window.SCSE_DEFAULT_DATA = {
      "hint": "P…",
      "answer": [
       "prompt",
-      "a prompt",
-      "gesaan"
+      "a prompt"
      ],
      "keywords": []
     }
@@ -2583,10 +2541,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Explain the cout/cin arrows memory trick.",
    "type": "explain",
    "keywords": [
-    "arrow|arrows|anak panah|panah|point|tunjuk",
-    "data|go|goes|pergi|where|ke mana",
-    "out|keluar|screen|skrin|push|pushes|tolak",
-    "in|masuk|variable|pemboleh ubah|pull|pulls|tarik"
+    "arrow|arrows|point",
+    "data|go|goes|where",
+    "out|screen|push|pushes",
+    "in|variable|pull|pulls"
    ],
    "answer": "The arrows point where the data goes: cout << pushes data out to the screen; cin >> pulls data in to the variable.",
    "hint": "Arrow direction = data direction.",
@@ -2626,8 +2584,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is the size of a char and how is 'C' stored?",
    "type": "explain",
    "keywords": [
-    "1 byte|1|one byte|satu byte",
-    "67|ascii|number|nombor"
+    "1 byte|1|one byte",
+    "67|ascii|number"
    ],
    "answer": "1 byte; 'C' is stored as the number 67.",
    "hint": "One byte; the numeric code of 'C'.",
@@ -2674,9 +2632,9 @@ window.SCSE_DEFAULT_DATA = {
    "type": "explain",
    "keywords": [
     "true",
-    "1|one|satu",
+    "1|one",
     "false",
-    "0|zero|sifar"
+    "0|zero"
    ],
    "answer": "true = 1, false = 0.",
    "hint": "One and zero.",
@@ -2844,8 +2802,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is the difference between 'C' and \"C\"?",
    "type": "explain",
    "keywords": [
-    "character|char|aksara",
-    "string|rentetan",
+    "character|char",
+    "string",
     "\\0|null|nul|terminator"
    ],
    "answer": "'C' is a character; \"C\" is a string stored as C + \\0.",
@@ -2941,8 +2899,8 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "Not rounding.",
      "keywords": [
-      "truncate|truncated|truncation|potong|dipotong|cut|chop",
-      "not round|not rounded|bukan bundar|tidak dibundarkan|round|rounded|bundar"
+      "truncate|truncated|truncation|cut|chop",
+      "not round|not rounded|round|rounded"
      ],
      "answer": "Because the value is truncated, not rounded."
     }
@@ -2967,9 +2925,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "How are octal and hex literals written in C++?",
    "type": "explain",
    "keywords": [
-    "octal|oktal",
-    "0|starts with 0|bermula 0|075|zero",
-    "hex|hexadecimal|heksadesimal",
+    "octal",
+    "0|starts with 0|075|zero",
+    "hex|hexadecimal",
     "0x|0x75a"
    ],
    "answer": "Octal starts with 0 (075); hex starts with 0x (0x75A).",
@@ -3016,9 +2974,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What does sizeof do?",
    "type": "explain",
    "keywords": [
-    "size|saiz",
-    "byte|bytes|bait",
-    "type|jenis|variable"
+    "size",
+    "byte|bytes",
+    "type|variable"
    ],
    "answer": "It gives the size of a type (or variable) in bytes.",
    "hint": "Unit: bytes.",
@@ -3066,7 +3024,7 @@ window.SCSE_DEFAULT_DATA = {
    "keywords": [
     "const",
     "#define|define",
-    "preferred|prefer|recommended|better|disyorkan|typed|type|jenis"
+    "preferred|prefer|recommended|better|typed|type"
    ],
    "answer": "const double PI = 3.14159; (typed, preferred) and #define PI 3.14159 (no = and no ;).",
    "hint": "One has a data type, one is a preprocessor line.",
@@ -3090,8 +3048,7 @@ window.SCSE_DEFAULT_DATA = {
       "uppercase",
       "upper case",
       "capital letters",
-      "capitals",
-      "huruf besar"
+      "capitals"
      ],
      "keywords": []
     },
@@ -3101,9 +3058,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "It's a constant.",
      "answer": [
-      "no",
-      "tidak",
-      "tak"
+      "no"
      ],
      "keywords": []
     }
@@ -3128,8 +3083,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Why is `5 = size;` wrong?",
    "type": "explain",
    "keywords": [
-    "variable|pemboleh ubah|pembolehubah",
-    "left|kiri|left side|left-hand"
+    "variable",
+    "left|left side|left-hand"
    ],
    "answer": "The variable must be on the left of the =.",
    "hint": "Who receives the value?",
@@ -3201,9 +3156,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is the scope rule in the notes?",
    "type": "explain",
    "keywords": [
-    "before|sebelum|earlier",
-    "declare|declared|declaration|isytihar|diisytihar|pengisytiharan",
-    "cannot|can't|cant|tidak boleh|tak boleh|use|guna|not"
+    "before|earlier",
+    "declare|declared|declaration",
+    "cannot|can't|cant|use|not"
    ],
    "answer": "You can't use a variable before the line where it is declared.",
    "hint": "Order of lines.",
@@ -3214,9 +3169,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "value is used before it is declared.",
      "answer": [
-      "no",
-      "tidak",
-      "tak"
+      "no"
      ],
      "keywords": []
     }
@@ -3334,9 +3287,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "Integers only.",
      "answer": [
-      "no",
-      "tidak",
-      "tak"
+      "no"
      ],
      "keywords": []
     },
@@ -3371,10 +3322,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Write the order of precedence for arithmetic operators.",
    "type": "explain",
    "keywords": [
-    "( )|()|parentheses|brackets|bracket|kurungan",
-    "unary|unari|negative|negatif",
-    "* / %|*|multiply|multiplication|divide|darab|bahagi",
-    "+ −|+ -|+|add|addition|subtract|tambah|tolak"
+    "( )|()|parentheses|brackets|bracket",
+    "unary|negative",
+    "* / %|*|multiply|multiplication|divide",
+    "+ −|+ -|+|add|addition|subtract"
    ],
    "answer": "( ) → unary − → * / % → + −",
    "hint": "Brackets first, add/subtract last.",
@@ -3405,8 +3356,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "Like reading.",
      "answer": [
-      "left to right",
-      "kiri ke kanan"
+      "left to right"
      ],
      "keywords": []
     }
@@ -3470,9 +3420,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is promotion in type conversion?",
    "type": "explain",
    "keywords": [
-    "lower|rendah|smaller|kecil",
-    "higher|tinggi|bigger|besar|up|naik",
-    "convert|converted|tukar|ditukar|promote|promoted"
+    "lower|smaller",
+    "higher|bigger|up",
+    "convert|converted|promote|promoted"
    ],
    "answer": "In an expression, the lower type is converted up to the higher type.",
    "hint": "Low → high.",
@@ -3518,8 +3468,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "With =, which type does the final result take?",
    "type": "explain",
    "keywords": [
-    "left|kiri|left-hand",
-    "variable|pemboleh ubah|type|jenis"
+    "left|left-hand",
+    "variable|type"
    ],
    "answer": "The type of the variable on the left-hand side.",
    "hint": "Who receives the value?",
@@ -3612,8 +3562,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What happens on overflow?",
    "type": "explain",
    "keywords": [
-    "too big|too large|too small|terlalu besar|terlalu kecil|big|small|exceed|exceeds|range|julat",
-    "wrap|wraps|wrap around|wraps around|pusing|berpusing"
+    "too big|too large|too small|big|small|exceed|exceeds|range",
+    "wrap|wraps|wrap around|wraps around"
    ],
    "answer": "A value too big or too small for the type wraps around.",
    "hint": "Like a car's odometer.",
@@ -3650,9 +3600,9 @@ window.SCSE_DEFAULT_DATA = {
    "type": "explain",
    "keywords": [
     "prefix|++x",
-    "change first|change|ubah dahulu|tambah dahulu|dahulu|first|before",
+    "change first|change|first|before",
     "postfix|x++",
-    "use first|use|guna dahulu|then change|after|later|kemudian|selepas"
+    "use first|use|then change|after|later"
    ],
    "answer": "++x (prefix) changes first, then uses the value; x++ (postfix) uses the value first, then changes it.",
    "hint": "Change-then-use vs use-then-change.",
@@ -3792,8 +3742,7 @@ window.SCSE_DEFAULT_DATA = {
    "type": "exact",
    "keywords": [],
    "answer": [
-    "right to left",
-    "kanan ke kiri"
+    "right to left"
    ],
    "hint": "It starts with z.",
    "followUps": [
@@ -3829,8 +3778,8 @@ window.SCSE_DEFAULT_DATA = {
    "type": "explain",
    "keywords": [
     "hello",
-    "space|ruang|whitespace|berhenti|stop",
-    "world|buffer|baki|tinggal|remain|seterusnya|next"
+    "space|whitespace|stop",
+    "world|buffer|remain|next"
    ],
    "answer": "Only 'Hello' is read because cin stops at the space; 'World' stays in the buffer for the next input.",
    "hint": "What does cin do when it meets a space?",
@@ -3878,8 +3827,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Why is `const` recommended over `#define`?",
    "type": "explain",
    "keywords": [
-    "type|jenis|data type|type-checked|semak jenis",
-    "scope|skop|compiler|safe|selamat|ralat|error|debug"
+    "type|data type|type-checked",
+    "scope|compiler|safe|error|debug"
    ],
    "answer": "const has a data type that the compiler checks and follows scope; #define is only text replacement by the preprocessor.",
    "hint": "Who processes #define? Does it have a type?",
@@ -3904,9 +3853,7 @@ window.SCSE_DEFAULT_DATA = {
      "hint": "#define is not a statement.",
      "answer": [
       ";",
-      "semicolon",
-      "titik koma",
-      "koma bertitik"
+      "semicolon"
      ],
      "keywords": []
     },
@@ -3941,7 +3888,7 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Between * and +, which operator is evaluated first?",
    "type": "explain",
    "keywords": [
-    "*|darab|multiply|multiplication|pendaraban"
+    "*|multiply|multiplication"
    ],
    "answer": "* (multiplication) is evaluated before +.",
    "hint": "Same as in maths.",
@@ -3999,9 +3946,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is the difference between ++x and x++?",
    "type": "explain",
    "keywords": [
-    "prefix|++x|sebelum|before|dulu|dahulu",
-    "postfix|x++|selepas|after|kemudian",
-    "value|nilai|guna|use|digunakan"
+    "prefix|++x|before",
+    "postfix|x++|after",
+    "value|use"
    ],
    "answer": "++x (prefix) adds first then uses the new value; x++ (postfix) uses the old value first then adds.",
    "hint": "Think about when the value is USED versus when it is ADDED.",
@@ -4013,8 +3960,7 @@ window.SCSE_DEFAULT_DATA = {
      "hint": "Postfix uses 5 first.",
      "answer": [
       "35 4",
-      "second = 35 count = 4",
-      "35 dan 4"
+      "second = 35 count = 4"
      ],
      "keywords": []
     },
@@ -4025,8 +3971,7 @@ window.SCSE_DEFAULT_DATA = {
      "hint": "Prefix: count becomes 3 first.",
      "answer": [
       "25 3",
-      "second = 25 count = 3",
-      "25 dan 3"
+      "second = 25 count = 3"
      ],
      "keywords": []
     },
@@ -4061,8 +4006,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What does `i *= j + 3;` mean?",
    "type": "explain",
    "keywords": [
-    "i = i *|i=i*|i = i*|darab|multiply",
-    "(j + 3)|(j+3)|kurungan|j + 3 dahulu|dulu|dahulu|keseluruhan|whole"
+    "i = i *|i=i*|i = i*|multiply",
+    "(j + 3)|(j+3)|whole"
    ],
    "answer": "i = i * (j + 3): the right-hand side is evaluated first, then multiplied by i.",
    "hint": "Expand op= into its full form.",
@@ -4121,7 +4066,6 @@ window.SCSE_DEFAULT_DATA = {
    "keywords": [],
    "answer": [
     "6",
-    "enam",
     "six",
     "6 digits"
    ],
@@ -4158,8 +4102,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Why should you fix only the first error, then recompile?",
    "type": "explain",
    "keywords": [
-    "first|pertama",
-    "hide|sembunyi|cause|sebab|menyebabkan|lain|other|cascade|berantai|palsu|false"
+    "first",
+    "hide|cause|other|cascade|false"
    ],
    "answer": "Because one mistake can cause or hide other errors; after fixing the first, the others may disappear.",
    "hint": "One mistake can produce many messages.",
@@ -4171,10 +4115,7 @@ window.SCSE_DEFAULT_DATA = {
      "hint": "The message says ';' should come BEFORE int.",
      "answer": [
       "using",
-      "baris using",
-      "using namespace std",
-      "baris sebelum",
-      "sebelumnya"
+      "using namespace std"
      ],
      "keywords": []
     },
@@ -4248,10 +4189,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "How is an int converted to a bool?",
    "type": "explain",
    "keywords": [
-    "0|zero|sifar",
-    "false|palsu",
-    "non-zero|nonzero|any other|not zero|bukan sifar|bukan-sifar|selain 0|lain",
-    "true|benar"
+    "0|zero",
+    "false",
+    "non-zero|nonzero|any other|not zero",
+    "true"
    ],
    "answer": "0 = false; any non-zero value (even a negative like −10) = true.",
    "hint": "Only one value is false.",
@@ -4297,9 +4238,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is a compound statement, and when are braces { } optional?",
    "type": "explain",
    "keywords": [
-    "group|several|multiple|more than one|kumpulan|beberapa|lebih",
-    "{ }|{}|braces|curly|kurungan kerinting",
-    "one|single|only one|satu|hanya satu"
+    "group|several|multiple|more than one",
+    "{ }|{}|braces|curly",
+    "one|single|only one"
    ],
    "answer": "A compound statement is a group of statements inside { }; braces are optional when there is only one statement.",
    "hint": "Two parts: the definition, and when you can leave them out.",
@@ -4381,9 +4322,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Why is `if (x = 0)` wrong?",
    "type": "explain",
    "keywords": [
-    "assignment|assign|assigns|umpukan|=",
-    "not comparison|not compare|comparison|compare|bukan perbandingan|banding|==",
-    "always false|false|sentiasa false|0"
+    "assignment|assign|assigns|=",
+    "not comparison|not compare|comparison|compare|==",
+    "always false|false|0"
    ],
    "answer": "It is assignment, not comparison: x becomes 0, so the condition is always false. Correct: if (x == 0).",
    "hint": "= vs ==.",
@@ -4431,9 +4372,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Why is `if (2 < x < 9)` always true?",
    "type": "explain",
    "keywords": [
-    "0 or 1|0|1|true|false|0 atau 1",
-    "always|sentiasa",
-    "< 9|less than 9|kurang daripada 9|9"
+    "0 or 1|0|1|true|false",
+    "always",
+    "< 9|less than 9|9"
    ],
    "answer": "(2<x) is evaluated first and gives 0 or 1; both are less than 9, so it is always true.",
    "hint": "What is the value of (2 < x)?",
@@ -4484,9 +4425,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is wrong with `if (0<x) && (x<10)`?",
    "type": "explain",
    "keywords": [
-    "syntax|sintaks",
-    "outer|outside|whole|entire|luar|seluruh|keseluruhan",
-    "( )|()|parentheses|brackets|bracket|kurungan"
+    "syntax",
+    "outer|outside|whole|entire",
+    "( )|()|parentheses|brackets|bracket"
    ],
    "answer": "Syntax error: the whole condition needs outer brackets. Correct: if ((0<x) && (x<10)).",
    "hint": "The if's brackets must cover everything.",
@@ -4538,7 +4479,7 @@ window.SCSE_DEFAULT_DATA = {
      "hint": "Operator precedence.",
      "keywords": [
       "!|not",
-      "first|before|precedence|higher|dahulu|dulu|keutamaan",
+      "first|before|precedence|higher",
       "n|5|!n"
      ],
      "answer": "Because ! is applied to n first (!5 = 0), then 0 > 9 is compared."
@@ -4578,9 +4519,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What happens when there is a ; after `if (x<3)`?",
    "type": "explain",
    "keywords": [
-    "null|empty|kosong",
-    "always|sentiasa",
-    "next|following|seterusnya|line|baris|run|runs|jalan"
+    "null|empty",
+    "always",
+    "next|following|line|run|runs"
    ],
    "answer": "The ; is a null statement, so the next line always runs.",
    "hint": "The if's body becomes empty.",
@@ -4616,8 +4557,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What error do you get with two statements before else and no { }?",
    "type": "explain",
    "keywords": [
-    "syntax|sintaks|error|ralat",
-    "misplaced|without|salah tempat|tanpa|else"
+    "syntax|error",
+    "misplaced|without|else"
    ],
    "answer": "A syntax error: misplaced else ('else' without a previous 'if'). Wrap the statements in { }.",
    "hint": "The else can't find its if.",
@@ -4631,8 +4572,7 @@ window.SCSE_DEFAULT_DATA = {
       "{ }",
       "{}",
       "braces",
-      "curly braces",
-      "kurungan kerinting"
+      "curly braces"
      ],
      "keywords": []
     }
@@ -4668,7 +4608,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "Dangling else.",
      "keywords": [
-      "nearest|closest|inner|last|terdekat|dekat|dalam|terakhir"
+      "nearest|closest|inner|last"
      ],
      "answer": "The nearest if."
     }
@@ -4783,8 +4723,8 @@ window.SCSE_DEFAULT_DATA = {
    "type": "explain",
    "keywords": [
     "?|ternary|conditional",
-    "true|value1|first|benar|nilai pertama",
-    "otherwise|false|else|value2|second|jika tidak|kedua"
+    "true|value1|first",
+    "otherwise|false|else|value2|second"
    ],
    "answer": "cond ? value1 : value2 — if cond is true take value1, otherwise take value2.",
    "hint": "? and :",
@@ -4831,8 +4771,8 @@ window.SCSE_DEFAULT_DATA = {
    "type": "explain",
    "keywords": [
     "!( )|!()|!|not",
-    "around|wrap|surround|sekeliling|keliling|balut",
-    "yes|flowchart|wrong side|wrong|chart|carta|salah"
+    "around|wrap|surround",
+    "yes|flowchart|wrong side|wrong|chart"
    ],
    "answer": "Put !( ) around the condition; it's useful when the flowchart's Yes branch is on the wrong side.",
    "hint": "e.g. !(n==0).",
@@ -4881,7 +4821,7 @@ window.SCSE_DEFAULT_DATA = {
    "type": "explain",
    "keywords": [
     "int|integer|integral",
-    "char|character|aksara",
+    "char|character",
     "bool"
    ],
    "answer": "Integral types: int, char, bool (not float, not string).",
@@ -4903,9 +4843,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "Not float and not string.",
      "answer": [
-      "no",
-      "tidak",
-      "tak"
+      "no"
      ],
      "keywords": []
     }
@@ -4930,7 +4868,7 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What can be used as a case value?",
    "type": "explain",
    "keywords": [
-    "constant|constants|pemalar|tetap",
+    "constant|constants",
     "literal|const|#define|define"
    ],
    "answer": "Constants only: a literal, const or #define; not a variable.",
@@ -4942,9 +4880,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "It must be a constant.",
      "answer": [
-      "no",
-      "tidak",
-      "tak"
+      "no"
      ],
      "keywords": []
     }
@@ -5005,7 +4941,7 @@ window.SCSE_DEFAULT_DATA = {
    "question": "When does default run in a switch?",
    "type": "explain",
    "keywords": [
-    "no case|none|not match|no match|nothing matches|doesn't match|tiada case|tidak sepadan|tak sepadan"
+    "no case|none|not match|no match|nothing matches|doesn't match"
    ],
    "answer": "When no case matches.",
    "hint": "The last resort.",
@@ -5041,10 +4977,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What are the four parts of a loop?",
    "type": "explain",
    "keywords": [
-    "initialise|initialize|initialization|initialisation|inisialisasi|nilai awal|init|start",
-    "condition|test|syarat",
-    "body|badan",
-    "update|increment|decrement|kemas kini"
+    "initialise|initialize|initialization|initialisation|init|start",
+    "condition|test",
+    "body",
+    "update|increment|decrement"
    ],
    "answer": "Initialise, condition, body, update.",
    "hint": "Start, test, work, change.",
@@ -5132,8 +5068,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "When is do-while the best choice?",
    "type": "explain",
    "keywords": [
-    "at least once|once|sekurang-kurangnya sekali|sekali",
-    "menu|menus|validation|validate|input|validasi|pengesahan"
+    "at least once|once",
+    "menu|menus|validation|validate|input"
    ],
    "answer": "When the loop must run at least once, e.g. menus and input validation.",
    "hint": "Menus…",
@@ -5192,7 +5128,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "Not both.",
      "keywords": [
-      "inner|innermost|inside|dalam|terdalam"
+      "inner|innermost|inside"
      ],
      "answer": "Only the inner loop."
     },
@@ -5275,7 +5211,7 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Why should goto be avoided?",
    "type": "explain",
    "keywords": [
-    "unstructured|not structured|structure|structured|messy|hard|tidak berstruktur|struktur"
+    "unstructured|not structured|structure|structured|messy|hard"
    ],
    "answer": "Because it makes code unstructured.",
    "hint": "The opposite of 'structured programming'.",
@@ -5312,8 +5248,8 @@ window.SCSE_DEFAULT_DATA = {
    "type": "explain",
    "keywords": [
     "continue",
-    "before|skip|skips|sebelum|langkau",
-    "update|n = n - 1|n-1|never|not run|tidak pernah|tak pernah"
+    "before|skip|skips",
+    "update|n = n - 1|n-1|never|not run"
    ],
    "answer": "Because continue comes before the update, so n = n - 1 never runs and n stays 9.",
    "hint": "Does n ever change?",
@@ -5324,7 +5260,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "Order of lines.",
      "keywords": [
-      "before|above|first|earlier|sebelum|atas|dahulu"
+      "before|above|first|earlier"
      ],
      "answer": "Before the continue."
     }
@@ -5449,10 +5385,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "A century not divisible by 400.",
      "answer": [
-      "no",
-      "tidak",
-      "bukan",
-      "tak"
+      "no"
      ],
      "keywords": []
     },
@@ -5462,9 +5395,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "The part after ||.",
      "answer": [
-      "yes",
-      "ya",
-      "betul"
+      "yes"
      ],
      "keywords": []
     }
@@ -5500,7 +5431,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "k never changes.",
      "keywords": [
-      "infinite|tak berhenti|tidak berhenti|selama-lamanya|forever|tak terhingga|hang|never"
+      "infinite|forever|hang|never"
      ],
      "answer": "Infinite loop: the while's body is just ;, so k never increases."
     }
@@ -5526,9 +5457,7 @@ window.SCSE_DEFAULT_DATA = {
    "type": "exact",
    "keywords": [],
    "answer": [
-    "6",
-    "enam",
-    "6 kali"
+    "6"
    ],
    "hint": "Count 0, 1, 2, 3, 4, 5.",
    "followUps": [
@@ -5563,8 +5492,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Name two causes of an infinite loop.",
    "type": "explain",
    "keywords": [
-    "update|kemas kini|i++|increment|tiada update|lupa",
-    "wrong|salah|arah|direction|condition|syarat|never false|tak pernah false|tidak pernah",
+    "update|i++|increment",
+    "wrong|direction|condition|never false",
     ";|semicolon"
    ],
    "answer": "No update (forgot i++), an update in the wrong direction, a condition that never becomes false, or a ; after while.",
@@ -5576,8 +5505,8 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "i starts at 10 and is tested with > 0.",
      "keywords": [
-      "i++|increment|tambah|naik",
-      "i--|decrement|kurang|turun|arah|direction|salah|wrong"
+      "i++|increment",
+      "i--|decrement|direction|wrong"
      ],
      "answer": "The update i++ makes i bigger; it should be i-- so that i > 0 eventually becomes false."
     }
@@ -5602,9 +5531,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is a sentinel-controlled loop?",
    "type": "explain",
    "keywords": [
-    "sentinel|nilai khas|special value|-1",
-    "stop|berhenti|tamat|end|hentikan|until|sehingga",
-    "input|baca|read|unknown|tidak diketahui"
+    "sentinel|special value|-1",
+    "stop|end|until",
+    "input|read|unknown"
    ],
    "answer": "A loop that keeps reading input until the user enters a special (sentinel) value such as -1.",
    "hint": "The number of inputs is unknown.",
@@ -5651,9 +5580,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is a breakpoint for?",
    "type": "explain",
    "keywords": [
-    "stop|berhenti|pause|hentikan|jeda",
-    "line|baris|tempat|point|titik",
-    "inspect|lihat|watch|nilai|variable|periksa|check"
+    "stop|pause",
+    "line|point",
+    "inspect|watch|variable|check"
    ],
    "answer": "It stops the program at a chosen line so you can inspect variable values and step through line by line.",
    "hint": "The program pauses…",
@@ -5690,9 +5619,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is modular programming and what are its benefits?",
    "type": "explain",
    "keywords": [
-    "split|splitting|break|small|divide|pecah|pecahkan|kecil|bahagi",
-    "function|functions|fungsi",
-    "write|read|maintain|easier|tulis|baca|selenggara|mudah"
+    "split|splitting|break|small|divide",
+    "function|functions",
+    "write|read|maintain|easier"
    ],
    "answer": "Splitting a program into small functions so it is easier to write, read and maintain.",
    "hint": "Three benefits: write, read, …",
@@ -5703,8 +5632,8 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "Long or short?",
      "keywords": [
-      "short|small|pendek|ringkas",
-      "call|calls|panggil|memanggil"
+      "short|small",
+      "call|calls"
      ],
      "answer": "Short, and mostly calls other functions."
     }
@@ -5827,11 +5756,11 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What do strlen, strcat, strcpy, strcmp and strstr do?",
    "type": "explain",
    "keywords": [
-    "strlen|length|panjang",
-    "strcat|join|joins|concatenate|sambung|gabung",
-    "strcpy|copy|copies|salin",
-    "strcmp|compare|compares|banding",
-    "strstr|find|finds|search|cari"
+    "strlen|length",
+    "strcat|join|joins|concatenate",
+    "strcpy|copy|copies",
+    "strcmp|compare|compares",
+    "strstr|find|finds|search"
    ],
    "answer": "strlen = length, strcat = join, strcpy = copy, strcmp = compare (0 = same), strstr = find.",
    "hint": "length, join, copy, compare, find.",
@@ -5928,7 +5857,7 @@ window.SCSE_DEFAULT_DATA = {
    "keywords": [
     "strcmp",
     "strcpy",
-    "==|=|cannot|can't|cant|not|tidak boleh|tak boleh"
+    "==|=|cannot|can't|cant|not"
    ],
    "answer": "Use strcmp to compare (0 = equal) and strcpy to copy; you can't use == or =.",
    "hint": "Two str… functions.",
@@ -5977,9 +5906,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What are the three parts of a function header?",
    "type": "explain",
    "keywords": [
-    "return type|returntype|return|jenis pulangan",
-    "name|nama",
-    "parameter|parameters|parameter list|senarai parameter"
+    "return type|returntype|return",
+    "name",
+    "parameter|parameters|parameter list"
    ],
    "answer": "returnType, name, (parameter list).",
    "hint": "Type, name, brackets.",
@@ -6028,9 +5957,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Where is a prototype placed, and how does it end?",
    "type": "explain",
    "keywords": [
-    "before|above|sebelum|atas",
+    "before|above",
     "main",
-    ";|semicolon|titik koma"
+    ";|semicolon"
    ],
    "answer": "Before main, and it ends with ;.",
    "hint": "Location + symbol.",
@@ -6077,10 +6006,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What must the compiler know before a function is called, and how do you make sure it does?",
    "type": "explain",
    "keywords": [
-    "name|nama",
-    "return type|return|jenis pulangan",
-    "number|type|types|parameter|parameters|bilangan|jenis",
-    "prototype|above|before main|atas|sebelum main"
+    "name",
+    "return type|return",
+    "number|type|types|parameter|parameters",
+    "prototype|above|before main"
    ],
    "answer": "Its name, return type, and the number and types of its parameters; use a prototype or define the function above main.",
    "hint": "Three facts + two ways.",
@@ -6091,8 +6020,8 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "Its position.",
      "keywords": [
-      "define|definition|write|put|place|definisi|takrif|letak|tulis",
-      "above|before|atas|sebelum"
+      "define|definition|write|put|place",
+      "above|before"
      ],
      "answer": "Define the function above main."
     }
@@ -6117,8 +6046,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What does void mean?",
    "type": "explain",
    "keywords": [
-    "nothing|no|not|none|tiada|tidak|tak",
-    "return|returns|value|pulang|memulangkan|nilai"
+    "nothing|no|not|none",
+    "return|returns|value"
    ],
    "answer": "The function returns nothing.",
    "hint": "Empty.",
@@ -6129,9 +6058,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "There is no value.",
      "answer": [
-      "no",
-      "tidak",
-      "tak"
+      "no"
      ],
      "keywords": []
     }
@@ -6156,11 +6083,11 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is the difference between arguments and parameters?",
    "type": "explain",
    "keywords": [
-    "argument|arguments|actual|sebenar",
-    "call|panggil|panggilan",
+    "argument|arguments|actual",
+    "call",
     "parameter|parameters|formal",
-    "header|definition|definisi",
-    "order|number|turutan|bilangan"
+    "header|definition",
+    "order|number"
    ],
    "answer": "Arguments (actual) are in the call; parameters (formal) are in the header; they are matched by order and their number must match.",
    "hint": "Call vs header.",
@@ -6183,8 +6110,7 @@ window.SCSE_DEFAULT_DATA = {
      "answer": [
       "error",
       "compile error",
-      "syntax error",
-      "ralat"
+      "syntax error"
      ],
      "keywords": []
     }
@@ -6209,9 +6135,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What are three ways to use a value returned by a function?",
    "type": "explain",
    "keywords": [
-    "assign|store|=|simpan|umpuk|variable",
-    "print|output|cout|display|cetak|papar",
-    "expression|calculation|ungkapan"
+    "assign|store|=|variable",
+    "print|output|cout|display",
+    "expression|calculation"
    ],
    "answer": "Assign it to a variable, print it (cout), or use it in an expression.",
    "hint": "Store, print, calculate.",
@@ -6283,8 +6209,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is wrong with the header `one(int a, int b)`?",
    "type": "explain",
    "keywords": [
-    "return type|return|type|jenis pulangan|jenis",
-    "missing|no|none|without|tiada|tertinggal"
+    "return type|return|type",
+    "missing|no|none|without"
    ],
    "answer": "It has no return type.",
    "hint": "What should come before the name?",
@@ -6320,8 +6246,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is wrong with the header `char another(int a, b)`?",
    "type": "explain",
    "keywords": [
-    "type|int|jenis",
-    "each|every|own|b|parameter|setiap"
+    "type|int",
+    "each|every|own|b|parameter"
    ],
    "answer": "Parameter b has no type; each parameter needs its own type.",
    "hint": "Look at b.",
@@ -6357,8 +6283,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is wrong with the header `double yetanother`?",
    "type": "explain",
    "keywords": [
-    "( )|()|parentheses|brackets|bracket|kurungan",
-    "missing|no|none|without|tiada|tertinggal"
+    "( )|()|parentheses|brackets|bracket",
+    "missing|no|none|without"
    ],
    "answer": "There are no ( ) after the function name.",
    "hint": "A function must have…",
@@ -6394,8 +6320,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What does pass by value mean?",
    "type": "explain",
    "keywords": [
-    "copy|copies|salinan|salin",
-    "original|not change|doesn't change|does not change|unchanged|same|asal|tidak berubah|kekal"
+    "copy|copies",
+    "original|not change|doesn't change|does not change|unchanged|same"
    ],
    "answer": "The function gets a copy; changes inside it do not change the original variable.",
    "hint": "A copy.",
@@ -6431,9 +6357,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What does pass by reference mean, and when is it used?",
    "type": "explain",
    "keywords": [
-    "original|alias|asal",
-    "change|changes|stay|ubah|perubahan|kekal",
-    "more than one|multiple|several|lebih daripada satu|beberapa|banyak"
+    "original|alias",
+    "change|changes|stay",
+    "more than one|multiple|several"
    ],
    "answer": "The function works on the original (an alias), so changes stay; it is used to 'return' more than one value.",
    "hint": "An alias…",
@@ -6454,9 +6380,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "It must be a variable.",
      "answer": [
-      "no",
-      "tidak",
-      "tak"
+      "no"
      ],
      "keywords": []
     },
@@ -6494,10 +6418,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Explain the photocopy memory trick for value vs reference.",
    "type": "explain",
    "keywords": [
-    "value|nilai",
-    "photocopy|copy|fotostat|salinan",
-    "reference|&|rujukan",
-    "original|real|asal|sebenar"
+    "value",
+    "photocopy|copy",
+    "reference|&",
+    "original|real"
    ],
    "answer": "Value = photocopy (the original is safe); reference = the original paper (& = and change the real one).",
    "hint": "Photocopy vs …",
@@ -6508,8 +6432,8 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "and change the …",
      "keywords": [
-      "change|ubah",
-      "real|original|asal|sebenar"
+      "change",
+      "real|original"
      ],
      "answer": "And change the real one."
     }
@@ -6534,9 +6458,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What are the properties of a local variable?",
    "type": "explain",
    "keywords": [
-    "inside|within|function|dalam",
-    "created|each call|destroyed|every call|dicipta|setiap panggilan|musnah|dimusnahkan",
-    "not auto|not initialised|not initialized|garbage|no initial|tidak auto|tak auto|sampah"
+    "inside|within|function",
+    "created|each call|destroyed|every call",
+    "not auto|not initialised|not initialized|garbage|no initial"
    ],
    "answer": "Declared inside a function; created on each call and destroyed at the end; not auto-initialised.",
    "hint": "Where, how long, starting value.",
@@ -6547,9 +6471,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "Not auto-initialised.",
      "answer": [
-      "no",
-      "tidak",
-      "tak"
+      "no"
      ],
      "keywords": []
     }
@@ -6574,10 +6496,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What are the properties of a global variable?",
    "type": "explain",
    "keywords": [
-    "outside|luar",
-    "visible|line|end of file|file|kelihatan|baris|fail",
-    "0|zero|auto|sifar",
-    "avoid|constant|constants|elak|elakkan|pemalar"
+    "outside",
+    "visible|line|end of file|file",
+    "0|zero|auto",
+    "avoid|constant|constants"
    ],
    "answer": "Declared outside all functions; visible from that line to the end of the file; auto-initialised to 0; avoid them and prefer global constants.",
    "hint": "Where, scope, starting value, advice.",
@@ -6613,9 +6535,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What are the properties of a static local variable?",
    "type": "explain",
    "keywords": [
-    "keep|keeps|remember|remembers|retain|retains|kekal|ingat",
-    "between calls|calls|between|antara panggilan|panggilan",
-    "once|sekali"
+    "keep|keeps|remember|remembers|retain|retains",
+    "between calls|calls|between",
+    "once"
    ],
    "answer": "It keeps its value between calls and is initialised only once (default 0).",
    "hint": "It 'remembers'.",
@@ -6710,8 +6632,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "State the two rules for default arguments.",
    "type": "explain",
    "keywords": [
-    "right|end|kanan|hujung",
-    "leave out|omit|skip|after|everything after|tinggal|selepas"
+    "right|end",
+    "leave out|omit|skip|after|everything after"
    ],
    "answer": "Defaults must be at the right end of the list; when you leave out an argument, you must leave out everything after it.",
    "hint": "Right… and what comes after.",
@@ -6732,9 +6654,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "A default in the middle.",
      "answer": [
-      "no",
-      "tidak",
-      "tak"
+      "no"
      ],
      "keywords": []
     },
@@ -6744,9 +6664,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "You can't skip one in the middle.",
      "answer": [
-      "no",
-      "tidak",
-      "tak"
+      "no"
      ],
      "keywords": []
     }
@@ -6771,10 +6689,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is function overloading?",
    "type": "explain",
    "keywords": [
-    "same name|share|nama sama|sama nama|kongsi",
-    "different|berbeza|lain",
-    "parameter|parameters|parameter list|list|senarai",
-    "number|type|types|bilangan|jenis"
+    "same name|share",
+    "different",
+    "parameter|parameters|parameter list|list",
+    "number|type|types"
    ],
    "answer": "Functions sharing the same name but with different parameter lists (number or types); the compiler picks the matching one.",
    "hint": "Same name, what differs?",
@@ -6827,9 +6745,9 @@ window.SCSE_DEFAULT_DATA = {
    "type": "explain",
    "keywords": [
     "return",
-    "function|caller|fungsi|pemanggil",
+    "function|caller",
     "exit",
-    "program|whole|immediately|seluruh|serta-merta"
+    "program|whole|immediately"
    ],
    "answer": "return ends the function and goes back to the caller; exit(0) ends the whole program immediately.",
    "hint": "Function vs program.",
@@ -6852,9 +6770,7 @@ window.SCSE_DEFAULT_DATA = {
      "type": "exact",
      "hint": "Code after it doesn't run.",
      "answer": [
-      "no",
-      "tidak",
-      "tak"
+      "no"
      ],
      "keywords": []
     }
@@ -6926,8 +6842,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Why use acos(-1.0) instead of M_PI?",
    "type": "explain",
    "keywords": [
-    "standard|piawai|not standard|bukan standard",
-    "compiler|portable|mudah alih|reject|tolak|semua"
+    "standard|not standard",
+    "compiler|portable|reject"
    ],
    "answer": "M_PI is not standard C++ and some compilers reject it; acos(-1.0) is standard and gives pi.",
    "hint": "A standards and compiler issue.",
@@ -6966,9 +6882,7 @@ window.SCSE_DEFAULT_DATA = {
    "answer": [
     "1 to 6",
     "1-6",
-    "1 - 6",
-    "1 hingga 6",
-    "1 sampai 6"
+    "1 - 6"
    ],
    "hint": "% 6 gives 0..5.",
    "followUps": [
@@ -6978,8 +6892,8 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "Lab 6 B4 mode 1.",
      "keywords": [
-      "same|sama|ulang|repeat|reproducible|tetap",
-      "test|testing|uji|semak|debug"
+      "same|repeat|reproducible",
+      "test|testing|debug"
      ],
      "answer": "It gives the same random sequence every run, so testing is easier."
     },
@@ -7084,8 +6998,8 @@ window.SCSE_DEFAULT_DATA = {
      "type": "explain",
      "hint": "Compare the return values.",
      "keywords": [
-      "0|sifar|zero",
-      "same|sama|both|kedua-dua|keduanya"
+      "0|zero",
+      "same|both"
      ],
      "answer": "Both return 0, so there is no way to know the input was invalid."
     }
@@ -7199,12 +7113,12 @@ window.SCSE_DEFAULT_DATA = {
    "question": "List the four computational thinking skills and the two extras in the extended version.",
    "type": "explain",
    "keywords": [
-    "decomposition|decompose|pecah",
-    "pattern|corak",
-    "abstraction|abstract|abstraksi",
-    "algorithm|algoritma",
+    "decomposition|decompose",
+    "pattern",
+    "abstraction|abstract",
+    "algorithm",
     "modelling|modeling|model",
-    "evaluation|evaluate|penilaian"
+    "evaluation|evaluate"
    ],
    "answer": "Decomposition, Pattern, Abstraction, Algorithm + Modelling, Evaluation.",
    "hint": "D-P-A-A + M + E.",
@@ -7243,10 +7157,10 @@ window.SCSE_DEFAULT_DATA = {
    "type": "explain",
    "keywords": [
     "ipo|input",
-    "algorithm|algoritma",
+    "algorithm",
     "pseudocode|flowchart",
     "trace|trace table",
-    "code|kod"
+    "code"
    ],
    "answer": "IPO → Algorithm → Pseudocode / Flowchart → Trace table → Code.",
    "hint": "Starts with IPO, ends with Code.",
@@ -7283,14 +7197,14 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Match the flowchart shapes: Oval, Rectangle, Parallelogram, Diamond.",
    "type": "explain",
    "keywords": [
-    "oval|bujur",
-    "start|end|mula|tamat",
-    "rectangle|segi empat tepat",
-    "process|proses",
-    "parallelogram|segi empat selari",
+    "oval",
+    "start|end",
+    "rectangle",
+    "process",
+    "parallelogram",
     "i/o|input|output",
-    "diamond|berlian",
-    "decision|keputusan"
+    "diamond",
+    "decision"
    ],
    "answer": "Oval = start/end, Rectangle = process, Parallelogram = I/O, Diamond = decision.",
    "hint": "4 pairs.",
@@ -7421,10 +7335,10 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What truth value do 0 and a non-zero number have?",
    "type": "explain",
    "keywords": [
-    "0|zero|sifar",
-    "false|palsu",
-    "non-zero|nonzero|any other|not zero|bukan sifar|bukan-sifar|lain",
-    "true|benar"
+    "0|zero",
+    "false",
+    "non-zero|nonzero|any other|not zero",
+    "true"
    ],
    "answer": "0 = false; any non-zero = true.",
    "hint": "Only one value is false.",
@@ -7461,8 +7375,8 @@ window.SCSE_DEFAULT_DATA = {
    "question": "Why is `if (x = 5)` always true?",
    "type": "explain",
    "keywords": [
-    "assign|assigns|assignment|=|umpuk",
-    "5|non-zero|nonzero|not zero|true|bukan sifar"
+    "assign|assigns|assignment|=",
+    "5|non-zero|nonzero|not zero|true"
    ],
    "answer": "Because = assigns 5 to x, and 5 (non-zero) counts as true.",
    "hint": "The value of the assignment is 5.",
@@ -7576,11 +7490,11 @@ window.SCSE_DEFAULT_DATA = {
    "type": "explain",
    "keywords": [
     "local",
-    "per call|each call|every call|setiap panggilan|panggilan",
+    "per call|each call|every call",
     "static",
-    "remember|remembers|keeps|kekal|ingat",
+    "remember|remembers|keeps",
     "global",
-    "whole file|file|entire file|seluruh fail|fail"
+    "whole file|file|entire file"
    ],
    "answer": "local = per call; static = remembers its value; global = whole file (avoid).",
    "hint": "Per call, remembers, whole file.",
@@ -7619,9 +7533,9 @@ window.SCSE_DEFAULT_DATA = {
    "question": "What is required for function overloading?",
    "type": "explain",
    "keywords": [
-    "same name|nama sama|sama nama",
-    "different|berbeza",
-    "parameter|parameters|list|senarai"
+    "same name",
+    "different",
+    "parameter|parameters|list"
    ],
    "answer": "The same name with a different parameter list (number or types).",
    "hint": "Name + parameters.",
@@ -7634,8 +7548,7 @@ window.SCSE_DEFAULT_DATA = {
      "answer": [
       "right",
       "from the right",
-      "the right",
-      "kanan"
+      "the right"
      ],
      "keywords": []
     }

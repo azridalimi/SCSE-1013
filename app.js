@@ -184,7 +184,7 @@
     if (tok === kw) return true;
     if (kw.length >= 6 && tok.length >= 6 && Math.abs(tok.length - kw.length) <= 2 && levenshtein(tok, kw) <= 2) return true;
     if (kw.length >= 4 && /^[a-z]/.test(kw) && tok.indexOf(kw) === 0 && tok.length - kw.length <= 3) return true;  // plural / suffix
-    if (kw.length >= 5 && /^[a-z]+$/.test(kw) && tok.indexOf(kw) > 0) return true;  // Malay prefix: memecahkan ⊃ pecah
+    if (kw.length >= 5 && /^[a-z]+$/.test(kw) && tok.indexOf(kw) > 0) return true;  // word contains the keyword (e.g. recomputed ⊃ compute)
     return false;
   }
   function phraseIn(tokens, phrase, raw) {
@@ -387,6 +387,7 @@
       '<span class="eyebrow rv"><span class="dot"></span>SCSE1013 · FUNDAMENTAL PROGRAMMING CONCEPTS</span>' +
       '<h1 class="display rv rv-d1">Memorise SCSE1013. <span class="muted">One note at a time.</span></h1>' +
       '<p class="lead rv rv-d2">Read a note, hide it, then write what you remember. Every statement is checked against keywords, and follow-up questions drill code tracing and error-spotting, exactly like the exam.</p>' +
+      (customOutdated ? '<div class="notice err rv" style="margin-top:24px">This browser is still using an older saved copy of the notes. <button class="btn btn-primary btn-sm" id="loadNew" style="margin-left:8px">Load the new English notes</button></div>' : '') +
       '<div class="row rv rv-d3"><a class="btn btn-primary" href="#topics">Start memorising <span class="arrow">→</span></a><a class="btn btn-ghost" href="#/quiz/trap">Exam Trap Quiz</a></div>' +
       '</div></section>' +
       '<section><div class="wrap"><div class="stats rv">' +
@@ -406,6 +407,11 @@
       '<div class="row" style="margin-top:22px"><a class="btn btn-white" href="#/quiz/trap">Start trap quiz <span class="arrow">→</span></a></div></div>' +
       '</div></div></section>';
     app.innerHTML = html;
+    var ln = $("#loadNew", app);
+    if (ln) ln.addEventListener("click", function () {
+      if (!confirm("Replace the saved notes in this browser with the new English notes? Use Manage Notes → Export JSON first if you want to keep your edits.")) return;
+      lsDel(KEY_DATA); DATA = clone(DEFAULT); customOutdated = false; toast("New notes loaded"); route();
+    });
     var a = $('a[href="#topics"]', app);
     if (a) a.addEventListener("click", function (e) { e.preventDefault(); document.getElementById("topics").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" }); });
   }
@@ -525,7 +531,7 @@
         '<div class="question">' + inline(it.question) + '</div>' +
         '<label class="sr-only" for="ans">Your answer</label>' +
         '<textarea id="ans" class="answer-box' + (isCode ? ' code' : '') + '" placeholder="' + (it.type === "exact" ? "Type the exact answer…" : "Write what you remember and understand…") + '"' + (locked ? ' readonly' : '') + ' spellcheck="false" autocapitalize="off" autocomplete="off">' + esc(S.input) + '</textarea>' +
-        '<div class="type-hint">' + (it.type === "exact" ? "Extra spaces and commas are ignored. For code, symbols such as == ; & ++ must be exact." : "Checked against keywords (English or Malay). ≥ 70% = CORRECT.") + ' · Ctrl/⌘ + Enter to submit.</div>' +
+        '<div class="type-hint">' + (it.type === "exact" ? "Extra spaces and commas are ignored. For code, symbols such as == ; & ++ must be exact." : "Checked against keywords and their synonyms. ≥ 70% = CORRECT.") + ' · Ctrl/⌘ + Enter to submit.</div>' +
         (S.phase === "feedback" ? feedbackHTML(st, it) : '<div class="actions"><button class="btn btn-primary" data-act="check">Check answer</button></div>') +
         '</article>';
     }
@@ -842,7 +848,7 @@
     $("#imp", app).addEventListener("change", importJSON);
     $("#reset", app).addEventListener("click", function () {
       if (!confirm("Discard all changes and go back to the original data.js?")) return;
-      lsDel(KEY_DATA); DATA = clone(DEFAULT); toast("Original data restored"); route();
+      lsDel(KEY_DATA); DATA = clone(DEFAULT); customOutdated = false; toast("Original data restored"); route();
     });
     $("#resetp", app).addEventListener("click", function () {
       if (!confirm("Clear all memorisation progress, streaks and session count?")) return;
@@ -914,7 +920,7 @@
       '<div class="check"><input type="checkbox" id="trap" name="trap"' + (s.trap ? ' checked' : '') + '><label for="trap">TRAP / Common traps / Invalid headers section (included in Trap Quiz)</label></div>' +
       fld("Note (text)", '<textarea class="textarea" name="text" rows="9">' + esc(s.text) + '</textarea>', "Format: **bold**, `code`, lines starting with - for lists, | for tables, ``` for C++ code blocks.") +
       fld("Question", '<textarea class="textarea" name="question" rows="2">' + esc(s.question) + '</textarea>') +
-      fld("Keywords (explain)", '<textarea class="textarea" name="keywords" rows="4" placeholder="decomposition|break into parts|pecahkan">' + esc((s.keywords || []).join("\n")) + '</textarea>', "One required keyword per line. Separate synonyms with | (English and Malay).") +
+      fld("Keywords (explain)", '<textarea class="textarea" name="keywords" rows="4" placeholder="decomposition|break into parts|split">' + esc((s.keywords || []).join("\n")) + '</textarea>', "One required keyword per line. Separate synonyms with |.") +
       fld("Answer", '<textarea class="textarea" name="answer" rows="3">' + esc(answerText) + '</textarea>', "explain: reference answer. exact: one accepted answer per line (e.g. 10 9 8 and 10, 9, 8).") +
       fld("Hint", '<input class="input" name="hint" value="' + esc(s.hint) + '">', "A clue that does not give the answer away.") +
       fld("Follow-up questions (JSON)", '<textarea class="textarea" name="followUps" rows="10">' + esc(JSON.stringify(s.followUps || [], null, 2)) + '</textarea>', 'Array of 1–3 objects: {"note","question","type":"exact"|"explain","answer":[…] or "…","keywords":[…],"hint"}.') +
