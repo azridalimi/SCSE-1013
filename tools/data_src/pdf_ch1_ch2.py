@@ -1,101 +1,101 @@
 from helpers import S, F, M
 
-# =================================================================== BAB 1
+# =================================================================== CHAPTER 1
 T = "ct"
 H = "1 · "
 
 S("ct01", T, H + "Computational thinking (definition)",
   """
-  **Computational thinking** = menyelesaikan masalah **cara komputer menyelesaikannya**:
+  **Computational thinking** = solving a problem **the way a computer would**:
 
-  1. pecahkan (break) masalah kepada bahagian,
-  2. kenal pasti corak (spot patterns),
-  3. reka langkah-langkah yang boleh diikuti oleh komputer (design steps a computer can follow).
+  1. break it into parts,
+  2. spot patterns,
+  3. design steps a computer can follow.
   """,
-  "Apakah maksud computational thinking?",
+  "What is computational thinking?",
   kw=["computer|komputer",
       "break|pecah|pecahkan|bahagian|parts|decompose",
       "pattern|corak",
       "steps|langkah|step|algorithm|algoritma"],
-  ans="Menyelesaikan masalah cara komputer: pecahkan kepada bahagian, kenal pasti corak, dan reka langkah yang komputer boleh ikut.",
-  hint="Tiga tindakan: pecah, corak, langkah. Dan 'cara siapa'?",
-  fu=[F("""Definisi nota: "solving a problem **the way a computer would**".""",
-        "Lengkapkan: Computational thinking = solving a problem the way a ______ would.",
+  ans="Solving a problem the way a computer would: break it into parts, spot patterns, and design steps a computer can follow.",
+  hint="Three actions: break, patterns, steps. And 'the way ___ would'?",
+  fu=[F("""The definition in the notes: "solving a problem **the way a computer would**".""",
+        "Complete: Computational thinking = solving a problem the way a ______ would.",
         ans=["computer", "komputer"],
-        hint="Mesin.")],
-  mcq=M("Menurut nota, computational thinking ialah…",
-        "Menyelesaikan masalah cara komputer: pecah, cari corak, reka langkah",
-        "Menghafal semua sintaks C++",
-        "Membaiki perkakasan komputer",
-        "Menaip kod secepat mungkin"))
+        hint="A machine.")],
+  mcq=M("According to the notes, computational thinking is…",
+        "Solving a problem the way a computer would: break it up, spot patterns, design steps",
+        "Memorising all of C++ syntax",
+        "Repairing computer hardware",
+        "Typing code as fast as possible"))
 
 S("ct02", T, H + "4 key skills · Decomposition",
   """
-  **Decomposition**: pecahkan masalah besar (break a big problem) kepada bahagian kecil yang **mudah diurus** (small, manageable parts).
+  **Decomposition**: break a big problem into small, **manageable** parts.
   """,
-  "Apakah decomposition?",
+  "What is decomposition?",
   kw=["break|pecah|pecahkan|bahagi|split|divide",
       "big|besar|large|kompleks|complex",
       "small|kecil|manageable|mudah diurus|bahagian kecil|parts"],
-  ans="Memecahkan masalah besar kepada bahagian kecil yang mudah diurus.",
-  hint="Masalah BESAR menjadi…",
-  fu=[F("""Contoh trafik (nota): sistem pengurusan trafik dipecahkan kepada **roads, vehicles, signals, pedestrian crossings**.""",
-        "Memecahkan sistem trafik kepada jalan, kenderaan, lampu isyarat dan lintasan pejalan kaki ialah skill apa?",
+  ans="Breaking a big problem into small, manageable parts.",
+  hint="A BIG problem becomes…",
+  fu=[F("""Traffic example (notes): a traffic management system is split into **roads, vehicles, signals, pedestrian crossings**.""",
+        "Splitting a traffic system into roads, vehicles, signals and pedestrian crossings uses which skill?",
         ans=["decomposition", "dekomposisi"],
-        hint="Pecah.")],
-  mcq=M("'Break a big problem into small, manageable parts' ialah…",
+        hint="Breaking it up.")],
+  mcq=M("'Break a big problem into small, manageable parts' is…",
         "Decomposition", "Abstraction", "Pattern recognition", "Algorithm design"))
 
 S("ct03", T, H + "4 key skills · Pattern recognition",
   """
-  **Pattern recognition**: cari persamaan (find similarities) di antara bahagian-bahagian kecil tersebut.
+  **Pattern recognition**: find similarities between the small parts.
   """,
-  "Apakah pattern recognition?",
+  "What is pattern recognition?",
   kw=["similar|similarities|persamaan|sama|corak|pattern",
       "parts|bahagian|small|kecil|antara|between"],
-  ans="Mencari persamaan antara bahagian-bahagian kecil.",
-  hint="Selepas dipecahkan, apa yang dicari antara bahagian-bahagian itu?",
-  fu=[F("""Contoh trafik: corak yang dicari ialah **peak hours, accident hotspots, congestion areas**.""",
-        "Namakan satu corak (pattern) dalam contoh sistem trafik.",
+  ans="Finding similarities between the small parts.",
+  hint="After breaking it up, what do you look for between the parts?",
+  fu=[F("""Traffic example: the patterns are **peak hours, accident hotspots, congestion areas**.""",
+        "Name one pattern in the traffic system example.",
         kw=["peak|puncak|sibuk|accident|kemalangan|hotspot|congestion|kesesakan|sesak"],
-        ans="Peak hours, accident hotspots atau congestion areas.",
-        hint="Waktu tertentu, tempat tertentu…")],
-  mcq=M("'Find similarities between the small parts' ialah…",
+        ans="Peak hours, accident hotspots or congestion areas.",
+        hint="Certain times, certain places…")],
+  mcq=M("'Find similarities between the small parts' is…",
         "Pattern recognition", "Decomposition", "Abstraction", "Evaluation"))
 
 S("ct04", T, H + "4 key skills · Abstraction",
   """
-  **Abstraction**: buang butiran yang tidak perlu (remove unnecessary details) dan **simpan yang penting** (keep what matters).
+  **Abstraction**: remove unnecessary details and **keep what matters**.
   """,
-  "Apakah abstraction?",
+  "What is abstraction?",
   kw=["remove|buang|ignore|abaikan|unnecessary|tidak perlu|tak perlu|irrelevant",
       "keep|simpan|kekal|important|penting|matters|essential|fokus|focus"],
-  ans="Buang butiran yang tidak perlu dan simpan yang penting.",
-  hint="Dua tindakan: buang apa, simpan apa?",
-  fu=[F("""Contoh trafik: **hanya model jalan utama dan persimpangan sibuk** (only model main roads and busy intersections).""",
-        "Dalam contoh trafik, apakah yang dibuat pada peringkat abstraction?",
+  ans="Removing unnecessary details and keeping what matters.",
+  hint="Two actions: remove what, keep what?",
+  fu=[F("""Traffic example: **only model main roads and busy intersections**.""",
+        "In the traffic example, what is done at the abstraction stage?",
         kw=["main|utama|busy|sibuk|only|hanya",
             "road|jalan|intersection|persimpangan|simpang"],
-        ans="Hanya model jalan utama dan persimpangan yang sibuk.",
-        hint="Bukan semua jalan…")],
-  mcq=M("'Remove unnecessary details and keep what matters' ialah…",
+        ans="Only model the main roads and busy intersections.",
+        hint="Not every road…")],
+  mcq=M("'Remove unnecessary details and keep what matters' is…",
         "Abstraction", "Decomposition", "Modelling", "Pattern recognition"))
 
 S("ct05", T, H + "4 key skills · Algorithm design",
   """
-  **Algorithm design**: tulis arahan langkah demi langkah (step-by-step instructions) yang menyelesaikan masalah.
+  **Algorithm design**: write **step-by-step instructions** that solve the problem.
   """,
-  "Apakah algorithm design?",
+  "What is algorithm design?",
   kw=["step|langkah|step-by-step|langkah demi langkah",
       "instruction|arahan|write|tulis",
       "solve|selesai|menyelesaikan|solution|penyelesaian"],
-  ans="Menulis arahan langkah demi langkah yang menyelesaikan masalah.",
-  hint="Seperti resepi.",
-  fu=[F("""Empat skill: Decomposition, Pattern recognition, Abstraction, **Algorithm design**. Algorithm design ialah yang terakhir: hasilnya langkah yang boleh dilaksanakan.""",
-        "Skill apakah yang menghasilkan langkah demi langkah untuk diikuti komputer?",
-        ans=["algorithm design", "algorithm", "algoritma", "reka bentuk algoritma"],
+  ans="Writing step-by-step instructions that solve the problem.",
+  hint="Like a recipe.",
+  fu=[F("""The four skills: Decomposition, Pattern recognition, Abstraction, **Algorithm design**. Algorithm design comes last: it produces steps that can be carried out.""",
+        "Which skill produces the step-by-step instructions a computer follows?",
+        ans=["algorithm design", "algorithm", "algoritma"],
         hint="A…")],
-  mcq=M("'Write step-by-step instructions that solve it' ialah…",
+  mcq=M("'Write step-by-step instructions that solve it' is…",
         "Algorithm design", "Abstraction", "Evaluation", "Decomposition"))
 
 S("ct06", T, H + "Memory trick: D-P-A-A",
@@ -104,113 +104,113 @@ S("ct06", T, H + "Memory trick: D-P-A-A",
 
   **D**ivide it → find the **P**attern → **A**bstract (simplify) → write the **A**lgorithm.
   """,
-  "Apakah memory trick D-P-A-A? Tulis keempat-empat langkah mengikut turutan.",
+  "What is the D-P-A-A memory trick? Give all four steps in order.",
   kw=["divide|decomposition|pecah|bahagi",
       "pattern|corak",
       "abstract|abstraction|simplify|ringkaskan|permudah",
       "algorithm|algoritma"],
   ans="Divide it → find the Pattern → Abstract (simplify) → write the Algorithm.",
   hint="D, P, A, A.",
-  fu=[F("""Dalam D-P-A-A, huruf A pertama = **Abstract (simplify)**, A kedua = **Algorithm**.""",
-        "Dalam D-P-A-A, A yang pertama bermaksud apa?",
+  fu=[F("""In D-P-A-A, the first A = **Abstract (simplify)**, the second A = **Algorithm**.""",
+        "In D-P-A-A, what does the first A stand for?",
         ans=["abstract", "abstraction", "abstract (simplify)", "simplify"],
-        hint="Permudahkan.")],
-  mcq=M("Dalam memory trick D-P-A-A, huruf P bermaksud…",
+        hint="Simplify.")],
+  mcq=M("In the D-P-A-A memory trick, P stands for…",
         "find the Pattern", "Process", "Pseudocode", "Program"))
 
 S("ct07", T, H + "5 stages · Decomposition (divide and conquer)",
   """
   **5 stages (extended version)**: Decomposition → Generalisation & Pattern Recognition → Modelling → Abstraction → Evaluation.
 
-  **Stage 1 · Decomposition** = **divide and conquer**: pecahkan (split), selesaikan setiap bahagian (solve each part), kemudian **gabungkan** (then combine).
+  **Stage 1 · Decomposition** = **divide and conquer**: split, solve each part, then **combine**.
   """,
-  "Terangkan stage Decomposition dalam versi 5 stages.",
+  "Explain the Decomposition stage in the 5-stage version.",
   kw=["divide and conquer|divide|split|pecah|pecahkan",
       "solve|selesai|selesaikan|setiap|each",
       "combine|gabung|gabungkan|cantum|satukan"],
-  ans="Divide and conquer: pecahkan, selesaikan setiap bahagian, kemudian gabungkan.",
-  hint="Tiga kata kerja: split, solve, …",
-  fu=[F("""Turutan 5 stages: 1 Decomposition, 2 Generalisation & Pattern Recognition, 3 Modelling, 4 Abstraction, 5 Evaluation.""",
-        "Apakah stage yang KE-5 (terakhir)?",
+  ans="Divide and conquer: split the problem, solve each part, then combine.",
+  hint="Three verbs: split, solve, …",
+  fu=[F("""The 5 stages in order: 1 Decomposition, 2 Generalisation & Pattern Recognition, 3 Modelling, 4 Abstraction, 5 Evaluation.""",
+        "What is the 5th (last) stage?",
         ans=["evaluation", "penilaian"],
-        hint="Uji dan perbaiki.")],
-  mcq=M("Frasa 'divide and conquer' merujuk kepada stage…",
+        hint="Test and refine.")],
+  mcq=M("The phrase 'divide and conquer' refers to the stage…",
         "Decomposition", "Modelling", "Evaluation", "Abstraction"))
 
 S("ct08", T, H + "5 stages · Generalisation & Pattern Recognition",
   """
-  **Stage 2 · Generalisation & Pattern Recognition**: cari trend (find trends), kemudian **guna semula pendekatan yang sama** pada masalah yang serupa (reuse the same approach on similar problems).
+  **Stage 2 · Generalisation & Pattern Recognition**: find trends, then **reuse the same approach on similar problems**.
   """,
-  "Apakah Generalisation & Pattern Recognition?",
+  "What is Generalisation & Pattern Recognition?",
   kw=["trend|trends|corak|pattern",
       "reuse|guna semula|ulang guna|same approach|pendekatan sama|sama",
       "similar|serupa|seumpama|similar problems"],
-  ans="Cari trend, kemudian guna semula pendekatan yang sama pada masalah yang serupa.",
-  hint="Cari trend → … pada masalah serupa.",
-  fu=[F("""Generalisation bermaksud penyelesaian yang sama boleh dipakai pada masalah yang **serupa**, bukan hanya satu kes.""",
-        "Stage ke berapakah Generalisation & Pattern Recognition? (nombor)",
-        ans=["2", "dua", "two"],
-        hint="Selepas Decomposition.")],
-  mcq=M("'Find trends, then reuse the same approach on similar problems' ialah stage…",
+  ans="Finding trends, then reusing the same approach on similar problems.",
+  hint="Find trends → … on similar problems.",
+  fu=[F("""Generalisation means one solution can be applied to **similar** problems, not just one case.""",
+        "Which stage number is Generalisation & Pattern Recognition?",
+        ans=["2", "two", "dua"],
+        hint="Right after Decomposition.")],
+  mcq=M("'Find trends, then reuse the same approach on similar problems' is the stage…",
         "Generalisation & Pattern Recognition", "Modelling", "Abstraction", "Evaluation"))
 
 S("ct09", T, H + "5 stages · Modelling",
   """
-  **Stage 3 · Modelling**: buat **perwakilan ringkas** (simplified representation), selalunya **visual**, bagi sistem sebenar.
+  **Stage 3 · Modelling**: make a **simplified (often visual) representation** of the real system.
 
-  Contoh trafik: **simulate traffic flow and signal timing**.
+  Traffic example: **simulate traffic flow and signal timing**.
   """,
-  "Apakah Modelling?",
+  "What is Modelling?",
   kw=["simplified|ringkas|simple|mudah|permudah",
       "representation|perwakilan|model|wakil|gambaran",
       "visual|rajah|diagram|simulate|simulasi",
       "real|sebenar|system|sistem"],
-  ans="Membuat perwakilan ringkas (selalunya visual) bagi sistem sebenar.",
-  hint="Seperti maket bangunan.",
-  fu=[F("""Contoh trafik bagi Modelling: simulasi aliran trafik dan masa lampu isyarat.""",
-        "Apakah yang dibuat pada peringkat Modelling dalam contoh trafik?",
+  ans="Making a simplified (often visual) representation of the real system.",
+  hint="Like a scale model of a building.",
+  fu=[F("""Traffic example for Modelling: simulate traffic flow and signal timing.""",
+        "What is done at the Modelling stage in the traffic example?",
         kw=["simulate|simulasi|simulation",
             "flow|aliran|signal|isyarat|timing|masa"],
-        ans="Simulasi aliran trafik dan masa lampu isyarat.",
+        ans="Simulate traffic flow and signal timing.",
         hint="Simul…")],
-  mcq=M("Membuat simulasi aliran trafik ialah contoh stage…",
+  mcq=M("Simulating traffic flow is an example of the stage…",
         "Modelling", "Decomposition", "Evaluation", "Pattern recognition"))
 
 S("ct10", T, H + "5 stages · Abstraction",
   """
-  **Stage 4 · Abstraction**: fokus kepada **maklumat penting** (essential information) dan **abaikan yang lain** (ignore the rest).
+  **Stage 4 · Abstraction**: focus on the **essential information** and **ignore the rest**.
   """,
-  "Dalam 5 stages, apakah Abstraction?",
+  "In the 5 stages, what is Abstraction?",
   kw=["focus|fokus|essential|penting|important|utama",
       "ignore|abaikan|rest|lain|buang|tidak perlu"],
-  ans="Fokus pada maklumat penting dan abaikan yang lain.",
-  hint="Penting vs yang lain.",
-  fu=[F("""Abstraction ialah stage ke-4, selepas Modelling dan sebelum Evaluation.""",
-        "Stage apakah yang datang SELEPAS Abstraction?",
+  ans="Focusing on the essential information and ignoring the rest.",
+  hint="Essential vs the rest.",
+  fu=[F("""Abstraction is stage 4, after Modelling and before Evaluation.""",
+        "Which stage comes AFTER Abstraction?",
         ans=["evaluation", "penilaian"],
-        hint="Stage terakhir.")],
-  mcq=M("Dalam versi 5 stages, Abstraction datang selepas…",
-        "Modelling", "Evaluation", "Decomposition sahaja", "Tiada (ia yang pertama)"))
+        hint="The last stage.")],
+  mcq=M("In the 5-stage version, Abstraction comes right after…",
+        "Modelling", "Evaluation", "Decomposition only", "Nothing (it is first)"))
 
 S("ct11", T, H + "5 stages · Evaluation",
   """
-  **Stage 5 · Evaluation**: **uji** (test) → cari ralat (find errors) → **perbaiki** (refine) dan **ulang** (repeat).
+  **Stage 5 · Evaluation**: **test** → find errors → **refine** and **repeat**.
 
-  Contoh trafik: **test strategies and measure travel time and safety**.
+  Traffic example: **test strategies and measure travel time and safety**.
   """,
-  "Apakah Evaluation?",
+  "What is Evaluation?",
   kw=["test|uji|ujian",
       "error|ralat|kesilapan|find|cari",
       "refine|perbaiki|baiki|improve|tambah baik",
       "repeat|ulang|ulangi"],
-  ans="Uji → cari ralat → perbaiki dan ulang.",
-  hint="Kitaran: test, find, refine, …",
-  fu=[F("""Contoh trafik bagi Evaluation: uji strategi dan ukur **travel time** dan **safety**.""",
-        "Dua perkara apakah yang diukur pada peringkat Evaluation dalam contoh trafik?",
-        kw=["travel time|masa perjalanan|time|masa", "safety|keselamatan|selamat"],
-        ans="Masa perjalanan (travel time) dan keselamatan (safety).",
-        hint="Masa dan …")],
-  mcq=M("'Test → find errors → refine and repeat' ialah…",
+  ans="Test → find errors → refine and repeat.",
+  hint="A cycle: test, find, refine, …",
+  fu=[F("""Traffic example for Evaluation: test strategies and measure **travel time** and **safety**.""",
+        "Which two things are measured at the Evaluation stage in the traffic example?",
+        kw=["travel time|masa perjalanan|time|masa", "safety|keselamatan|selamat|safe"],
+        ans="Travel time and safety.",
+        hint="Time and …")],
+  mcq=M("'Test → find errors → refine and repeat' is…",
         "Evaluation", "Modelling", "Abstraction", "Generalisation"))
 
 S("ct12", T, H + "Example: traffic management system",
@@ -223,44 +223,44 @@ S("ct12", T, H + "Example: traffic management system",
   | Abstraction | Only model main roads and busy intersections |
   | Evaluation | Test strategies and measure travel time and safety |
   """,
-  "Dalam contoh sistem trafik, 'Only model main roads and busy intersections' ialah stage apa?",
+  "In the traffic system example, 'Only model main roads and busy intersections' is which stage?",
   ans=["abstraction", "abstraksi"],
-  hint="Hanya yang penting.",
-  fu=[F("""Baris jadual: Pattern → Peak hours, accident hotspots, congestion areas.""",
-        "'Peak hours, accident hotspots, congestion areas' ialah stage apa?",
-        ans=["pattern", "pattern recognition", "corak", "generalisation & pattern recognition"],
-        hint="Corak."),
-      F("""Baris jadual: Evaluation → Test strategies and measure travel time and safety.""",
-        "'Test strategies and measure travel time and safety' ialah stage apa?",
+  hint="Only what matters.",
+  fu=[F("""Table row: Pattern → Peak hours, accident hotspots, congestion areas.""",
+        "'Peak hours, accident hotspots, congestion areas' is which stage?",
+        ans=["pattern", "pattern recognition", "generalisation & pattern recognition", "corak"],
+        hint="Patterns."),
+      F("""Table row: Evaluation → Test strategies and measure travel time and safety.""",
+        "'Test strategies and measure travel time and safety' is which stage?",
         ans=["evaluation", "penilaian"],
-        hint="Uji."),
-      F("""Baris jadual: Modelling → Simulate traffic flow and signal timing.""",
-        "'Simulate traffic flow and signal timing' ialah stage apa?",
+        hint="Testing."),
+      F("""Table row: Modelling → Simulate traffic flow and signal timing.""",
+        "'Simulate traffic flow and signal timing' is which stage?",
         ans=["modelling", "modeling", "pemodelan"],
         hint="Model.")],
-  mcq=M("Dalam contoh trafik, 'Split into roads, vehicles, signals, pedestrian crossings' ialah…",
+  mcq=M("In the traffic example, 'Split into roads, vehicles, signals, pedestrian crossings' is…",
         "Decomposition", "Abstraction", "Modelling", "Evaluation"))
 
 S("ct13", T, H + "Related ways of thinking · Logical thinking",
   """
-  **Logical thinking**: berfikir dengan jelas supaya **kesimpulan mengikut fakta** (conclusions follow from facts).
+  **Logical thinking**: reason clearly so that **conclusions follow from facts**.
 
-  Langkah: **Identify → Analyse → Formulate solution → Evaluate**
+  Steps: **Identify → Analyse → Formulate solution → Evaluate**
   """,
-  "Apakah logical thinking dan apakah langkah-langkahnya?",
+  "What is logical thinking and what are its steps?",
   kw=["conclusion|kesimpulan|reason|alasan|jelas|clearly",
       "fact|fakta",
       "identify|kenal pasti|kenalpasti",
       "analyse|analyze|analisis",
       "formulate|rumus|solution|penyelesaian",
       "evaluate|nilai|penilaian"],
-  ans="Berfikir jelas supaya kesimpulan mengikut fakta. Identify → Analyse → Formulate solution → Evaluate.",
-  hint="4 langkah bermula dengan Identify.",
+  ans="Reasoning clearly so conclusions follow from facts. Identify → Analyse → Formulate solution → Evaluate.",
+  hint="4 steps starting with Identify.",
   fu=[F("""Logical thinking: Identify → Analyse → Formulate solution → Evaluate.""",
-        "Apakah langkah KETIGA dalam logical thinking?",
+        "What is the THIRD step of logical thinking?",
         ans=["formulate solution", "formulate", "rumus penyelesaian"],
         hint="F…")],
-  mcq=M("Turutan langkah logical thinking ialah…",
+  mcq=M("The steps of logical thinking are…",
         "Identify → Analyse → Formulate solution → Evaluate",
         "Define → Identify steps → Sequence → Execute → Evaluate",
         "Input → Process → Output",
@@ -268,50 +268,50 @@ S("ct13", T, H + "Related ways of thinking · Logical thinking",
 
 S("ct14", T, H + "Related ways of thinking · Algorithmic thinking",
   """
-  **Algorithmic thinking**: selesaikan masalah sebagai **senarai langkah yang tersusun** (an ordered list of steps).
+  **Algorithmic thinking**: solve a problem as an **ordered list of steps**.
 
-  Langkah: **Define → Identify steps → Sequence → Execute → Evaluate**
+  Steps: **Define → Identify steps → Sequence → Execute → Evaluate**
   """,
-  "Apakah algorithmic thinking dan apakah langkah-langkahnya?",
+  "What is algorithmic thinking and what are its steps?",
   kw=["ordered|tersusun|turutan|order|list|senarai",
       "step|langkah",
       "define|takrif|tentukan",
       "sequence|susun|urutan",
       "execute|laksana|jalankan|run",
       "evaluate|nilai"],
-  ans="Selesaikan masalah sebagai senarai langkah tersusun. Define → Identify steps → Sequence → Execute → Evaluate.",
-  hint="5 langkah bermula dengan Define.",
-  fu=[F("""Algorithmic thinking ada 5 langkah: Define → Identify steps → Sequence → Execute → Evaluate. Logical thinking ada 4.""",
-        "Apakah langkah SELEPAS Sequence dalam algorithmic thinking?",
+  ans="Solving a problem as an ordered list of steps. Define → Identify steps → Sequence → Execute → Evaluate.",
+  hint="5 steps starting with Define.",
+  fu=[F("""Algorithmic thinking has 5 steps: Define → Identify steps → Sequence → Execute → Evaluate. Logical thinking has 4.""",
+        "Which step comes AFTER Sequence in algorithmic thinking?",
         ans=["execute", "laksana", "jalankan"],
-        hint="Jalankan.")],
-  mcq=M("'Define → Identify steps → Sequence → Execute → Evaluate' ialah…",
-        "Algorithmic thinking", "Logical thinking", "Program development", "5 stages CT"))
+        hint="Run it.")],
+  mcq=M("'Define → Identify steps → Sequence → Execute → Evaluate' is…",
+        "Algorithmic thinking", "Logical thinking", "The programming process", "The 5 CT stages"))
 
 S("ct15", T, H + "Where it's used",
   """
-  Computational thinking digunakan dalam:
-  - **kehidupan harian** (everyday life): merancang perjalanan (trip planning), bajet (budgeting)
+  Computational thinking is used in:
+  - **everyday life**: trip planning, budgeting
   - **software development**
   - **data analysis**
-  - **research** (penyelidikan)
+  - **research**
   """,
-  "Senaraikan sekurang-kurangnya tiga bidang di mana computational thinking digunakan.",
+  "List at least three areas where computational thinking is used.",
   kw=["everyday|harian|daily|trip|budget|bajet|perjalanan",
       "software|perisian|development|pembangunan",
       "data|analysis|analisis",
       "research|penyelidikan|kajian"],
-  ans="Kehidupan harian (trip planning, budgeting), software development, data analysis, research.",
-  hint="Satu harian, satu perisian, satu data, satu kajian.",
-  fu=[F("""Dua contoh kehidupan harian dalam nota: **trip planning** dan **budgeting**.""",
-        "Berikan satu contoh penggunaan CT dalam kehidupan harian (ikut nota).",
+  ans="Everyday life (trip planning, budgeting), software development, data analysis, research.",
+  hint="One daily-life, one software, one data, one research.",
+  fu=[F("""The two everyday-life examples in the notes: **trip planning** and **budgeting**.""",
+        "Give one everyday-life use of CT from the notes.",
         kw=["trip|perjalanan|percutian|travel|budget|bajet|belanjawan"],
-        ans="Trip planning atau budgeting.",
-        hint="Cuti atau wang.")],
-  mcq=M("Yang manakah BUKAN contoh penggunaan CT dalam nota?",
-        "Membaiki enjin kereta secara manual", "Trip planning", "Data analysis", "Research"))
+        ans="Trip planning or budgeting.",
+        hint="Holidays or money.")],
+  mcq=M("Which is NOT an example of CT use given in the notes?",
+        "Repairing a car engine by hand", "Trip planning", "Data analysis", "Research"))
 
-# =================================================================== BAB 2
+# =================================================================== CHAPTER 2
 T = "alg"
 H = "2 · "
 
@@ -321,24 +321,24 @@ S("al01", T, H + "The programming process",
 
   **Understand the requirements → Analyse → Design the algorithm → Code → Test**
   """,
-  "Tulis proses pengaturcaraan mengikut turutan.",
+  "Write the programming process in order.",
   kw=["understand|faham|requirement|keperluan",
       "analyse|analyze|analisis",
       "design|reka|algorithm|algoritma",
       "code|kod|coding",
       "test|uji|testing"],
   ans="Understand the requirements → Analyse → Design the algorithm → Code → Test.",
-  hint="5 langkah. Bermula dengan memahami, berakhir dengan menguji.",
-  fu=[F("""Design the algorithm datang **sebelum** Code.""",
-        "Apakah langkah tepat SEBELUM Code?",
+  hint="5 steps. Starts with understanding, ends with testing.",
+  fu=[F("""Design the algorithm comes **before** Code.""",
+        "Which step comes right BEFORE Code?",
         ans=["design the algorithm", "design", "design algorithm", "reka algoritma"],
-        hint="Reka bentuk…")],
-  mcq=M("Dalam proses pengaturcaraan, langkah terakhir ialah…",
+        hint="Design…")],
+  mcq=M("In the programming process, the last step is…",
         "Test", "Code", "Analyse", "Design the algorithm"))
 
 S("al02", T, H + "IPO · Rectangle area",
   """
-  **Input → Process → Output (IPO)**, contoh luas segi empat tepat:
+  **Input → Process → Output (IPO)**, rectangle area example:
 
   | | Rectangle area |
   |---|---|
@@ -346,15 +346,15 @@ S("al02", T, H + "IPO · Rectangle area",
   | Process | area = length × width |
   | Output | area |
   """,
-  "Apakah Input, Process dan Output bagi masalah luas segi empat tepat?",
+  "What are the Input, Process and Output for the rectangle area problem?",
   kw=["length|panjang", "width|lebar", "area = length|area = length × width|length × width|length * width|panjang darab lebar|area=length"],
   ans="Input: length, width. Process: area = length × width. Output: area.",
-  hint="Dua input, satu formula, satu output.",
+  hint="Two inputs, one formula, one output.",
   fu=[F("""length = 10, width = 15 → area = 10 × 15.""",
-        "Berapakah area?",
+        "What is the area?",
         ans=["150", "area = 150", "area=150"],
         hint="10 × 15.")],
-  mcq=M("Dalam IPO luas segi empat tepat, 'area' ialah…",
+  mcq=M("In the rectangle area IPO, 'area' is the…",
         "Output", "Input", "Process", "Constant"))
 
 S("al03", T, H + "IPO · Income tax",
@@ -365,130 +365,130 @@ S("al03", T, H + "IPO · Income tax",
   | Process | tax = 0.25 × (income × 11 − kids × 450) |
   | Output | name, tax |
   """,
-  "Tulis formula process bagi income tax.",
+  "Write the process formula for income tax.",
   kw=["0.25", "11", "450", "income|pendapatan", "kids|anak"],
   ans="tax = 0.25 × (income × 11 − kids × 450)",
-  hint="Kadar 0.25; income didarab 11; potongan 450 setiap anak.",
+  hint="Rate 0.25; income times 11; 450 off per kid.",
   fu=[F("""Income = 4000, kids = 2: 0.25 × (4000 × 11 − 2 × 450) = 0.25 × 43100.""",
-        "Berapakah tax?",
+        "What is the tax?",
         ans=["10775", "rm10775", "rm 10775", "10775.0"],
         hint="0.25 × 43100."),
-      F("""Output income tax ialah **name** dan **tax**.""",
-        "Apakah output bagi masalah income tax?",
+      F("""The income tax outputs are **name** and **tax**.""",
+        "What are the outputs of the income tax problem?",
         kw=["name|nama", "tax|cukai"],
-        ans="name dan tax.",
-        hint="Dua perkara dipaparkan.")],
-  mcq=M("Dalam IPO income tax, 'number of kids' ialah…",
+        ans="name and tax.",
+        hint="Two things are displayed.")],
+  mcq=M("In the income tax IPO, 'number of kids' is an…",
         "Input", "Process", "Output", "Formula"))
 
 S("al04", T, H + "TIP: finding IPO in an exam question",
   """
-  💡 **TIP**: dalam soalan peperiksaan,
-  - **kata nama** (nouns) yang diberi biasanya **input**,
-  - **formula** ialah **process**,
-  - apa yang anda mesti **"display"** ialah **output**.
+  💡 **TIP**: in an exam question,
+  - the **nouns** you are given are usually the **inputs**,
+  - the **formula** is the **process**,
+  - what you must **"display"** is the **output**.
   """,
-  "Bagaimana mengenal pasti input, process dan output dalam soalan peperiksaan?",
+  "How do you spot the input, process and output in an exam question?",
   kw=["noun|nouns|kata nama|nama|given|diberi",
       "formula|rumus",
       "display|papar|paparkan|tunjuk"],
-  ans="Kata nama yang diberi = input, formula = process, apa yang mesti di-display = output.",
-  hint="Kata nama, formula, display.",
-  fu=[F("""Soalan: "Given the radius, calculate the area using area = 3.14 × r × r and display the area." """,
-        "Apakah output soalan ini?",
-        ans=["area", "luas", "the area"],
-        hint="Apa yang di-display?")],
-  mcq=M("Dalam soalan peperiksaan, formula biasanya ialah…",
+  ans="The nouns given are the inputs, the formula is the process, and what you must display is the output.",
+  hint="Nouns, formula, display.",
+  fu=[F("""Question: "Given the radius, calculate the area using area = 3.14 × r × r and display the area." """,
+        "What is the output of this question?",
+        ans=["area", "the area", "luas"],
+        hint="What is displayed?")],
+  mcq=M("In an exam question, the formula is usually the…",
         "Process", "Input", "Output", "Sentinel"))
 
 S("al05", T, H + "Procedural vs Object-Oriented",
   """
-  - **Procedural (structured)**: dibina di sekitar **functions/procedures**. Contoh: **C**.
-  - **Object-oriented (OOP)**: dibina di sekitar **objects** (data + procedures). Contoh: **C++**.
+  - **Procedural (structured)**: built around **functions/procedures**. e.g. **C**.
+  - **Object-oriented (OOP)**: built around **objects** (data + procedures). e.g. **C++**.
   """,
-  "Apakah beza procedural dan object-oriented programming?",
+  "What is the difference between procedural and object-oriented programming?",
   kw=["procedural|structured|berstruktur",
       "function|procedure|fungsi|prosedur",
       "object|objek|oop",
       "data"],
-  ans="Procedural dibina sekitar functions/procedures (contoh C); OOP dibina sekitar objects yang menggabungkan data dan procedures (contoh C++).",
-  hint="Satu sekitar fungsi, satu sekitar objek.",
-  fu=[F("""Nota: C = procedural, C++ = object-oriented.""",
-        "Bahasa apakah contoh procedural dalam nota?",
-        ans=["c", "bahasa c", "c language"],
-        hint="Satu huruf.")],
-  mcq=M("Object dalam OOP terdiri daripada…",
-        "Data + procedures", "Hanya functions", "Hanya variables global", "Flowchart"))
+  ans="Procedural is built around functions/procedures (e.g. C); OOP is built around objects that combine data and procedures (e.g. C++).",
+  hint="One is built around functions, the other around objects.",
+  fu=[F("""Notes: C = procedural, C++ = object-oriented.""",
+        "Which language is the procedural example in the notes?",
+        ans=["c", "c language"],
+        hint="One letter.")],
+  mcq=M("An object in OOP is made of…",
+        "Data + procedures", "Functions only", "Global variables only", "A flowchart"))
 
 S("al06", T, H + "Algorithm · definition",
   """
-  **Algorithm**: satu **turutan langkah yang terhingga** (finite sequence of steps) dalam **susunan logik** (logical order) yang menyelesaikan masalah.
+  **Algorithm**: a **finite sequence of steps** in a **logical order** that solves a problem.
   """,
-  "Takrifkan algorithm.",
+  "Define an algorithm.",
   kw=["finite|terhingga|terhad",
       "sequence|turutan|steps|langkah",
       "logical|logik|order|susunan",
       "solve|selesai|menyelesaikan|problem|masalah"],
-  ans="Turutan langkah terhingga dalam susunan logik yang menyelesaikan masalah.",
+  ans="A finite sequence of steps in a logical order that solves a problem.",
   hint="Finite… sequence… logical order…",
-  fu=[F("""Kata kunci definisi: **finite**, **sequence of steps**, **logical order**.""",
-        "Algorithm mesti ada bilangan langkah yang terhingga. Apakah istilah English untuk 'terhingga'?",
+  fu=[F("""Key words of the definition: **finite**, **sequence of steps**, **logical order**.""",
+        "An algorithm must have a limited number of steps. What is the English word for this?",
         ans=["finite"],
         hint="F…")],
-  mcq=M("Algorithm ialah…",
-        "Turutan langkah terhingga dalam susunan logik yang menyelesaikan masalah",
-        "Bahasa pengaturcaraan",
-        "Rajah dengan simbol oval",
-        "Program yang telah di-compile"))
+  mcq=M("An algorithm is…",
+        "A finite sequence of steps in a logical order that solves a problem",
+        "A programming language",
+        "A diagram with oval symbols",
+        "A compiled program"))
 
 S("al07", T, H + "Algorithm · requirements",
   """
-  Keperluan (requirements) algorithm yang baik:
+  Requirements of an algorithm:
 
   **has input** · **produces output** · **unambiguous** · **general** · **correct** · **finite** · **efficient**
   """,
-  "Senaraikan keperluan sesuatu algorithm (sekurang-kurangnya lima).",
+  "List the requirements of an algorithm (at least five).",
   kw=["input", "output",
-      "unambiguous|jelas|tidak samar|tak samar",
+      "unambiguous|jelas|tidak samar|tak samar|clear",
       "general|umum",
       "correct|betul",
       "finite|terhingga|terhad",
       "efficient|cekap"],
   ans="Has input, produces output, unambiguous, general, correct, finite, efficient.",
-  hint="Ada 7: input, output, dan lima kata sifat.",
-  fu=[F("""'Unambiguous' = setiap langkah hanya ada **satu maksud**.""",
-        "Langkah 'tambah sedikit garam' melanggar keperluan apa?",
-        ans=["unambiguous", "unambiguity", "jelas"],
-        hint="Berapa banyak 'sedikit'?"),
-      F("""'General' = algorithm berfungsi untuk **semua input yang sah**, bukan hanya satu kes.""",
-        "Algorithm yang hanya berfungsi untuk length = 10 melanggar keperluan apa?",
+  hint="7 of them: input, output, and five adjectives.",
+  fu=[F("""'Unambiguous' = every step has **only one meaning**.""",
+        "The step 'add a little salt' breaks which requirement?",
+        ans=["unambiguous", "unambiguity"],
+        hint="How much is 'a little'?"),
+      F("""'General' = the algorithm works for **all valid inputs**, not just one case.""",
+        "An algorithm that only works when length = 10 breaks which requirement?",
         ans=["general", "umum"],
-        hint="Bukan spesifik.")],
-  mcq=M("Yang manakah BUKAN keperluan algorithm dalam nota?",
+        hint="Not specific.")],
+  mcq=M("Which is NOT an algorithm requirement in the notes?",
         "Colourful", "Finite", "Efficient", "Unambiguous"))
 
 S("al08", T, H + "Algorithm · three ways to design",
   """
-  Tiga cara mereka bentuk algorithm:
+  Three ways to design an algorithm:
   1. **Pseudocode**
   2. **Flowchart**
   3. **Top-down design (structure chart)**
   """,
-  "Apakah tiga cara mereka bentuk algorithm?",
+  "What are the three ways to design an algorithm?",
   kw=["pseudocode|pseudokod", "flowchart|carta alir",
       "top-down|top down|structure chart|carta struktur"],
-  ans="Pseudocode, flowchart dan top-down design (structure chart).",
-  hint="Dua yang biasa, satu lagi 'atas ke bawah'.",
-  fu=[F("""Top-down design juga dikenali sebagai **structure chart**.""",
-        "Top-down design dilukis sebagai apa?",
+  ans="Pseudocode, flowchart and top-down design (structure chart).",
+  hint="Two common ones, plus one 'from the top down'.",
+  fu=[F("""Top-down design is also known as a **structure chart**.""",
+        "Top-down design is drawn as a…?",
         ans=["structure chart", "carta struktur"],
         hint="S… chart.")],
-  mcq=M("Top-down design juga dikenali sebagai…",
+  mcq=M("Top-down design is also known as a…",
         "Structure chart", "Trace table", "Pseudocode", "Truth table"))
 
 S("al09", T, H + "Pseudocode",
   """
-  **Pseudocode**: langkah seperti bahasa Inggeris **tanpa sintaks pengaturcaraan** (no programming syntax), supaya logik mudah dibaca.
+  **Pseudocode**: English-like steps with **no programming syntax**, so the logic is easy to read.
 
   ```
   1. Start
@@ -498,150 +498,150 @@ S("al09", T, H + "Pseudocode",
   5. End
   ```
   """,
-  "Apakah pseudocode?",
+  "What is pseudocode?",
   kw=["english|inggeris|bahasa",
       "no syntax|tiada sintaks|tanpa sintaks|no programming syntax|bukan kod|syntax|sintaks",
       "logic|logik|easy|mudah|read|baca|steps|langkah"],
-  ans="Langkah seperti bahasa Inggeris tanpa sintaks pengaturcaraan supaya logik mudah dibaca.",
-  hint="Seperti bahasa apa, dan tanpa apa?",
-  fu=[F("""Dalam contoh pseudocode cukai, input dibaca dengan kata kerja **Get** dan output dengan **Display**.""",
-        "Kata kerja apakah yang digunakan untuk membaca input dalam contoh pseudocode?",
+  ans="English-like steps with no programming syntax, so the logic is easy to read.",
+  hint="Like which language, and without what?",
+  fu=[F("""In the tax pseudocode, input is read with the verb **Get** and output with **Display**.""",
+        "Which verb reads the input in the pseudocode example?",
         ans=["get"],
-        hint="Langkah 2."),
-      F("""Pseudocode cukai ada 5 langkah: Start, Get, tax = …, Display, End.""",
-        "Apakah langkah TERAKHIR?",
+        hint="Step 2."),
+      F("""The tax pseudocode has 5 steps: Start, Get, tax = …, Display, End.""",
+        "What is the LAST step?",
         ans=["end", "5. end"],
-        hint="Lawan Start.")],
-  mcq=M("Pseudocode ditulis…",
-        "Seperti bahasa Inggeris, tanpa sintaks pengaturcaraan",
-        "Dalam sintaks C++ penuh",
-        "Dalam binary",
-        "Menggunakan simbol oval dan diamond"))
+        hint="The opposite of Start.")],
+  mcq=M("Pseudocode is written…",
+        "In English-like steps, with no programming syntax",
+        "In full C++ syntax",
+        "In binary",
+        "Using ovals and diamonds"))
 
 S("al10", T, H + "Flowchart symbols · Terminal",
   """
-  **Terminal** (bentuk **oval**): **Start / End**.
+  **Terminal** (**oval**): **Start / End**.
 
-  Flowchart sebuah **function** berakhir dengan **Return** (bukan End).
+  A **function's** flowchart ends with **Return** (not End).
   """,
-  "Apakah simbol Terminal dan bagaimana flowchart function berakhir?",
-  kw=["oval|bujur|kapsul|rounded",
+  "What is the Terminal symbol, and how does a function's flowchart end?",
+  kw=["oval|bujur|kapsul|rounded|capsule",
       "start|end|mula|tamat",
       "return"],
-  ans="Terminal ialah oval untuk Start/End; flowchart function berakhir dengan Return.",
-  hint="Bentuk kapsul; function tamat dengan perkataan R…",
-  fu=[F("""Function chart: bermula dengan nama function dan berakhir dengan **Return**.""",
-        "Flowchart sebuah function berakhir dengan perkataan apa?",
+  ans="The Terminal is an oval for Start/End; a function's flowchart ends with Return.",
+  hint="Capsule shape; a function ends with the word R…",
+  fu=[F("""A function chart starts with the function's name and ends with **Return**.""",
+        "Which word ends a function's flowchart?",
         ans=["return"],
         hint="R…")],
-  mcq=M("Simbol oval dalam flowchart ialah…",
+  mcq=M("The oval in a flowchart is the…",
         "Terminal (Start/End)", "Process", "Decision", "Input/Output"))
 
 S("al11", T, H + "Flowchart symbols · Process",
   """
-  **Process** (bentuk **rectangle / segi empat tepat**): pengiraan dan assignment (calculations and assignments).
+  **Process** (**rectangle**): calculations and assignments.
   """,
-  "Simbol apakah untuk Process dan apakah gunanya?",
+  "Which symbol is used for Process, and what is it for?",
   kw=["rectangle|segi empat tepat|segiempat tepat|kotak|box",
       "calculation|kira|pengiraan|assignment|umpukan|calculations"],
-  ans="Rectangle; untuk pengiraan dan assignment.",
-  hint="Kotak biasa.",
-  fu=[F("""`area = length * width` ialah pengiraan → Process.""",
-        "`sum = sum + counter` dilukis dalam simbol apa?",
-        ans=["rectangle", "process", "segi empat tepat", "kotak"],
-        hint="Assignment.")],
-  mcq=M("'tax = 0.25 * income' dilukis dalam…",
+  ans="A rectangle; for calculations and assignments.",
+  hint="A plain box.",
+  fu=[F("""`area = length * width` is a calculation → Process.""",
+        "`sum = sum + counter` is drawn in which symbol?",
+        ans=["rectangle", "process", "segi empat tepat", "box"],
+        hint="An assignment.")],
+  mcq=M("'tax = 0.25 * income' is drawn in a…",
         "Rectangle (Process)", "Parallelogram", "Diamond", "Oval"))
 
 S("al12", T, H + "Flowchart symbols · Input/Output",
   """
-  **Input/Output** (bentuk **parallelogram**): **Read / Display**.
+  **Input/Output** (**parallelogram**): **Read / Display**.
   """,
-  "Simbol apakah untuk Input/Output?",
+  "Which symbol is used for Input/Output?",
   kw=["parallelogram|segi empat selari|selari|jajaran genjang"],
-  ans="Parallelogram (Read / Display).",
-  hint="Kotak yang senget.",
-  fu=[F("""Read dan Display kedua-duanya menggunakan parallelogram.""",
-        "'Display sum' dilukis dalam simbol apa?",
-        ans=["parallelogram", "segi empat selari", "input/output"],
-        hint="Sama seperti Read.")],
-  mcq=M("'Read length, width' dilukis dalam…",
+  ans="A parallelogram (Read / Display).",
+  hint="A slanted box.",
+  fu=[F("""Read and Display both use the parallelogram.""",
+        "'Display sum' is drawn in which symbol?",
+        ans=["parallelogram", "input/output", "segi empat selari"],
+        hint="Same as Read.")],
+  mcq=M("'Read length, width' is drawn in a…",
         "Parallelogram", "Rectangle", "Diamond", "Circle"))
 
 S("al13", T, H + "Flowchart symbols · Decision",
   """
-  **Decision** (bentuk **diamond**): **satu garis masuk, dua keluar** (one line in, two out), iaitu **Yes/No**.
+  **Decision** (**diamond**): **one line in, two out** (Yes/No).
   """,
-  "Terangkan simbol Decision.",
+  "Describe the Decision symbol.",
   kw=["diamond|berlian|wajik|rhombus",
-      "one in|satu masuk|1 masuk|one line in|satu garis",
-      "two out|dua keluar|2 keluar|yes|no|ya|tidak"],
-  ans="Diamond; satu garis masuk, dua keluar (Yes/No).",
-  hint="Bentuk, berapa masuk, berapa keluar.",
-  fu=[F("""Decision: 1 masuk, 2 keluar.""",
-        "Berapakah garis yang KELUAR dari Decision?",
-        ans=["2", "dua", "two"],
-        hint="Yes dan No.")],
-  mcq=M("Simbol Decision mempunyai…",
-        "Satu garis masuk, dua keluar (Yes/No)", "Dua masuk, satu keluar", "Satu masuk, satu keluar", "Tiada garis keluar"))
+      "one in|satu masuk|1 masuk|one line in|satu garis|1 in",
+      "two out|dua keluar|2 keluar|2 out|yes|no|ya|tidak"],
+  ans="A diamond; one line in, two out (Yes/No).",
+  hint="Shape, how many in, how many out.",
+  fu=[F("""Decision: 1 in, 2 out.""",
+        "How many lines come OUT of a Decision?",
+        ans=["2", "two", "dua"],
+        hint="Yes and No.")],
+  mcq=M("A Decision symbol has…",
+        "One line in, two out (Yes/No)", "Two in, one out", "One in, one out", "No lines out"))
 
 S("al14", T, H + "Flowchart symbols · Function/Subroutine",
   """
-  **Function/Subroutine** (rectangle dengan **garis menegak di kedua-dua tepi**): **memanggil flowchart lain** (calls another flowchart).
+  **Function/Subroutine** (rectangle with **vertical lines on both sides**): **calls another flowchart**.
   """,
-  "Apakah fungsi simbol Function/Subroutine?",
-  kw=["call|panggil|memanggil", "another|lain|separate|berasingan|flowchart|carta"],
-  ans="Memanggil flowchart lain (function).",
-  hint="Ia tidak buat kerja sendiri, ia…",
-  fu=[F("""Bentuknya: rectangle dengan garis tambahan di tepi kiri dan kanan.""",
-        "Bagaimanakah bentuk simbol Function/Subroutine?",
-        kw=["rectangle|segi empat|kotak", "line|garis|side|tepi|double|berganda|bar"],
-        ans="Rectangle dengan garis menegak di kedua-dua tepi.",
-        hint="Seperti Process, tambah sesuatu di tepi.")],
-  mcq=M("Simbol rectangle dengan garis menegak di kedua-dua tepi bermaksud…",
-        "Panggil function/subroutine (flowchart lain)", "Input", "Decision", "Komen"))
+  "What does the Function/Subroutine symbol do?",
+  kw=["call|calls|panggil|memanggil", "another|lain|separate|berasingan|flowchart|carta|chart"],
+  ans="It calls another flowchart (a function).",
+  hint="It doesn't do the work itself, it…",
+  fu=[F("""Its shape: a rectangle with an extra line on the left and right edges.""",
+        "What does the Function/Subroutine symbol look like?",
+        kw=["rectangle|segi empat|kotak|box", "line|lines|garis|side|sides|tepi|double|berganda|bar"],
+        ans="A rectangle with vertical lines on both sides.",
+        hint="Like Process, plus something on the edges.")],
+  mcq=M("A rectangle with vertical lines on both sides means…",
+        "Call a function/subroutine (another flowchart)", "Input", "Decision", "Comment"))
 
 S("al15", T, H + "Flowchart symbols · Connectors, flowline, comment",
   """
-  - **Connectors**: **circle** = halaman yang **sama** (same page), **pentagon** = halaman **lain** (another page).
-  - **Flowline** (anak panah): tunjuk **arah aliran**.
-  - **Comment symbol**: tambah nota/catatan.
+  - **Connectors**: **circle** = same page, **pentagon** = another page.
+  - **Flowline** (arrow): shows the **direction of flow**.
+  - **Comment symbol**: adds notes.
   """,
-  "Apakah beza connector circle dan pentagon?",
+  "What is the difference between a circle connector and a pentagon connector?",
   kw=["circle|bulatan|bulat", "same|sama", "pentagon", "another|lain|other|different|berbeza"],
-  ans="Circle untuk sambungan pada halaman yang sama; pentagon untuk sambungan ke halaman lain.",
-  hint="Satu bulat, satu bersegi lima.",
-  fu=[F("""Flowline arrow menunjukkan arah aliran (direction of flow).""",
-        "Apakah fungsi flowline?",
+  ans="A circle connects on the same page; a pentagon connects to another page.",
+  hint="One round, one five-sided.",
+  fu=[F("""The flowline arrow shows the direction of flow.""",
+        "What does a flowline do?",
         kw=["direction|arah", "flow|aliran"],
-        ans="Menunjukkan arah aliran.",
-        hint="Anak panah."),
-      F("""Simbol komen digunakan untuk menambah nota.""",
-        "Simbol apakah digunakan untuk menambah nota pada flowchart?",
-        ans=["comment", "comment symbol", "komen", "simbol komen"],
+        ans="Shows the direction of flow.",
+        hint="Arrow."),
+      F("""The comment symbol is used to add notes.""",
+        "Which symbol adds notes to a flowchart?",
+        ans=["comment", "comment symbol", "komen"],
         hint="C…")],
-  mcq=M("Pentagon connector bermaksud sambungan ke…",
-        "Halaman lain", "Halaman yang sama", "Function", "Decision"))
+  mcq=M("A pentagon connector links to…",
+        "Another page", "The same page", "A function", "A decision"))
 
 S("al16", T, H + "3 control structures",
   """
   **3 control structures (the foundation of everything):**
 
-  - **Sequence**: langkah dilaksanakan mengikut turutan, atas ke bawah.
-  - **Selection**: pilih laluan: `if`, `if-else`, nested if.
-  - **Repetition**: ulang selagi syarat benar: **pre-test** atau **post-test** loop.
+  - **Sequence**: steps run in order, top to bottom.
+  - **Selection**: choose a path: `if`, `if-else`, nested if.
+  - **Repetition**: repeat while a condition is true: **pre-test** or **post-test** loop.
   """,
-  "Namakan dan terangkan tiga control structures.",
+  "Name and explain the three control structures.",
   kw=["sequence|jujukan|turutan",
       "selection|pilihan|pemilihan|if",
       "repetition|ulangan|loop|pengulangan|gelung"],
-  ans="Sequence (ikut turutan atas ke bawah), Selection (pilih laluan: if, if-else, nested if), Repetition (ulang selagi syarat benar: pre-test/post-test).",
+  ans="Sequence (steps run in order, top to bottom), Selection (choose a path: if, if-else, nested if), Repetition (repeat while a condition is true: pre-test/post-test).",
   hint="S, S, R.",
-  fu=[F("""Repetition: ulang **selagi syarat benar** (while a condition is true), sama ada pre-test atau post-test.""",
-        "Dua jenis loop dalam repetition ialah pre-test dan …?",
+  fu=[F("""Repetition: repeat **while a condition is true**, either pre-test or post-test.""",
+        "The two kinds of loop in repetition are pre-test and …?",
         ans=["post-test", "post test", "posttest"],
-        hint="Lawan 'pre'.")],
-  mcq=M("'Steps run in order, top to bottom' ialah…",
+        hint="The opposite of 'pre'.")],
+  mcq=M("'Steps run in order, top to bottom' is…",
         "Sequence", "Selection", "Repetition", "Decomposition"))
 
 S("al17", T, H + "Selection forms",
@@ -652,18 +652,18 @@ S("al17", T, H + "Selection forms",
   | Two choices (if-else) | "do this or that" | `if cond … else … end_if` |
   | Multi (if-else if-else) | several ranges | `if … else if … else if … else … end_if` |
   """,
-  "Apakah idea bagi selection 'one choice (if)'?",
-  ans=["do or don't", "do or dont", "buat atau tidak"],
+  "What is the idea behind 'one choice (if)'?",
+  ans=["do or don't", "do or dont"],
   hint="\"do or …\"",
   fu=[F("""Two choices (if-else) = "do this or that".""",
-        "Apakah idea bagi if-else?",
-        ans=["do this or that", "buat ini atau itu"],
+        "What is the idea behind if-else?",
+        ans=["do this or that"],
         hint="\"do this or …\""),
-      F("""Multi (if-else if-else) digunakan untuk **several ranges** (beberapa julat).""",
-        "Bentuk selection manakah sesuai untuk beberapa julat (contoh gred A–F)?",
+      F("""Multi (if-else if-else) is for **several ranges**.""",
+        "Which selection form suits several ranges (e.g. grades A–F)?",
         ans=["multi", "if-else if-else", "if else if else", "else if", "multi (if-else if-else)"],
         hint="Several ranges.")],
-  mcq=M("Pseudocode `if cond … else … end_if` ialah bentuk…",
+  mcq=M("The pseudocode `if cond … else … end_if` is the form…",
         "Two choices (if-else)", "One choice (if)", "Multi (if-else if-else)", "Repetition"))
 
 S("al18", T, H + "Operators · Relational",
@@ -674,14 +674,14 @@ S("al18", T, H + "Operators · Relational",
   | `==` | equal to |
   | `!=` | not equal to |
   """,
-  "Apakah maksud operator `!=`?",
-  ans=["not equal to", "tidak sama dengan", "not equal", "tidak sama"],
-  hint="! = tidak.",
-  fu=[F("""`==` bermaksud **equal to** (perbandingan). Ia berbeza dengan `=` (assignment).""",
-        "Operator relational apakah bermaksud 'equal to'?",
+  "What does the operator `!=` mean?",
+  ans=["not equal to", "not equal", "tidak sama dengan"],
+  hint="! = not.",
+  fu=[F("""`==` means **equal to** (comparison). It is different from `=` (assignment).""",
+        "Which relational operator means 'equal to'?",
         ans=["=="],
-        hint="Dua simbol sama.")],
-  mcq=M("Operator manakah membandingkan saiz (compare size)?",
+        hint="Two equals signs.")],
+  mcq=M("Which operator compares size?",
         ">=", "==", "&&", "!"))
 
 S("al19", T, H + "Operators · Logical",
@@ -692,89 +692,89 @@ S("al19", T, H + "Operators · Logical",
   | `||` OR | **at least one** is true |
   | `!` NOT | flips true ↔ false |
   """,
-  "Bilakah && (AND) dan || (OR) bernilai true?",
+  "When are && (AND) and || (OR) true?",
   kw=["&&|and", "both|kedua-dua|keduanya|semua|all",
       "\\|\\||or", "at least one|sekurang-kurangnya satu|salah satu|one|satu"],
-  ans="&& true apabila kedua-dua true; || true apabila sekurang-kurangnya satu true.",
-  hint="AND = kedua-dua; OR = …",
-  fu=[F("""`!` NOT menyongsangkan nilai: true ↔ false.""",
-        "Apakah nilai `!true`?",
-        ans=["false", "0", "palsu"],
-        hint="Flip.")],
-  mcq=M("`||` bernilai true apabila…",
-        "Sekurang-kurangnya satu operand true", "Kedua-dua operand true", "Kedua-dua operand false", "Tidak pernah"))
+  ans="&& is true when both are true; || is true when at least one is true.",
+  hint="AND = both; OR = …",
+  fu=[F("""`!` NOT flips the value: true ↔ false.""",
+        "What is the value of `!true`?",
+        ans=["false", "0"],
+        hint="Flip it.")],
+  mcq=M("`||` is true when…",
+        "At least one operand is true", "Both operands are true", "Both operands are false", "Never"))
 
 S("al20", T, H + "Memory trick: AND is strict, OR is generous",
   """
   💡 **MEMORY TRICK**: **AND is strict** (any F gives F). **OR is generous** (any T gives T).
 
-  Contoh: x = 12, y = 5, z = −4:
+  e.g. x = 12, y = 5, z = −4:
   - `(x>y)&&(y>z)` = **true**
   - `(x<=z)||(y==z)` = **false**
   - `!(x>=z)` = **false**
   """,
-  "Terangkan memory trick 'AND is strict, OR is generous'.",
+  "Explain the memory trick 'AND is strict, OR is generous'.",
   kw=["and|&&", "strict|ketat", "any f|mana-mana f|f memberi f|mana-mana false|satu false|any false|f gives f|false",
       "or|\\|\\|", "generous|murah hati|pemurah", "any t|mana-mana t|t memberi t|mana-mana true|satu true|any true|t gives t|true"],
-  ans="AND ketat: mana-mana F memberi F. OR pemurah: mana-mana T memberi T.",
+  ans="AND is strict: any F gives F. OR is generous: any T gives T.",
   hint="Strict / generous… F gives F, T gives T.",
-  fu=[F("""x = 12, y = 5, z = −4. Nilai `(x>y)`: 12 > 5 = T; `(y>z)`: 5 > −4 = T.""",
-        "Apakah nilai `(x>y)&&(y>z)`? (true / false)",
-        ans=["true", "1", "benar"],
+  fu=[F("""x = 12, y = 5, z = −4. `(x>y)`: 12 > 5 = T; `(y>z)`: 5 > −4 = T.""",
+        "What is `(x>y)&&(y>z)`? (true / false)",
+        ans=["true", "1"],
         hint="T && T."),
       F("""`(x<=z)`: 12 <= −4 = F; `(y==z)`: 5 == −4 = F.""",
-        "Apakah nilai `(x<=z)||(y==z)`? (true / false)",
-        ans=["false", "0", "palsu"],
+        "What is `(x<=z)||(y==z)`? (true / false)",
+        ans=["false", "0"],
         hint="F || F."),
       F("""`(x>=z)`: 12 >= −4 = T.""",
-        "Apakah nilai `!(x>=z)`? (true / false)",
-        ans=["false", "0", "palsu"],
+        "What is `!(x>=z)`? (true / false)",
+        ans=["false", "0"],
         hint="!T.")],
-  mcq=M("Dengan x=12, y=5, z=−4, `(x<=z)||(y==z)` bernilai…",
-        "false", "true", "−4", "ralat"))
+  mcq=M("With x=12, y=5, z=−4, `(x<=z)||(y==z)` is…",
+        "false", "true", "−4", "an error"))
 
 S("al21", T, H + "Repetition · Pre-test vs post-test",
   """
-  - **Pre-test (while)**: semak syarat **dahulu**, jadi badan mungkin berjalan **0 kali**.
-  - **Post-test (do-while)**: jalankan badan **dahulu**, semak kemudian, jadi ia berjalan **sekurang-kurangnya sekali**.
+  - **Pre-test (while)**: checks the condition **first**, so the body may run **0 times**.
+  - **Post-test (do-while)**: runs the body **first** and checks after, so it runs **at least once**.
   """,
-  "Apakah beza pre-test loop dan post-test loop?",
+  "What is the difference between a pre-test loop and a post-test loop?",
   kw=["pre-test|pre test|while",
-      "first|dahulu|dulu|0 times|0 kali|sifar|zero|mungkin tidak",
+      "first|dahulu|dulu|0 times|0 kali|sifar|zero|mungkin tidak|before",
       "post-test|post test|do-while|do while",
       "at least once|sekurang-kurangnya sekali|sekali|once"],
-  ans="Pre-test (while) semak syarat dahulu, jadi mungkin 0 kali. Post-test (do-while) jalankan badan dahulu, jadi sekurang-kurangnya sekali.",
-  hint="Bila syarat disemak?",
-  fu=[F("""do-while ialah post-test loop.""",
-        "Berapa kali MINIMUM badan do-while dijalankan?",
-        ans=["1", "sekali", "once", "satu", "1 kali"],
+  ans="A pre-test loop (while) checks the condition first, so it may run 0 times. A post-test loop (do-while) runs the body first, so it runs at least once.",
+  hint="When is the condition checked?",
+  fu=[F("""do-while is a post-test loop.""",
+        "What is the MINIMUM number of times a do-while body runs?",
+        ans=["1", "once", "one", "1 time"],
         hint="At least…"),
-      F("""while ialah pre-test loop.""",
-        "Berapa kali MINIMUM badan while dijalankan?",
-        ans=["0", "sifar", "zero", "0 kali"],
-        hint="Syarat mungkin false dari awal.")],
-  mcq=M("Loop yang pasti berjalan sekurang-kurangnya sekali ialah…",
-        "Post-test (do-while)", "Pre-test (while)", "for", "Tiada"))
+      F("""while is a pre-test loop.""",
+        "What is the MINIMUM number of times a while body runs?",
+        ans=["0", "zero", "0 times"],
+        hint="The condition may be false from the start.")],
+  mcq=M("Which loop is guaranteed to run at least once?",
+        "Post-test (do-while)", "Pre-test (while)", "for", "None"))
 
 S("al22", T, H + "Counter-controlled loop · 3 parts",
   """
-  **Counter-controlled loop** ada 3 bahagian:
+  A **counter-controlled loop** has 3 parts:
 
   1. **initialise**: `cnt = 0`
   2. **test**: `cnt < n`
   3. **update**: `cnt = cnt + 1`
   """,
-  "Apakah tiga bahagian counter-controlled loop?",
-  kw=["initialise|initialize|initialization|inisialisasi|nilai awal|cnt = 0",
+  "What are the three parts of a counter-controlled loop?",
+  kw=["initialise|initialize|initialization|initialisation|inisialisasi|nilai awal|cnt = 0",
       "test|condition|syarat|uji|cnt < n",
-      "update|kemas kini|cnt = cnt + 1|tambah"],
+      "update|kemas kini|cnt = cnt + 1|tambah|increment"],
   ans="Initialise (cnt = 0), test (cnt < n), update (cnt = cnt + 1).",
-  hint="Mula, uji, ubah.",
-  fu=[F("""Contoh nota: ① `cnt = 0` ② `cnt < n` ③ `cnt = cnt + 1`.""",
-        "Tulis bahagian update dalam contoh nota.",
+  hint="Start, test, change.",
+  fu=[F("""Notes example: ① `cnt = 0` ② `cnt < n` ③ `cnt = cnt + 1`.""",
+        "Write the update part from the notes example.",
         ans=["cnt = cnt + 1", "cnt=cnt+1", "cnt++", "cnt += 1"],
-        hint="cnt tambah satu.")],
-  mcq=M("Dalam counter-controlled loop, `cnt < n` ialah bahagian…",
+        hint="cnt plus one.")],
+  mcq=M("In a counter-controlled loop, `cnt < n` is the…",
         "Test", "Initialise", "Update", "Body"))
 
 S("al23", T, H + "Counter-controlled loop · sum 1 to 10 pseudocode",
@@ -790,158 +790,158 @@ S("al23", T, H + "Counter-controlled loop · sum 1 to 10 pseudocode",
   End
   ```
   """,
-  "Apakah nilai sum yang dipaparkan oleh pseudocode di atas?",
+  "What value of sum does the pseudocode above display?",
   ans=["55"],
   hint="1 + 2 + … + 10.",
-  fu=[F("""Jika syarat ditukar kepada `While counter <= 5`.""",
-        "Apakah nilai sum sekarang?",
+  fu=[F("""Change the condition to `While counter <= 5`.""",
+        "What is sum now?",
         ans=["15"],
         hint="1 + 2 + 3 + 4 + 5."),
-      F("""Blok While ditutup dengan `End_While`.""",
-        "Kata kunci apakah menutup loop While dalam pseudocode nota?",
+      F("""The While block is closed with `End_While`.""",
+        "Which keyword closes the While loop in the notes' pseudocode?",
         ans=["end_while", "endwhile", "end while"],
         hint="End_…")],
-  mcq=M("Dalam pseudocode sum 1–10, nilai counter selepas loop tamat ialah…",
+  mcq=M("In the sum 1–10 pseudocode, what is counter after the loop ends?",
         "11", "10", "55", "0"))
 
 S("al24", T, H + "User-controlled loop and sentinel",
   """
-  - **User-controlled loop**: pengguna memasukkan **berapa kali** untuk diulang (`limit`).
-  - **Sentinel**: nilai khas yang **menamatkan input**, contoh **`-999`** atau nama **`"OK"`**. Gunakan apabila anda **tidak tahu berapa banyak item**.
+  - **User-controlled loop**: the user enters **how many times** to repeat (`limit`).
+  - **Sentinel**: a special value that **ends the input**, e.g. **`-999`** or the name **`"OK"`**. Use it when you **don't know how many items** there will be.
   """,
-  "Apakah sentinel dan bilakah ia digunakan?",
+  "What is a sentinel, and when is it used?",
   kw=["special|khas|nilai khas",
-      "end|tamat|stop|berhenti|hentikan|menamatkan",
-      "don't know|tidak tahu|tak tahu|unknown|tidak diketahui|berapa banyak|how many"],
-  ans="Nilai khas (contoh -999 atau \"OK\") yang menamatkan input; digunakan apabila tidak tahu berapa banyak item.",
-  hint="Contoh -999.",
-  fu=[F("""Contoh sentinel dalam nota: `-999` dan nama `"OK"`.""",
-        "Berikan contoh nilai sentinel nombor dalam nota.",
+      "end|ends|tamat|stop|berhenti|hentikan|menamatkan",
+      "don't know|dont know|do not know|tidak tahu|tak tahu|unknown|tidak diketahui|berapa banyak|how many"],
+  ans="A special value (e.g. -999 or \"OK\") that ends the input; used when you don't know how many items there will be.",
+  hint="For example -999.",
+  fu=[F("""Sentinel examples in the notes: `-999` and the name `"OK"`.""",
+        "Give a numeric sentinel value from the notes.",
         ans=["-999"],
-        hint="Negatif, tiga digit sama."),
-      F("""User-controlled loop: pengguna masukkan `limit`.""",
-        "Dalam user-controlled loop, siapa yang menentukan bilangan ulangan?",
-        ans=["user", "pengguna", "the user"],
-        hint="Namanya sendiri.")],
-  mcq=M("Loop yang membaca markah sehingga pengguna menaip -999 ialah…",
+        hint="Negative, three identical digits."),
+      F("""User-controlled loop: the user enters `limit`.""",
+        "In a user-controlled loop, who decides how many times to repeat?",
+        ans=["user", "the user", "pengguna"],
+        hint="It's in the name.")],
+  mcq=M("A loop that reads marks until the user types -999 is a…",
         "Sentinel-controlled loop", "Counter-controlled loop", "Nested loop", "Infinite loop"))
 
 S("al25", T, H + "Trace table",
   """
-  **Trace table**: tulis setiap pemboleh ubah sebagai **lajur** (column) dan isi **satu baris bagi setiap langkah atau input**. Ia membantu mencari **logic errors**.
+  **Trace table**: write each variable as a **column** and fill in **a row for each step or input**. It helps you find **logic errors**.
 
   | Length | Width | Area | Perimeter | Output |
   |---|---|---|---|---|
   | 10 | 15 | 150 | 50 | Area=150, Perimeter=50 |
   | 20 | 20 | 400 | 80 | Area=400, Perimeter=80 |
   """,
-  "Apakah trace table dan apakah fungsinya?",
+  "What is a trace table and what is it for?",
   kw=["column|lajur|variable|pemboleh ubah",
       "row|baris|step|langkah|input",
-      "logic error|ralat logik|error|ralat|kesilapan"],
-  ans="Jadual dengan setiap pemboleh ubah sebagai lajur dan satu baris bagi setiap langkah/input; membantu mencari logic errors.",
-  hint="Lajur = ?, baris = ?, tujuan = ?",
-  fu=[F("""Perimeter = 2 × (length + width). Baris kedua: length 20, width 20.""",
-        "Berapakah Perimeter baris kedua?",
+      "logic error|ralat logik|error|errors|ralat|kesilapan"],
+  ans="A table with each variable as a column and a row for each step or input; it helps you find logic errors.",
+  hint="Columns = ?, rows = ?, purpose = ?",
+  fu=[F("""Perimeter = 2 × (length + width). Second row: length 20, width 20.""",
+        "What is the Perimeter in the second row?",
         ans=["80"],
         hint="2 × 40."),
       F("""Length = 10, width = 15.""",
-        "Berapakah Perimeter baris pertama?",
+        "What is the Perimeter in the first row?",
         ans=["50"],
         hint="2 × 25.")],
-  mcq=M("Trace table terutamanya membantu mencari…",
-        "Logic errors", "Syntax errors sahaja", "Virus", "Header yang hilang"))
+  mcq=M("A trace table mainly helps you find…",
+        "Logic errors", "Only syntax errors", "Viruses", "Missing headers"))
 
 S("al26", T, H + "Modular flowcharts · call vs definition",
   """
   **Modular flowcharts (functions):**
-  - **Function call** (dalam carta utama) menyatakan **apa** (what) yang perlu dibuat.
-  - **Function definition** (carta berasingan) menyatakan **bagaimana** (how) melakukannya.
+  - The **function call** (in the main chart) says **what** to do.
+  - The **function definition** (a separate chart) says **how** to do it.
   """,
-  "Apakah beza function call dan function definition dalam modular flowchart?",
+  "What is the difference between a function call and a function definition in a modular flowchart?",
   kw=["call|panggilan|panggil", "what|apa",
       "definition|definisi|takrif", "how|bagaimana|cara"],
-  ans="Function call (carta utama) menyatakan apa yang dibuat; function definition (carta berasingan) menyatakan bagaimana.",
+  ans="The function call (main chart) says what to do; the function definition (a separate chart) says how to do it.",
   hint="What vs how.",
-  fu=[F("""Function definition dilukis dalam **carta berasingan** (a separate chart).""",
-        "Di manakah function definition dilukis?",
-        kw=["separate|berasingan|lain|another|sendiri|asing"],
-        ans="Dalam carta (flowchart) berasingan.",
-        hint="Bukan dalam carta utama.")],
-  mcq=M("Dalam modular flowchart, carta yang menyatakan BAGAIMANA tugas dibuat ialah…",
+  fu=[F("""The function definition is drawn in **a separate chart**.""",
+        "Where is the function definition drawn?",
+        kw=["separate|berasingan|lain|another|own|sendiri|asing"],
+        ans="In a separate chart (flowchart).",
+        hint="Not in the main chart.")],
+  mcq=M("In a modular flowchart, the chart that says HOW a task is done is the…",
         "Function definition", "Function call", "Main chart", "Connector"))
 
 S("al27", T, H + "Modular flowcharts · function chart start and end",
   """
-  **Function chart**: bermula dengan **nama function**, contoh `AVRG(R, a, b, c)`, dan berakhir dengan **Return**.
+  A **function chart** starts with the **function name**, e.g. `AVRG(R, a, b, c)`, and ends with **Return**.
   """,
-  "Bagaimanakah function chart bermula dan berakhir?",
+  "How does a function chart start and end?",
   kw=["name|nama|avrg", "return"],
-  ans="Bermula dengan nama function (contoh AVRG(R, a, b, c)) dan berakhir dengan Return.",
-  hint="Bermula dengan N…, berakhir dengan R…",
-  fu=[F("""Contoh nama function chart: `AVRG(R, a, b, c)`.""",
-        "Dalam `AVRG(R, a, b, c)`, apakah nama function?",
+  ans="It starts with the function name (e.g. AVRG(R, a, b, c)) and ends with Return.",
+  hint="Starts with the N…, ends with R…",
+  fu=[F("""Example function chart name: `AVRG(R, a, b, c)`.""",
+        "In `AVRG(R, a, b, c)`, what is the function name?",
         ans=["avrg"],
-        hint="Sebelum kurungan.")],
-  mcq=M("Function chart berakhir dengan…",
+        hint="Before the brackets.")],
+  mcq=M("A function chart ends with…",
         "Return", "End", "Stop", "Exit"))
 
 S("al28", T, H + "Modular flowcharts · actual vs formal parameters",
   """
-  - **Actual parameters** berada dalam **call**: `(n1, n2, n3)`.
-  - **Formal parameters** berada dalam **definition**: `(a, b, c)`.
-  - Dipadankan **mengikut turutan, bukan nama** (matched by order, not by name).
+  - **Actual parameters** are in the **call**: `(n1, n2, n3)`.
+  - **Formal parameters** are in the **definition**: `(a, b, c)`.
+  - They are matched **by order, not by name**.
   """,
-  "Apakah beza actual parameters dan formal parameters, dan bagaimana ia dipadankan?",
+  "What is the difference between actual and formal parameters, and how are they matched?",
   kw=["actual|sebenar", "call|panggilan|panggil",
       "formal", "definition|definisi|takrif",
-      "order|turutan|kedudukan|susunan"],
-  ans="Actual parameters dalam call (n1, n2, n3); formal parameters dalam definition (a, b, c); dipadankan mengikut turutan, bukan nama.",
-  hint="Satu dalam call, satu dalam definition; padan ikut apa?",
-  fu=[F("""Call `AVRG(R, n1, n2, n3)` dan definition `AVRG(R, a, b, c)`. Dipadankan ikut turutan.""",
-        "Parameter formal manakah menerima nilai n2?",
+      "order|turutan|kedudukan|susunan|position"],
+  ans="Actual parameters are in the call (n1, n2, n3); formal parameters are in the definition (a, b, c); they are matched by order, not by name.",
+  hint="One in the call, one in the definition; matched by what?",
+  fu=[F("""Call `AVRG(R, n1, n2, n3)` and definition `AVRG(R, a, b, c)`. Matched by order.""",
+        "Which formal parameter receives the value of n2?",
         ans=["b"],
-        hint="Kedudukan kedua."),
-      F("""Nama tidak perlu sama; hanya **turutan** penting.""",
-        "Adakah nama actual dan formal parameter mesti sama? (ya / tidak)",
-        ans=["tidak", "no", "tak"],
+        hint="Second position."),
+      F("""The names don't have to match; only the **order** matters.""",
+        "Must actual and formal parameter names be the same? (yes / no)",
+        ans=["no", "tidak", "tak"],
         hint="By order, not by name.")],
-  mcq=M("Actual dan formal parameters dipadankan mengikut…",
-        "Turutan", "Nama", "Jenis data sahaja", "Abjad"))
+  mcq=M("Actual and formal parameters are matched by…",
+        "Order", "Name", "Data type only", "Alphabetical order"))
 
 S("al29", T, H + "Modular flowcharts · variables in the current chart",
   """
-  Dalam modular flowchart, **hanya gunakan pemboleh ubah yang wujud dalam carta semasa** (only use variables that exist in the current chart).
+  In a modular flowchart, **only use variables that exist in the current chart**.
 
-  Contoh: dalam carta `AVRG(R, a, b, c)`, gunakan a, b, c, bukan n1, n2, n3.
+  e.g. inside the `AVRG(R, a, b, c)` chart, use a, b, c, not n1, n2, n3.
   """,
-  "Pemboleh ubah apakah boleh digunakan dalam sebuah function chart?",
-  kw=["exist|wujud|ada", "current|semasa|this|ini|same|sama|chart|carta"],
-  ans="Hanya pemboleh ubah yang wujud dalam carta semasa.",
-  hint="Bukan pemboleh ubah carta utama.",
-  fu=[F("""Dalam definition `AVRG(R, a, b, c)`, n1 milik carta utama.""",
-        "Bolehkah carta AVRG menggunakan n1 secara terus? (ya / tidak)",
-        ans=["tidak", "no", "tak"],
-        hint="Ia tidak wujud dalam carta AVRG.")],
-  mcq=M("Dalam function chart AVRG(R, a, b, c), pemboleh ubah yang sah digunakan ialah…",
-        "a, b, c dan R", "n1, n2, n3", "Semua pemboleh ubah carta utama", "Tiada"))
+  "Which variables can a function chart use?",
+  kw=["exist|exists|wujud|ada", "current|semasa|this|ini|same|sama|chart|carta"],
+  ans="Only variables that exist in the current chart.",
+  hint="Not the main chart's variables.",
+  fu=[F("""In the definition `AVRG(R, a, b, c)`, n1 belongs to the main chart.""",
+        "Can the AVRG chart use n1 directly? (yes / no)",
+        ans=["no", "tidak", "tak"],
+        hint="It doesn't exist in the AVRG chart.")],
+  mcq=M("Inside the function chart AVRG(R, a, b, c), the valid variables are…",
+        "a, b, c and R", "n1, n2, n3", "All main-chart variables", "None"))
 
 S("al30", T, H + "From flowchart to code",
   """
   **From flowchart to code:**
 
-  Problem → Flowchart → rough **"intermediate" code** → **complete code** (tambah `#include`, pengisytiharan pemboleh ubah (variable declarations) dan **prompts**).
+  Problem → Flowchart → rough **"intermediate" code** → **complete code** (add `#include`, variable declarations and **prompts**).
   """,
-  "Apakah turutan daripada masalah kepada kod lengkap?",
+  "What is the path from a problem to complete code?",
   kw=["problem|masalah", "flowchart|carta alir",
       "intermediate|rough|kasar|pertengahan",
       "complete|lengkap|full|penuh"],
   ans="Problem → Flowchart → rough intermediate code → complete code.",
-  hint="4 peringkat; ada satu kod 'kasar'.",
-  fu=[F("""Kod lengkap menambah tiga perkara kepada intermediate code: `#include`, variable declarations, prompts.""",
-        "Namakan dua perkara yang ditambah untuk menjadikan kod lengkap.",
-        kw=["#include|include|header", "declaration|pengisytiharan|isytihar|declare|variable", "prompt|prompts|gesaan"],
-        ans="#include, variable declarations dan prompts.",
-        hint="Header, pemboleh ubah, mesej kepada pengguna.")],
-  mcq=M("Apakah yang BUKAN ditambah semasa menukar intermediate code kepada kod lengkap?",
-        "Simbol diamond", "#include", "Variable declarations", "Prompts"))
+  hint="4 stages, including a 'rough' code.",
+  fu=[F("""Complete code adds three things to the intermediate code: `#include`, variable declarations, prompts.""",
+        "Name two things added to make the code complete.",
+        kw=["#include|include|header", "declaration|declarations|pengisytiharan|isytihar|declare|variable", "prompt|prompts|gesaan"],
+        ans="#include, variable declarations and prompts.",
+        hint="Header, variables, messages to the user.")],
+  mcq=M("Which is NOT added when turning intermediate code into complete code?",
+        "A diamond symbol", "#include", "Variable declarations", "Prompts"))

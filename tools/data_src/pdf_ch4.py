@@ -3,26 +3,28 @@ from helpers import S, F, M
 T = "ctrl"
 H = "4 · "
 
+NO = ["no", "tidak", "tak"]
+
 S("cs01", T, H + "bool ↔ int",
   """
-  - **bool → int**: `true` = **1**, `false` = **0**. Contoh: `2 + true` = **3**.
-  - **int → bool**: `0` = **false**, **sebarang bukan-sifar = true** (termasuk **−10**).
+  - **bool → int**: `true` = **1**, `false` = **0**. e.g. `2 + true` = **3**.
+  - **int → bool**: `0` = **false**, **any non-zero = true** (even **−10**).
   """,
-  "Bagaimanakah int ditukar kepada bool?",
-  kw=["0|sifar|zero", "false|palsu",
-      "non-zero|bukan sifar|bukan-sifar|selain 0|lain|any other|nonzero", "true|benar"],
-  ans="0 = false; sebarang nilai bukan sifar (termasuk negatif seperti −10) = true.",
-  hint="Hanya satu nilai yang false.",
+  "How is an int converted to a bool?",
+  kw=["0|zero|sifar", "false|palsu",
+      "non-zero|nonzero|any other|not zero|bukan sifar|bukan-sifar|selain 0|lain", "true|benar"],
+  ans="0 = false; any non-zero value (even a negative like −10) = true.",
+  hint="Only one value is false.",
   fu=[F("""`cout << 2 + true;`""",
-        "Apakah output?",
+        "What is the output?",
         ans=["3"],
         hint="true = 1."),
       F("""`if (-10) cout << "yes"; else cout << "no";`""",
-        "Apakah output?",
+        "What is the output?",
         ans=["yes"],
-        hint="−10 bukan sifar.")],
-  mcq=M("Dalam C++, `-10` sebagai syarat bernilai…",
-        "true", "false", "ralat", "-10"))
+        hint="−10 is not zero.")],
+  mcq=M("In C++, `-10` used as a condition is…",
+        "true", "false", "an error", "-10"))
 
 S("cs02", T, H + "if statement: 3 forms and compound statement",
   """
@@ -33,14 +35,14 @@ S("cs02", T, H + "if statement: 3 forms and compound statement",
                      }                        ...
                                           }
   ```
-  - Braces `{ }` adalah **pilihan apabila hanya satu statement**.
-  - Sekumpulan statement dalam `{ }` dipanggil **compound statement**.
+  - Braces `{ }` are **optional when there's only one statement**.
+  - A group of statements inside `{ }` is called a **compound statement**.
   """,
-  "Apakah compound statement dan bilakah braces { } pilihan?",
-  kw=["group|kumpulan|beberapa|multiple|lebih", "{ }|{}|braces|kurungan kerinting",
-      "one|satu|single|hanya satu"],
-  ans="Compound statement ialah sekumpulan statement dalam { }; braces pilihan apabila hanya ada satu statement.",
-  hint="Dua bahagian: definisi dan bila boleh tinggal.",
+  "What is a compound statement, and when are braces { } optional?",
+  kw=["group|several|multiple|more than one|kumpulan|beberapa|lebih", "{ }|{}|braces|curly|kurungan kerinting",
+      "one|single|only one|satu|hanya satu"],
+  ans="A compound statement is a group of statements inside { }; braces are optional when there is only one statement.",
+  hint="Two parts: the definition, and when you can leave them out.",
   fu=[F("""
         ```
         int a = 8;
@@ -49,11 +51,11 @@ S("cs02", T, H + "if statement: 3 forms and compound statement",
             cout << "number";
         }
         ```""",
-        "Apakah output?",
+        "What is the output?",
         ans=["big number"],
-        hint="Kedua-dua dalam blok.")],
-  mcq=M("Sekumpulan statement dalam { } dipanggil…",
-        "Compound statement", "Null statement", "Preprocessor", "Literal"))
+        hint="Both are inside the block.")],
+  mcq=M("A group of statements inside { } is called a…",
+        "Compound statement", "Null statement", "Preprocessor directive", "Literal"))
 
 S("cs03", T, H + "if-else if chain (grade)",
   """
@@ -64,21 +66,21 @@ S("cs03", T, H + "if-else if chain (grade)",
   else if (score > 50) grade = 'D';
   else                 grade = 'F';
   ```
-  Syarat diuji dari atas; **yang pertama benar** sahaja dijalankan.
+  Conditions are tested from the top; **only the first true one** runs.
   """,
-  "Dengan kod di atas, apakah gred untuk score = 80?",
+  "With the code above, what grade does score = 80 get?",
   ans=["B"],
   hint="80 > 90? 80 > 75?",
-  fu=[F("""Sempadan: `score > 90` bermaksud lebih daripada 90, jadi 90 bukan A.""",
-        "Apakah gred untuk score = 90?",
+  fu=[F("""Boundary: `score > 90` means more than 90, so 90 is not an A.""",
+        "What grade does score = 90 get?",
         ans=["B"],
-        hint="90 > 90 false."),
-      F("""score = 50: 50 > 50 false.""",
-        "Apakah gred untuk score = 50?",
+        hint="90 > 90 is false."),
+      F("""score = 50: 50 > 50 is false.""",
+        "What grade does score = 50 get?",
         ans=["F"],
-        hint="Jatuh ke else.")],
-  mcq=M("Dalam rantai if-else if, berapa cabang paling banyak dijalankan?",
-        "Satu", "Semua yang benar", "Dua", "Tiada had"))
+        hint="Falls through to else.")],
+  mcq=M("In an if-else if chain, at most how many branches run?",
+        "One", "Every true one", "Two", "No limit"))
 
 S("cs04", T, H + "Common traps · if (x = 0)", trap=True,
   text="""
@@ -86,13 +88,13 @@ S("cs04", T, H + "Common traps · if (x = 0)", trap=True,
 
   | Wrong | Why | Correct |
   |---|---|---|
-  | `if (x = 0)` | Ini **assignment**, bukan perbandingan. x menjadi 0, jadi syarat **sentiasa false**. | `if (x == 0)` |
+  | `if (x = 0)` | This is **assignment, not comparison**. x becomes 0, so the condition is **always false**. | `if (x == 0)` |
   """,
-  question="Mengapa `if (x = 0)` salah?",
-  kw=["assignment|umpukan|assign|=",
-      "not comparison|bukan perbandingan|bukan banding|compare|banding|==",
-      "always false|sentiasa false|sentiasa palsu|false|0"],
-  ans="Ia assignment, bukan perbandingan: x menjadi 0 dan syarat sentiasa false. Betul: if (x == 0).",
+  question="Why is `if (x = 0)` wrong?",
+  kw=["assignment|assign|assigns|umpukan|=",
+      "not comparison|not compare|comparison|compare|bukan perbandingan|banding|==",
+      "always false|false|sentiasa false|0"],
+  ans="It is assignment, not comparison: x becomes 0, so the condition is always false. Correct: if (x == 0).",
   hint="= vs ==.",
   fu=[F("""
         ```
@@ -101,15 +103,15 @@ S("cs04", T, H + "Common traps · if (x = 0)", trap=True,
         else cout << "F";
         cout << " x=" << x;
         ```""",
-        "Apakah output?",
+        "What is the output?",
         ans=["F x=0"],
-        hint="x ditukar kepada 0, 0 = false."),
-      F("""Betulkan syarat supaya ia membandingkan x dengan 0.""",
-        "Tulis syarat yang betul.",
+        hint="x is set to 0, and 0 = false."),
+      F("""Fix the condition so it compares x with 0.""",
+        "Write the correct condition.",
         ans=["if (x == 0)", "if(x==0)", "x == 0"],
-        hint="Dua =.")],
-  mcq=M("`if (x = 0)` akan…",
-        "Menukar x kepada 0 dan sentiasa false", "Membandingkan x dengan 0", "Sentiasa true", "Ralat compile"))
+        hint="Two equals signs.")],
+  mcq=M("`if (x = 0)` will…",
+        "Set x to 0 and always be false", "Compare x with 0", "Always be true", "Fail to compile"))
 
 S("cs05", T, H + "Common traps · if (2 < x < 9)", trap=True,
   text="""
@@ -117,21 +119,21 @@ S("cs05", T, H + "Common traps · if (2 < x < 9)", trap=True,
 
   | Wrong | Why | Correct |
   |---|---|---|
-  | `if (2 < x < 9)` | `(2<x)` memberi **0 atau 1**, yang **sentiasa < 9**, jadi **sentiasa true** | `if (2<x && x<9)` |
+  | `if (2 < x < 9)` | `(2<x)` gives **0 or 1**, which is **always < 9**, so it's **always true** | `if (2<x && x<9)` |
   """,
-  question="Mengapa `if (2 < x < 9)` sentiasa true?",
-  kw=["0 or 1|0 atau 1|0|1|true|false", "always|sentiasa", "< 9|kurang daripada 9|less than 9|9"],
-  ans="(2<x) dinilai dahulu dan memberi 0 atau 1; kedua-duanya < 9, jadi sentiasa true.",
-  hint="Apakah nilai (2 < x)?",
-  fu=[F("""x = 20: `(2 < 20)` = 1, kemudian `1 < 9` = true.""",
-        "Dengan x = 20, apakah nilai `(2 < x < 9)`? (1 / 0)",
+  question="Why is `if (2 < x < 9)` always true?",
+  kw=["0 or 1|0|1|true|false|0 atau 1", "always|sentiasa", "< 9|less than 9|kurang daripada 9|9"],
+  ans="(2<x) is evaluated first and gives 0 or 1; both are less than 9, so it is always true.",
+  hint="What is the value of (2 < x)?",
+  fu=[F("""x = 20: `(2 < 20)` = 1, then `1 < 9` = true.""",
+        "With x = 20, what is `(2 < x < 9)`? (1 / 0)",
         ans=["1", "true"],
         hint="1 < 9."),
-      F("""Tulis julat 2 < x < 9 dengan betul dalam C++.""",
-        "Tulis syarat yang betul.",
+      F("""Write the range 2 < x < 9 correctly in C++.""",
+        "Write the correct condition.",
         ans=["if (2<x && x<9)", "2<x && x<9", "if (2 < x && x < 9)", "x > 2 && x < 9", "(2 < x) && (x < 9)"],
-        hint="Guna &&.")],
-  mcq=M("Syarat betul untuk 'x antara 2 dan 9' ialah…",
+        hint="Use &&.")],
+  mcq=M("The correct condition for 'x is between 2 and 9' is…",
         "2 < x && x < 9", "2 < x < 9", "2 < x || x < 9", "x < 2 && x > 9"))
 
 S("cs06", T, H + "Common traps · if (0<x) && (x<10)", trap=True,
@@ -140,18 +142,18 @@ S("cs06", T, H + "Common traps · if (0<x) && (x<10)", trap=True,
 
   | Wrong | Why | Correct |
   |---|---|---|
-  | `if (0<x) && (x<10)` | **Syntax error**: seluruh syarat perlukan **kurungan luar** `( )` | `if ((0<x) && (x<10))` |
+  | `if (0<x) && (x<10)` | **Syntax error**: the whole condition needs **outer `( )`** | `if ((0<x) && (x<10))` |
   """,
-  question="Apakah kesilapan dalam `if (0<x) && (x<10)`?",
-  kw=["syntax|sintaks", "outer|luar|whole|seluruh|keseluruhan", "( )|()|kurungan|parentheses|bracket"],
-  ans="Syntax error: seluruh syarat perlu dalam kurungan luar. Betul: if ((0<x) && (x<10)).",
-  hint="Kurungan if mesti meliputi semua.",
-  fu=[F("""Syarat if mesti berada dalam **satu pasang kurungan luar**.""",
-        "Tulis syarat yang betul.",
+  question="What is wrong with `if (0<x) && (x<10)`?",
+  kw=["syntax|sintaks", "outer|outside|whole|entire|luar|seluruh|keseluruhan", "( )|()|parentheses|brackets|bracket|kurungan"],
+  ans="Syntax error: the whole condition needs outer brackets. Correct: if ((0<x) && (x<10)).",
+  hint="The if's brackets must cover everything.",
+  fu=[F("""An if condition must be inside **one pair of outer brackets**.""",
+        "Write the correct condition.",
         ans=["if ((0<x) && (x<10))", "if((0<x)&&(x<10))", "if (0<x && x<10)", "if (0 < x && x < 10)"],
-        hint="Tambah ( ) di luar.")],
-  mcq=M("`if (0<x) && (x<10)` menghasilkan…",
-        "Syntax error", "Sentiasa true", "Sentiasa false", "Berfungsi seperti biasa"))
+        hint="Add ( ) around it.")],
+  mcq=M("`if (0<x) && (x<10)` gives…",
+        "A syntax error", "Always true", "Always false", "Works normally"))
 
 S("cs07", T, H + "Common traps · if (!n > 9)", trap=True,
   text="""
@@ -159,22 +161,22 @@ S("cs07", T, H + "Common traps · if (!n > 9)", trap=True,
 
   | Wrong | Why | Correct |
   |---|---|---|
-  | `if (!n > 9)` | `!` dinilai **dahulu**: `!5` = false = 0, dan `0 > 9` ialah false | `if (!(n > 9))` |
+  | `if (!n > 9)` | `!` runs **first**: `!5` = false = 0, and `0 > 9` is false | `if (!(n > 9))` |
   """,
-  question="Dengan n = 5, apakah nilai `!n > 9`? (1 / 0)",
+  question="With n = 5, what is `!n > 9`? (1 / 0)",
   ans=["0", "false"],
-  hint="!5 dahulu.",
-  fu=[F("""Langkah: `!5` = 0, kemudian `0 > 9` = false.""",
-        "Mengapa `!n > 9` tidak bermaksud 'n tidak lebih besar daripada 9'?",
-        kw=["!|not", "first|dahulu|dulu|before|keutamaan|precedence|higher",
+  hint="!5 first.",
+  fu=[F("""Steps: `!5` = 0, then `0 > 9` = false.""",
+        "Why doesn't `!n > 9` mean 'n is not greater than 9'?",
+        kw=["!|not", "first|before|precedence|higher|dahulu|dulu|keutamaan",
             "n|5|!n"],
-        ans="Kerana ! dinilai dahulu pada n (!5 = 0), kemudian 0 > 9.",
-        hint="Keutamaan operator."),
-      F("""Bentuk betul: songsangkan seluruh perbandingan.""",
-        "Tulis syarat yang betul.",
+        ans="Because ! is applied to n first (!5 = 0), then 0 > 9 is compared.",
+        hint="Operator precedence."),
+      F("""Correct form: negate the whole comparison.""",
+        "Write the correct condition.",
         ans=["if (!(n > 9))", "!(n > 9)", "if(!(n>9))", "n <= 9", "if (n <= 9)"],
         hint="!( … )")],
-  mcq=M("`!n > 9` dinilai sebagai…",
+  mcq=M("`!n > 9` is evaluated as…",
         "(!n) > 9", "!(n > 9)", "n < 9", "n != 9"))
 
 S("cs08", T, H + "Common traps · if (x<3);", trap=True,
@@ -183,23 +185,23 @@ S("cs08", T, H + "Common traps · if (x<3);", trap=True,
 
   | Wrong | Why | Correct |
   |---|---|---|
-  | `if (x<3);` | `;` ialah **null statement**, jadi baris seterusnya **sentiasa** dijalankan | Tiada `;` selepas `if (...)` |
+  | `if (x<3);` | The `;` is a **null statement**, so the next line **always** runs | No `;` after `if (...)` |
   """,
-  question="Apakah yang berlaku apabila ada ; selepas `if (x<3)`?",
-  kw=["null|kosong|empty", "always|sentiasa", "next|seterusnya|line|baris|run|jalan"],
-  ans="; menjadi null statement, jadi baris seterusnya sentiasa dijalankan.",
-  hint="Badan if menjadi kosong.",
+  question="What happens when there is a ; after `if (x<3)`?",
+  kw=["null|empty|kosong", "always|sentiasa", "next|following|seterusnya|line|baris|run|runs|jalan"],
+  ans="The ; is a null statement, so the next line always runs.",
+  hint="The if's body becomes empty.",
   fu=[F("""
         ```
         int x = 7;
         if (x < 3);
             cout << "small";
         ```""",
-        "Apakah output?",
+        "What is the output?",
         ans=["small"],
-        hint="cout tiada kaitan dengan if.")],
-  mcq=M("`if (x<3); cout << \"A\";` dengan x = 10 mencetak…",
-        "A", "Tiada", "Ralat", "10"))
+        hint="The cout has nothing to do with the if.")],
+  mcq=M("`if (x<3); cout << \"A\";` with x = 10 prints…",
+        "A", "Nothing", "An error", "10"))
 
 S("cs09", T, H + "Common traps · 2 statements before else with no { }", trap=True,
   text="""
@@ -207,26 +209,26 @@ S("cs09", T, H + "Common traps · 2 statements before else with no { }", trap=Tr
 
   | Wrong | Why | Correct |
   |---|---|---|
-  | 2 statements sebelum `else` tanpa `{ }` | **Syntax error: misplaced else** | Balut dengan `{ }` |
+  | 2 statements before `else` with no `{ }` | **Syntax error: misplaced else** | Wrap them in `{ }` |
 
   ```
   if (x > 0)
       x = 1;
-      x = 2;        // bukan milik if
+      x = 2;        // not part of the if
   else              // error: 'else' without a previous 'if'
       x = 3;
   ```
   """,
-  question="Apakah ralat jika dua statement diletak sebelum else tanpa { }?",
-  kw=["syntax|sintaks|ralat|error", "misplaced|salah tempat|without|tanpa|else"],
-  ans="Syntax error: misplaced else ('else' without a previous 'if'). Balut statement dengan { }.",
-  hint="else tidak jumpa if-nya.",
-  fu=[F("""Penyelesaian: balut kedua-dua statement dalam `{ }`.""",
-        "Apakah yang perlu ditambah untuk membetulkannya?",
-        ans=["{ }", "{}", "braces", "kurungan kerinting", "curly braces"],
-        hint="Compound statement.")],
-  mcq=M("Dua statement sebelum else tanpa braces menghasilkan…",
-        "Syntax error: misplaced else", "else dijalankan dua kali", "Infinite loop", "Tiada masalah"))
+  question="What error do you get with two statements before else and no { }?",
+  kw=["syntax|sintaks|error|ralat", "misplaced|without|salah tempat|tanpa|else"],
+  ans="A syntax error: misplaced else ('else' without a previous 'if'). Wrap the statements in { }.",
+  hint="The else can't find its if.",
+  fu=[F("""Fix: wrap both statements in `{ }`.""",
+        "What must be added to fix it?",
+        ans=["{ }", "{}", "braces", "curly braces", "kurungan kerinting"],
+        hint="A compound statement.")],
+  mcq=M("Two statements before else with no braces gives…",
+        "Syntax error: misplaced else", "else runs twice", "An infinite loop", "No problem"))
 
 S("cs10", T, H + "Common traps · nested if with no braces (dangling else)", trap=True,
   text="""
@@ -234,7 +236,7 @@ S("cs10", T, H + "Common traps · nested if with no braces (dangling else)", tra
 
   | Wrong | Why | Correct |
   |---|---|---|
-  | Nested if tanpa braces | `else` berpasangan dengan **if yang terdekat** (dangling else) | Guna `{ }` untuk tunjuk if yang mana |
+  | Nested if with no braces | The `else` pairs with the **nearest if** (dangling else) | Use `{ }` to show which if |
 
   ```
   int a = 5, b = 1;
@@ -243,16 +245,16 @@ S("cs10", T, H + "Common traps · nested if with no braces (dangling else)", tra
   else cout << "Y";
   ```
   """,
-  question="Dengan a = 5, b = 1, apakah output kod di atas?",
+  question="With a = 5, b = 1, what does the code above print?",
   ans=["Y"],
-  hint="else milik if (b > 3).",
-  fu=[F("""else berpasangan dengan if **terdekat**, bukan ikut indentasi.""",
-        "Dengan siapakah else berpasangan dalam nested if tanpa braces?",
-        kw=["nearest|terdekat|dekat|closest|inner|dalam|last|terakhir"],
-        ans="Dengan if yang terdekat.",
+  hint="The else belongs to if (b > 3).",
+  fu=[F("""The else pairs with the **nearest** if, not by indentation.""",
+        "In a nested if with no braces, which if does the else pair with?",
+        kw=["nearest|closest|inner|last|terdekat|dekat|dalam|terakhir"],
+        ans="The nearest if.",
         hint="Dangling else.")],
-  mcq=M("Dangling else bermaksud else berpasangan dengan…",
-        "if yang terdekat", "if yang pertama", "if paling luar", "if yang diindent sama"))
+  mcq=M("Dangling else means the else pairs with…",
+        "The nearest if", "The first if", "The outermost if", "The if with the same indentation"))
 
 S("cs11", T, H + "Common traps · indentation only", trap=True,
   text="""
@@ -260,7 +262,7 @@ S("cs11", T, H + "Common traps · indentation only", trap=True,
 
   | Wrong | Why | Correct |
   |---|---|---|
-  | Indentasi sahaja | **Indentasi tidak bermakna** kepada compiler | Guna `{ }` |
+  | Indentation only | **Indentation means nothing** to the compiler | Use `{ }` |
 
   ```
   int age = 15;
@@ -269,15 +271,15 @@ S("cs11", T, H + "Common traps · indentation only", trap=True,
       cout << "Can vote";
   ```
   """,
-  question="Apakah output kod di atas?",
+  question="What does the code above print?",
   ans=["Can vote"],
-  hint="Hanya baris pertama milik if.",
-  fu=[F("""Compiler mengabaikan ruang/indentasi. Hanya `{ }` menentukan blok.""",
-        "Apakah yang menentukan statement mana milik if: indentasi atau braces?",
-        ans=["braces", "{ }", "{}", "kurungan kerinting"],
-        hint="Bukan ruang.")],
-  mcq=M("Bagi compiler C++, indentasi…",
-        "Tidak bermakna", "Menentukan blok", "Wajib", "Menggantikan ;"))
+  hint="Only the first line belongs to the if.",
+  fu=[F("""The compiler ignores spaces and indentation. Only `{ }` define a block.""",
+        "What decides which statements belong to an if: indentation or braces?",
+        ans=["braces", "{ }", "{}", "curly braces"],
+        hint="Not spaces.")],
+  mcq=M("To the C++ compiler, indentation…",
+        "Means nothing", "Defines blocks", "Is required", "Replaces ;"))
 
 S("cs12", T, H + "Shortcuts · if (a), if (!a), if (n%2)",
   """
@@ -287,66 +289,66 @@ S("cs12", T, H + "Shortcuts · if (a), if (!a), if (n%2)",
   | `if (a == 0)` | `if (!a)` |
   | `if (n%2 == 1)` (odd) | `if (n%2)` |
   """,
-  "Tulis bentuk ringkas bagi `if (a != 0)`.",
+  "Write the short form of `if (a != 0)`.",
   ans=["if (a)", "if(a)"],
-  hint="Bukan sifar = true.",
+  hint="Non-zero = true.",
   fu=[F("""`if (a == 0)` → `if (!a)`.""",
-        "Tulis bentuk ringkas bagi `if (a == 0)`.",
+        "Write the short form of `if (a == 0)`.",
         ans=["if (!a)", "if(!a)"],
         hint="NOT a."),
-      F("""`n % 2` bukan sifar bermaksud ganjil (odd).""",
-        "Tulis bentuk ringkas untuk menguji n ganjil.",
+      F("""A non-zero `n % 2` means n is odd.""",
+        "Write the short form that tests whether n is odd.",
         ans=["if (n%2)", "if (n % 2)", "if(n%2)"],
-        hint="Baki bukan sifar.")],
-  mcq=M("`if (!a)` bersamaan dengan…",
+        hint="A non-zero remainder.")],
+  mcq=M("`if (!a)` is the same as…",
         "if (a == 0)", "if (a != 0)", "if (a > 0)", "if (a = 0)"))
 
 S("cs13", T, H + "Conditional (ternary) operator",
   """
-  `cond ? value1 : value2`: **jika true, ambil value1; jika tidak, value2**.
+  `cond ? value1 : value2`: **if true, take value1; otherwise, value2**.
 
   ```
   p = (p<5) ? q+1 : 5;
   ```
   """,
-  "Terangkan conditional (ternary) operator.",
-  kw=["?|ternary|conditional", "true|benar|value1|nilai pertama|first",
-      "otherwise|jika tidak|false|value2|else|kedua|second"],
-  ans="cond ? value1 : value2 — jika cond true ambil value1, jika tidak ambil value2.",
-  hint="? dan :",
+  "Explain the conditional (ternary) operator.",
+  kw=["?|ternary|conditional", "true|value1|first|benar|nilai pertama",
+      "otherwise|false|else|value2|second|jika tidak|kedua"],
+  ans="cond ? value1 : value2 — if cond is true take value1, otherwise take value2.",
+  hint="? and :",
   fu=[F("""`int p = 3, q = 8; p = (p<5) ? q+1 : 5;`""",
-        "Apakah nilai p?",
+        "What is p?",
         ans=["9"],
-        hint="3 < 5 true → q+1."),
+        hint="3 < 5 is true → q+1."),
       F("""`int p = 7, q = 8; p = (p<5) ? q+1 : 5;`""",
-        "Apakah nilai p?",
+        "What is p?",
         ans=["5"],
-        hint="7 < 5 false.")],
-  mcq=M("`x = (a > b) ? a : b;` menyimpan…",
-        "Nilai yang lebih besar antara a dan b", "Nilai yang lebih kecil", "Sentiasa a", "Sentiasa b"))
+        hint="7 < 5 is false.")],
+  mcq=M("`x = (a > b) ? a : b;` stores…",
+        "The larger of a and b", "The smaller one", "Always a", "Always b"))
 
 S("cs14", T, H + "Complement a condition",
   """
-  **Complement** syarat dengan meletakkan **`!( )`** di sekelilingnya:
+  **Complement** a condition by putting **`!( )`** around it:
 
-  `!(n==0)` sama dengan `n != 0`.
+  `!(n==0)` is the same as `n != 0`.
 
-  Gunakan apabila cabang **"Yes" flowchart berada di sebelah yang salah**.
+  Use it when the flowchart's **"Yes" branch is on the wrong side**.
   """,
-  "Bagaimana membuat complement sesuatu syarat, dan bilakah ia berguna?",
-  kw=["!( )|!()|!|not", "around|sekeliling|keliling|balut|wrap",
-      "yes|flowchart|carta|wrong side|sebelah salah|salah"],
-  ans="Letak !( ) di sekeliling syarat; berguna apabila cabang Yes flowchart berada di sebelah yang salah.",
-  hint="Contoh !(n==0).",
+  "How do you complement a condition, and when is it useful?",
+  kw=["!( )|!()|!|not", "around|wrap|surround|sekeliling|keliling|balut",
+      "yes|flowchart|wrong side|wrong|chart|carta|salah"],
+  ans="Put !( ) around the condition; it's useful when the flowchart's Yes branch is on the wrong side.",
+  hint="e.g. !(n==0).",
   fu=[F("""`!(n==0)` = `n != 0`.""",
-        "Tulis bentuk lain bagi `!(n==0)`.",
+        "Write another form of `!(n==0)`.",
         ans=["n != 0", "n!=0"],
-        hint="Tidak sama."),
-      F("""Complement bagi `x > 5` boleh ditulis `!(x > 5)` atau `x <= 5`.""",
-        "Tulis complement bagi `x > 5` tanpa menggunakan !.",
+        hint="Not equal."),
+      F("""The complement of `x > 5` can be written `!(x > 5)` or `x <= 5`.""",
+        "Write the complement of `x > 5` without using !.",
         ans=["x <= 5", "x<=5"],
-        hint="Bukan x < 5.")],
-  mcq=M("`!(n == 0)` sama dengan…",
+        hint="Not x < 5.")],
+  mcq=M("`!(n == 0)` is the same as…",
         "n != 0", "n == 0", "n > 0", "n < 0"))
 
 S("cs15", T, H + "switch · integral expression",
@@ -359,41 +361,41 @@ S("cs15", T, H + "switch · integral expression",
       default : cout << "Fail";
   }
   ```
-  Expression mesti jenis **integral**: **`int`, `char`, `bool`**. **Bukan float dan bukan string.**
+  The expression must be an **integral type**: **`int`, `char`, `bool`**. **Not float and not string.**
   """,
-  "Apakah jenis yang dibenarkan untuk expression switch?",
+  "Which types are allowed for a switch expression?",
   kw=["int|integer|integral", "char|character|aksara", "bool"],
-  ans="Jenis integral: int, char, bool (bukan float, bukan string).",
-  hint="Tiga jenis.",
-  fu=[F("""Dengan `grade = 'B'` dalam kod di atas.""",
-        "Apakah output?",
+  ans="Integral types: int, char, bool (not float, not string).",
+  hint="Three types.",
+  fu=[F("""With `grade = 'B'` in the code above.""",
+        "What is the output?",
         ans=["Very good!"],
         hint="case 'B'."),
-      F("""`double d = 1; switch (d) { ... }` → ralat `switch quantity not an integer`.""",
-        "Bolehkah string digunakan sebagai expression switch? (ya / tidak)",
-        ans=["tidak", "no", "tak"],
+      F("""`double d = 1; switch (d) { ... }` → error `switch quantity not an integer`.""",
+        "Can a string be used as a switch expression? (yes / no)",
+        ans=NO,
         hint="Not float and not string.")],
-  mcq=M("Jenis manakah TIDAK boleh digunakan dalam switch?",
+  mcq=M("Which type can NOT be used in a switch?",
         "float", "int", "char", "bool"))
 
 S("cs16", T, H + "switch · case values must be constants",
   """
-  Setiap nilai `case` mesti **constant**: **literal, `const` atau `#define`**, **bukan pemboleh ubah**.
+  Each `case` value must be a **constant**: a **literal, `const` or `#define`**, **not a variable**.
   """,
-  "Apakah yang boleh dijadikan nilai case?",
-  kw=["constant|pemalar|tetap", "literal|const|#define|define"],
-  ans="Constant sahaja: literal, const atau #define; bukan pemboleh ubah.",
-  hint="Tiga jenis constant.",
-  fu=[F("""`int c = 2; switch (x) { case c: ... }` → ralat: c bukan constant.""",
-        "Bolehkah pemboleh ubah biasa dijadikan nilai case? (ya / tidak)",
-        ans=["tidak", "no", "tak"],
-        hint="Mesti constant.")],
-  mcq=M("Label case manakah SAH?",
+  "What can be used as a case value?",
+  kw=["constant|constants|pemalar|tetap", "literal|const|#define|define"],
+  ans="Constants only: a literal, const or #define; not a variable.",
+  hint="Three kinds of constant.",
+  fu=[F("""`int c = 2; switch (x) { case c: ... }` → error: c is not a constant.""",
+        "Can an ordinary variable be a case value? (yes / no)",
+        ans=NO,
+        hint="It must be a constant.")],
+  mcq=M("Which case label is VALID?",
         "case 'A':", "case x:", "case x > 5:", "case 2.5:"))
 
 S("cs17", T, H + "switch · fall-through (missing break)",
   """
-  Jika **`break` tertinggal**, ia **"falls through"** dan menjalankan **case seterusnya juga**.
+  If **`break` is missing**, it **"falls through"** and runs **the next case too**.
 
   ```
   char grade = 'C';
@@ -405,50 +407,50 @@ S("cs17", T, H + "switch · fall-through (missing break)",
   }
   ```
   """,
-  "Apakah output kod di atas (tiada break)?",
+  "What does the code above (no breaks) print?",
   ans=["GoodFail"],
-  hint="Mula di case 'C', terus ke default.",
-  fu=[F("""Dengan grade = 'B' dalam kod tanpa break.""",
-        "Apakah output?",
+  hint="Starts at case 'C', continues into default.",
+  fu=[F("""With grade = 'B' in the code without breaks.""",
+        "What is the output?",
         ans=["Very good!GoodFail"],
-        hint="Jatuh hingga hujung.")],
-  mcq=M("Apa yang berlaku jika break tertinggal dalam case?",
-        "Case seterusnya turut dijalankan (fall through)", "Ralat compile", "Program tamat", "Case dilangkau"))
+        hint="Falls through to the end.")],
+  mcq=M("What happens if break is missing in a case?",
+        "The next case runs too (fall-through)", "A compile error", "The program ends", "The case is skipped"))
 
 S("cs18", T, H + "switch · default",
   """
-  **`default`** dijalankan apabila **tiada case yang sepadan** (no case matches).
+  **`default`** runs when **no case matches**.
   """,
-  "Bilakah default dijalankan dalam switch?",
-  kw=["no case|tiada case|tiada yang|none|not match|tidak sepadan|tak sepadan|no match"],
-  ans="Apabila tiada case yang sepadan.",
-  hint="Pilihan terakhir.",
-  fu=[F("""Kod switch gred (dengan break) dan `grade = 'Z'`.""",
-        "Apakah output?",
+  "When does default run in a switch?",
+  kw=["no case|none|not match|no match|nothing matches|doesn't match|tiada case|tidak sepadan|tak sepadan"],
+  ans="When no case matches.",
+  hint="The last resort.",
+  fu=[F("""The grade switch (with breaks) and `grade = 'Z'`.""",
+        "What is the output?",
         ans=["Fail"],
-        hint="Tiada case 'Z'.")],
-  mcq=M("Dalam switch, bahagian yang dijalankan apabila tiada case sepadan ialah…",
+        hint="There is no case 'Z'.")],
+  mcq=M("In a switch, the part that runs when no case matches is…",
         "default", "break", "else", "continue"))
 
 S("cs19", T, H + "Loops · 4 parts",
   """
-  Setiap loop ada **4 bahagian**: **initialise**, **condition**, **body**, **update**.
+  Every loop has **4 parts**: **initialise**, **condition**, **body**, **update**.
 
-  Jika anda **lupa update**, anda dapat **infinite loop**.
+  If you **forget to update**, you get an **infinite loop**.
   """,
-  "Apakah empat bahagian sesuatu loop?",
-  kw=["initialise|initialize|initialization|inisialisasi|nilai awal|init",
-      "condition|syarat|test",
+  "What are the four parts of a loop?",
+  kw=["initialise|initialize|initialization|initialisation|inisialisasi|nilai awal|init|start",
+      "condition|test|syarat",
       "body|badan",
-      "update|kemas kini|increment|decrement"],
+      "update|increment|decrement|kemas kini"],
   ans="Initialise, condition, body, update.",
-  hint="Mula, uji, kerja, ubah.",
-  fu=[F("""Tanpa update, syarat tidak pernah berubah.""",
-        "Apakah yang berlaku jika update dilupakan?",
-        ans=["infinite loop", "loop tak terhingga", "infinite"],
-        hint="Tidak pernah berhenti.")],
-  mcq=M("Lupa bahagian update dalam loop biasanya menyebabkan…",
-        "Infinite loop", "Syntax error", "Loop berjalan 0 kali", "Program lebih laju"))
+  hint="Start, test, work, change.",
+  fu=[F("""Without an update, the condition never changes.""",
+        "What happens if you forget the update?",
+        ans=["infinite loop", "an infinite loop", "infinite"],
+        hint="It never stops.")],
+  mcq=M("Forgetting the update part of a loop usually causes…",
+        "An infinite loop", "A syntax error", "The loop to run 0 times", "A faster program"))
 
 S("cs20", T, H + "Loops · while, for, do-while print 10 to 1",
   """
@@ -460,51 +462,51 @@ S("cs20", T, H + "Loops · while, for, do-while print 10 to 1",
       n = n - 1;            }                                 n = n - 1;
   }                                                       } while (n > 0);   // ← ;
   ```
-  Ketiga-tiganya mencetak **10 9 8 7 6 5 4 3 2 1**. Perhatikan **`;` selepas `while (n > 0)` dalam do-while**.
+  All three print **10 9 8 7 6 5 4 3 2 1**. Note the **`;` after `while (n > 0)` in the do-while**.
   """,
-  "Apakah output ketiga-tiga loop di atas?",
+  "What do all three loops above print?",
   ans=["10 9 8 7 6 5 4 3 2 1"],
-  hint="Dari 10 turun ke 1.",
-  fu=[F("""do-while berakhir dengan `} while (n > 0);`""",
-        "Simbol apakah yang mesti ada selepas `while (n > 0)` dalam do-while?",
-        ans=[";", "semicolon", "titik koma", "koma bertitik"],
+  hint="From 10 down to 1.",
+  fu=[F("""A do-while ends with `} while (n > 0);`""",
+        "Which symbol must come after `while (n > 0)` in a do-while?",
+        ans=[";", "semicolon", "a semicolon"],
         hint="← ;"),
-      F("""Jika `n = 0` pada mula: while tidak jalan (pre-test), do-while jalan sekali (post-test).""",
-        "Dengan n = 0 pada mula, berapa kali badan do-while dijalankan?",
-        ans=["1", "sekali", "once"],
+      F("""If `n = 0` at the start: the while doesn't run (pre-test), the do-while runs once (post-test).""",
+        "With n = 0 at the start, how many times does the do-while body run?",
+        ans=["1", "once", "one"],
         hint="Post-test.")],
-  mcq=M("Loop manakah ialah post-test?",
-        "do-while", "while", "for", "Ketiga-tiganya"))
+  mcq=M("Which loop is post-test?",
+        "do-while", "while", "for", "All three"))
 
 S("cs21", T, H + "Loops · which loop to use",
   """
   | Loop | Use when… |
   |---|---|
-  | `for` | tahu **berapa kali** (counter) |
-  | `while` | mungkin berjalan **0 kali** (sentinel, bilangan tidak diketahui) |
-  | `do-while` | mesti berjalan **sekurang-kurangnya sekali** (menu, input validation) |
+  | `for` | you know **how many times** (counter) |
+  | `while` | you might run it **0 times** (sentinel, unknown count) |
+  | `do-while` | it must run **at least once** (menus, input validation) |
   """,
-  "Bilakah do-while paling sesuai?",
-  kw=["at least once|sekurang-kurangnya sekali|sekali|once",
-      "menu|validation|validasi|pengesahan|input"],
-  ans="Apabila loop mesti berjalan sekurang-kurangnya sekali, contoh menu dan input validation.",
-  hint="Menu…",
-  fu=[F("""for = bilangan diketahui (counter).""",
-        "Loop manakah sesuai untuk mencetak jadual 1 hingga 12?",
+  "When is do-while the best choice?",
+  kw=["at least once|once|sekurang-kurangnya sekali|sekali",
+      "menu|menus|validation|validate|input|validasi|pengesahan"],
+  ans="When the loop must run at least once, e.g. menus and input validation.",
+  hint="Menus…",
+  fu=[F("""for = known count (counter).""",
+        "Which loop suits printing a times table from 1 to 12?",
         ans=["for", "for loop"],
-        hint="Bilangan diketahui."),
-      F("""while = mungkin 0 kali (sentinel, bilangan tidak diketahui).""",
-        "Loop manakah sesuai untuk membaca data sehingga sentinel -999?",
+        hint="Known count."),
+      F("""while = might run 0 times (sentinel, unknown count).""",
+        "Which loop suits reading data until the sentinel -999?",
         ans=["while", "while loop"],
-        hint="Bilangan tidak diketahui.")],
-  mcq=M("Loop untuk menu yang mesti dipaparkan sekurang-kurangnya sekali ialah…",
+        hint="Unknown count.")],
+  mcq=M("The loop for a menu that must show at least once is…",
         "do-while", "for", "while", "switch"))
 
 S("cs22", T, H + "Jump statements · break",
   """
-  **`break`** keluar dari loop (atau switch) **serta-merta**. Dalam **nested loops**, ia **hanya keluar dari loop dalam** (inner).
+  **`break`** exits the loop (or switch) **immediately**. In **nested loops**, it **only exits the inner one**.
 
-  Contoh nota: `for(n=10;n>0;n--){ if(n<8) break; cout<<n; }` memberi nilai **10 9 8** (tanpa ruang dalam cout, ia dicetak `1098`).
+  Notes example: `for(n=10;n>0;n--){ if(n<8) break; cout<<n; }` gives the values **10 9 8** (with no space in the cout it actually prints `1098`).
   ```
   for (n = 10; n > 0; n--) {
       if (n < 8) break;
@@ -513,14 +515,14 @@ S("cs22", T, H + "Jump statements · break",
   ```
   Output: `10 9 8`
   """,
-  "Apakah output loop break di atas (dengan ruang)?",
+  "What does the break loop above (with spaces) print?",
   ans=["10 9 8"],
-  hint="Berhenti apabila n < 8.",
-  fu=[F("""Dalam nested loop, break hanya keluar dari loop **dalam**.""",
-        "Dalam nested loops, break keluar dari loop mana?",
-        kw=["inner|dalam|innermost|terdalam"],
-        ans="Hanya loop dalam (inner).",
-        hint="Bukan kedua-duanya."),
+  hint="It stops when n < 8.",
+  fu=[F("""In nested loops, break only exits the **inner** loop.""",
+        "In nested loops, which loop does break exit?",
+        kw=["inner|innermost|inside|dalam|terdalam"],
+        ans="Only the inner loop.",
+        hint="Not both."),
       F("""
         ```
         int c = 0;
@@ -531,17 +533,17 @@ S("cs22", T, H + "Jump statements · break",
             }
         cout << c;
         ```""",
-        "Apakah output?",
+        "What is the output?",
         ans=["6"],
-        hint="Setiap i, j = 0 dan 1 sahaja.")],
-  mcq=M("`break` dalam inner loop akan…",
-        "Keluar dari inner loop sahaja", "Keluar dari semua loop", "Tamatkan program", "Langkau satu ulangan"))
+        hint="For each i, only j = 0 and 1.")],
+  mcq=M("`break` in an inner loop will…",
+        "Exit the inner loop only", "Exit every loop", "End the program", "Skip one round"))
 
 S("cs23", T, H + "Jump statements · continue",
   """
-  **`continue`** langkau baki pusingan ini (skips the rest of this round).
-  - Dalam **for** loop: pergi ke **update**.
-  - Dalam **while / do-while**: pergi ke **condition**.
+  **`continue`** skips the rest of this round.
+  - In a **for** loop it goes to the **update**.
+  - In **while / do-while** it goes to the **condition**.
 
   ```
   for (n = 10; n > 0; n--) {
@@ -549,77 +551,77 @@ S("cs23", T, H + "Jump statements · continue",
       cout << n << " ";
   }
   ```
-  Hanya nombor genap dicetak: **10 8 6 4 2**.
+  Prints only even numbers: **10 8 6 4 2**.
   """,
-  "Apakah output loop continue di atas?",
+  "What does the continue loop above print?",
   ans=["10 8 6 4 2"],
-  hint="Nombor ganjil dilangkau.",
-  fu=[F("""Dalam for, continue pergi ke update (`n--`). Dalam while/do-while, ia pergi ke condition.""",
-        "Dalam for loop, continue melompat ke bahagian mana?",
-        ans=["update", "the update", "kemas kini"],
+  hint="Odd numbers are skipped.",
+  fu=[F("""In a for loop, continue jumps to the update (`n--`). In while/do-while, it jumps to the condition.""",
+        "In a for loop, where does continue jump to?",
+        ans=["update", "the update"],
         hint="n--."),
-      F("""Dalam while, continue melompat terus ke condition.""",
-        "Dalam while loop, continue melompat ke bahagian mana?",
-        ans=["condition", "syarat", "the condition"],
-        hint="Bukan update.")],
-  mcq=M("`continue` dalam loop…",
-        "Langkau baki pusingan dan teruskan pusingan seterusnya", "Keluar dari loop", "Tamatkan function", "Ulang pusingan semasa dari awal tanpa uji syarat"))
+      F("""In a while loop, continue jumps straight to the condition.""",
+        "In a while loop, where does continue jump to?",
+        ans=["condition", "the condition"],
+        hint="Not the update.")],
+  mcq=M("`continue` in a loop…",
+        "Skips the rest of this round and goes on to the next", "Exits the loop", "Ends the function", "Restarts the round without testing the condition"))
 
 S("cs24", T, H + "Jump statements · return and goto",
   """
-  - **`return`**: tamatkan **seluruh function**.
-  - **`goto`**: lompat ke label. **Elakkan**, kerana ia menjadikan kod **tidak berstruktur** (unstructured).
+  - **`return`**: ends the **whole function**.
+  - **`goto`**: jumps to a label. **Avoid it**, because it makes code **unstructured**.
   """,
-  "Mengapa goto perlu dielakkan?",
-  kw=["unstructured|tidak berstruktur|tak berstruktur|struktur|structure|messy|sukar"],
-  ans="Kerana ia menjadikan kod tidak berstruktur.",
-  hint="Lawan 'structured programming'.",
-  fu=[F("""`return` menamatkan seluruh function, bukan hanya loop.""",
-        "Jump statement manakah menamatkan seluruh function?",
+  "Why should goto be avoided?",
+  kw=["unstructured|not structured|structure|structured|messy|hard|tidak berstruktur|struktur"],
+  ans="Because it makes code unstructured.",
+  hint="The opposite of 'structured programming'.",
+  fu=[F("""`return` ends the whole function, not just a loop.""",
+        "Which jump statement ends the whole function?",
         ans=["return"],
         hint="R…")],
-  mcq=M("Jump statement yang melompat ke label dan perlu dielakkan ialah…",
+  mcq=M("The jump statement that jumps to a label and should be avoided is…",
         "goto", "break", "continue", "return"))
 
 S("cs25", T, H + "TRAP: continue before the update in a while loop", trap=True,
   text="""
   ⚠ **TRAP**
 
-  Dalam **while** loop, jika `continue` datang **sebelum update** (`n = n - 1`), update **tidak pernah dijalankan**. Loop mencetak **9 9 9 …** selama-lamanya.
+  In a **while** loop, if `continue` comes **before the update** (`n = n - 1`), the update **never runs**. The loop prints **9 9 9 …** forever.
 
   ```
   int n = 9;
   while (n > 0) {
       cout << n << " ";
-      if (n % 2 == 1) continue;   // n ganjil: lompat ke condition
-      n = n - 1;                  // tidak pernah sampai
+      if (n % 2 == 1) continue;   // odd n: jump to the condition
+      n = n - 1;                  // never reached
   }
   ```
   """,
-  question="Mengapa loop di atas mencetak 9 9 9 … selama-lamanya?",
-  kw=["continue", "before|sebelum|skip|langkau",
-      "update|n = n - 1|n-1|tolak|kurang|never|tidak pernah|tak pernah"],
-  ans="Kerana continue datang sebelum update, jadi n = n - 1 tidak pernah dijalankan dan n kekal 9.",
-  hint="Adakah n pernah berubah?",
-  fu=[F("""Penyelesaian: letak update **sebelum** continue, atau guna for loop (continue dalam for pergi ke update).""",
-        "Di manakah update patut diletak untuk mengelak trap ini?",
-        kw=["before|sebelum|atas|above|first|dahulu"],
-        ans="Sebelum continue.",
-        hint="Susunan baris.")],
-  mcq=M("Dalam while loop, continue sebelum update menyebabkan…",
-        "Infinite loop", "Loop tamat awal", "Syntax error", "Update dijalankan dua kali"))
+  question="Why does the loop above print 9 9 9 … forever?",
+  kw=["continue", "before|skip|skips|sebelum|langkau",
+      "update|n = n - 1|n-1|never|not run|tidak pernah|tak pernah"],
+  ans="Because continue comes before the update, so n = n - 1 never runs and n stays 9.",
+  hint="Does n ever change?",
+  fu=[F("""Fix: put the update **before** continue, or use a for loop (continue in a for goes to the update).""",
+        "Where should the update go to avoid this trap?",
+        kw=["before|above|first|earlier|sebelum|atas|dahulu"],
+        ans="Before the continue.",
+        hint="Order of lines.")],
+  mcq=M("In a while loop, continue before the update causes…",
+        "An infinite loop", "The loop to end early", "A syntax error", "The update to run twice"))
 
 S("cs26", T, H + "Nested loops",
   """
-  **Inner loop** menjalankan **semua pusingannya bagi setiap pusingan outer loop**.
+  The **inner loop runs all its rounds for each round of the outer loop**.
 
-  Jumlah inner runs = **outer × inner**. Contoh: loop 3 × 3 → badan dijalankan **9 kali**.
+  Total inner runs = **outer × inner**. e.g. a 3 × 3 loop body runs **9 times**.
   """,
-  "Berapa kali badan nested loop 3 × 3 dijalankan?",
-  ans=["9", "sembilan", "9 kali"],
+  "How many times does the body of a 3 × 3 nested loop run?",
+  ans=["9", "nine", "9 times"],
   hint="outer × inner.",
-  fu=[F("""Outer 4 kali, inner 2 kali.""",
-        "Berapa kali badan inner dijalankan?",
+  fu=[F("""Outer 4 times, inner 2 times.""",
+        "How many times does the inner body run?",
         ans=["8"],
         hint="4 × 2."),
       F("""
@@ -628,8 +630,8 @@ S("cs26", T, H + "Nested loops",
             for (int j = 1; j <= 3; j++)
                 cout << i << j << " ";
         ```""",
-        "Apakah output?",
+        "What is the output?",
         ans=["11 12 13 21 22 23"],
-        hint="j berjalan penuh bagi setiap i.")],
-  mcq=M("Jumlah larian inner loop dalam nested loop ialah…",
-        "outer × inner", "outer + inner", "inner sahaja", "outer sahaja"))
+        hint="j runs fully for each i.")],
+  mcq=M("The total number of inner-loop runs in a nested loop is…",
+        "outer × inner", "outer + inner", "inner only", "outer only"))

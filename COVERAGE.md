@@ -190,30 +190,30 @@ Every heading, table row, TIP, REMEMBER, TRAP, memory trick and example in the P
 
 ## Tambahan (Lab 4–6, not in the PDF)
 
-Extra practice from the lab documents. Labelled *Tambahan (Lab)* in the app and never used by Kuiz Trap.
+Extra practice from the lab documents. Labelled *Extra (Lab)* in the app and never used by Kuiz Trap.
 
 | ID | Topic | Section |
 |---|---|---|
-| `xal12` | alg | Tambahan (Lab) · common flowchart mistakes |
-| `xcp08` | cpp | Tambahan (Lab 4) · cin with char arrays and getline |
-| `xcp13` | cpp | Tambahan (Lab 4) · Named constants: const vs #define (slides 63–66) |
-| `xcp17` | cpp | Tambahan (Lab 4) · Operator precedence |
-| `xcp21` | cpp | Tambahan (Lab 4) · Increment ++ and decrement -- (slides 103–108) |
-| `xcp22` | cpp | Tambahan (Lab 4) · Combined and multiple assignment |
-| `xcp23` | cpp | Tambahan (Lab 4) · Default cout precision |
-| `xcp24` | cpp | Tambahan (Lab 4) · Reading compiler errors (Lab 4 A1) |
-| `xcp25` | cpp | Tambahan (Lab 4) · Using / and % for unit conversion (Lab 4 B3) |
-| `xcs10` | ctrl | Tambahan (Lab 5) · n % 2 == 1 for negative numbers (slide 37) |
-| `xcs11` | ctrl | Tambahan (Lab 5) · Compound condition: leap year |
-| `xcs18` | ctrl | Tambahan (Lab 5) · semicolon after for/while |
-| `xcs19` | ctrl | Tambahan (Lab 5) · off-by-one (< vs <=) |
-| `xcs20` | ctrl | Tambahan (Lab 5) · infinite loop (missing/wrong update) |
-| `xcs22` | ctrl | Tambahan (Lab 5) · Loop patterns: counting, totals, sentinel (slides 84–91) |
-| `xcs25` | ctrl | Tambahan (Lab 5) · Debugging with breakpoints (Lab 5) |
-| `xfn03` | func | Tambahan (Lab 6) · Math functions in <cmath> (slides 8–13) |
-| `xfn04` | func | Tambahan (Lab 6) · Getting pi with acos(-1.0) (Lab 6 B2) |
-| `xfn05` | func | Tambahan (Lab 6) · Random numbers: rand and srand (slide 14) |
-| `xfn06` | func | Tambahan (Lab 6) · Character functions in <cctype> (slides 15–23) |
-| `xfn08` | func | Tambahan (Lab 6) · atoi, atol, atof (slides 34–36) |
-| `xfn12` | func | Tambahan (Lab 6) · integer division inside a function |
-| `xfn20` | func | Tambahan (Lab 6) · Common function call errors |
+| `xal12` | alg | Extra (Lab) · Common flowchart mistakes |
+| `xcp08` | cpp | Extra (Lab 4) · cin with char arrays and getline |
+| `xcp13` | cpp | Extra (Lab 4) · Named constants: const vs #define (slides 63–66) |
+| `xcp17` | cpp | Extra (Lab 4) · Operator precedence |
+| `xcp21` | cpp | Extra (Lab 4) · Increment ++ and decrement -- (slides 103–108) |
+| `xcp22` | cpp | Extra (Lab 4) · Combined and multiple assignment |
+| `xcp23` | cpp | Extra (Lab 4) · Default cout precision |
+| `xcp24` | cpp | Extra (Lab 4) · Reading compiler errors (Lab 4 A1) |
+| `xcp25` | cpp | Extra (Lab 4) · Using / and % for unit conversion (Lab 4 B3) |
+| `xcs10` | ctrl | Extra (Lab 5) · n % 2 == 1 for negative numbers (slide 37) |
+| `xcs11` | ctrl | Extra (Lab 5) · Compound condition: leap year |
+| `xcs18` | ctrl | Extra (Lab 5) · Semicolon after for/while |
+| `xcs19` | ctrl | Extra (Lab 5) · Off-by-one (< vs <=) |
+| `xcs20` | ctrl | Extra (Lab 5) · Infinite loop (missing/wrong update) |
+| `xcs22` | ctrl | Extra (Lab 5) · Loop patterns: counting, totals, sentinel (slides 84–91) |
+| `xcs25` | ctrl | Extra (Lab 5) · Debugging with breakpoints |
+| `xfn03` | func | Extra (Lab 6) · More <cmath>: fabs, ceil, floor |
+| `xfn04` | func | Extra (Lab 6) · Getting pi with acos(-1.0) (Lab 6 B2) |
+| `xfn05` | func | Extra (Lab 6) · Random numbers: rand and srand (slide 14) |
+| `xfn06` | func | Extra (Lab 6) · toupper returns int |
+| `xfn08` | func | Extra (Lab 6) · atoi, atol, atof (slides 34–36) |
+| `xfn12` | func | Extra (Lab 6) · Integer division inside a function |
+| `xfn20` | func | Extra (Lab 6) · Common function call errors |

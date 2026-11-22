@@ -1,58 +1,58 @@
-# Hafal SCSE1013
+# Memorise SCSE1013
 
-Web app untuk **hafal dan faham** nota SCSE1013 Fundamental Programming Concepts.
-HTML, CSS dan JavaScript biasa sahaja: tiada backend, tiada framework.
+A web app for **memorising and understanding** the SCSE1013 Fundamental Programming Concepts notes.
+Plain HTML, CSS and JavaScript only: no backend, no framework.
 
-**Cara buka:** double-click `index.html`. Ia berfungsi terus daripada fail (`file://`), dan juga offline (font kembali ke font sistem).
+**To open:** double-click `index.html`. It runs straight from the file (`file://`) and also works offline (fonts fall back to system fonts).
 
-## Struktur fail
+## Files
 
-| Fail | Kegunaan |
+| File | Purpose |
 |---|---|
-| `index.html` | Rangka halaman, memuatkan `data.js` kemudian `app.js` |
-| `styles.css` | Tema gelap editorial (hitam + biru #2F5BFF), responsive, `prefers-reduced-motion` |
-| `data.js` | Semua statement (`window.SCSE_DEFAULT_DATA`): 6 topik, 151 statement daripada PDF + 23 tambahan lab, 260 soalan susulan |
-| `app.js` | Enjin: routing, mod hafalan (Nota → Jawab → Semak), kuiz MCQ, markah, Urus Nota |
-| `COVERAGE.md` | Peta setiap tajuk / baris jadual / TIP / TRAP dalam `SCSE1013_Study_Notes.pdf` → ID statement |
-| `tools/data_src/pdf_*.py` | Sumber nota daripada PDF, ikut susunan bab (mudah ditulis: blok kod, jadual) |
-| `tools/data_src/lab_extras.json` | 23 statement tambahan daripada dokumen Lab 4–6 (ID bermula `x`) |
-| `tools/build_data.py` | Jana `data.js` daripada `tools/data_src` |
-| `tools/build_coverage.py` | Jana `COVERAGE.md` daripada `data.js` |
-| `tools/verify/*.cpp` | Program C++ yang mengesahkan setiap contoh kod PDF dan output "trace code" |
+| `index.html` | Page shell; loads `data.js` then `app.js` |
+| `styles.css` | Dark editorial theme (black + blue #2F5BFF), responsive, respects `prefers-reduced-motion` |
+| `data.js` | All statements (`window.SCSE_DEFAULT_DATA`): 6 topics, 151 statements from the PDF + 23 lab extras, 260 follow-up questions |
+| `app.js` | Engine: routing, memorise mode (Note → Answer → Check), MCQ quiz, scoring, Manage Notes |
+| `COVERAGE.md` | Maps every heading / table row / TIP / TRAP in `SCSE1013_Study_Notes.pdf` → statement IDs |
+| `tools/data_src/pdf_*.py` | Source of the notes from the PDF, in chapter order (easy to write: code blocks, tables) |
+| `tools/data_src/lab_extras.json` | 23 extra statements from the Lab 4–6 documents (IDs start with `x`) |
+| `tools/build_data.py` | Generates `data.js` from `tools/data_src` |
+| `tools/build_coverage.py` | Generates `COVERAGE.md` and fails if any PDF statement is unmapped |
+| `tools/verify/*.cpp` | C++ programs that confirm every code example and "trace code" output |
 
-## Cara tambah nota baru
+## Adding a new note
 
-**Cara 1: dalam app (paling mudah).** Buka **Urus Nota** → **+ Tambah statement**. Isi ID, topik, nota, soalan, jenis (`explain` atau `exact`), keywords atau jawapan, hint, soalan susulan (JSON) dan MCQ. Data disimpan dalam `localStorage` pelayar. Guna **Export JSON** untuk backup dan **Import JSON** untuk pindah ke peranti lain.
+**Option 1: in the app (easiest).** Open **Manage Notes** → **+ Add statement**. Fill in the ID, topic, note, question, type (`explain` or `exact`), keywords or answers, hint, follow-ups (JSON) and MCQ. Data is saved in the browser's `localStorage`. Use **Export JSON** for backups and **Import JSON** to move to another device.
 
-**Cara 2: kekal dalam fail.** Tambah `S(...)` baru dalam `tools/data_src/pdf_<bab>.py`, kemudian:
+**Option 2: permanently in the files.** Add a new `S(...)` in `tools/data_src/pdf_<chapter>.py`, then run:
 
 ```
 python3 tools/build_data.py
 python3 tools/build_coverage.py
 ```
 
-Format satu statement dalam `data.js`:
+Format of one statement in `data.js`:
 
 ```js
 {
-  "id": "cp16", "topic": "cpp", "section": "3.8 Arithmetic operators, / and %", "trap": true,
-  "text": "Nota penuh. **tebal**, `kod`, ``` blok kod ```, | jadual |",
-  "question": "Apakah nilai 13 % 5?",
-  "type": "exact",                       // atau "explain"
-  "keywords": [],                        // explain: ["decomposition|pecahkan|bahagi kepada bahagian kecil", ...]
-  "answer": ["3"],                       // exact: senarai jawapan diterima; explain: jawapan rujukan (teks)
-  "hint": "13 = 5 × 2 + ?",
-  "followUps": [{ "note": "...", "question": "...", "type": "exact", "answer": ["3 1"], "keywords": [], "hint": "..." }],
-  "mcq": { "question": "...", "options": ["betul", "salah1", "salah2", "salah3"], "correct": 0 }
+  "id": "cp30", "topic": "cpp", "section": "3 · Arithmetic operators · % remainder", "trap": false,
+  "text": "Full note. **bold**, `code`, ``` code block ```, | table |",
+  "question": "What is 7 % 3?",
+  "type": "exact",                       // or "explain"
+  "keywords": [],                        // explain: ["decomposition|break into parts|pecahkan", ...]
+  "answer": ["1"],                       // exact: list of accepted answers; explain: reference answer (text)
+  "hint": "7 = 3 × 2 + ?",
+  "followUps": [{ "note": "...", "question": "...", "type": "exact", "answer": ["3"], "keywords": [], "hint": "..." }],
+  "mcq": { "question": "...", "options": ["correct", "wrong1", "wrong2", "wrong3"], "correct": 0 }
 }
 ```
 
-## Peraturan semakan
+## Checking rules
 
-- **explain**: huruf kecil, tanda baca dibuang, kemudian kira % kumpulan keyword yang ada. Ejaan hampir diterima (Levenshtein ≤ 2 untuk perkataan ≥ 6 huruf). ≥ 70% BETUL, 40–69% HAMPIR, < 40% SALAH.
-- **exact**: ruang berlebihan dan koma diabaikan. Jika jawapan ialah kod (ada `; = < > ( ) & + %` …), semua ruang diabaikan tetapi simbol dan huruf besar/kecil mesti tepat.
-- Markah: cubaan 1 = 100%, 2 = 60%, 3 = 30%, gagal = 0%. Item yang gagal 3 kali ditanda *perlu ulang* dan diulang di hujung sesi, bermula dengan FASA NOTA.
+- **explain**: lower-cased, punctuation removed, then the % of keyword groups present is counted. Near-miss spellings are accepted (Levenshtein ≤ 2 for words of ≥ 6 letters). Keywords accept English and Malay synonyms. ≥ 70% CORRECT, 40–69% ALMOST, < 40% WRONG.
+- **exact**: extra spaces and commas are ignored. If the answer is code (contains `; = < > ( ) & + %` …), all spaces are ignored but symbols and letter case must match exactly.
+- Scoring: attempt 1 = 100%, 2 = 60%, 3 = 30%, failed = 0%. An item failed 3 times is marked *needs review* and repeated at the end of the session, starting again from the NOTE phase.
 
-## Sumber nota
+## Note sources
 
-Semua statement utama (ID tanpa awalan `x`) datang daripada **SCSE1013_Study_Notes.pdf** (Bab 1–6), mengikut susunan dan tajuk PDF. Statement `x…` ialah latihan tambahan daripada dokumen Lab 4–6, dilabel *Tambahan (Lab)* dan tidak dimasukkan dalam Kuiz Trap. **Kuiz Trap** hanya menggunakan bahagian ⚠ Common traps, ⚠ TRAP dan ⚠ INVALID HEADERS dalam PDF.
+Every main statement (IDs without an `x` prefix) comes from **SCSE1013_Study_Notes.pdf** (Chapters 1–6), in the PDF's order and headings. `x…` statements are extra practice from the Lab 4–6 documents, labelled *Extra (Lab)* and never included in the Trap Quiz. The **Trap Quiz** only uses the PDF's ⚠ Common traps, ⚠ TRAP and ⚠ INVALID HEADERS sections.

@@ -385,25 +385,25 @@
     var html = '' +
       '<section class="hero"><div class="wrap">' +
       '<span class="eyebrow rv"><span class="dot"></span>SCSE1013 · FUNDAMENTAL PROGRAMMING CONCEPTS</span>' +
-      '<h1 class="display rv rv-d1">Hafal SCSE1013. <span class="muted">Satu nota pada satu masa.</span></h1>' +
-      '<p class="lead rv rv-d2">Baca nota, tutup, tulis semula apa yang anda ingat. Setiap statement disemak dengan kata kunci, dan soalan susulan menguji trace code dan cari kesilapan seperti dalam peperiksaan.</p>' +
-      '<div class="row rv rv-d3"><a class="btn btn-primary" href="#topics">Mula hafal <span class="arrow">→</span></a><a class="btn btn-ghost" href="#/quiz/trap">Kuiz Trap Peperiksaan</a></div>' +
+      '<h1 class="display rv rv-d1">Memorise SCSE1013. <span class="muted">One note at a time.</span></h1>' +
+      '<p class="lead rv rv-d2">Read a note, hide it, then write what you remember. Every statement is checked against keywords, and follow-up questions drill code tracing and error-spotting, exactly like the exam.</p>' +
+      '<div class="row rv rv-d3"><a class="btn btn-primary" href="#topics">Start memorising <span class="arrow">→</span></a><a class="btn btn-ghost" href="#/quiz/trap">Exam Trap Quiz</a></div>' +
       '</div></section>' +
       '<section><div class="wrap"><div class="stats rv">' +
-      stat(overallMastery(), "%", "Hafalan keseluruhan") +
-      stat(masteredCount(), '<small>/' + total + '</small>', "Statement dikuasai") +
-      stat(PROG.bestStreak, "", "Streak terbaik") +
-      stat(PROG.sessions, "", "Sesi selesai") +
+      stat(overallMastery(), "%", "Overall memorised") +
+      stat(masteredCount(), '<small>/' + total + '</small>', "Statements mastered") +
+      stat(PROG.bestStreak, "", "Best streak") +
+      stat(PROG.sessions, "", "Sessions completed") +
       '</div></div></section>' +
       '<section class="section" id="topics"><div class="wrap">' +
-      '<div class="section-head"><div><span class="eyebrow rv"><span class="dot"></span>TOPIK</span><h2 class="h2 rv rv-d1" style="margin-top:14px">Enam bab. Satu subjek.</h2></div></div>' +
+      '<div class="section-head"><div><span class="eyebrow rv"><span class="dot"></span>TOPICS</span><h2 class="h2 rv rv-d1" style="margin-top:14px">Six chapters. One subject.</h2></div></div>' +
       '<div class="topics">' + DATA.topics.map(topicRow).join("") + '</div>' +
       '</div></section>' +
       '<section class="section" style="padding-top:0"><div class="wrap"><div class="blue-block rv">' + decoSVG() +
-      '<div class="content"><span class="eyebrow"><span class="dot"></span>MOD GAME · 20 SAAT SETIAP SOALAN</span>' +
-      '<h2 class="h2" style="margin:16px 0 14px">Kuiz Trap Peperiksaan.</h2>' +
-      '<p class="lead">Hanya soalan daripada bahagian TRAP, Common traps dan Invalid headers. Soalan yang paling kerap menjatuhkan markah.</p>' +
-      '<div class="row" style="margin-top:22px"><a class="btn btn-white" href="#/quiz/trap">Mula kuiz trap <span class="arrow">→</span></a></div></div>' +
+      '<div class="content"><span class="eyebrow"><span class="dot"></span>GAME MODE · 20 SECONDS PER QUESTION</span>' +
+      '<h2 class="h2" style="margin:16px 0 14px">Exam Trap Quiz.</h2>' +
+      '<p class="lead">Only questions from the TRAP, Common traps and Invalid headers sections: the mistakes that cost the most marks.</p>' +
+      '<div class="row" style="margin-top:22px"><a class="btn btn-white" href="#/quiz/trap">Start trap quiz <span class="arrow">→</span></a></div></div>' +
       '</div></div></section>';
     app.innerHTML = html;
     var a = $('a[href="#topics"]', app);
@@ -416,9 +416,9 @@
     var n = stmtsOf(t.id).length, pct = topicMastery(t.id);
     return '<a class="topic rv" href="#/topic/' + t.id + '" style="--tc:' + t.color + '">' +
       '<span class="topic-no">' + esc(t.no) + '</span>' +
-      '<div class="topic-body"><span class="tag">BAB ' + esc(t.no) + '</span>' +
+      '<div class="topic-body"><span class="tag">CH ' + esc(t.no) + '</span>' +
       '<h3 class="topic-title">' + esc(t.title) + '</h3>' +
-      '<div class="topic-meta"><span class="topic-pct">' + pct + '%</span><span>hafalan</span><span>·</span><span>' + n + ' statement</span><span>·</span><span>' + masteredCount(t.id) + ' dikuasai</span></div></div>' +
+      '<div class="topic-meta"><span class="topic-pct">' + pct + '%</span><span>memorised</span><span>·</span><span>' + n + ' statements</span><span>·</span><span>' + masteredCount(t.id) + ' mastered</span></div></div>' +
       '<span class="topic-go" aria-hidden="true">→</span>' +
       '<div class="bar"><span data-w="' + pct + '"></span></div></a>';
   }
@@ -433,23 +433,23 @@
     var weak = list.filter(function (s) { var p = PROG.stmts[s.id]; return !p || !p.mastered; }).length;
     app.innerHTML = '' +
       '<section class="hero" style="--tc:' + t.color + '"><div class="wrap">' +
-      '<span class="eyebrow rv"><span class="tag" style="--tc:' + t.color + '">BAB ' + esc(t.no) + '</span>' + esc(t.short) + '</span>' +
+      '<span class="eyebrow rv"><span class="tag" style="--tc:' + t.color + '">CH ' + esc(t.no) + '</span>' + esc(t.short) + '</span>' +
       '<h1 class="display rv rv-d1" style="max-width:16ch">' + esc(t.title) + '</h1>' +
       '</div></section>' +
       '<section><div class="wrap"><div class="stats rv">' +
-      stat(pct, "%", "Hafalan topik") + stat(list.length, "", "Statement") + stat(fu, "", "Soalan susulan") + stat(traps, "", "Statement TRAP") +
+      stat(pct, "%", "Topic memorised") + stat(list.length, "", "Statements") + stat(fu, "", "Follow-up questions") + stat(traps, "", "TRAP statements") +
       '</div></div></section>' +
       '<section class="section"><div class="wrap"><div class="grid-2">' +
-      modeCard("#/study/" + id, "MOD HAFALAN", "Baca → Tutup → Tulis", "Kitaran nota, jawab dan semak untuk setiap " + list.length + " statement dan soalan susulannya. Yang gagal diulang di hujung sesi.", "Mula sesi penuh") +
-      modeCard("#/quiz/" + id, "MOD KUIZ", "MCQ 20 saat", "Setiap statement keluar sekurang-kurangnya sekali sebagai soalan aneka pilihan, susunan rawak, dengan streak.", "Mula kuiz") +
-      (weak && weak < list.length ? modeCard("#/study/" + id + "/weak", "ULANG YANG LEMAH", weak + " statement belum dikuasai", "Hanya statement yang belum pernah dikuasai atau perlu ulang.", "Ulang sekarang") : "") +
-      (traps ? modeCard("#/quiz/" + id + "/trap", "KUIZ TRAP", "Trap bab ini sahaja", traps + " statement daripada bahagian TRAP / Common traps / Invalid headers dalam bab ini.", "Mula kuiz trap") : "") +
+      modeCard("#/study/" + id, "MEMORISE MODE", "Read → Hide → Write", "Note, answer and check for all " + list.length + " statements and their follow-ups. Anything you fail is repeated at the end of the session.", "Start full session") +
+      modeCard("#/quiz/" + id, "QUIZ MODE", "20-second MCQ", "Every statement appears at least once as a multiple-choice question, in random order, with streaks.", "Start quiz") +
+      (weak && weak < list.length ? modeCard("#/study/" + id + "/weak", "REVIEW WEAK SPOTS", weak + " statements not mastered yet", "Only statements you have not mastered yet or need to review.", "Review now") : "") +
+      (traps ? modeCard("#/quiz/" + id + "/trap", "TRAP QUIZ", "This chapter's traps only", traps + " statements from the TRAP / Common traps / Invalid headers sections of this chapter.", "Start trap quiz") : "") +
       '</div>' +
-      '<hr class="sep"><div class="eyebrow" style="margin-bottom:14px">KANDUNGAN BAB</div>' +
+      '<hr class="sep"><div class="eyebrow" style="margin-bottom:14px">CHAPTER CONTENTS</div>' +
       '<div class="list">' + list.map(function (s) {
         var p = PROG.stmts[s.id];
         return '<div class="list-item"><div><div class="meta"><span class="mono">' + esc(s.id) + '</span>' + (s.trap ? '<span class="tag trap">TRAP</span>' : '') + '<span>' + esc(s.section) + '</span></div></div>' +
-          '<div class="meta">' + (p ? (p.mastered ? '<span style="color:var(--ok)">✓ ' + p.score + '%</span>' : '<span style="color:var(--bad)">↻ ' + p.score + '%</span>') : '<span>belum</span>') + '</div></div>';
+          '<div class="meta">' + (p ? (p.mastered ? '<span style="color:var(--ok)">✓ ' + p.score + '%</span>' : '<span style="color:var(--bad)">↻ ' + p.score + '%</span>') : '<span>not yet</span>') + '</div></div>';
       }).join("") + '</div>' +
       '</div></section>';
   }
@@ -473,7 +473,7 @@
     if (!t) { location.hash = "#/"; return; }
     var list = stmtsOf(topicId);
     if (weakOnly) list = list.filter(function (s) { var p = PROG.stmts[s.id]; return !p || !p.mastered; });
-    if (!list.length) { app.innerHTML = emptyState("Tiada statement dalam topik ini.", "#/topic/" + topicId); return; }
+    if (!list.length) { app.innerHTML = emptyState("No statements in this topic.", "#/topic/" + topicId); return; }
     S = {
       topic: t, round: 1, queue: list.map(function (s) { return s.id; }), qi: 0, ii: 0,
       phase: "note", attempts: 0, input: "", last: null,
@@ -492,17 +492,17 @@
     var st = curStmt(), items = itemsOf(st);
     var doneUnits = S.qi / S.queue.length + (S.ii / items.length) / S.queue.length;
     var it = items[S.ii];
-    var phaseNames = [["note", "A · Nota"], ["answer", "B · Jawab"], ["check", "C · Semak"]];
+    var phaseNames = [["note", "A · Note"], ["answer", "B · Answer"], ["check", "C · Check"]];
     var ph = S.phase === "feedback" ? "check" : S.phase;
     return '<div class="study-top">' +
-      '<span class="eyebrow"><span class="tag" style="--tc:' + S.topic.color + '">BAB ' + esc(S.topic.no) + '</span>' + esc(S.topic.short) + (S.round > 1 ? ' · <span style="color:var(--near)">ULANGAN ' + (S.round - 1) + '</span>' : '') + '</span>' +
+      '<span class="eyebrow"><span class="tag" style="--tc:' + S.topic.color + '">CH ' + esc(S.topic.no) + '</span>' + esc(S.topic.short) + (S.round > 1 ? ' · <span style="color:var(--near)">REVIEW ROUND ' + (S.round - 1) + '</span>' : '') + '</span>' +
       '<div class="row"><div class="phases">' + phaseNames.map(function (p) { return '<span class="phase-pill' + (p[0] === ph ? ' on' : '') + '">' + p[1] + '</span>'; }).join("") + '</div>' +
-      '<button class="btn btn-ghost btn-sm" data-act="end">Tamat sesi</button></div>' +
+      '<button class="btn btn-ghost btn-sm" data-act="end">End session</button></div>' +
       '</div>' +
       '<div class="progress-line" aria-hidden="true"><span style="width:' + Math.round(doneUnits * 100) + '%"></span></div>' +
       '<div class="row" style="justify-content:space-between;margin-bottom:12px">' +
-      '<span class="counter">Nota ' + (S.qi + 1) + ' daripada ' + S.queue.length + (it.kind === "fu" ? ' · <span class="followup-tag">Soalan susulan ' + (it.fuIndex + 1) + '/' + it.fuTotal + '</span>' : '') + '</span>' +
-      '<span class="counter">' + esc(st.id) + (st.trap ? ' · <span style="color:var(--bad)">TRAP</span>' : '') + (/^x/.test(st.id) ? ' · <span style="color:var(--text-2)">TAMBAHAN LAB</span>' : '') + '</span></div>';
+      '<span class="counter">Note ' + (S.qi + 1) + ' of ' + S.queue.length + (it.kind === "fu" ? ' · <span class="followup-tag">Follow-up ' + (it.fuIndex + 1) + '/' + it.fuTotal + '</span>' : '') + '</span>' +
+      '<span class="counter">' + esc(st.id) + (st.trap ? ' · <span style="color:var(--bad)">TRAP</span>' : '') + (/^x/.test(st.id) ? ' · <span style="color:var(--text-2)">LAB EXTRA</span>' : '') + '</span></div>';
   }
 
   function renderStudy() {
@@ -511,22 +511,22 @@
     var body = "";
     if (S.phase === "note") {
       body = '<article class="card card-tc note-card" style="--tc:' + S.topic.color + '">' +
-        '<span class="eyebrow">' + (it.kind === "fu" ? 'NOTA SUSULAN · ' : '') + esc(st.section) + '</span>' +
-        '<h2 class="h2">' + (it.kind === "fu" ? "Konteks soalan susulan" : esc(sectionTitle(st.section))) + '</h2>' +
+        '<span class="eyebrow">' + (it.kind === "fu" ? 'FOLLOW-UP NOTE · ' : '') + esc(st.section) + '</span>' +
+        '<h2 class="h2">' + (it.kind === "fu" ? "Follow-up context" : esc(sectionTitle(st.section))) + '</h2>' +
         '<div class="rich">' + md(it.note) + '</div>' +
-        '<div class="actions"><button class="btn btn-primary" data-act="tested">Saya dah baca, uji saya <span class="arrow">→</span></button></div>' +
+        '<div class="actions"><button class="btn btn-primary" data-act="tested">I&rsquo;ve read it, test me <span class="arrow">→</span></button></div>' +
         '</article>';
     } else {
       var isCode = it.type === "exact" && (it.answer || []).some(function (a) { return CODE_RX.test(a); });
       var locked = S.phase === "feedback" && (S.last.verdict === "ok" || S.attempts >= 3);
       body = '<article class="card card-tc" style="--tc:' + S.topic.color + '">' +
-        '<div class="row" style="justify-content:space-between"><span class="eyebrow">' + (it.type === "exact" ? "JAWAPAN TEPAT" : "TERANGKAN DENGAN AYAT SENDIRI") + '</span>' +
-        '<span class="attempts" aria-label="Cubaan ' + S.attempts + ' daripada 3">Cubaan ' + [0, 1, 2].map(function (i) { return '<i class="' + (i < S.attempts ? 'used' : '') + '"></i>'; }).join("") + '</span></div>' +
+        '<div class="row" style="justify-content:space-between"><span class="eyebrow">' + (it.type === "exact" ? "EXACT ANSWER" : "EXPLAIN IN YOUR OWN WORDS") + '</span>' +
+        '<span class="attempts" aria-label="Attempt ' + S.attempts + ' of 3">Attempts ' + [0, 1, 2].map(function (i) { return '<i class="' + (i < S.attempts ? 'used' : '') + '"></i>'; }).join("") + '</span></div>' +
         '<div class="question">' + inline(it.question) + '</div>' +
-        '<label class="sr-only" for="ans">Jawapan anda</label>' +
-        '<textarea id="ans" class="answer-box' + (isCode ? ' code' : '') + '" placeholder="' + (it.type === "exact" ? "Taip jawapan tepat…" : "Tulis apa yang anda ingat dan faham…") + '"' + (locked ? ' readonly' : '') + ' spellcheck="false" autocapitalize="off" autocomplete="off">' + esc(S.input) + '</textarea>' +
-        '<div class="type-hint">' + (it.type === "exact" ? "Ruang berlebihan dan koma diabaikan. Untuk kod, simbol seperti == ; & ++ mesti tepat." : "Disemak dengan kata kunci (English atau Bahasa Melayu). ≥ 70% = BETUL.") + ' · Ctrl/⌘ + Enter untuk hantar.</div>' +
-        (S.phase === "feedback" ? feedbackHTML(st, it) : '<div class="actions"><button class="btn btn-primary" data-act="check">Semak jawapan</button></div>') +
+        '<label class="sr-only" for="ans">Your answer</label>' +
+        '<textarea id="ans" class="answer-box' + (isCode ? ' code' : '') + '" placeholder="' + (it.type === "exact" ? "Type the exact answer…" : "Write what you remember and understand…") + '"' + (locked ? ' readonly' : '') + ' spellcheck="false" autocapitalize="off" autocomplete="off">' + esc(S.input) + '</textarea>' +
+        '<div class="type-hint">' + (it.type === "exact" ? "Extra spaces and commas are ignored. For code, symbols such as == ; & ++ must be exact." : "Checked against keywords (English or Malay). ≥ 70% = CORRECT.") + ' · Ctrl/⌘ + Enter to submit.</div>' +
+        (S.phase === "feedback" ? feedbackHTML(st, it) : '<div class="actions"><button class="btn btn-primary" data-act="check">Check answer</button></div>') +
         '</article>';
     }
     app.innerHTML = '<section class="study"><div class="wrap"><div class="stage">' + studyHeader() + body + '</div></div></section>';
@@ -544,37 +544,37 @@
 
   function feedbackHTML(st, it) {
     var r = S.last, final = r.verdict === "ok" || S.attempts >= 3;
-    var label = r.verdict === "ok" ? "BETUL" : r.verdict === "near" ? "HAMPIR" : "SALAH";
+    var label = r.verdict === "ok" ? "CORRECT" : r.verdict === "near" ? "ALMOST" : "WRONG";
     var ico = r.verdict === "ok" ? "✓" : r.verdict === "near" ? "≈" : "✕";
     var h = '<div class="feedback ' + r.verdict + '" role="status" aria-live="polite">' +
       '<div class="verdict"><span class="ico" aria-hidden="true">' + ico + '</span>' + label +
-      (it.type === "explain" ? '<span class="pct">' + r.pct + '% kata kunci</span>' : '') + '</div>';
+      (it.type === "explain" ? '<span class="pct">' + r.pct + '% keywords</span>' : '') + '</div>';
     if (r.verdict === "ok") {
-      h += '<p class="fb-text">Markah item ini: <strong>' + ATTEMPT_SCORE[S.attempts - 1] + '%</strong> (cubaan ke-' + S.attempts + ').</p>';
+      h += '<p class="fb-text">Score for this item: <strong>' + ATTEMPT_SCORE[S.attempts - 1] + '%</strong> (attempt ' + S.attempts + ').</p>';
     } else if (!final) {
-      h += '<p class="fb-text">' + (r.empty ? "Jawapan kosong. " : "") + 'Cubaan ' + S.attempts + ' daripada 3. Cuba lagi.</p>';
+      h += '<p class="fb-text">' + (r.empty ? "Empty answer. " : "") + 'Attempt ' + S.attempts + ' of 3. Try again.</p>';
     } else {
-      h += '<p class="fb-text">3 cubaan habis. Item ini ditanda <strong>perlu ulang</strong>.</p>';
+      h += '<p class="fb-text">All 3 attempts used. This item is marked <strong>needs review</strong>.</p>';
     }
     if (it.type === "explain" && (r.found.length || r.missing.length)) {
       h += '<div class="chips">' + r.found.map(function (k) { return '<span class="chip hit">' + esc(k) + '</span>'; }).join("") +
         (final ? r.missing.map(function (k) { return '<span class="chip miss">' + esc(k) + '</span>'; }).join("")
-               : (r.missing.length ? '<span class="chip miss">' + r.missing.length + ' kata kunci tertinggal</span>' : '')) + '</div>';
+               : (r.missing.length ? '<span class="chip miss">' + r.missing.length + ' keyword(s) missing</span>' : '')) + '</div>';
     }
     if (!final && it.hint) h += '<div class="hint"><b>Hint</b>' + inline(it.hint) + '</div>';
     if (final) {
       if (r.verdict !== "ok") {
-        var ans = it.type === "exact" ? (it.answer || []).join("   atau   ") : it.answer;
-        if (ans) h += '<div class="reveal-box"><div class="eyebrow">JAWAPAN RUJUKAN</div><div class="ref-answer">' + esc(ans) + '</div></div>';
+        var ans = it.type === "exact" ? (it.answer || []).join("   or   ") : it.answer;
+        if (ans) h += '<div class="reveal-box"><div class="eyebrow">REFERENCE ANSWER</div><div class="ref-answer">' + esc(ans) + '</div></div>';
       } else if (it.type === "explain" && it.answer) {
-        h += '<div class="reveal-box"><div class="eyebrow">JAWAPAN RUJUKAN</div><div class="ref-answer">' + esc(it.answer) + '</div></div>';
+        h += '<div class="reveal-box"><div class="eyebrow">REFERENCE ANSWER</div><div class="ref-answer">' + esc(it.answer) + '</div></div>';
       }
-      h += '<div class="reveal-box"><div class="eyebrow">NOTA ASAL UNTUK PERBANDINGAN</div><div class="rich">' + md(it.note) + '</div></div>';
+      h += '<div class="reveal-box"><div class="eyebrow">ORIGINAL NOTE FOR COMPARISON</div><div class="rich">' + md(it.note) + '</div></div>';
     }
     h += '</div>';
     h += final
-      ? '<div class="actions"><button class="btn btn-primary" data-act="next">Seterusnya <span class="arrow">→</span></button></div>'
-      : '<div class="actions"><button class="btn btn-primary" data-act="retry">Cuba lagi</button></div>';
+      ? '<div class="actions"><button class="btn btn-primary" data-act="next">Next <span class="arrow">→</span></button></div>'
+      : '<div class="actions"><button class="btn btn-primary" data-act="retry">Try again</button></div>';
     return h;
   }
 
@@ -584,7 +584,7 @@
     else if (act === "check") doCheck();
     else if (act === "retry") { S.phase = "answer"; renderStudy(); }
     else if (act === "next") nextItem();
-    else if (act === "end") { if (confirm("Tamatkan sesi sekarang? Item yang belum dijawab tidak dikira.")) finishStudy(true); }
+    else if (act === "end") { if (confirm("End the session now? Unanswered items will not be counted.")) finishStudy(true); }
   }
 
   function doCheck() {
@@ -621,10 +621,10 @@
     if (failed.length) {
       var n = failed.length;
       app.innerHTML = '<section class="study"><div class="wrap"><div class="stage interstitial">' +
-        '<span class="eyebrow"><span class="dot"></span>' + (S.round === 1 ? 'PUSINGAN PERTAMA SELESAI' : 'ULANGAN ' + (S.round - 1) + ' SELESAI') + '</span>' +
-        '<h1 class="display">' + n + ' perlu ulang.</h1>' +
-        '<p class="lead" style="margin:0 auto">Statement ini akan diulang bermula dengan FASA NOTA. Markah sesi dikira daripada pusingan pertama.</p>' +
-        '<div class="row" style="justify-content:center;margin-top:28px"><button class="btn btn-primary" data-r="go">Ulang sekarang <span class="arrow">→</span></button><button class="btn btn-ghost" data-r="end">Lihat keputusan</button></div>' +
+        '<span class="eyebrow"><span class="dot"></span>' + (S.round === 1 ? 'FIRST ROUND DONE' : 'REVIEW ROUND ' + (S.round - 1) + ' DONE') + '</span>' +
+        '<h1 class="display">' + n + ' to review.</h1>' +
+        '<p class="lead" style="margin:0 auto">These statements are repeated, starting again from the NOTE phase. The session score comes from the first round.</p>' +
+        '<div class="row" style="justify-content:center;margin-top:28px"><button class="btn btn-primary" data-r="go">Review now <span class="arrow">→</span></button><button class="btn btn-ghost" data-r="end">See results</button></div>' +
         '</div></div></section>';
       $('[data-r="go"]', app).addEventListener("click", function () {
         S.round++; S.queue = failed; S.qi = 0; S.ii = 0; S.phase = "note"; S.attempts = 0; S.input = ""; S.roundFailed = {};
@@ -654,10 +654,10 @@
     var pct = count ? Math.round(sum / count) : 0;
     renderResults({
       kind: "study", topic: t, pct: pct, early: early,
-      stats: [[topicMastery(t.id) + "%", "Hafalan topik"], [mastered.length, "Dikuasai"], [redo.length, "Perlu ulang"]],
+      stats: [[topicMastery(t.id) + "%", "Topic memorised"], [mastered.length, "Mastered"], [redo.length, "Needs review"]],
       groups: [
-        { title: "Dikuasai", color: "var(--ok)", items: mastered.map(function (m) { return { id: m.st.id, q: m.st.question, sc: m.score + "%" }; }) },
-        { title: "Perlu ulang", color: "var(--bad)", items: redo.map(function (m) { return { id: m.st.id, q: m.st.question, sc: m.score + "%" + (m.reviewOk ? " · lulus ulangan" : "") }; }) }
+        { title: "Mastered", color: "var(--ok)", items: mastered.map(function (m) { return { id: m.st.id, q: m.st.question, sc: m.score + "%" }; }) },
+        { title: "Needs review", color: "var(--bad)", items: redo.map(function (m) { return { id: m.st.id, q: m.st.question, sc: m.score + "%" + (m.reviewOk ? " · passed review" : "") }; }) }
       ],
       again: "#/study/" + t.id + (redo.length ? "/weak" : "")
     });
@@ -668,17 +668,17 @@
   function renderResults(o) {
     var t = o.topic;
     app.innerHTML = '<section class="result-hero"><div class="wrap">' +
-      '<span class="eyebrow rv">' + (t ? '<span class="tag" style="--tc:' + t.color + '">BAB ' + esc(t.no) + '</span>' + esc(t.short) : '<span class="tag trap">TRAP</span>SEMUA BAB') + ' · ' + (o.kind === "study" ? "KEPUTUSAN SESI HAFALAN" : "KEPUTUSAN KUIZ") + '</span>' +
+      '<span class="eyebrow rv">' + (t ? '<span class="tag" style="--tc:' + t.color + '">CH ' + esc(t.no) + '</span>' + esc(t.short) : '<span class="tag trap">TRAP</span>ALL CHAPTERS') + ' · ' + (o.kind === "study" ? "MEMORISE SESSION RESULTS" : "QUIZ RESULTS") + '</span>' +
       '<div class="giant rv rv-d1"><span data-count="' + o.pct + '">' + o.pct + '</span><small>%</small></div>' +
-      '<p class="lead rv rv-d2">' + (o.kind === "study" ? "Markah sesi (1st = 100%, 2nd = 60%, 3rd = 30%, gagal = 0%)." : "Jawapan betul daripada semua soalan.") + (o.early ? " Sesi ditamatkan awal; hanya statement yang lengkap dikira." : "") + '</p>' +
+      '<p class="lead rv rv-d2">' + (o.kind === "study" ? "Session score (1st try = 100%, 2nd = 60%, 3rd = 30%, failed = 0%)." : "Correct answers out of all questions.") + (o.early ? " Session ended early; only completed statements are counted." : "") + '</p>' +
       '<div class="result-stats rv">' + o.stats.map(function (s) { return '<div><span class="num"' + (typeof s[0] === "number" ? ' data-count="' + s[0] + '"' : '') + '>' + esc(s[0]) + '</span><div class="eyebrow">' + esc(s[1]) + '</div></div>'; }).join("") + '</div>' +
       o.groups.map(function (g, gi) {
         return '<details class="acc rv"' + (gi === 1 && g.items.length ? ' open' : '') + '><summary><span class="sw" style="background:' + g.color + '"></span>' + esc(g.title) + ' <span class="count">' + g.items.length + '</span><span class="plus" aria-hidden="true">+</span></summary>' +
-          (g.items.length ? '<ul class="acc-list">' + g.items.map(function (i) { return '<li><span class="sid">' + esc(i.id) + '</span><span class="q">' + inline(i.q) + '</span><span class="sc">' + esc(i.sc) + '</span></li>'; }).join("") + '</ul>' : '<p style="color:var(--text-2);margin:0 0 22px">Tiada.</p>') +
+          (g.items.length ? '<ul class="acc-list">' + g.items.map(function (i) { return '<li><span class="sid">' + esc(i.id) + '</span><span class="q">' + inline(i.q) + '</span><span class="sc">' + esc(i.sc) + '</span></li>'; }).join("") + '</ul>' : '<p style="color:var(--text-2);margin:0 0 22px">None.</p>') +
           '</details>';
       }).join("") +
-      '<div class="row" style="margin-top:32px"><a class="btn btn-primary" href="' + o.again + '">Ulang lagi <span class="arrow">→</span></a>' +
-      (t ? '<a class="btn btn-ghost" href="#/topic/' + t.id + '">Kembali ke topik</a>' : '') + '<a class="btn btn-ghost" href="#/">Halaman utama</a></div>' +
+      '<div class="row" style="margin-top:32px"><a class="btn btn-primary" href="' + o.again + '">Go again <span class="arrow">→</span></a>' +
+      (t ? '<a class="btn btn-ghost" href="#/topic/' + t.id + '">Back to topic</a>' : '') + '<a class="btn btn-ghost" href="#/">Home</a></div>' +
       '</div></section>';
     revealAll(); countUp(app); window.scrollTo(0, 0);
   }
@@ -695,7 +695,7 @@
       if (trapOnly) list = list.filter(function (s) { return s.trap; });
     }
     list = list.filter(function (s) { return s.mcq && s.mcq.options && s.mcq.options.length >= 2; });
-    if (!list.length) { app.innerHTML = emptyState("Tiada soalan MCQ untuk kuiz ini.", t ? "#/topic/" + t.id : "#/"); return; }
+    if (!list.length) { app.innerHTML = emptyState("No MCQ questions for this quiz.", t ? "#/topic/" + t.id : "#/"); return; }
     Q = { topic: t, trap: trapOnly, scope: scope, list: shuffle(list), i: 0, correct: 0, streak: 0, best: 0, wrong: [], right: [], timer: null, answered: false };
     renderQuizQ();
     cleanup = function () { if (Q && Q.timer) cancelAnimationFrame(Q.timer); Q = null; };
@@ -706,21 +706,21 @@
     var opts = s.mcq.options.map(function (o, idx) { return { text: o, correct: idx === (s.mcq.correct || 0) }; });
     Q.opts = shuffle(opts); Q.answered = false;
     app.innerHTML = '<section class="study"><div class="wrap"><div class="stage">' +
-      '<div class="quiz-head"><span class="eyebrow">' + (Q.trap ? '<span class="tag trap">KUIZ TRAP</span>' : '') + '<span class="tag" style="--tc:' + tp.color + '">BAB ' + esc(tp.no) + '</span>' + esc(tp.short) + '</span>' +
+      '<div class="quiz-head"><span class="eyebrow">' + (Q.trap ? '<span class="tag trap">TRAP QUIZ</span>' : '') + '<span class="tag" style="--tc:' + tp.color + '">CH ' + esc(tp.no) + '</span>' + esc(tp.short) + '</span>' +
       '<span class="streak" id="streak"><span class="flame" aria-hidden="true">🔥</span><span>' + Q.streak + '</span><span class="sr-only">streak</span></span></div>' +
-      '<div class="row" style="justify-content:space-between;margin-bottom:10px"><span class="counter">Soalan ' + (Q.i + 1) + ' daripada ' + Q.list.length + '</span><span class="counter" id="secs">' + QUIZ_SECONDS + 's</span></div>' +
+      '<div class="row" style="justify-content:space-between;margin-bottom:10px"><span class="counter">Question ' + (Q.i + 1) + ' of ' + Q.list.length + '</span><span class="counter" id="secs">' + QUIZ_SECONDS + 's</span></div>' +
       '<div class="timer" id="timer"><span></span></div>' +
       '<article class="card card-tc" style="--tc:' + tp.color + '">' +
       '<div class="question">' + inline(s.mcq.question) + '</div>' +
-      '<div class="options" role="group" aria-label="Pilihan jawapan">' + Q.opts.map(function (o, i) {
+      '<div class="options" role="group" aria-label="Answer options">' + Q.opts.map(function (o, i) {
         return '<button class="opt" data-i="' + i + '"><span class="k">' + "ABCD"[i] + '</span><span>' + inline(o.text) + '</span></button>';
       }).join("") + '</div>' +
       '<div id="qfb"></div>' +
       '</article>' +
-      '<div class="row" style="justify-content:flex-end;margin-top:16px"><button class="btn btn-ghost btn-sm" id="qend">Tamat kuiz</button></div>' +
+      '<div class="row" style="justify-content:flex-end;margin-top:16px"><button class="btn btn-ghost btn-sm" id="qend">End quiz</button></div>' +
       '</div></div></section>';
     $all(".opt", app).forEach(function (b) { b.addEventListener("click", function () { answerQuiz(parseInt(b.getAttribute("data-i"), 10)); }); });
-    $("#qend", app).addEventListener("click", function () { if (confirm("Tamatkan kuiz sekarang?")) finishQuiz(); });
+    $("#qend", app).addEventListener("click", function () { if (confirm("End the quiz now?")) finishQuiz(); });
     startTimer();
   }
   function startTimer() {
@@ -758,10 +758,10 @@
       $("#streak", app).querySelector("span:nth-child(2)").textContent = 0;
     }
     if (Q.best > PROG.bestStreak) { PROG.bestStreak = Q.best; saveProg(); }
-    fb.innerHTML = '<div class="feedback ' + (ok ? "ok" : "bad") + '" role="status"><div class="verdict"><span class="ico" aria-hidden="true">' + (ok ? "✓" : "✕") + '</span>' + (ok ? "BETUL" : (i < 0 ? "MASA TAMAT" : "SALAH")) + '</div>' +
-      (ok ? '' : '<p class="fb-text">Jawapan betul: <strong>' + inline(correctText) + '</strong></p>') +
-      '<div class="reveal-box"><div class="eyebrow">NOTA · ' + esc(s.id) + ' · ' + esc(s.section) + '</div><div class="rich">' + md(s.text) + '</div></div></div>' +
-      '<div class="actions"><button class="btn btn-primary" id="qnext">' + (Q.i + 1 < Q.list.length ? 'Seterusnya <span class="arrow">→</span>' : 'Lihat keputusan') + '</button></div>';
+    fb.innerHTML = '<div class="feedback ' + (ok ? "ok" : "bad") + '" role="status"><div class="verdict"><span class="ico" aria-hidden="true">' + (ok ? "✓" : "✕") + '</span>' + (ok ? "CORRECT" : (i < 0 ? "TIME'S UP" : "WRONG")) + '</div>' +
+      (ok ? '' : '<p class="fb-text">Correct answer: <strong>' + inline(correctText) + '</strong></p>') +
+      '<div class="reveal-box"><div class="eyebrow">NOTE · ' + esc(s.id) + ' · ' + esc(s.section) + '</div><div class="rich">' + md(s.text) + '</div></div></div>' +
+      '<div class="actions"><button class="btn btn-primary" id="qnext">' + (Q.i + 1 < Q.list.length ? 'Next <span class="arrow">→</span>' : 'See results') + '</button></div>';
     var nb = $("#qnext", app);
     nb.addEventListener("click", function () { Q.i++; if (Q.i < Q.list.length) { renderQuizQ(); window.scrollTo(0, 0); } else finishQuiz(); });
     nb.focus({ preventScroll: true });
@@ -776,10 +776,10 @@
     var o = Q;
     renderResults({
       kind: "quiz", topic: o.topic, pct: pct, early: asked < o.list.length,
-      stats: [[o.correct + "/" + asked, "Betul"], [o.best, "Streak terbaik"], [PROG.bestStreak, "Rekod streak"]],
+      stats: [[o.correct + "/" + asked, "Correct"], [o.best, "Best streak"], [PROG.bestStreak, "Streak record"]],
       groups: [
-        { title: "Betul", color: "var(--ok)", items: o.right.map(function (s) { return { id: s.id, q: s.mcq.question, sc: "✓" }; }) },
-        { title: "Perlu ulang", color: "var(--bad)", items: o.wrong.map(function (s) { return { id: s.id, q: s.mcq.question, sc: "✕" }; }) }
+        { title: "Correct", color: "var(--ok)", items: o.right.map(function (s) { return { id: s.id, q: s.mcq.question, sc: "✓" }; }) },
+        { title: "Needs review", color: "var(--bad)", items: o.wrong.map(function (s) { return { id: s.id, q: s.mcq.question, sc: "✕" }; }) }
       ],
       again: "#/quiz/" + o.scope + (o.trap && o.scope !== "trap" ? "/trap" : "")
     });
@@ -787,7 +787,7 @@
   }
 
   function emptyState(msg, back) {
-    return '<section class="hero"><div class="wrap"><h1 class="h2">' + esc(msg) + '</h1><div class="row" style="margin-top:24px"><a class="btn btn-ghost" href="' + back + '">Kembali</a></div></div></section>';
+    return '<section class="hero"><div class="wrap"><h1 class="h2">' + esc(msg) + '</h1><div class="row" style="margin-top:24px"><a class="btn btn-ghost" href="' + back + '">Back</a></div></div></section>';
   }
 
   // ---------------------------------------------------------------- MANAGE (CRUD + import/export)
@@ -803,26 +803,26 @@
       return true;
     });
     app.innerHTML = '<section class="hero" style="padding-bottom:20px"><div class="wrap">' +
-      '<span class="eyebrow rv"><span class="dot"></span>URUS NOTA</span>' +
-      '<h1 class="display rv rv-d1" style="font-size:clamp(2.4rem,6vw,4.6rem)">Tambah, edit, padam.</h1>' +
-      '<p class="lead rv rv-d2">' + DATA.statements.length + ' statement. ' + (isCustomData() ? 'Anda sedang guna data yang telah diubah (disimpan dalam localStorage).' : 'Anda sedang guna data asal daripada data.js.') + '</p>' +
-      (customOutdated ? '<div class="notice err" style="margin-top:16px">Data dalam pelayar ini lebih lama daripada data.js terkini (nota PDF penuh). Export dahulu jika perlu, kemudian tekan <b>Reset ke data asal</b>.</div>' : '') +
-      '<div class="toolbar"><a class="btn btn-primary" href="#/manage/new">+ Tambah statement</a>' +
+      '<span class="eyebrow rv"><span class="dot"></span>MANAGE NOTES</span>' +
+      '<h1 class="display rv rv-d1" style="font-size:clamp(2.4rem,6vw,4.6rem)">Add, edit, delete.</h1>' +
+      '<p class="lead rv rv-d2">' + DATA.statements.length + ' statements. ' + (isCustomData() ? 'You are using edited data (saved in localStorage).' : 'You are using the original data from data.js.') + '</p>' +
+      (customOutdated ? '<div class="notice err" style="margin-top:16px">The data saved in this browser is older than the current data.js. Export it first if you need it, then press <b>Reset to original data</b>.</div>' : '') +
+      '<div class="toolbar"><a class="btn btn-primary" href="#/manage/new">+ Add statement</a>' +
       '<button class="btn btn-ghost" id="exp">Export JSON</button>' +
       '<label class="btn btn-ghost" for="imp" style="cursor:pointer">Import JSON</label><input type="file" id="imp" accept=".json,application/json" class="sr-only">' +
-      '<button class="btn btn-danger" id="reset">Reset ke data asal</button>' +
-      '<button class="btn btn-danger" id="resetp">Padam kemajuan</button></div>' +
-      '<div class="grid-2"><div class="field"><label for="ft">Topik</label><select id="ft" class="select"><option value="">Semua topik</option>' +
+      '<button class="btn btn-danger" id="reset">Reset to original data</button>' +
+      '<button class="btn btn-danger" id="resetp">Clear progress</button></div>' +
+      '<div class="grid-2"><div class="field"><label for="ft">Topic</label><select id="ft" class="select"><option value="">All topics</option>' +
       DATA.topics.map(function (t) { return '<option value="' + t.id + '"' + (manageFilter.topic === t.id ? ' selected' : '') + '>' + esc(t.no + " · " + t.title) + '</option>'; }).join("") + '</select></div>' +
-      '<div class="field"><label for="fq">Cari</label><input id="fq" class="input" type="search" value="' + esc(manageFilter.q) + '" placeholder="ID, soalan atau isi nota"></div></div>' +
+      '<div class="field"><label for="fq">Search</label><input id="fq" class="input" type="search" value="' + esc(manageFilter.q) + '" placeholder="ID, question or note text"></div></div>' +
       '</div></section>' +
       '<section style="padding-bottom:80px"><div class="wrap"><div class="list">' +
       list.map(function (s) {
         var t = topicById(s.topic) || { color: "#666", no: "?" };
-        return '<div class="list-item"><div><div class="meta"><span class="tag" style="--tc:' + t.color + '">BAB ' + esc(t.no) + '</span><span class="mono">' + esc(s.id) + '</span>' + (s.trap ? '<span class="tag trap">TRAP</span>' : '') + '<span>' + esc(s.type) + '</span><span>' + (s.followUps || []).length + ' susulan</span></div>' +
+        return '<div class="list-item"><div><div class="meta"><span class="tag" style="--tc:' + t.color + '">CH ' + esc(t.no) + '</span><span class="mono">' + esc(s.id) + '</span>' + (s.trap ? '<span class="tag trap">TRAP</span>' : '') + '<span>' + esc(s.type) + '</span><span>' + (s.followUps || []).length + ' follow-ups</span></div>' +
           '<div class="q">' + inline(s.question) + '</div></div>' +
-          '<div class="row"><a class="btn btn-ghost btn-sm" href="#/manage/' + encodeURIComponent(s.id) + '">Edit</a><button class="btn btn-danger btn-sm" data-del="' + esc(s.id) + '">Padam</button></div></div>';
-      }).join("") + (list.length ? '' : '<p style="color:var(--text-2);padding:20px 0">Tiada statement sepadan.</p>') +
+          '<div class="row"><a class="btn btn-ghost btn-sm" href="#/manage/' + encodeURIComponent(s.id) + '">Edit</a><button class="btn btn-danger btn-sm" data-del="' + esc(s.id) + '">Delete</button></div></div>';
+      }).join("") + (list.length ? '' : '<p style="color:var(--text-2);padding:20px 0">No matching statements.</p>') +
       '</div></div></section>';
 
     $("#ft", app).addEventListener("change", function (e) { manageFilter.topic = e.target.value; route(); });
@@ -833,20 +833,20 @@
     $all("[data-del]", app).forEach(function (b) {
       b.addEventListener("click", function () {
         var id = b.getAttribute("data-del");
-        if (!confirm("Padam statement " + id + "?")) return;
+        if (!confirm("Delete statement " + id + "?")) return;
         DATA.statements = DATA.statements.filter(function (s) { return s.id !== id; });
-        saveData(); toast("Statement " + id + " dipadam"); route();
+        saveData(); toast("Statement " + id + " deleted"); route();
       });
     });
     $("#exp", app).addEventListener("click", exportJSON);
     $("#imp", app).addEventListener("change", importJSON);
     $("#reset", app).addEventListener("click", function () {
-      if (!confirm("Buang semua perubahan dan kembali ke data asal data.js?")) return;
-      lsDel(KEY_DATA); DATA = clone(DEFAULT); toast("Data asal dipulihkan"); route();
+      if (!confirm("Discard all changes and go back to the original data.js?")) return;
+      lsDel(KEY_DATA); DATA = clone(DEFAULT); toast("Original data restored"); route();
     });
     $("#resetp", app).addEventListener("click", function () {
-      if (!confirm("Padam semua kemajuan hafalan, streak dan bilangan sesi?")) return;
-      PROG = { stmts: {}, sessions: 0, bestStreak: 0 }; saveProg(); toast("Kemajuan dipadam");
+      if (!confirm("Clear all memorisation progress, streaks and session count?")) return;
+      PROG = { stmts: {}, sessions: 0, bestStreak: 0 }; saveProg(); toast("Progress cleared");
     });
   }
   function exportJSON() {
@@ -856,7 +856,7 @@
     a.download = "scse1013-notes-" + new Date().toISOString().slice(0, 10) + ".json";
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
-    toast("Fail JSON dimuat turun");
+    toast("JSON file downloaded");
   }
   function importJSON(e) {
     var f = e.target.files && e.target.files[0];
@@ -866,28 +866,28 @@
       try {
         var d = JSON.parse(rd.result);
         if (Array.isArray(d)) d = { topics: DATA.topics, statements: d };
-        if (!d || !Array.isArray(d.statements)) throw new Error("Tiada senarai 'statements'.");
+        if (!d || !Array.isArray(d.statements)) throw new Error("No 'statements' list found.");
         d.statements.forEach(function (s, i) {
           var err = validateStmt(s, d.statements.slice(0, i).map(function (x) { return x.id; }));
           if (err) throw new Error((s && s.id ? s.id : "#" + (i + 1)) + ": " + err);
         });
         if (!Array.isArray(d.topics) || !d.topics.length) d.topics = DATA.topics;
-        DATA = d; saveData(); toast("Import berjaya: " + d.statements.length + " statement"); route();
-      } catch (err) { alert("Import gagal. " + err.message); }
+        DATA = d; saveData(); toast("Imported " + d.statements.length + " statements"); route();
+      } catch (err) { alert("Import failed. " + err.message); }
     };
     rd.readAsText(f);
   }
   function validateStmt(s, takenIds) {
     if (!s || typeof s !== "object") return "bukan objek";
-    if (!s.id || !/^[A-Za-z0-9_-]+$/.test(s.id)) return "id mesti huruf/nombor/_/- sahaja";
-    if (takenIds.indexOf(s.id) >= 0) return "id berulang";
-    if (!topicById(s.topic) && !(DATA.topics || []).length) return "topik tidak sah";
-    if (!s.text || !s.question) return "text dan question wajib";
-    if (s.type !== "explain" && s.type !== "exact") return "type mesti explain atau exact";
-    if (s.type === "explain" && !(s.keywords || []).length) return "explain perlu sekurang-kurangnya satu keyword";
-    if (s.type === "exact" && !(Array.isArray(s.answer) && s.answer.length)) return "exact perlu senarai answer";
-    if (s.followUps && !Array.isArray(s.followUps)) return "followUps mesti array";
-    if (s.mcq && !(Array.isArray(s.mcq.options) && s.mcq.options.length === 4)) return "mcq perlu 4 pilihan";
+    if (!s.id || !/^[A-Za-z0-9_-]+$/.test(s.id)) return "id must use only letters, digits, _ or -";
+    if (takenIds.indexOf(s.id) >= 0) return "duplicate id";
+    if (!topicById(s.topic) && !(DATA.topics || []).length) return "invalid topic";
+    if (!s.text || !s.question) return "text and question are required";
+    if (s.type !== "explain" && s.type !== "exact") return "type must be explain or exact";
+    if (s.type === "explain" && !(s.keywords || []).length) return "explain needs at least one keyword";
+    if (s.type === "exact" && !(Array.isArray(s.answer) && s.answer.length)) return "exact needs a list of answers";
+    if (s.followUps && !Array.isArray(s.followUps)) return "followUps must be an array";
+    if (s.mcq && !(Array.isArray(s.mcq.options) && s.mcq.options.length === 4)) return "mcq needs 4 options";
     return null;
   }
 
@@ -902,28 +902,28 @@
     while (wrongs.length < 3) wrongs.push("");
     var answerText = Array.isArray(s.answer) ? s.answer.join("\n") : (s.answer || "");
     app.innerHTML = '<section class="hero" style="padding-bottom:16px"><div class="wrap">' +
-      '<span class="eyebrow"><span class="dot"></span>URUS NOTA · ' + (isNew ? "STATEMENT BARU" : "EDIT " + esc(s.id)) + '</span>' +
-      '<h1 class="h2" style="margin-top:14px">' + (isNew ? "Tambah statement" : "Edit statement") + '</h1></div></section>' +
+      '<span class="eyebrow"><span class="dot"></span>MANAGE NOTES · ' + (isNew ? "NEW STATEMENT" : "EDIT " + esc(s.id)) + '</span>' +
+      '<h1 class="h2" style="margin-top:14px">' + (isNew ? "Add statement" : "Edit statement") + '</h1></div></section>' +
       '<section style="padding-bottom:80px"><div class="wrap"><form id="ed" class="card" novalidate>' +
       '<div class="grid-2">' +
-      fld("ID", '<input class="input mono" name="id" required value="' + esc(s.id) + '" placeholder="cp99">', "Unik. Huruf, nombor, _ atau -.") +
-      fld("Topik", '<select class="select" name="topic">' + DATA.topics.map(function (t) { return '<option value="' + t.id + '"' + (t.id === s.topic ? ' selected' : '') + '>' + esc(t.no + " · " + t.title) + '</option>'; }).join("") + '</select>') +
-      fld("Bahagian (tajuk kecil PDF)", '<input class="input" name="section" value="' + esc(s.section) + '" placeholder="3.8 Arithmetic operators">') +
-      fld("Jenis soalan", '<select class="select" name="type"><option value="explain"' + (s.type === "explain" ? ' selected' : '') + '>explain: ayat sendiri (kata kunci)</option><option value="exact"' + (s.type === "exact" ? ' selected' : '') + '>exact: jawapan tepat</option></select>') +
+      fld("ID", '<input class="input mono" name="id" required value="' + esc(s.id) + '" placeholder="cp99">', "Unique. Letters, digits, _ or -.") +
+      fld("Topic", '<select class="select" name="topic">' + DATA.topics.map(function (t) { return '<option value="' + t.id + '"' + (t.id === s.topic ? ' selected' : '') + '>' + esc(t.no + " · " + t.title) + '</option>'; }).join("") + '</select>') +
+      fld("Section (PDF sub-heading)", '<input class="input" name="section" value="' + esc(s.section) + '" placeholder="3.8 Arithmetic operators">') +
+      fld("Question type", '<select class="select" name="type"><option value="explain"' + (s.type === "explain" ? ' selected' : '') + '>explain: own words (keywords)</option><option value="exact"' + (s.type === "exact" ? ' selected' : '') + '>exact: exact answer</option></select>') +
       '</div>' +
-      '<div class="check"><input type="checkbox" id="trap" name="trap"' + (s.trap ? ' checked' : '') + '><label for="trap">Bahagian TRAP / Common traps / Invalid headers (masuk Kuiz Trap)</label></div>' +
-      fld("Nota (text)", '<textarea class="textarea" name="text" rows="9">' + esc(s.text) + '</textarea>', "Format: **tebal**, `kod`, baris bermula - untuk senarai, | untuk jadual, ``` untuk blok kod C++.") +
-      fld("Soalan", '<textarea class="textarea" name="question" rows="2">' + esc(s.question) + '</textarea>') +
-      fld("Keywords (explain)", '<textarea class="textarea" name="keywords" rows="4" placeholder="decomposition|pecahkan|bahagi kepada bahagian kecil">' + esc((s.keywords || []).join("\n")) + '</textarea>', "Satu kata kunci wajib setiap baris. Sinonim dipisah dengan | (English dan Bahasa Melayu).") +
-      fld("Jawapan", '<textarea class="textarea" name="answer" rows="3">' + esc(answerText) + '</textarea>', "explain: jawapan rujukan. exact: satu jawapan diterima setiap baris (contoh 10 9 8 dan 10, 9, 8).") +
-      fld("Hint", '<input class="input" name="hint" value="' + esc(s.hint) + '">', "Petunjuk tanpa memberi jawapan.") +
-      fld("Soalan susulan (JSON)", '<textarea class="textarea" name="followUps" rows="10">' + esc(JSON.stringify(s.followUps || [], null, 2)) + '</textarea>', 'Array 1–3 objek: {"note","question","type":"exact"|"explain","answer":[…] atau "…","keywords":[…],"hint"}.') +
-      '<hr class="sep"><div class="eyebrow" style="margin-bottom:14px">MCQ (4 PILIHAN)</div>' +
-      fld("Soalan MCQ", '<input class="input" name="mq" value="' + esc(mcq.question) + '">') +
-      fld("Pilihan BETUL", '<input class="input" name="mc" value="' + esc(correct) + '">') +
-      '<div class="grid-2">' + wrongs.slice(0, 3).map(function (w, i) { return fld("Pilihan salah " + (i + 1), '<input class="input" name="mw' + i + '" value="' + esc(w) + '">'); }).join("") + '</div>' +
+      '<div class="check"><input type="checkbox" id="trap" name="trap"' + (s.trap ? ' checked' : '') + '><label for="trap">TRAP / Common traps / Invalid headers section (included in Trap Quiz)</label></div>' +
+      fld("Note (text)", '<textarea class="textarea" name="text" rows="9">' + esc(s.text) + '</textarea>', "Format: **bold**, `code`, lines starting with - for lists, | for tables, ``` for C++ code blocks.") +
+      fld("Question", '<textarea class="textarea" name="question" rows="2">' + esc(s.question) + '</textarea>') +
+      fld("Keywords (explain)", '<textarea class="textarea" name="keywords" rows="4" placeholder="decomposition|break into parts|pecahkan">' + esc((s.keywords || []).join("\n")) + '</textarea>', "One required keyword per line. Separate synonyms with | (English and Malay).") +
+      fld("Answer", '<textarea class="textarea" name="answer" rows="3">' + esc(answerText) + '</textarea>', "explain: reference answer. exact: one accepted answer per line (e.g. 10 9 8 and 10, 9, 8).") +
+      fld("Hint", '<input class="input" name="hint" value="' + esc(s.hint) + '">', "A clue that does not give the answer away.") +
+      fld("Follow-up questions (JSON)", '<textarea class="textarea" name="followUps" rows="10">' + esc(JSON.stringify(s.followUps || [], null, 2)) + '</textarea>', 'Array of 1–3 objects: {"note","question","type":"exact"|"explain","answer":[…] or "…","keywords":[…],"hint"}.') +
+      '<hr class="sep"><div class="eyebrow" style="margin-bottom:14px">MCQ (4 OPTIONS)</div>' +
+      fld("MCQ question", '<input class="input" name="mq" value="' + esc(mcq.question) + '">') +
+      fld("CORRECT option", '<input class="input" name="mc" value="' + esc(correct) + '">') +
+      '<div class="grid-2">' + wrongs.slice(0, 3).map(function (w, i) { return fld("Wrong option " + (i + 1), '<input class="input" name="mw' + i + '" value="' + esc(w) + '">'); }).join("") + '</div>' +
       '<div id="edErr"></div>' +
-      '<div class="actions"><button class="btn btn-primary" type="submit">Simpan</button><a class="btn btn-ghost" href="#/manage">Batal</a></div>' +
+      '<div class="actions"><button class="btn btn-primary" type="submit">Save</button><a class="btn btn-ghost" href="#/manage">Cancel</a></div>' +
       '</form></div></section>';
     $("#ed", app).addEventListener("submit", function (e) {
       e.preventDefault();
@@ -938,18 +938,18 @@
       ns.answer = ns.type === "exact" ? ansLines : f.answer.value.trim();
       if (ns.type === "exact") ns.keywords = [];
       try { ns.followUps = JSON.parse(f.followUps.value || "[]"); }
-      catch (x) { err.innerHTML = '<div class="notice err">Soalan susulan: JSON tidak sah (' + esc(x.message) + ').</div>'; return; }
+      catch (x) { err.innerHTML = '<div class="notice err">Follow-ups: invalid JSON (' + esc(x.message) + ').</div>'; return; }
       var opts = [f.mc.value.trim(), f.mw0.value.trim(), f.mw1.value.trim(), f.mw2.value.trim()];
       ns.mcq = { question: f.mq.value.trim(), options: opts, correct: 0 };
       var taken = DATA.statements.filter(function (x) { return !s || x.id !== (isNew ? "\u0000" : id); }).map(function (x) { return x.id; });
       var msg = validateStmt(ns, taken);
-      if (!msg && ns.mcq.question && opts.some(function (o) { return !o; })) msg = "MCQ perlu 4 pilihan yang diisi";
-      if (!msg && !ns.mcq.question) msg = "MCQ wajib (soalan dan 4 pilihan)";
+      if (!msg && ns.mcq.question && opts.some(function (o) { return !o; })) msg = "MCQ needs all 4 options filled in";
+      if (!msg && !ns.mcq.question) msg = "MCQ is required (question and 4 options)";
       if (!msg) (ns.followUps || []).forEach(function (fu, i) {
         if (msg) return;
-        if (!fu.note || !fu.question) msg = "Soalan susulan " + (i + 1) + ": note dan question wajib";
-        else if (fu.type === "exact" && !(Array.isArray(fu.answer) && fu.answer.length)) msg = "Soalan susulan " + (i + 1) + ": exact perlu senarai answer";
-        else if (fu.type !== "exact" && !(fu.keywords || []).length) msg = "Soalan susulan " + (i + 1) + ": explain perlu keywords";
+        if (!fu.note || !fu.question) msg = "Follow-up " + (i + 1) + ": note and question are required";
+        else if (fu.type === "exact" && !(Array.isArray(fu.answer) && fu.answer.length)) msg = "Follow-up " + (i + 1) + ": exact needs a list of answers";
+        else if (fu.type !== "exact" && !(fu.keywords || []).length) msg = "Follow-up " + (i + 1) + ": explain needs keywords";
       });
       if (msg) { err.innerHTML = '<div class="notice err">' + esc(msg) + '</div>'; err.scrollIntoView({ block: "center" }); return; }
       if (isNew) DATA.statements.push(ns);
@@ -958,7 +958,7 @@
         DATA.statements[idx] = ns;
         if (id !== ns.id && PROG.stmts[id]) { PROG.stmts[ns.id] = PROG.stmts[id]; delete PROG.stmts[id]; saveProg(); }
       }
-      saveData(); toast("Disimpan: " + ns.id); location.hash = "#/manage";
+      saveData(); toast("Saved: " + ns.id); location.hash = "#/manage";
     });
   }
   function fld(label, control, help) {

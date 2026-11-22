@@ -3,126 +3,128 @@ from helpers import S, F, M
 T = "func"
 H = "5 · "
 
+NO = ["no", "tidak", "tak"]
+
 S("fn01", T, H + "Modular programming",
   """
-  **Modular programming**: pecahkan program kepada **functions kecil**. Ini menjadikannya lebih mudah **ditulis, dibaca dan diselenggara** (write, read and maintain).
+  **Modular programming** means splitting a program into **small functions**. This makes it easier to **write, read and maintain**.
 
-  Idealnya, **`main()` pendek** dan kebanyakannya **memanggil function lain**.
+  Ideally, **`main()` is short** and mostly **calls other functions**.
   """,
-  "Apakah modular programming dan apakah faedahnya?",
-  kw=["split|pecah|pecahkan|small|kecil|bahagi",
-      "function|fungsi",
-      "write|tulis|read|baca|maintain|selenggara|mudah|easier"],
-  ans="Memecahkan program kepada functions kecil supaya lebih mudah ditulis, dibaca dan diselenggara.",
-  hint="Tiga faedah: tulis, baca, …",
-  fu=[F("""Idealnya `main()` pendek dan kebanyakannya memanggil function lain.""",
-        "Bagaimanakah main() yang ideal dalam modular programming?",
-        kw=["short|pendek|ringkas", "call|panggil|memanggil"],
-        ans="Pendek, dan kebanyakannya memanggil function lain.",
-        hint="Panjang atau pendek?")],
-  mcq=M("Dalam modular programming yang baik, main()…",
-        "Pendek dan banyak memanggil function lain", "Mengandungi semua kod", "Tidak wujud", "Mesti void"))
+  "What is modular programming and what are its benefits?",
+  kw=["split|splitting|break|small|divide|pecah|pecahkan|kecil|bahagi",
+      "function|functions|fungsi",
+      "write|read|maintain|easier|tulis|baca|selenggara|mudah"],
+  ans="Splitting a program into small functions so it is easier to write, read and maintain.",
+  hint="Three benefits: write, read, …",
+  fu=[F("""Ideally `main()` is short and mostly calls other functions.""",
+        "What does an ideal main() look like in modular programming?",
+        kw=["short|small|pendek|ringkas", "call|calls|panggil|memanggil"],
+        ans="Short, and mostly calls other functions.",
+        hint="Long or short?")],
+  mcq=M("In good modular programming, main()…",
+        "Is short and mostly calls other functions", "Contains all the code", "Does not exist", "Must be void"))
 
 S("fn02", T, H + "Library functions · <cmath>",
   """
-  **`<cmath>`**: `pow(x,y)`, `sqrt(x)`, `abs(x)`, `sin`, `cos`, `tan`, `log`. Function ini **menerima dan memulangkan double**.
+  **`<cmath>`**: `pow(x,y)`, `sqrt(x)`, `abs(x)`, `sin`, `cos`, `tan`, `log`. These **take and return double**.
   """,
-  "Header apakah diperlukan untuk pow dan sqrt?",
+  "Which header is needed for pow and sqrt?",
   ans=["<cmath>", "cmath", "#include <cmath>"],
   hint="c + math.",
   fu=[F("""`cout << pow(2, 3) << " " << sqrt(25);`""",
-        "Apakah output?",
+        "What is the output?",
         ans=["8 5"],
-        hint="2³ dan √25."),
-      F("""Function `<cmath>` menerima dan memulangkan **double**.""",
-        "Jenis data apakah dipulangkan oleh sqrt?",
+        hint="2³ and √25."),
+      F("""`<cmath>` functions take and return **double**.""",
+        "What type does sqrt return?",
         ans=["double"],
-        hint="Perpuluhan.")],
-  mcq=M("Function manakah dalam <cmath>?",
+        hint="A decimal type.")],
+  mcq=M("Which function is in <cmath>?",
         "sqrt", "strlen", "toupper", "rand"))
 
 S("fn03", T, H + "Library functions · <cctype>",
   """
-  **`<cctype>`**: `isalpha`, `isdigit`, `isalnum`, `islower`, `isupper`, `isspace`, `ispunct`, `isprint`, dan `toupper`, `tolower`.
+  **`<cctype>`**: `isalpha`, `isdigit`, `isalnum`, `islower`, `isupper`, `isspace`, `ispunct`, `isprint`, and `toupper`, `tolower`.
   """,
-  "Header apakah diperlukan untuk isdigit dan toupper?",
+  "Which header is needed for isdigit and toupper?",
   ans=["<cctype>", "cctype", "#include <cctype>"],
   hint="c + c + type.",
-  fu=[F("""`isdigit('7')` true, `isalpha('7')` false. `toupper('a')` → 'A'.""",
-        "Function <cctype> apakah menukar huruf kepada huruf besar?",
+  fu=[F("""`isdigit('7')` is true, `isalpha('7')` is false. `toupper('a')` → 'A'.""",
+        "Which <cctype> function converts a letter to uppercase?",
         ans=["toupper", "toupper()"],
         hint="to + upper."),
-      F("""`isspace` menguji ruang (whitespace), `ispunct` menguji tanda baca.""",
-        "Function apakah menguji sama ada aksara ialah digit?",
+      F("""`isspace` tests for whitespace, `ispunct` tests for punctuation.""",
+        "Which function tests whether a character is a digit?",
         ans=["isdigit", "isdigit()"],
         hint="is + digit.")],
-  mcq=M("`isupper` berada dalam header…",
+  mcq=M("`isupper` is in the header…",
         "<cctype>", "<cmath>", "<cstring>", "<cstdlib>"))
 
 S("fn04", T, H + "Library functions · <cstring>",
   """
   **`<cstring>`**:
-  - `strlen`: **panjang** (length)
-  - `strcat`: **sambung** (join)
-  - `strcpy`: **salin** (copy)
-  - `strcmp`: **banding** (compare): **0 bermaksud sama**
-  - `strstr`: **cari** (find)
+  - `strlen`: **length**
+  - `strcat`: **join**
+  - `strcpy`: **copy**
+  - `strcmp`: **compare** (**0 means same**)
+  - `strstr`: **find**
   """,
-  "Apakah fungsi strlen, strcat, strcpy, strcmp dan strstr?",
-  kw=["strlen|length|panjang", "strcat|join|sambung|gabung",
-      "strcpy|copy|salin", "strcmp|compare|banding", "strstr|find|cari"],
-  ans="strlen = panjang, strcat = sambung, strcpy = salin, strcmp = banding (0 = sama), strstr = cari.",
+  "What do strlen, strcat, strcpy, strcmp and strstr do?",
+  kw=["strlen|length|panjang", "strcat|join|joins|concatenate|sambung|gabung",
+      "strcpy|copy|copies|salin", "strcmp|compare|compares|banding", "strstr|find|finds|search|cari"],
+  ans="strlen = length, strcat = join, strcpy = copy, strcmp = compare (0 = same), strstr = find.",
   hint="length, join, copy, compare, find.",
   fu=[F("""`strlen("George")`.""",
-        "Apakah nilai pulangan?",
+        "What does it return?",
         ans=["6"],
-        hint="Kira huruf."),
+        hint="Count the letters."),
       F("""`char s[20]; strcpy(s, "Hi"); strcat(s, "!!"); cout << s;`""",
-        "Apakah output?",
+        "What is the output?",
         ans=["Hi!!"],
-        hint="Salin, kemudian sambung.")],
-  mcq=M("Function untuk mencari substring dalam C-string ialah…",
+        hint="Copy, then join.")],
+  mcq=M("The function that finds a substring in a C-string is…",
         "strstr", "strcat", "strlen", "strcpy"))
 
 S("fn05", T, H + "Library functions · <cstdlib>",
   """
   **`<cstdlib>`**: `rand()`, `srand(x)`, `atoi`, `atol`, `atof` (**string → number**), `exit(0)`.
   """,
-  "Header apakah mengandungi rand, atoi dan exit?",
+  "Which header contains rand, atoi and exit?",
   ans=["<cstdlib>", "cstdlib", "#include <cstdlib>"],
   hint="c + std + lib.",
   fu=[F("""atoi = string → int, atol = string → long, atof = string → double.""",
-        "Function apakah menukar string kepada double?",
+        "Which function converts a string to a double?",
         ans=["atof", "atof()"],
         hint="a-to-f."),
       F("""`cout << atoi("42") + 1;`""",
-        "Apakah output?",
+        "What is the output?",
         ans=["43"],
         hint="\"42\" → 42.")],
-  mcq=M("`atoi`, `atol` dan `atof` menukar…",
-        "String kepada nombor", "Nombor kepada string", "Huruf kecil kepada besar", "double kepada int"))
+  mcq=M("`atoi`, `atol` and `atof` convert…",
+        "A string to a number", "A number to a string", "Lowercase to uppercase", "double to int"))
 
 S("fn06", T, H + "C-STRINGS warning",
   """
   ⚠ **C-STRINGS**
 
-  Anda **tidak boleh** banding dengan `==` atau assign dengan `=`. Gunakan **`strcmp`** dan **`strcpy`**.
+  You **can't** compare with `==` or assign with `=`. Use **`strcmp`** and **`strcpy`**.
 
-  `strcmp` memulangkan **0 apabila string sama**.
+  `strcmp` returns **0 when the strings are equal**.
   """,
-  "Bagaimana membanding dan menyalin C-string?",
-  kw=["strcmp", "strcpy", "== |==|=|cannot|tidak boleh|tak boleh"],
-  ans="Guna strcmp untuk banding (0 = sama) dan strcpy untuk salin; tidak boleh guna == atau =.",
-  hint="Dua function str…",
+  "How do you compare and copy C-strings?",
+  kw=["strcmp", "strcpy", "==|=|cannot|can't|cant|not|tidak boleh|tak boleh"],
+  ans="Use strcmp to compare (0 = equal) and strcpy to copy; you can't use == or =.",
+  hint="Two str… functions.",
   fu=[F("""`strcmp("abc", "abc")`.""",
-        "Apakah nilai pulangan?",
+        "What does it return?",
         ans=["0"],
-        hint="Sama."),
-      F("""Syarat untuk C-string a dan b yang sama.""",
-        "Tulis syarat if yang benar apabila a dan b sama.",
+        hint="They are equal."),
+      F("""Condition for C-strings a and b being equal.""",
+        "Write the if condition that is true when a and b are equal.",
         ans=["if (strcmp(a, b) == 0)", "strcmp(a, b) == 0", "strcmp(a,b)==0", "if (!strcmp(a, b))"],
         hint="strcmp(...) == 0")],
-  mcq=M("Cara BETUL untuk memberi nilai \"Ali\" kepada `char name[10]` selepas pengisytiharan ialah…",
+  mcq=M("The CORRECT way to give `char name[10]` the value \"Ali\" after declaring it is…",
         "strcpy(name, \"Ali\");", "name = \"Ali\";", "name == \"Ali\";", "strcmp(name, \"Ali\");"))
 
 S("fn07", T, H + "User-defined functions · structure",
@@ -136,104 +138,104 @@ S("fn07", T, H + "User-defined functions · structure",
   }
   ```
   """,
-  "Apakah tiga bahagian function header?",
-  kw=["return type|returntype|jenis pulangan|return", "name|nama", "parameter|parameter list|senarai parameter"],
+  "What are the three parts of a function header?",
+  kw=["return type|returntype|return|jenis pulangan", "name|nama", "parameter|parameters|parameter list|senarai parameter"],
   ans="returnType, name, (parameter list).",
-  hint="Jenis, nama, kurungan.",
-  fu=[F("""`return value;` tidak diperlukan jika function ialah `void`.""",
-        "Bilakah `return value;` tidak diperlukan?",
-        ans=["void", "apabila void", "if void", "jika void"],
-        hint="Jenis pulangan tiada."),
+  hint="Type, name, brackets.",
+  fu=[F("""`return value;` is not needed if the function is `void`.""",
+        "When is `return value;` not needed?",
+        ans=["void", "when it is void", "if void", "when void"],
+        hint="No return type."),
       F("""Header `double average(int a, int b)`.""",
-        "Apakah return type dalam header ini?",
+        "What is the return type in this header?",
         ans=["double"],
-        hint="Perkataan pertama.")],
-  mcq=M("Dalam `int sum(int a, int b)`, `int a, int b` ialah…",
-        "Parameter list", "Return type", "Nama function", "Badan function"))
+        hint="The first word.")],
+  mcq=M("In `int sum(int a, int b)`, `int a, int b` is the…",
+        "Parameter list", "Return type", "Function name", "Function body"))
 
 S("fn08", T, H + "Prototype, definition, call",
   """
   | Prototype | Definition | Call |
   |---|---|---|
   | `int sum(int, int);` | `int sum(int a, int b) { return a + b; }` | `total = sum(x, y);` |
-  | Diletak **sebelum main**, berakhir dengan **`;`** | | |
+  | Placed **before main**, ends with **`;`** | | |
   """,
-  "Di manakah prototype diletak dan bagaimana ia berakhir?",
-  kw=["before|sebelum|atas|above", "main", ";|semicolon|titik koma|koma bertitik"],
-  ans="Sebelum main, dan berakhir dengan ;.",
-  hint="Lokasi + simbol.",
-  fu=[F("""Prototype hanya perlu jenis parameter: `int sum(int, int);`""",
-        "Tulis prototype untuk `double avg(double a, double b)`.",
+  "Where is a prototype placed, and how does it end?",
+  kw=["before|above|sebelum|atas", "main", ";|semicolon|titik koma"],
+  ans="Before main, and it ends with ;.",
+  hint="Location + symbol.",
+  fu=[F("""A prototype only needs the parameter types: `int sum(int, int);`""",
+        "Write the prototype for `double avg(double a, double b)`.",
         ans=["double avg(double, double);", "double avg(double a, double b);"],
         hint="Header + ;"),
       F("""`int x = 3, y = 4; total = sum(x, y);`""",
-        "Apakah nilai total?",
+        "What is total?",
         ans=["7"],
         hint="a + b.")],
-  mcq=M("Yang manakah function CALL?",
+  mcq=M("Which one is a function CALL?",
         "total = sum(x, y);", "int sum(int, int);", "int sum(int a, int b)", "{ return a + b; }"))
 
 S("fn09", T, H + "What the compiler must know before a call",
   """
-  Compiler **mesti tahu** **nama** function, **return type**, dan **bilangan serta jenis parameter** **sebelum** ia dipanggil.
+  The compiler **must know** the function's **name**, **return type**, and the **number and types of its parameters** **before it is called**.
 
-  Jadi gunakan **prototype**, atau **definisikan function di atas main**.
+  So use a **prototype**, or **define the function above main**.
   """,
-  "Apakah yang mesti diketahui compiler sebelum function dipanggil, dan bagaimana memastikannya?",
-  kw=["name|nama", "return type|jenis pulangan|return",
-      "number|bilangan|type|jenis|parameter",
-      "prototype|above|atas|sebelum main|before main"],
-  ans="Nama, return type, bilangan dan jenis parameter; gunakan prototype atau definisikan function di atas main.",
-  hint="Tiga maklumat + dua cara.",
-  fu=[F("""Tanpa prototype, dan definition di bawah main → `'f' was not declared in this scope`.""",
-        "Selain prototype, apakah cara lain supaya compiler kenal function?",
-        kw=["define|definisi|takrif|definition|letak|tulis", "above|atas|before|sebelum"],
-        ans="Definisikan function di atas main.",
-        hint="Kedudukan.")],
-  mcq=M("Yang manakah TIDAK perlu diketahui compiler sebelum panggilan function?",
-        "Isi badan function", "Nama function", "Return type", "Bilangan dan jenis parameter"))
+  "What must the compiler know before a function is called, and how do you make sure it does?",
+  kw=["name|nama", "return type|return|jenis pulangan",
+      "number|type|types|parameter|parameters|bilangan|jenis",
+      "prototype|above|before main|atas|sebelum main"],
+  ans="Its name, return type, and the number and types of its parameters; use a prototype or define the function above main.",
+  hint="Three facts + two ways.",
+  fu=[F("""No prototype, and the definition below main → `'f' was not declared in this scope`.""",
+        "Besides a prototype, how else can the compiler know a function?",
+        kw=["define|definition|write|put|place|definisi|takrif|letak|tulis", "above|before|atas|sebelum"],
+        ans="Define the function above main.",
+        hint="Its position.")],
+  mcq=M("Which does the compiler NOT need to know before a function call?",
+        "The function body's contents", "The function name", "The return type", "The number and types of parameters"))
 
 S("fn10", T, H + "void functions",
   """
-  **`void`** bermaksud function **tidak memulangkan apa-apa** (returns nothing).
+  **`void`** means the function **returns nothing**.
   """,
-  "Apakah maksud void?",
-  kw=["nothing|tiada|tidak|no|tak", "return|pulang|memulangkan|nilai|value"],
-  ans="Function tidak memulangkan apa-apa nilai.",
-  hint="Kosong.",
-  fu=[F("""`void printLine()` tidak memulangkan nilai, jadi `int x = printLine();` ialah ralat.""",
-        "Bolehkah hasil void function disimpan dalam pemboleh ubah? (ya / tidak)",
-        ans=["tidak", "no", "tak"],
-        hint="Tiada nilai.")],
-  mcq=M("Function `void show(int n)`…",
-        "Tidak memulangkan nilai", "Memulangkan int", "Memulangkan n", "Tidak boleh ada parameter"))
+  "What does void mean?",
+  kw=["nothing|no|not|none|tiada|tidak|tak", "return|returns|value|pulang|memulangkan|nilai"],
+  ans="The function returns nothing.",
+  hint="Empty.",
+  fu=[F("""`void printLine()` returns no value, so `int x = printLine();` is an error.""",
+        "Can the result of a void function be stored in a variable? (yes / no)",
+        ans=NO,
+        hint="There is no value.")],
+  mcq=M("The function `void show(int n)`…",
+        "Returns no value", "Returns an int", "Returns n", "Can't have parameters"))
 
 S("fn11", T, H + "Arguments vs parameters",
   """
-  - **Arguments (actual)** berada dalam **call**.
-  - **Parameters (formal)** berada dalam **header**.
-  - Dipadankan **mengikut turutan**, dan **bilangannya mesti sama**.
+  - **Arguments (actual)** are in the **call**.
+  - **Parameters (formal)** are in the **header**.
+  - They are matched **by order**, and **their number must match**.
   """,
-  "Apakah beza arguments dan parameters?",
-  kw=["argument|actual|sebenar", "call|panggil|panggilan",
-      "parameter|formal", "header|definition|definisi",
-      "order|turutan|number|bilangan"],
-  ans="Arguments (actual) dalam call; parameters (formal) dalam header; dipadankan ikut turutan dan bilangan mesti sama.",
+  "What is the difference between arguments and parameters?",
+  kw=["argument|arguments|actual|sebenar", "call|panggil|panggilan",
+      "parameter|parameters|formal", "header|definition|definisi",
+      "order|number|turutan|bilangan"],
+  ans="Arguments (actual) are in the call; parameters (formal) are in the header; they are matched by order and their number must match.",
   hint="Call vs header.",
-  fu=[F("""`total = sum(x, y);` dengan header `int sum(int a, int b)`.""",
-        "Parameter manakah menerima nilai y?",
+  fu=[F("""`total = sum(x, y);` with header `int sum(int a, int b)`.""",
+        "Which parameter receives the value of y?",
         ans=["b"],
-        hint="Kedudukan kedua."),
-      F("""Bilangan argument mesti sama dengan parameter. `sum(1, 2, 3)` untuk `sum(int, int)` → ralat `too many arguments`.""",
-        "Apakah yang berlaku jika bilangan argument tidak sama? (ralat / ok)",
-        ans=["ralat", "error", "syntax error", "compile error"],
-        hint="Mesti sama.")],
-  mcq=M("Dalam `total = sum(x, y);`, x dan y ialah…",
+        hint="Second position."),
+      F("""The number of arguments must match the parameters. `sum(1, 2, 3)` for `sum(int, int)` → error `too many arguments`.""",
+        "What happens if the number of arguments doesn't match? (error / ok)",
+        ans=["error", "compile error", "syntax error", "ralat"],
+        hint="They must match.")],
+  mcq=M("In `total = sum(x, y);`, x and y are…",
         "Arguments (actual)", "Parameters (formal)", "Return values", "Prototypes"))
 
 S("fn12", T, H + "Using a returned value",
   """
-  Gunakan nilai pulangan dengan **menyimpannya** (assign), **mencetaknya** (print), atau **dalam ungkapan** (use it in an expression).
+  Use a returned value by **assigning it**, **printing it**, or **using it in an expression**.
 
   ```
   total = sum(3, 4);            // assign
@@ -241,98 +243,98 @@ S("fn12", T, H + "Using a returned value",
   int d = sum(3, 4) * 2;        // expression → 14
   ```
   """,
-  "Apakah tiga cara menggunakan nilai yang dipulangkan oleh function?",
-  kw=["assign|simpan|umpuk|=|pemboleh ubah", "print|cetak|cout|papar", "expression|ungkapan"],
-  ans="Assign kepada pemboleh ubah, print (cout), atau guna dalam expression.",
-  hint="Simpan, cetak, kira.",
+  "What are three ways to use a value returned by a function?",
+  kw=["assign|store|=|simpan|umpuk|variable", "print|output|cout|display|cetak|papar", "expression|calculation|ungkapan"],
+  ans="Assign it to a variable, print it (cout), or use it in an expression.",
+  hint="Store, print, calculate.",
   fu=[F("""`int d = sum(3, 4) * 2;`""",
-        "Apakah nilai d?",
+        "What is d?",
         ans=["14"],
         hint="7 × 2.")],
-  mcq=M("Yang manakah BUKAN cara menggunakan nilai pulangan?",
+  mcq=M("Which is NOT a way to use a returned value?",
         "sum(3, 4) = total;", "total = sum(3, 4);", "cout << sum(3, 4);", "d = sum(3, 4) * 2;"))
 
 S("fn13", T, H + "Returning bool",
   """
-  Function boleh memulangkan **bool**, contoh:
+  A function can return **bool**, e.g.
 
   ```
   bool isEven(int n) { return n % 2 == 0; }
   ```
   """,
-  "Tulis header function isEven yang menerima int n dan memulangkan bool.",
+  "Write the header of a function isEven that takes int n and returns bool.",
   ans=["bool isEven(int n)"],
   hint="Return type bool.",
   fu=[F("""`cout << isEven(6) << isEven(7);`""",
-        "Apakah output?",
+        "What is the output?",
         ans=["10"],
         hint="true = 1, false = 0.")],
-  mcq=M("`bool isEven(int n)` memulangkan…",
-        "true atau false", "Nombor genap", "n", "Tiada"))
+  mcq=M("`bool isEven(int n)` returns…",
+        "true or false", "An even number", "n", "Nothing"))
 
 S("fn14", T, H + "INVALID HEADERS · no return type", trap=True,
   text="""
   ⚠ **INVALID HEADERS**
 
-  `one(int a, int b)`: **tiada return type** ❌
+  `one(int a, int b)`: **no return type** ❌
   """,
-  question="Apakah kesilapan dalam header `one(int a, int b)`?",
-  kw=["return type|jenis pulangan|return|type|jenis", "missing|tiada|no|tak ada|tertinggal"],
-  ans="Tiada return type.",
-  hint="Apa yang patut ada sebelum nama?",
-  fu=[F("""Tambah return type, contoh `int`.""",
-        "Tulis header yang betul jika function memulangkan int.",
+  question="What is wrong with the header `one(int a, int b)`?",
+  kw=["return type|return|type|jenis pulangan|jenis", "missing|no|none|without|tiada|tertinggal"],
+  ans="It has no return type.",
+  hint="What should come before the name?",
+  fu=[F("""Add a return type, e.g. `int`.""",
+        "Write the correct header if the function returns an int.",
         ans=["int one(int a, int b)"],
         hint="int + …")],
-  mcq=M("Header `one(int a, int b)` tidak sah kerana…",
-        "Tiada return type", "Parameter tiada jenis", "Tiada ( )", "Nama terlalu pendek"))
+  mcq=M("The header `one(int a, int b)` is invalid because…",
+        "It has no return type", "A parameter has no type", "It has no ( )", "The name is too short"))
 
 S("fn15", T, H + "INVALID HEADERS · each parameter needs a type", trap=True,
   text="""
   ⚠ **INVALID HEADERS**
 
-  `char another(int a, b)`: **setiap parameter perlukan jenisnya sendiri** ❌
+  `char another(int a, b)`: **each parameter needs its own type** ❌
   """,
-  question="Apakah kesilapan dalam header `char another(int a, b)`?",
-  kw=["type|jenis|int", "each|setiap|b|parameter"],
-  ans="Parameter b tiada jenis; setiap parameter perlukan jenisnya sendiri.",
-  hint="Lihat b.",
-  fu=[F("""Betul: `char another(int a, int b)`.""",
-        "Tulis header yang betul.",
+  question="What is wrong with the header `char another(int a, b)`?",
+  kw=["type|int|jenis", "each|every|own|b|parameter|setiap"],
+  ans="Parameter b has no type; each parameter needs its own type.",
+  hint="Look at b.",
+  fu=[F("""Correct: `char another(int a, int b)`.""",
+        "Write the correct header.",
         ans=["char another(int a, int b)"],
-        hint="Tambah int sebelum b.")],
-  mcq=M("Header manakah SAH?",
+        hint="Add int before b.")],
+  mcq=M("Which header is VALID?",
         "char another(int a, int b)", "char another(int a, b)", "another(int a, int b)", "char another"))
 
 S("fn16", T, H + "INVALID HEADERS · no ( )", trap=True,
   text="""
   ⚠ **INVALID HEADERS**
 
-  `double yetanother`: **tiada `( )`** ❌
+  `double yetanother`: **no `( )`** ❌
   """,
-  question="Apakah kesilapan dalam header `double yetanother`?",
-  kw=["( )|()|kurungan|parentheses|bracket", "missing|tiada|no|tertinggal"],
-  ans="Tiada ( ) selepas nama function.",
-  hint="Function mesti ada…",
-  fu=[F("""Function tanpa parameter tetap perlukan `( )`: `double yetanother()`.""",
-        "Tulis header yang betul (tanpa parameter).",
+  question="What is wrong with the header `double yetanother`?",
+  kw=["( )|()|parentheses|brackets|bracket|kurungan", "missing|no|none|without|tiada|tertinggal"],
+  ans="There are no ( ) after the function name.",
+  hint="A function must have…",
+  fu=[F("""A function with no parameters still needs `( )`: `double yetanother()`.""",
+        "Write the correct header (no parameters).",
         ans=["double yetanother()"],
-        hint="Tambah ( ).")],
-  mcq=M("`double yetanother` tidak sah sebagai function header kerana…",
-        "Tiada ( )", "Tiada return type", "double tidak dibenarkan", "Nama salah"))
+        hint="Add ( ).")],
+  mcq=M("`double yetanother` is not a valid function header because…",
+        "It has no ( )", "It has no return type", "double is not allowed", "The name is wrong"))
 
 S("fn17", T, H + "Pass by value",
   """
   **By value**: `void f(int n)`
 
-  Function mendapat **salinan** (copy). Mengubahnya **tidak mengubah yang asal**.
+  The function gets a **copy**. Changing it **does not change the original**.
 
-  Contoh: `m = 612` → `f(m)` tambah 37 di dalam → **m masih 612**.
+  e.g. `m = 612` → `f(m)` adds 37 inside → **m is still 612**.
   """,
-  "Apakah maksud pass by value?",
-  kw=["copy|salinan|salin", "original|asal|not change|tidak berubah|unchanged|kekal|tak berubah|tidak mengubah"],
-  ans="Function menerima salinan; perubahan di dalam tidak mengubah pemboleh ubah asal.",
-  hint="Salinan.",
+  "What does pass by value mean?",
+  kw=["copy|copies|salinan|salin", "original|not change|doesn't change|does not change|unchanged|same|asal|tidak berubah|kekal"],
+  ans="The function gets a copy; changes inside it do not change the original variable.",
+  hint="A copy.",
   fu=[F("""
         ```
         void f(int n) { n = n + 37; }
@@ -340,26 +342,26 @@ S("fn17", T, H + "Pass by value",
         f(m);
         cout << m;
         ```""",
-        "Apakah output?",
+        "What is the output?",
         ans=["612"],
-        hint="Salinan sahaja yang berubah.")],
-  mcq=M("Dalam pass by value, function bekerja dengan…",
-        "Salinan", "Yang asal", "Alamat", "Pemalar"))
+        hint="Only the copy changed.")],
+  mcq=M("In pass by value, the function works with…",
+        "A copy", "The original", "An address", "A constant"))
 
 S("fn18", T, H + "Pass by reference",
   """
   **By reference**: `void f(int &n)`
 
-  Function bekerja pada **yang asal** (an alias), jadi **perubahan kekal**.
-  - Guna untuk **"memulangkan" lebih daripada satu nilai**.
-  - `&` diletak dalam **prototype dan header**.
-  - Argument **mesti pemboleh ubah**, bukan `5` atau `a+b`.
+  The function works on **the original** (an alias), so **changes stay**.
+  - Use it to **"return" more than one value**.
+  - The `&` goes in **both the prototype and the header**.
+  - The argument **must be a variable**, not `5` or `a+b`.
   """,
-  "Apakah maksud pass by reference dan bilakah ia digunakan?",
-  kw=["original|asal|alias", "change|ubah|perubahan|kekal|stay",
-      "more than one|lebih daripada satu|beberapa|multiple|banyak"],
-  ans="Function bekerja pada yang asal (alias), jadi perubahan kekal; digunakan untuk 'memulangkan' lebih daripada satu nilai.",
-  hint="Alias…",
+  "What does pass by reference mean, and when is it used?",
+  kw=["original|alias|asal", "change|changes|stay|ubah|perubahan|kekal",
+      "more than one|multiple|several|lebih daripada satu|beberapa|banyak"],
+  ans="The function works on the original (an alias), so changes stay; it is used to 'return' more than one value.",
+  hint="An alias…",
   fu=[F("""
         ```
         void f(int &n) { n = n + 37; }
@@ -367,108 +369,108 @@ S("fn18", T, H + "Pass by reference",
         f(m);
         cout << m;
         ```""",
-        "Apakah output?",
+        "What is the output?",
         ans=["649"],
         hint="612 + 37."),
-      F("""Argument untuk reference parameter mesti pemboleh ubah. `f(5)` dan `f(a+b)` ialah ralat.""",
-        "Bolehkah `f(a+b)` dipanggil untuk `void f(int &n)`? (ya / tidak)",
-        ans=["tidak", "no", "tak"],
-        hint="Mesti pemboleh ubah."),
-      F("""`&` diletak dalam prototype DAN header.""",
-        "Tulis prototype untuk `void f(int &n)`.",
+      F("""The argument for a reference parameter must be a variable. `f(5)` and `f(a+b)` are errors.""",
+        "Can you call `f(a+b)` for `void f(int &n)`? (yes / no)",
+        ans=NO,
+        hint="It must be a variable."),
+      F("""The `&` goes in the prototype AND the header.""",
+        "Write the prototype for `void f(int &n)`.",
         ans=["void f(int &n);", "void f(int&);", "void f(int &);", "void f(int& n);"],
-        hint="Jangan lupa & dan ;")],
-  mcq=M("Untuk `void f(int &n)`, panggilan manakah SAH?",
+        hint="Don't forget & and ;")],
+  mcq=M("For `void f(int &n)`, which call is VALID?",
         "f(m);", "f(5);", "f(a + b);", "f(&5);"))
 
 S("fn19", T, H + "Memory trick: photocopy vs original",
   """
   💡 **MEMORY TRICK**
 
-  - **Value = photocopy**: conteng padanya dan yang asal selamat.
-  - **Reference = kertas asal**: `&` = "and change the real one".
+  - **Value = photocopy**: scribble on it and the original is fine.
+  - **Reference = the original paper**: `&` = "and change the real one".
   """,
-  "Terangkan memory trick photocopy untuk value dan reference.",
-  kw=["value|nilai", "photocopy|fotostat|salinan|copy",
-      "reference|rujukan|&", "original|asal|real|sebenar"],
-  ans="Value = photocopy (asal selamat); reference = kertas asal (& = ubah yang sebenar).",
-  hint="Fotostat vs …",
+  "Explain the photocopy memory trick for value vs reference.",
+  kw=["value|nilai", "photocopy|copy|fotostat|salinan",
+      "reference|&|rujukan", "original|real|asal|sebenar"],
+  ans="Value = photocopy (the original is safe); reference = the original paper (& = and change the real one).",
+  hint="Photocopy vs …",
   fu=[F("""`&` = "and change the real one".""",
-        "Dalam memory trick, `&` bermaksud apa?",
-        kw=["change|ubah", "real|sebenar|asal|original"],
-        ans="And change the real one (ubah yang asal).",
+        "In the memory trick, what does `&` stand for?",
+        kw=["change|ubah", "real|original|asal|sebenar"],
+        ans="And change the real one.",
         hint="and change the …")],
-  mcq=M("Menurut memory trick, pass by value ibarat…",
-        "Photocopy", "Kertas asal", "Pen", "Pemadam"))
+  mcq=M("In the memory trick, pass by value is like a…",
+        "Photocopy", "The original paper", "A pen", "An eraser"))
 
 S("fn20", T, H + "Local variables",
   """
-  **Local**: diisytihar **dalam function**. **Dicipta pada setiap panggilan dan dimusnahkan pada akhir**. **Tidak auto-initialised**.
+  **Local**: declared **inside a function**. **Created on each call and destroyed at the end**. **Not auto-initialised**.
   """,
-  "Apakah ciri pemboleh ubah local?",
-  kw=["inside|dalam|function", "created|dicipta|each call|setiap panggilan|destroyed|musnah|dimusnahkan",
-      "not auto|tidak auto|tak auto|not initialised|tidak diinisialisasi|garbage|sampah|tiada nilai awal"],
-  ans="Diisytihar dalam function; dicipta setiap panggilan dan dimusnahkan di akhir; tidak auto-initialised.",
-  hint="Di mana, berapa lama, nilai awal.",
-  fu=[F("""Local variable tidak diberi nilai awal secara automatik, jadi ia mengandungi nilai sampah jika tidak diinisialisasi.""",
-        "Adakah local variable diberi nilai 0 secara automatik? (ya / tidak)",
-        ans=["tidak", "no", "tak"],
+  "What are the properties of a local variable?",
+  kw=["inside|within|function|dalam", "created|each call|destroyed|every call|dicipta|setiap panggilan|musnah|dimusnahkan",
+      "not auto|not initialised|not initialized|garbage|no initial|tidak auto|tak auto|sampah"],
+  ans="Declared inside a function; created on each call and destroyed at the end; not auto-initialised.",
+  hint="Where, how long, starting value.",
+  fu=[F("""A local variable is not given a starting value automatically, so it holds garbage if you don't initialise it.""",
+        "Is a local variable automatically set to 0? (yes / no)",
+        ans=NO,
         hint="Not auto-initialised.")],
-  mcq=M("Pemboleh ubah local…",
-        "Dicipta setiap panggilan dan dimusnahkan di akhir", "Kekal sepanjang program", "Auto-initialised kepada 0", "Boleh diakses oleh semua function"))
+  mcq=M("A local variable…",
+        "Is created on each call and destroyed at the end", "Lasts for the whole program", "Is auto-initialised to 0", "Can be used by every function"))
 
 S("fn21", T, H + "Global variables",
   """
-  **Global**: diisytihar **di luar semua function**. **Kelihatan dari baris itu hingga hujung fail**. **Auto-initialised kepada 0**.
+  **Global**: declared **outside all functions**. **Visible from that line to the end of the file**. **Auto-initialised to 0**.
 
-  **Elakkan**; lebih baik guna **global constants**.
+  **Avoid them**; prefer **global constants**.
   """,
-  "Apakah ciri pemboleh ubah global?",
-  kw=["outside|luar", "visible|kelihatan|line|baris|end of file|hujung fail|file",
-      "0|sifar|zero|auto",
-      "avoid|elak|elakkan|constant|pemalar"],
-  ans="Diisytihar di luar semua function; kelihatan dari baris itu hingga hujung fail; auto-initialised 0; elakkan, guna global constants.",
-  hint="Di mana, skop, nilai awal, nasihat.",
-  fu=[F("""`int gx;` di luar main, kemudian `cout << gx;` dalam main.""",
-        "Apakah output?",
+  "What are the properties of a global variable?",
+  kw=["outside|luar", "visible|line|end of file|file|kelihatan|baris|fail",
+      "0|zero|auto|sifar",
+      "avoid|constant|constants|elak|elakkan|pemalar"],
+  ans="Declared outside all functions; visible from that line to the end of the file; auto-initialised to 0; avoid them and prefer global constants.",
+  hint="Where, scope, starting value, advice.",
+  fu=[F("""`int gx;` outside main, then `cout << gx;` inside main.""",
+        "What is the output?",
         ans=["0"],
-        hint="Global auto-initialised.")],
-  mcq=M("Pemboleh ubah global yang tidak diinisialisasi bernilai…",
-        "0", "Nilai sampah", "1", "Ralat"))
+        hint="Globals are auto-initialised.")],
+  mcq=M("An uninitialised global variable has the value…",
+        "0", "Garbage", "1", "An error"))
 
 S("fn22", T, H + "Static local variables",
   """
-  **Static local**: `static int x;` dalam function. **Mengekalkan nilai antara panggilan**. **Diinisialisasi sekali sahaja** (default 0).
+  **Static local**: `static int x;` inside a function. **Keeps its value between calls**. **Initialised only once** (default 0).
 
   ```
   void showVar() { static int var = 10; cout << var; var++; }
-  // dipanggil 10×: 10 11 12 ... 19    (tanpa static: 10 10 10 ...)
+  // called 10×: prints 10 11 12 ... 19    (without static: 10 10 10 ...)
   ```
   """,
-  "Apakah ciri static local variable?",
-  kw=["keep|kekal|mengekalkan|remember|ingat|retain",
-      "between calls|antara panggilan|panggilan|calls",
+  "What are the properties of a static local variable?",
+  kw=["keep|keeps|remember|remembers|retain|retains|kekal|ingat",
+      "between calls|calls|between|antara panggilan|panggilan",
       "once|sekali"],
-  ans="Mengekalkan nilai antara panggilan dan diinisialisasi sekali sahaja (default 0).",
-  hint="Ia 'ingat'.",
-  fu=[F("""showVar() dipanggil 3 kali.""",
-        "Apakah output (dengan ruang antara nilai)?",
+  ans="It keeps its value between calls and is initialised only once (default 0).",
+  hint="It 'remembers'.",
+  fu=[F("""showVar() called 3 times.""",
+        "What is the output (values separated by spaces)?",
         ans=["10 11 12"],
-        hint="Bermula 10, bertambah."),
-      F("""Tanpa `static`, var dicipta semula setiap panggilan.""",
-        "Apakah output 3 panggilan tanpa static (dengan ruang)?",
+        hint="Starts at 10, goes up."),
+      F("""Without `static`, var is created again on every call.""",
+        "What do 3 calls print without static (with spaces)?",
         ans=["10 10 10"],
-        hint="Sentiasa 10."),
-      F("""Dipanggil 10 kali dengan static.""",
-        "Apakah nilai TERAKHIR yang dicetak?",
+        hint="Always 10."),
+      F("""Called 10 times with static.""",
+        "What is the LAST value printed?",
         ans=["19"],
         hint="10 + 9.")],
-  mcq=M("`static int x;` dalam function tanpa nilai awal bermula dengan…",
-        "0", "Nilai sampah", "1", "Ralat"))
+  mcq=M("`static int x;` inside a function, with no starting value, begins at…",
+        "0", "Garbage", "1", "An error"))
 
 S("fn23", T, H + "Local wins over global",
   """
-  Jika pemboleh ubah **local mempunyai nama yang sama** dengan global, **local menang** dalam function itu.
+  If a local variable **has the same name** as a global one, **the local wins** inside that function.
 
   ```
   int gy = 5;
@@ -476,93 +478,93 @@ S("fn23", T, H + "Local wins over global",
   // shadow(); cout << " " << gy;  →  99 5
   ```
   """,
-  "Jika local dan global mempunyai nama sama, yang mana digunakan dalam function?",
-  ans=["local", "pemboleh ubah local", "tempatan"],
+  "If a local and a global have the same name, which one is used inside the function?",
+  ans=["local", "the local", "local variable", "the local variable"],
   hint="Local wins.",
-  fu=[F("""Kod shadow di atas: `shadow(); cout << " " << gy;`""",
-        "Apakah output?",
+  fu=[F("""The shadow code above: `shadow(); cout << " " << gy;`""",
+        "What is the output?",
         ans=["99 5"],
-        hint="Local dalam shadow, global dalam main.")],
-  mcq=M("Dalam function yang ada local `x` dan global `x`, `cout << x;` mencetak…",
-        "Nilai local", "Nilai global", "Ralat", "Hasil tambah kedua-duanya"))
+        hint="Local inside shadow, global inside main.")],
+  mcq=M("Inside a function with a local `x` and a global `x`, `cout << x;` prints…",
+        "The local value", "The global value", "An error", "The sum of both"))
 
 S("fn24", T, H + "Default arguments",
   """
   ```
-  int getSum(int, int = 0, int = 0);          // dalam prototype
-  getSum(5); getSum(5, 2); getSum(5, 2, 1);   // semua OK
+  int getSum(int, int = 0, int = 0);          // in the prototype
+  getSum(5); getSum(5, 2); getSum(5, 2, 1);   // all OK
   ```
-  - Nilai default mesti di **hujung kanan** senarai: `(int, int=0, int)` ❌
-  - Jika anda tinggalkan satu argument, anda mesti **tinggalkan semua selepasnya**: `getSum(a, , c)` ❌
+  - Default values must be at the **right end** of the list: `(int, int=0, int)` ❌
+  - When you leave out an argument, you must **leave out everything after it** too: `getSum(a, , c)` ❌
   """,
-  "Nyatakan dua peraturan default arguments.",
-  kw=["right|kanan|end|hujung",
-      "leave out|tinggal|omit|skip|after|selepas|semua selepas|everything after"],
-  ans="Default mesti di hujung kanan senarai; jika tinggalkan satu argument, tinggalkan semua selepasnya.",
-  hint="Kanan… dan apa yang selepas.",
-  fu=[F("""`getSum(int a, int b = 0, int c = 0)` memulangkan a + b + c.""",
-        "Apakah nilai getSum(5, 2)?",
+  "State the two rules for default arguments.",
+  kw=["right|end|kanan|hujung",
+      "leave out|omit|skip|after|everything after|tinggal|selepas"],
+  ans="Defaults must be at the right end of the list; when you leave out an argument, you must leave out everything after it.",
+  hint="Right… and what comes after.",
+  fu=[F("""`getSum(int a, int b = 0, int c = 0)` returns a + b + c.""",
+        "What is getSum(5, 2)?",
         ans=["7"],
         hint="5 + 2 + 0."),
       F("""Prototype `int f(int, int = 0, int);`""",
-        "Adakah prototype ini sah? (ya / tidak)",
-        ans=["tidak", "no", "tak"],
-        hint="Default di tengah."),
+        "Is this prototype valid? (yes / no)",
+        ans=NO,
+        hint="A default in the middle."),
       F("""`getSum(a, , c)`""",
-        "Adakah panggilan ini sah? (ya / tidak)",
-        ans=["tidak", "no", "tak"],
-        hint="Tidak boleh langkau di tengah.")],
-  mcq=M("Dengan `int getSum(int, int = 0, int = 0);`, panggilan manakah TIDAK sah?",
+        "Is this call valid? (yes / no)",
+        ans=NO,
+        hint="You can't skip one in the middle.")],
+  mcq=M("With `int getSum(int, int = 0, int = 0);`, which call is NOT valid?",
         "getSum(5, , 1);", "getSum(5);", "getSum(5, 2);", "getSum(5, 2, 1);"))
 
 S("fn25", T, H + "Function overloading",
   """
-  Function boleh berkongsi **nama yang sama** jika **senarai parameter berbeza** (bilangan atau jenis). Compiler memilih versi yang sepadan dengan argument.
+  Functions can **share the same name** if they have **different parameter lists** (number or types). The compiler picks the version that matches the arguments.
 
   ```
   void getDimensions(int);           void getDimensions(int, int);
   void getDimensions(int, double);   void getDimensions(double, double);
   ```
   """,
-  "Apakah function overloading?",
-  kw=["same name|nama sama|sama nama|share|kongsi",
-      "different|berbeza|lain", "parameter|parameter list|senarai",
-      "number|bilangan|type|jenis"],
-  ans="Function dengan nama sama tetapi senarai parameter berbeza (bilangan atau jenis); compiler pilih yang sepadan.",
-  hint="Nama sama, apa yang berbeza?",
-  fu=[F("""Panggilan `getDimensions(1, 2.5)`: argument int dan double.""",
-        "Versi manakah dipilih? (tulis jenis parameter, contoh int, int)",
+  "What is function overloading?",
+  kw=["same name|share|nama sama|sama nama|kongsi",
+      "different|berbeza|lain", "parameter|parameters|parameter list|list|senarai",
+      "number|type|types|bilangan|jenis"],
+  ans="Functions sharing the same name but with different parameter lists (number or types); the compiler picks the matching one.",
+  hint="Same name, what differs?",
+  fu=[F("""The call `getDimensions(1, 2.5)`: an int and a double argument.""",
+        "Which version is picked? (write the parameter types, e.g. int, int)",
         ans=["int, double", "(int, double)", "int double", "getDimensions(int, double)"],
-        hint="Padan jenis argument."),
-      F("""Panggilan `getDimensions(1.5, 2.5)`.""",
-        "Versi manakah dipilih?",
+        hint="Match the argument types."),
+      F("""The call `getDimensions(1.5, 2.5)`.""",
+        "Which version is picked?",
         ans=["double, double", "(double, double)", "double double", "getDimensions(double, double)"],
-        hint="Dua double.")],
-  mcq=M("Overloading memerlukan…",
-        "Nama sama, senarai parameter berbeza", "Nama berbeza, parameter sama", "Return type berbeza sahaja", "Semua parameter double"))
+        hint="Two doubles.")],
+  mcq=M("Overloading requires…",
+        "The same name with different parameter lists", "Different names with the same parameters", "A different return type only", "All parameters to be double"))
 
 S("fn26", T, H + "return vs exit()",
   """
-  - **`return`** tamatkan function dan **kembali ke pemanggil** (caller). Kod selepasnya tidak dijalankan.
-  - **`exit(0)`** tamatkan **seluruh program serta-merta**, dari mana-mana (`<cstdlib>`). Pemalar: `EXIT_SUCCESS` / `EXIT_FAILURE`.
+  - **`return`** ends the function and goes **back to the caller**. Code after it doesn't run.
+  - **`exit(0)`** ends the **whole program immediately**, from anywhere (`<cstdlib>`). Constants: `EXIT_SUCCESS` / `EXIT_FAILURE`.
   """,
-  "Apakah beza return dan exit(0)?",
-  kw=["return", "function|fungsi|caller|pemanggil",
-      "exit", "program|whole|seluruh|immediately|serta-merta"],
-  ans="return tamatkan function dan kembali ke pemanggil; exit(0) tamatkan seluruh program serta-merta.",
+  "What is the difference between return and exit(0)?",
+  kw=["return", "function|caller|fungsi|pemanggil",
+      "exit", "program|whole|immediately|seluruh|serta-merta"],
+  ans="return ends the function and goes back to the caller; exit(0) ends the whole program immediately.",
   hint="Function vs program.",
-  fu=[F("""exit berada dalam `<cstdlib>`. Pemalar: `EXIT_SUCCESS` / `EXIT_FAILURE`.""",
-        "Header apakah diperlukan untuk exit()?",
+  fu=[F("""exit is in `<cstdlib>`. Constants: `EXIT_SUCCESS` / `EXIT_FAILURE`.""",
+        "Which header is needed for exit()?",
         ans=["<cstdlib>", "cstdlib", "#include <cstdlib>"],
-        hint="Sama dengan rand."),
-      F("""`return` dalam function biasa kembali ke pemanggil; kod selepas return dalam function itu tidak dijalankan.""",
-        "Adakah kod selepas return dalam function yang sama dijalankan? (ya / tidak)",
-        ans=["tidak", "no", "tak"],
+        hint="Same as rand."),
+      F("""`return` in an ordinary function goes back to the caller; code after the return in that function doesn't run.""",
+        "Does code after return in the same function run? (yes / no)",
+        ans=NO,
         hint="Code after it doesn't run.")],
-  mcq=M("Untuk menamatkan SELURUH program dari dalam function, guna…",
+  mcq=M("To end the WHOLE program from inside a function, use…",
         "exit(0)", "return", "break", "continue"))
 
-# =================================================================== BAB 6 cheat sheet
+# =================================================================== CHAPTER 6 cheat sheet
 T = "cheat"
 H = "6 · Cheat Sheet · "
 
@@ -570,31 +572,31 @@ S("ch01", T, H + "Computational thinking",
   """
   **Computational thinking**: Decomposition · Pattern · Abstraction · Algorithm (**+ Modelling, Evaluation**)
   """,
-  "Senaraikan empat skill computational thinking dan dua tambahan dalam versi extended.",
-  kw=["decomposition|pecah", "pattern|corak", "abstraction|abstraksi", "algorithm|algoritma",
-      "modelling|modeling|model", "evaluation|penilaian"],
+  "List the four computational thinking skills and the two extras in the extended version.",
+  kw=["decomposition|decompose|pecah", "pattern|corak", "abstraction|abstract|abstraksi", "algorithm|algoritma",
+      "modelling|modeling|model", "evaluation|evaluate|penilaian"],
   ans="Decomposition, Pattern, Abstraction, Algorithm + Modelling, Evaluation.",
   hint="D-P-A-A + M + E.",
-  fu=[F("""Dua tambahan dalam versi extended: Modelling dan Evaluation.""",
-        "Namakan satu stage tambahan dalam versi extended.",
+  fu=[F("""The two extras in the extended version: Modelling and Evaluation.""",
+        "Name one extra stage in the extended version.",
         ans=["modelling", "modeling", "evaluation"],
-        hint="M atau E.")],
-  mcq=M("Yang manakah stage TAMBAHAN dalam versi extended?",
+        hint="M or E.")],
+  mcq=M("Which is an EXTRA stage in the extended version?",
         "Modelling", "Decomposition", "Abstraction", "Pattern"))
 
 S("ch02", T, H + "Problem solving",
   """
   **Problem solving**: IPO → Algorithm → Pseudocode / Flowchart → Trace table → Code
   """,
-  "Tulis aliran problem solving dalam cheat sheet.",
+  "Write the problem-solving flow from the cheat sheet.",
   kw=["ipo|input", "algorithm|algoritma", "pseudocode|flowchart", "trace|trace table", "code|kod"],
   ans="IPO → Algorithm → Pseudocode / Flowchart → Trace table → Code.",
-  hint="Bermula dengan IPO, berakhir dengan Code.",
-  fu=[F("""Trace table datang sebelum Code dalam aliran cheat sheet.""",
-        "Apakah langkah tepat sebelum Code?",
+  hint="Starts with IPO, ends with Code.",
+  fu=[F("""Trace table comes right before Code in the cheat sheet flow.""",
+        "Which step comes right before Code?",
         ans=["trace table", "trace"],
-        hint="Jadual.")],
-  mcq=M("Dalam aliran problem solving, langkah pertama ialah…",
+        hint="A table.")],
+  mcq=M("In the problem-solving flow, the first step is…",
         "IPO", "Code", "Trace table", "Flowchart"))
 
 S("ch03", T, H + "3 control structures and flowchart shapes",
@@ -602,214 +604,214 @@ S("ch03", T, H + "3 control structures and flowchart shapes",
   - **3 control structures**: Sequence · Selection · Repetition
   - **Flowchart shapes**: **Oval** = start/end · **Rectangle** = process · **Parallelogram** = I/O · **Diamond** = decision
   """,
-  "Padankan bentuk flowchart: Oval, Rectangle, Parallelogram, Diamond.",
+  "Match the flowchart shapes: Oval, Rectangle, Parallelogram, Diamond.",
   kw=["oval|bujur", "start|end|mula|tamat",
       "rectangle|segi empat tepat", "process|proses",
       "parallelogram|segi empat selari", "i/o|input|output",
       "diamond|berlian", "decision|keputusan"],
   ans="Oval = start/end, Rectangle = process, Parallelogram = I/O, Diamond = decision.",
-  hint="4 pasangan.",
+  hint="4 pairs.",
   fu=[F("""Diamond = decision.""",
-        "Bentuk apakah untuk decision?",
-        ans=["diamond", "berlian"],
-        hint="Wajik.")],
-  mcq=M("Parallelogram dalam flowchart ialah…",
+        "Which shape is used for a decision?",
+        ans=["diamond"],
+        hint="Rhombus.")],
+  mcq=M("A parallelogram in a flowchart is…",
         "Input/Output", "Process", "Decision", "Start/End"))
 
 S("ch04", T, H + "Integer maths",
   """
-  **Integer maths**: `7/3` = 2 · `7%3` = 1 · `7/3.0` = 2.33 (cout mencetak `2.33333`) · `int x = 3.9` → 3
+  **Integer maths**: `7/3` = 2 · `7%3` = 1 · `7/3.0` = 2.33 (cout prints `2.33333`) · `int x = 3.9` → 3
   """,
-  "Apakah nilai 7/3 dan 7%3? (tulis: a b)",
+  "What are 7/3 and 7%3? (format: a b)",
   ans=["2 1"],
-  hint="Integer division dan baki.",
-  fu=[F("""`int x = 3.9;` → dipotong.""",
-        "Apakah nilai x?",
+  hint="Integer division and remainder.",
+  fu=[F("""`int x = 3.9;` → truncated.""",
+        "What is x?",
         ans=["3"],
         hint="Truncated."),
-      F("""`7/3.0`: satu operand double. cout mencetak 6 digit bererti.""",
-        "Apakah output `cout << 7/3.0;`?",
+      F("""`7/3.0`: one operand is a double. cout prints 6 significant digits.""",
+        "What is the output of `cout << 7/3.0;`?",
         ans=["2.33333", "2.33"],
         hint="2.33…")],
-  mcq=M("`7 % 3` bernilai…",
+  mcq=M("`7 % 3` is…",
         "1", "2", "2.33", "0"))
 
 S("ch05", T, H + "Precedence",
   """
-  **Precedence** (tinggi → rendah):
+  **Precedence** (high → low):
 
   `( )` → `!` unary− → `* / %` → `+ −` → `< > <= >=` → `== !=` → `&&` → `||` → `=`
   """,
-  "Antara && dan ||, yang manakah lebih tinggi keutamaannya?",
+  "Between && and ||, which has higher precedence?",
   ans=["&&", "and"],
-  hint="AND sebelum OR.",
-  fu=[F("""Relational (`< > <= >=`) lebih tinggi daripada equality (`== !=`), yang lebih tinggi daripada `&&`.""",
-        "Apakah output `cout << (3 + 4 > 6 && 2 == 2);`?",
+  hint="AND before OR.",
+  fu=[F("""Relational (`< > <= >=`) is higher than equality (`== !=`), which is higher than `&&`.""",
+        "What is the output of `cout << (3 + 4 > 6 && 2 == 2);`?",
         ans=["1"],
         hint="7 > 6 true, 2 == 2 true."),
-      F("""`=` mempunyai keutamaan paling rendah.""",
-        "Operator manakah PALING rendah keutamaannya dalam senarai cheat sheet?",
+      F("""`=` has the lowest precedence.""",
+        "Which operator has the LOWEST precedence in the cheat sheet list?",
         ans=["=", "assignment"],
-        hint="Hujung senarai.")],
-  mcq=M("Yang manakah dinilai DAHULU?",
+        hint="End of the list.")],
+  mcq=M("Which is evaluated FIRST?",
         "!", "&&", "==", "||"))
 
 S("ch06", T, H + "Truth",
   """
-  **Truth**: `0` = false · **sebarang bukan-sifar = true**
+  **Truth**: `0` = false · **any non-zero = true**
 
-  **AND**: semua mesti T · **OR**: satu T sudah cukup
+  **AND**: all must be T · **OR**: one T is enough
   """,
-  "Apakah nilai truth bagi 0 dan bagi nombor bukan sifar?",
-  kw=["0|sifar|zero", "false|palsu", "non-zero|bukan sifar|bukan-sifar|lain", "true|benar"],
-  ans="0 = false; sebarang bukan sifar = true.",
-  hint="Hanya satu nilai false.",
-  fu=[F("""AND: semua mesti T. OR: satu T cukup.""",
-        "`true && false` bernilai? (true / false)",
+  "What truth value do 0 and a non-zero number have?",
+  kw=["0|zero|sifar", "false|palsu", "non-zero|nonzero|any other|not zero|bukan sifar|bukan-sifar|lain", "true|benar"],
+  ans="0 = false; any non-zero = true.",
+  hint="Only one value is false.",
+  fu=[F("""AND: all must be T. OR: one T is enough.""",
+        "What is `true && false`? (true / false)",
         ans=["false", "0"],
-        hint="AND ketat.")],
-  mcq=M("`if (7)` dianggap…",
-        "true", "false", "ralat", "7"))
+        hint="AND is strict.")],
+  mcq=M("`if (7)` is treated as…",
+        "true", "false", "an error", "7"))
 
 S("ch07", T, H + "= vs ==",
   """
   **`=` assigns · `==` compares**
 
-  `if (x = 5)` adalah **sentiasa true**! (x menjadi 5, dan 5 bukan sifar.)
+  `if (x = 5)` is **always true**! (x becomes 5, and 5 is non-zero.)
   """,
-  "Mengapa `if (x = 5)` sentiasa true?",
-  kw=["assign|assignment|umpuk|=", "5|bukan sifar|non-zero|true"],
-  ans="Kerana = memberi nilai 5 kepada x, dan 5 (bukan sifar) dianggap true.",
-  hint="Nilai assignment ialah 5.",
+  "Why is `if (x = 5)` always true?",
+  kw=["assign|assigns|assignment|=|umpuk", "5|non-zero|nonzero|not zero|true|bukan sifar"],
+  ans="Because = assigns 5 to x, and 5 (non-zero) counts as true.",
+  hint="The value of the assignment is 5.",
   fu=[F("""`int x = 1; if (x = 5) cout << x;`""",
-        "Apakah output?",
+        "What is the output?",
         ans=["5"],
-        hint="x ditukar.")],
-  mcq=M("Operator untuk MEMBANDINGKAN dua nilai ialah…",
+        hint="x is changed.")],
+  mcq=M("The operator that COMPARES two values is…",
         "==", "=", "!", "=>"))
 
 S("ch08", T, H + "switch and loops",
   """
-  - **switch**: int/char/bool sahaja · case constant · jangan lupa `break`
-  - **Loops**: `for` = bilangan diketahui · `while` = 0+ kali · `do-while` = 1+ kali (**berakhir dengan `;`**)
+  - **switch**: int/char/bool only · constant cases · don't forget `break`
+  - **Loops**: `for` = known count · `while` = 0+ times · `do-while` = 1+ times (**ends with `;`**)
   """,
-  "Berapa kali minimum while dan do-while berjalan? (tulis: while do-while)",
+  "What is the minimum number of runs for while and do-while? (format: while do-while)",
   ans=["0 1", "0+ 1+"],
-  hint="0+ dan 1+.",
-  fu=[F("""switch: int/char/bool sahaja.""",
-        "Senaraikan jenis yang dibenarkan dalam switch.",
+  hint="0+ and 1+.",
+  fu=[F("""switch: int/char/bool only.""",
+        "List the types allowed in a switch.",
         kw=["int", "char", "bool"],
         ans="int, char, bool.",
-        hint="Tiga.")],
-  mcq=M("Loop yang berakhir dengan ; ialah…",
+        hint="Three.")],
+  mcq=M("The loop that ends with ; is…",
         "do-while", "for", "while", "switch"))
 
 S("ch09", T, H + "break / continue and function parts",
   """
-  - **break** = keluar dari loop · **continue** = langkau ke pusingan seterusnya
+  - **break** = leave the loop · **continue** = skip to the next round
   - **Function parts**: prototype `int f(int);` · header `int f(int a)` · call `y = f(x);`
   """,
-  "Tulis contoh prototype, header dan call bagi function f dalam cheat sheet.",
+  "Give the cheat sheet's example prototype, header and call for f.",
   kw=["int f(int);|int f(int)", "int f(int a)", "y = f(x)|f(x)"],
   ans="Prototype: int f(int); Header: int f(int a). Call: y = f(x);",
-  hint="Prototype ada ;, header ada nama parameter, call tiada jenis.",
-  fu=[F("""break keluar; continue langkau ke pusingan seterusnya.""",
-        "Jump statement manakah langkau ke pusingan seterusnya?",
+  hint="The prototype has ;, the header names the parameter, the call has no types.",
+  fu=[F("""break leaves; continue skips to the next round.""",
+        "Which jump statement skips to the next round?",
         ans=["continue"],
-        hint="Bukan break.")],
-  mcq=M("Dalam cheat sheet, `y = f(x);` ialah…",
+        hint="Not break.")],
+  mcq=M("In the cheat sheet, `y = f(x);` is the…",
         "Call", "Prototype", "Header", "Definition"))
 
 S("ch10", T, H + "Value vs reference and variable lifetime",
   """
-  - **Value vs reference**: `f(int a)` = salinan · `f(int &a)` = asal (mesti hantar pemboleh ubah)
-  - **Variable lifetime**: local = setiap panggilan · static = ingat · global = seluruh fail (elakkan)
+  - **Value vs reference**: `f(int a)` = copy · `f(int &a)` = original (must pass a variable)
+  - **Variable lifetime**: local = per call · static = remembers · global = whole file (avoid)
   """,
-  "Padankan lifetime: local, static, global.",
-  kw=["local|tempatan", "per call|setiap panggilan|panggilan",
-      "static", "remember|ingat|kekal",
-      "global", "whole file|seluruh fail|fail|file"],
-  ans="local = setiap panggilan; static = ingat nilai; global = seluruh fail (elakkan).",
+  "Match the lifetimes: local, static, global.",
+  kw=["local", "per call|each call|every call|setiap panggilan|panggilan",
+      "static", "remember|remembers|keeps|kekal|ingat",
+      "global", "whole file|file|entire file|seluruh fail|fail"],
+  ans="local = per call; static = remembers its value; global = whole file (avoid).",
   hint="Per call, remembers, whole file.",
-  fu=[F("""`f(int &a)` bekerja pada yang asal; argument mesti pemboleh ubah.""",
-        "Header manakah mengubah pemboleh ubah asal: `f(int a)` atau `f(int &a)`?",
+  fu=[F("""`f(int &a)` works on the original; the argument must be a variable.""",
+        "Which header changes the original variable: `f(int a)` or `f(int &a)`?",
         ans=["f(int &a)", "int &a", "&a", "f(int& a)"],
-        hint="Ada &.")],
-  mcq=M("Pemboleh ubah yang 'mengingati' nilainya antara panggilan ialah…",
-        "static", "local biasa", "parameter by value", "literal"))
+        hint="The one with &.")],
+  mcq=M("The variable that 'remembers' its value between calls is…",
+        "static", "a plain local", "a by-value parameter", "a literal"))
 
 S("ch11", T, H + "Default args and overloading",
   """
-  - **Default args**: default dari **kanan ke kiri** · tinggalkan argument **dari kanan**
-  - **Overloading**: **nama sama + senarai parameter berbeza** (bilangan/jenis)
+  - **Default args**: defaults go **right to left** · leave out args **from the right**
+  - **Overloading**: **same name + different parameter list** (number/type)
   """,
-  "Apakah syarat function overloading?",
-  kw=["same name|nama sama|sama nama", "different|berbeza", "parameter|list|senarai"],
-  ans="Nama sama dengan senarai parameter berbeza (bilangan atau jenis).",
-  hint="Nama + parameter.",
-  fu=[F("""Default args: kanan ke kiri; argument ditinggalkan dari kanan.""",
-        "Dari arah manakah argument boleh ditinggalkan?",
-        ans=["kanan", "right", "dari kanan", "from the right"],
-        hint="Hujung senarai.")],
-  mcq=M("Default arguments ditetapkan…",
-        "Dari kanan ke kiri", "Dari kiri ke kanan", "Di tengah sahaja", "Dalam call sahaja"))
+  "What is required for function overloading?",
+  kw=["same name|nama sama|sama nama", "different|berbeza", "parameter|parameters|list|senarai"],
+  ans="The same name with a different parameter list (number or types).",
+  hint="Name + parameters.",
+  fu=[F("""Default args: right to left; arguments are left out from the right.""",
+        "From which side can arguments be left out?",
+        ans=["right", "from the right", "the right", "kanan"],
+        hint="The end of the list.")],
+  mcq=M("Default arguments are set…",
+        "From right to left", "From left to right", "Only in the middle", "Only in the call"))
 
 S("ch12", T, H + "EXAM-DAY CHECKLIST · trace table and traps",
   """
   ✔ **EXAM-DAY CHECKLIST WHEN TRACING CODE**
-  1. Lukis **trace table** dengan **satu lajur bagi setiap pemboleh ubah**.
-  2. Semak **`=` vs `==`**, **`;` tersasar selepas if/while**, dan **`break` yang hilang**.
+  1. Draw a **trace table** with **one column per variable**.
+  2. Check for **`=` vs `==`**, a **stray `;` after if/while**, and a **missing `break`**.
   """,
-  "Apakah tiga trap yang perlu disemak semasa trace code (checklist item 2)?",
-  kw=["= vs ==|==|=", ";|semicolon|titik koma|stray", "break"],
-  ans="= vs ==, ; tersasar selepas if/while, dan break yang hilang.",
-  hint="Satu operator, satu tanda baca, satu keyword.",
-  fu=[F("""Checklist item 1: trace table dengan satu lajur bagi setiap pemboleh ubah.""",
-        "Berapakah lajur bagi setiap pemboleh ubah dalam trace table?",
-        ans=["1", "satu", "one"],
+  "Which three traps does checklist item 2 tell you to check when tracing code?",
+  kw=["= vs ==|==|=", ";|semicolon|stray", "break"],
+  ans="= vs ==, a stray ; after if/while, and a missing break.",
+  hint="One operator, one punctuation mark, one keyword.",
+  fu=[F("""Checklist item 1: a trace table with one column per variable.""",
+        "How many columns per variable in a trace table?",
+        ans=["1", "one"],
         hint="One column per variable.")],
-  mcq=M("Langkah pertama dalam exam-day checklist ialah…",
-        "Lukis trace table, satu lajur setiap pemboleh ubah", "Tulis kod semula", "Compile", "Lukis flowchart"))
+  mcq=M("The first step of the exam-day checklist is…",
+        "Draw a trace table, one column per variable", "Rewrite the code", "Compile it", "Draw a flowchart"))
 
 S("ch13", T, H + "EXAM-DAY CHECKLIST · arithmetic and ++",
   """
   ✔ **EXAM-DAY CHECKLIST**
-  3. **Integer division? Truncation? Prefix atau postfix `++`?**
+  3. **Integer division? Truncation? Prefix or postfix `++`?**
   """,
-  "Apakah tiga soalan aritmetik dalam checklist item 3?",
-  kw=["integer division|integer|pembahagian integer", "truncation|truncate|potong",
+  "What are the three arithmetic questions in checklist item 3?",
+  kw=["integer division|integer|int division", "truncation|truncate|truncated",
       "prefix|postfix|++"],
-  ans="Integer division? Truncation? Prefix atau postfix ++?",
-  hint="Bahagi, potong, tambah.",
+  ans="Integer division? Truncation? Prefix or postfix ++?",
+  hint="Divide, cut off, increment.",
   fu=[F("""
         ```
         int a = 7, b = 2;
         double c = a / b;
         cout << c;
         ```""",
-        "Apakah output?",
+        "What is the output?",
         ans=["3"],
-        hint="a / b ialah int ÷ int dahulu.")],
+        hint="a / b is int ÷ int first.")],
   mcq=M("`int k = 4; int m = k++ + 1;` → m =",
-        "5", "6", "4", "Ralat"))
+        "5", "6", "4", "An error"))
 
 S("ch14", T, H + "EXAM-DAY CHECKLIST · value/reference and static",
   """
   ✔ **EXAM-DAY CHECKLIST**
-  4. **Pass by value** (asal tidak berubah) atau **by reference** (asal berubah)?
-  5. **Static variable** (kekalkan nilai) atau **local biasa** (reset setiap panggilan)?
+  4. **Pass by value** (original unchanged) or **by reference** (original changed)?
+  5. **Static variable** (keeps its value) or **normal local** (resets each call)?
   """,
-  "Apakah dua soalan tentang functions dalam checklist item 4 dan 5?",
-  kw=["value|nilai", "reference|rujukan|&", "static", "local|reset"],
-  ans="Pass by value atau by reference? Static variable atau local biasa?",
-  hint="Parameter dan lifetime.",
+  "What are the two function questions in checklist items 4 and 5?",
+  kw=["value", "reference|&", "static", "local|reset|resets"],
+  ans="Pass by value or by reference? Static variable or normal local?",
+  hint="Parameters and lifetime.",
   fu=[F("""
         ```
         void addOne(int n) { n++; }
         int main() { int k = 9; addOne(k); cout << k; }
         ```""",
-        "Apakah output?",
+        "What is the output?",
         ans=["9"],
         hint="Pass by value.")],
-  mcq=M("Dalam soalan trace, local variable biasa (bukan static)…",
-        "Reset setiap panggilan", "Mengekalkan nilai", "Auto 0 dan kekal", "Sama dengan global"))
+  mcq=M("When tracing, a normal (non-static) local variable…",
+        "Resets on each call", "Keeps its value", "Is auto 0 and stays", "Is the same as a global"))

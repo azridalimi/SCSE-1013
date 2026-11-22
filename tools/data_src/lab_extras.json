@@ -2,22 +2,22 @@
  {
   "id": "xal12",
   "topic": "alg",
-  "section": "Tambahan (Lab) · common flowchart mistakes",
+  "section": "Extra (Lab) · Common flowchart mistakes",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\n**Awas (flowchart)** yang selalu hilang markah:\n\n- Guna **rectangle** untuk input/output (sepatutnya **parallelogram**).\n- Diamond tanpa label **Yes/No** pada anak panah keluar.\n- Tiada simbol **Start/End** (oval).\n- Anak panah tiada arah, atau aliran bercabang tanpa diamond.",
-  "question": "Senaraikan dua kesilapan biasa semasa melukis flowchart.",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n**Watch out (flowchart)** — mistakes that often lose marks:\n\n- Using a **rectangle** for input/output (it should be a **parallelogram**).\n- A diamond without **Yes/No** labels on its exit arrows.\n- No **Start/End** (oval) symbol.\n- Arrows with no direction, or a flow that branches without a diamond.",
+  "question": "List two common mistakes when drawing a flowchart.",
   "type": "explain",
   "keywords": [
    "rectangle|segi empat|parallelogram|input|output",
    "label|yes|no|true|false|ya|tidak",
    "start|end|oval|mula|tamat|terminal|arrow|anak panah"
   ],
-  "answer": "Guna rectangle untuk input/output; diamond tanpa label Yes/No; tiada Start/End; anak panah tanpa arah.",
-  "hint": "Fikir simbol yang salah bentuk, dan label yang tertinggal.",
+  "answer": "Using a rectangle for input/output; a diamond without Yes/No labels; no Start/End; arrows with no direction.",
+  "hint": "Think of wrong shapes and missing labels.",
   "followUps": [
    {
-    "note": "Pelajar melukis `READ marks` dalam rectangle. Ini salah.",
-    "question": "Simbol yang betul untuk READ marks ialah?",
+    "note": "A student draws `READ marks` in a rectangle. That is wrong.",
+    "question": "What is the correct symbol for READ marks?",
     "type": "exact",
     "hint": "Input/Output.",
     "answer": [
@@ -28,12 +28,12 @@
    }
   ],
   "mcq": {
-   "question": "Kesilapan manakah dalam flowchart ini: 'DISPLAY total' dalam kotak segi empat tepat?",
+   "question": "What is wrong with this flowchart: 'DISPLAY total' in a rectangle?",
    "options": [
-    "Output sepatutnya dalam parallelogram",
-    "Output sepatutnya dalam diamond",
-    "Output sepatutnya dalam oval",
-    "Tiada kesilapan"
+    "Output should be a parallelogram",
+    "Output should be a diamond",
+    "Output should be an oval",
+    "Nothing is wrong"
    ],
    "correct": 0
   }
@@ -41,22 +41,22 @@
  {
   "id": "xcp08",
   "topic": "cpp",
-  "section": "Tambahan (Lab 4) · cin with char arrays and getline",
+  "section": "Extra (Lab 4) · cin with char arrays and getline",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\n**Awas**: `cin >>` berhenti membaca pada **whitespace** (ruang, tab, enter).\n\n```\nchar word[21];\nstring name;\ncin >> word;          // taip: Hello World\ncin >> name;\n```\n`word` = `Hello`, dan `World` kekal dalam buffer lalu terus masuk ke `name` tanpa menunggu pengguna (Lab 4 C2).\n\nUntuk baca satu baris penuh guna `cin.getline(word, 21)` (C-string) atau `getline(cin, name)` (string).",
-  "question": "Apa yang berlaku apabila pengguna menaip `Hello World` ke `cin >> word;`?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n**Watch out**: `cin >>` stops reading at **whitespace** (space, tab, enter).\n\n```\nchar word[21];\nstring name;\ncin >> word;          // type: Hello World\ncin >> name;\n```\n`word` = `Hello`, and `World` stays in the buffer and goes straight into `name` without waiting for the user (Lab 4 C2).\n\nTo read a whole line use `cin.getline(word, 21)` (C-string) or `getline(cin, name)` (string).",
+  "question": "What happens when the user types `Hello World` into `cin >> word;`?",
   "type": "explain",
   "keywords": [
    "hello",
    "space|ruang|whitespace|berhenti|stop",
    "world|buffer|baki|tinggal|remain|seterusnya|next"
   ],
-  "answer": "Hanya 'Hello' dibaca kerana cin berhenti pada ruang; 'World' kekal dalam buffer untuk input seterusnya.",
-  "hint": "Apa yang cin buat apabila jumpa ruang?",
+  "answer": "Only 'Hello' is read because cin stops at the space; 'World' stays in the buffer for the next input.",
+  "hint": "What does cin do when it meets a space?",
   "followUps": [
    {
-    "note": "`cin.getline(arr, size)` membaca sehingga Enter, termasuk ruang.",
-    "question": "Function apakah membaca satu baris penuh ke dalam char array?",
+    "note": "`cin.getline(arr, size)` reads up to Enter, including spaces.",
+    "question": "Which function reads a whole line into a char array?",
     "type": "exact",
     "hint": "cin.get…",
     "answer": [
@@ -67,10 +67,10 @@
     "keywords": []
    },
    {
-    "note": "`char word[21]` boleh simpan 20 aksara + `'\\0'` (null terminator).",
-    "question": "Berapakah aksara maksimum yang boleh disimpan dalam `char word[21]`?",
+    "note": "`char word[21]` holds 20 characters + `'\\0'` (null terminator).",
+    "question": "What is the maximum number of characters `char word[21]` can hold?",
     "type": "exact",
-    "hint": "Satu ruang untuk null terminator.",
+    "hint": "One slot is for the null terminator.",
     "answer": [
      "20"
     ],
@@ -78,12 +78,12 @@
    }
   ],
   "mcq": {
-   "question": "Pengguna taip 'Ali Baba' untuk `cin >> name;` (string). Nilai name ialah…",
+   "question": "The user types 'Ali Baba' for `cin >> name;` (string). name is…",
    "options": [
     "Ali",
     "Ali Baba",
     "Baba",
-    "Ralat"
+    "An error"
    ],
    "correct": 0
   }
@@ -91,23 +91,23 @@
  {
   "id": "xcp13",
   "topic": "cpp",
-  "section": "Tambahan (Lab 4) · Named constants: const vs #define (slides 63–66)",
+  "section": "Extra (Lab 4) · Named constants: const vs #define (slides 63–66)",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\nDua cara buat pemalar:\n\n```\nconst double PI = 3.14159;   // ada jenis, mesti diberi nilai, ada ;\n#define PI 3.14159           // preprocessor, TIADA = dan TIADA ;\n```\n\n- `PI = 3;` selepas `const` → ralat `assignment of read-only variable 'PI'`.\n- `PI = 3;` dengan `#define` → menjadi `3.14159 = 3;` → ralat `lvalue required as left operand of assignment`.\n- `#define PI 3.14159;` (ada `;`) → `;` ikut masuk ke setiap tempat PI digunakan → ralat sintaks.\n\nPilihan disyorkan: **const**, kerana ada jenis data (type-checked) dan mengikut scope.",
-  "question": "Mengapakah `const` lebih disyorkan berbanding `#define`?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nTwo ways to make a constant:\n\n```\nconst double PI = 3.14159;   // has a type, must be given a value, has ;\n#define PI 3.14159           // preprocessor, NO = and NO ;\n```\n\n- `PI = 3;` after `const` → error `assignment of read-only variable 'PI'`.\n- `PI = 3;` with `#define` → becomes `3.14159 = 3;` → error `lvalue required as left operand of assignment`.\n- `#define PI 3.14159;` (with `;`) → the `;` is pasted everywhere PI is used → syntax errors.\n\nRecommended: **const**, because it has a data type (type-checked) and follows scope.",
+  "question": "Why is `const` recommended over `#define`?",
   "type": "explain",
   "keywords": [
    "type|jenis|data type|type-checked|semak jenis",
    "scope|skop|compiler|safe|selamat|ralat|error|debug"
   ],
-  "answer": "const ada jenis data yang disemak compiler dan ikut scope; #define hanya penggantian teks oleh preprocessor.",
-  "hint": "Siapa yang memproses #define? Adakah ia ada jenis?",
+  "answer": "const has a data type that the compiler checks and follows scope; #define is only text replacement by the preprocessor.",
+  "hint": "Who processes #define? Does it have a type?",
   "followUps": [
    {
     "note": "```\nconst double PI = 3.14159;\nPI = 3;\n```",
-    "question": "Apakah jenis ralat yang berlaku? (assignment of …)",
+    "question": "What kind of error happens? (assignment of …)",
     "type": "exact",
-    "hint": "const = baca sahaja.",
+    "hint": "const = read only.",
     "answer": [
      "assignment of read-only variable",
      "assignment of read-only variable 'PI'",
@@ -117,10 +117,10 @@
     "keywords": []
    },
    {
-    "note": "Cari kesilapan: `#define PI 3.14159;`",
-    "question": "Apakah simbol yang perlu dibuang?",
+    "note": "Find the mistake: `#define PI 3.14159;`",
+    "question": "Which symbol must be removed?",
     "type": "exact",
-    "hint": "#define bukan statement.",
+    "hint": "#define is not a statement.",
     "answer": [
      ";",
      "semicolon",
@@ -130,10 +130,10 @@
     "keywords": []
    },
    {
-    "note": "Lab 4 B2: pemalar untuk formula cukai disimpan sebagai `const`.",
-    "question": "Tulis pengisytiharan const untuk kadar cukai 0.25 bernama TAX_RATE (double).",
+    "note": "Lab 4 B2: the tax formula constants are stored as `const`.",
+    "question": "Declare a const for the tax rate 0.25 called TAX_RATE (double).",
     "type": "exact",
-    "hint": "const + jenis + nama = nilai;",
+    "hint": "const + type + name = value;",
     "answer": [
      "const double TAX_RATE = 0.25;"
     ],
@@ -141,7 +141,7 @@
    }
   ],
   "mcq": {
-   "question": "Yang manakah pengisytiharan pemalar yang BETUL?",
+   "question": "Which constant declaration is CORRECT?",
    "options": [
     "#define RATE 0.25",
     "#define RATE = 0.25;",
@@ -154,20 +154,20 @@
  {
   "id": "xcp17",
   "topic": "cpp",
-  "section": "Tambahan (Lab 4) · Operator precedence",
+  "section": "Extra (Lab 4) · Operator precedence",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\nKeutamaan (tinggi → rendah):\n\n1. `( )`\n2. Unary `-`, `++`, `--`, `!`\n3. `*  /  %` (kiri ke kanan)\n4. `+  -` (kiri ke kanan)\n5. `=  +=  -=  *=  /=  %=` (kanan ke kiri)\n\n```\nint y = -5;\nint z = 8 - 3 + 9 / 2 + 2 * -y;     // 8 - 3 + 4 + 10 = 19\nz = 8 - (3 + 9 / 2) + 2 * -y;       // 8 - 7 + 10 = 11\n```",
-  "question": "Antara * dan +, operator manakah dinilai dahulu?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nPrecedence (high → low):\n\n1. `( )`\n2. Unary `-`, `++`, `--`, `!`\n3. `*  /  %` (left to right)\n4. `+  -` (left to right)\n5. `=  +=  -=  *=  /=  %=` (right to left)\n\n```\nint y = -5;\nint z = 8 - 3 + 9 / 2 + 2 * -y;     // 8 - 3 + 4 + 10 = 19\nz = 8 - (3 + 9 / 2) + 2 * -y;       // 8 - 7 + 10 = 11\n```",
+  "question": "Between * and +, which operator is evaluated first?",
   "type": "explain",
   "keywords": [
    "*|darab|multiply|multiplication|pendaraban"
   ],
-  "answer": "* (pendaraban) dinilai sebelum +.",
-  "hint": "Sama seperti matematik.",
+  "answer": "* (multiplication) is evaluated before +.",
+  "hint": "Same as in maths.",
   "followUps": [
    {
-    "note": "```\nint y = -5;\nint z = 8 - 3 + 9 / 2 + 2 * -y;\n```\nLangkah: `9 / 2` = 4 (integer), `-y` = 5, `2 * 5` = 10.",
-    "question": "Apakah nilai z?",
+    "note": "```\nint y = -5;\nint z = 8 - 3 + 9 / 2 + 2 * -y;\n```\nSteps: `9 / 2` = 4 (integer), `-y` = 5, `2 * 5` = 10.",
+    "question": "What is z?",
     "type": "exact",
     "hint": "8 − 3 + 4 + 10.",
     "answer": [
@@ -177,10 +177,10 @@
     "keywords": []
    },
    {
-    "note": "`z = 8 - (3 + 9 / 2) + 2 * -y;` dengan `y = -5`.",
-    "question": "Apakah nilai z?",
+    "note": "`z = 8 - (3 + 9 / 2) + 2 * -y;` with `y = -5`.",
+    "question": "What is z?",
     "type": "exact",
-    "hint": "Kurungan dahulu: 3 + 4 = 7.",
+    "hint": "Brackets first: 3 + 4 = 7.",
     "answer": [
      "11",
      "z = 11"
@@ -188,8 +188,8 @@
     "keywords": []
    },
    {
-    "note": "Lab 4 A2 4b/4c: `46 % 9 + 4 * 4 - 2` dan `45 + 43 % 5 * (23 * 3 % 2)`.",
-    "question": "Apakah nilai `45 + 43 % 5 * (23 * 3 % 2)`?",
+    "note": "Lab 4 A2 4b/4c: `46 % 9 + 4 * 4 - 2` and `45 + 43 % 5 * (23 * 3 % 2)`.",
+    "question": "What is `45 + 43 % 5 * (23 * 3 % 2)`?",
     "type": "exact",
     "hint": "23*3 = 69, 69 % 2 = 1, 43 % 5 = 3, 3 * 1 = 3.",
     "answer": [
@@ -199,7 +199,7 @@
    }
   ],
   "mcq": {
-   "question": "Nilai `46 % 9 + 4 * 4 - 2` ialah…",
+   "question": "The value of `46 % 9 + 4 * 4 - 2` is…",
    "options": [
     "15",
     "5",
@@ -212,24 +212,24 @@
  {
   "id": "xcp21",
   "topic": "cpp",
-  "section": "Tambahan (Lab 4) · Increment ++ and decrement -- (slides 103–108)",
+  "section": "Extra (Lab 4) · Increment ++ and decrement -- (slides 103–108)",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\n- **Prefix** `++x`: tambah dulu, kemudian guna nilai baru.\n- **Postfix** `x++`: guna nilai lama dulu, kemudian tambah.\n\n```\nint count = 5, first = 10, second;\nsecond = 5 * count-- + first;   // 5*5+10 = 35, count jadi 4\nsecond = 5 * --count + first;   // count jadi 3, 5*3+10 = 25\n```\n**Awas**: dalam baris kedua count sudah 4 (bukan 5).",
-  "question": "Apakah beza ++x dan x++?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n- **Prefix** `++x`: add first, then use the new value.\n- **Postfix** `x++`: use the old value first, then add.\n\n```\nint count = 5, first = 10, second;\nsecond = 5 * count-- + first;   // 5*5+10 = 35, count becomes 4\nsecond = 5 * --count + first;   // count becomes 3, 5*3+10 = 25\n```\n**Watch out**: on the second line count is already 4 (not 5).",
+  "question": "What is the difference between ++x and x++?",
   "type": "explain",
   "keywords": [
    "prefix|++x|sebelum|before|dulu|dahulu",
    "postfix|x++|selepas|after|kemudian",
    "value|nilai|guna|use|digunakan"
   ],
-  "answer": "++x (prefix) tambah dahulu kemudian guna nilai baru; x++ (postfix) guna nilai lama dahulu kemudian tambah.",
-  "hint": "Fikir bila nilai itu DIGUNAKAN berbanding bila ia DITAMBAH.",
+  "answer": "++x (prefix) adds first then uses the new value; x++ (postfix) uses the old value first then adds.",
+  "hint": "Think about when the value is USED versus when it is ADDED.",
   "followUps": [
    {
     "note": "```\nint count = 5, first = 10, second;\nsecond = 5 * count-- + first;\n```",
-    "question": "Apakah nilai second dan count? (tulis: second count)",
+    "question": "What are second and count? (format: second count)",
     "type": "exact",
-    "hint": "Postfix guna 5 dahulu.",
+    "hint": "Postfix uses 5 first.",
     "answer": [
      "35 4",
      "second = 35 count = 4",
@@ -238,10 +238,10 @@
     "keywords": []
    },
    {
-    "note": "Sambungan: `second = 5 * --count + first;` (count sekarang 4).",
-    "question": "Apakah nilai second dan count? (tulis: second count)",
+    "note": "Continuing: `second = 5 * --count + first;` (count is now 4).",
+    "question": "What are second and count? (format: second count)",
     "type": "exact",
-    "hint": "Prefix: count jadi 3 dahulu.",
+    "hint": "Prefix: count becomes 3 first.",
     "answer": [
      "25 3",
      "second = 25 count = 3",
@@ -251,9 +251,9 @@
    },
    {
     "note": "```\nint x = 5;\ncout << x++ << \" \";\ncout << x << \" \";\ncout << ++x;\n```",
-    "question": "Apakah output?",
+    "question": "What is the output?",
     "type": "exact",
-    "hint": "Postfix, kemudian nilai semasa, kemudian prefix.",
+    "hint": "Postfix, then the current value, then prefix.",
     "answer": [
      "5 6 7"
     ],
@@ -261,7 +261,7 @@
    }
   ],
   "mcq": {
-   "question": "`int a = 3; int b = a++ * 2;` Nilai a dan b ialah…",
+   "question": "`int a = 3; int b = a++ * 2;` What are a and b?",
    "options": [
     "a = 4, b = 6",
     "a = 4, b = 8",
@@ -274,21 +274,21 @@
  {
   "id": "xcp22",
   "topic": "cpp",
-  "section": "Tambahan (Lab 4) · Combined and multiple assignment",
+  "section": "Extra (Lab 4) · Combined and multiple assignment",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\nCombined assignment: `x op= expr` bermaksud `x = x op (expr)`. Seluruh sebelah kanan dikira DAHULU.\n\n```\nint i = 10, j = 2;\ni *= j + 3;              // i = 10 * (2 + 3) = 50\n\nint a = 1; double d = 1.0;\nd += 1.5 * 3 + (++a);    // d = 1.0 + (4.5 + 2) = 7.5, a = 2\na = 1; d = 1.0;\nd -= 1.5 * 3 + a++;      // d = 1.0 - (4.5 + 1) = -4.5, a = 2\n\na = 1;\na %= 3 / a + 3;          // a = 1 % 6 = 1\n\nint x, p, q;\nx = p = q = 5;           // kanan ke kiri, x+p+q = 15\n```",
-  "question": "Apakah maksud `i *= j + 3;`?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nCombined assignment: `x op= expr` means `x = x op (expr)`. The whole right-hand side is evaluated FIRST.\n\n```\nint i = 10, j = 2;\ni *= j + 3;              // i = 10 * (2 + 3) = 50\n\nint a = 1; double d = 1.0;\nd += 1.5 * 3 + (++a);    // d = 1.0 + (4.5 + 2) = 7.5, a = 2\na = 1; d = 1.0;\nd -= 1.5 * 3 + a++;      // d = 1.0 - (4.5 + 1) = -4.5, a = 2\n\na = 1;\na %= 3 / a + 3;          // a = 1 % 6 = 1\n\nint x, p, q;\nx = p = q = 5;           // right to left, x+p+q = 15\n```",
+  "question": "What does `i *= j + 3;` mean?",
   "type": "explain",
   "keywords": [
    "i = i *|i=i*|i = i*|darab|multiply",
    "(j + 3)|(j+3)|kurungan|j + 3 dahulu|dulu|dahulu|keseluruhan|whole"
   ],
-  "answer": "i = i * (j + 3): sebelah kanan dikira dahulu, kemudian didarab dengan i.",
-  "hint": "Kembangkan op= menjadi bentuk penuh.",
+  "answer": "i = i * (j + 3): the right-hand side is evaluated first, then multiplied by i.",
+  "hint": "Expand op= into its full form.",
   "followUps": [
    {
     "note": "`int i = 10, j = 2; i *= j + 3;`",
-    "question": "Apakah nilai i?",
+    "question": "What is i?",
     "type": "exact",
     "hint": "10 × 5.",
     "answer": [
@@ -298,7 +298,7 @@
    },
    {
     "note": "`int a = 1; double d = 1.0; d += 1.5 * 3 + (++a);`",
-    "question": "Apakah nilai d dan a? (tulis: d a)",
+    "question": "What are d and a? (format: d a)",
     "type": "exact",
     "hint": "++a = 2, 4.5 + 2 = 6.5, 1.0 + 6.5.",
     "answer": [
@@ -309,7 +309,7 @@
    },
    {
     "note": "`int a = 1; a %= 3 / a + 3;`",
-    "question": "Apakah nilai a?",
+    "question": "What is a?",
     "type": "exact",
     "hint": "3/1 + 3 = 6, 1 % 6.",
     "answer": [
@@ -319,7 +319,7 @@
    }
   ],
   "mcq": {
-   "question": "`int x = 4; x -= 2 * 3;` Nilai x ialah…",
+   "question": "`int x = 4; x -= 2 * 3;` What is x?",
    "options": [
     "-2",
     "6",
@@ -332,10 +332,10 @@
  {
   "id": "xcp23",
   "topic": "cpp",
-  "section": "Tambahan (Lab 4) · Default cout precision",
+  "section": "Extra (Lab 4) · Default cout precision",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\nSecara lalai `cout` memaparkan **6 digit bererti** (significant digits).\n\n`0.25 * (4250.50 * 11 - 3 * 450)` = 11351.375 tetapi dicetak `11351.4`.\n\n`80.33333…` dicetak `80.3333`. Format lain (setprecision) diajar kemudian (Week 10).",
-  "question": "Berapakah digit bererti yang dipaparkan cout secara lalai?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nBy default `cout` shows **6 significant digits**.\n\n`0.25 * (4250.50 * 11 - 3 * 450)` = 11351.375 but is printed as `11351.4`.\n\n`80.33333…` is printed as `80.3333`. Other formats (setprecision) are taught later (Week 10).",
+  "question": "How many significant digits does cout show by default?",
   "type": "exact",
   "keywords": [],
   "answer": [
@@ -344,13 +344,13 @@
    "six",
    "6 digits"
   ],
-  "hint": "80.3333 ada berapa digit?",
+  "hint": "How many digits does 80.3333 have?",
   "followUps": [
    {
-    "note": "Nilai sebenar 11351.375.",
-    "question": "Apakah yang dicetak oleh cout?",
+    "note": "The real value is 11351.375.",
+    "question": "What does cout print?",
     "type": "exact",
-    "hint": "Bundarkan kepada 6 digit bererti.",
+    "hint": "Round to 6 significant digits.",
     "answer": [
      "11351.4"
     ],
@@ -358,7 +358,7 @@
    }
   ],
   "mcq": {
-   "question": "`cout << 2.0 / 3;` mencetak…",
+   "question": "`cout << 2.0 / 3;` prints…",
    "options": [
     "0.666667",
     "0.6666666667",
@@ -371,23 +371,23 @@
  {
   "id": "xcp24",
   "topic": "cpp",
-  "section": "Tambahan (Lab 4) · Reading compiler errors (Lab 4 A1)",
+  "section": "Extra (Lab 4) · Reading compiler errors (Lab 4 A1)",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\nFormat mesej g++: `file.cpp:LINE:COLUMN: error: message`.\n\nStrategi:\n1. Betulkan **ralat PERTAMA sahaja**, kemudian compile semula. Satu kesilapan boleh menyembunyikan/menyebabkan ralat lain.\n2. **Awas**: baris yang dilaporkan kadang-kadang **selepas** kesilapan sebenar. Contoh `using namespace std` tanpa `;` dilaporkan sebagai `expected ';' before 'int'` pada baris seterusnya.\n3. Compile dengan `-Wall -Wextra` dan anggap warning sebagai kesilapan.",
-  "question": "Mengapa kita patut betulkan ralat pertama sahaja dahulu, kemudian compile semula?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\ng++ message format: `file.cpp:LINE:COLUMN: error: message`.\n\nStrategy:\n1. Fix **only the FIRST error**, then recompile. One mistake can hide or cause other errors.\n2. **Watch out**: the reported line is sometimes **after** the real mistake. e.g. `using namespace std` without `;` is reported as `expected ';' before 'int'` on the next line.\n3. Compile with `-Wall -Wextra` and treat warnings as mistakes.",
+  "question": "Why should you fix only the first error, then recompile?",
   "type": "explain",
   "keywords": [
    "first|pertama",
    "hide|sembunyi|cause|sebab|menyebabkan|lain|other|cascade|berantai|palsu|false"
   ],
-  "answer": "Kerana satu kesilapan boleh menyebabkan atau menyembunyikan ralat lain; selepas betulkan yang pertama, ralat lain mungkin hilang.",
-  "hint": "Satu kesilapan boleh menghasilkan banyak mesej.",
+  "answer": "Because one mistake can cause or hide other errors; after fixing the first, the others may disappear.",
+  "hint": "One mistake can produce many messages.",
   "followUps": [
    {
-    "note": "```\nusing namespace std\nint main()\n```\nCompiler lapor `expected ';' before 'int'` pada baris `int main()`.",
-    "question": "Di baris manakah kesilapan sebenar? (baris using / baris int main)",
+    "note": "```\nusing namespace std\nint main()\n```\nThe compiler reports `expected ';' before 'int'` on the `int main()` line.",
+    "question": "Which line has the real mistake? (the using line / the int main line)",
     "type": "exact",
-    "hint": "Mesej kata ';' sepatutnya ada SEBELUM int.",
+    "hint": "The message says ';' should come BEFORE int.",
     "answer": [
      "using",
      "baris using",
@@ -399,9 +399,9 @@
    },
    {
     "note": "Lab 4 A1: `#include iostream` → `#include expects \"FILENAME\" or <FILENAME>`.",
-    "question": "Tulis baris #include yang betul untuk iostream.",
+    "question": "Write the correct #include line for iostream.",
     "type": "exact",
-    "hint": "Nama fail dalam < >.",
+    "hint": "File name inside < >.",
     "answer": [
      "#include <iostream>",
      "#include<iostream>"
@@ -410,12 +410,12 @@
    }
   ],
   "mcq": {
-   "question": "Mesej `expected ';' before 'cout'` pada baris 10 biasanya bermaksud…",
+   "question": "The message `expected ';' before 'cout'` on line 10 usually means…",
    "options": [
-    "Baris 9 tiada ;",
-    "Baris 10 tiada ;",
-    "cout salah eja",
-    "Perlu #include <cmath>"
+    "Line 9 is missing ;",
+    "Line 10 is missing ;",
+    "cout is misspelt",
+    "You need #include <cmath>"
    ],
    "correct": 0
   }
@@ -423,10 +423,10 @@
  {
   "id": "xcp25",
   "topic": "cpp",
-  "section": "Tambahan (Lab 4) · Using / and % for unit conversion (Lab 4 B3)",
+  "section": "Extra (Lab 4) · Using / and % for unit conversion (Lab 4 B3)",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\nTukar saat → jam, minit, saat guna `/` dan `%` sahaja:\n\n```\nint s = 3725;\ncout << s / 3600 << \" h \"\n     << (s % 3600) / 60 << \" min \"\n     << s % 60 << \" s\";\n```\nOutput: `1 h 2 min 5 s`",
-  "question": "Bagaimana mendapatkan bilangan minit (selepas jam) daripada jumlah saat s?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nConvert seconds → hours, minutes, seconds using only `/` and `%`:\n\n```\nint s = 3725;\ncout << s / 3600 << \" h \"\n     << (s % 3600) / 60 << \" min \"\n     << s % 60 << \" s\";\n```\nOutput: `1 h 2 min 5 s`",
+  "question": "How do you get the number of minutes (after the hours) from a total of s seconds?",
   "type": "exact",
   "keywords": [],
   "answer": [
@@ -434,13 +434,13 @@
    "s % 3600 / 60",
    "(s%3600)/60"
   ],
-  "hint": "Buang jam penuh dahulu dengan %, kemudian bahagi 60.",
+  "hint": "Remove the full hours with % first, then divide by 60.",
   "followUps": [
    {
     "note": "s = 7384. 7384 / 3600 = 2, 7384 % 3600 = 184, 184 / 60 = 3, 7384 % 60 = 4.",
-    "question": "Apakah output untuk s = 7384? (format: X h Y min Z s)",
+    "question": "What is the output for s = 7384? (format: X h Y min Z s)",
     "type": "exact",
-    "hint": "Guna pengiraan dalam nota.",
+    "hint": "Use the calculation in the note.",
     "answer": [
      "2 h 3 min 4 s"
     ],
@@ -448,7 +448,7 @@
    }
   ],
   "mcq": {
-   "question": "`int s = 3725; cout << s % 60;` mencetak…",
+   "question": "`int s = 3725; cout << s % 60;` prints…",
    "options": [
     "5",
     "62",
@@ -461,22 +461,22 @@
  {
   "id": "xcs10",
   "topic": "ctrl",
-  "section": "Tambahan (Lab 5) · n % 2 == 1 for negative numbers (slide 37)",
+  "section": "Extra (Lab 5) · n % 2 == 1 for negative numbers (slide 37)",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\n**Awas**: dalam C++, hasil `%` mengikut tanda operand kiri. `-3 % 2` = **-1**, bukan 1.\n\nJadi `if (n % 2 == 1)` GAGAL mengesan nombor ganjil negatif.\n\nBetul: `if (n % 2 != 0)` → odd. Atau uji `n % 2 == 0` untuk even.",
-  "question": "Apakah nilai -3 % 2 dalam C++?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n**Watch out**: in C++, the result of `%` takes the sign of the left operand. `-3 % 2` = **-1**, not 1.\n\nSo `if (n % 2 == 1)` FAILS to detect negative odd numbers.\n\nCorrect: `if (n % 2 != 0)` → odd. Or test `n % 2 == 0` for even.",
+  "question": "What is -3 % 2 in C++?",
   "type": "exact",
   "keywords": [],
   "answer": [
    "-1"
   ],
-  "hint": "Tanda ikut operand kiri.",
+  "hint": "The sign follows the left operand.",
   "followUps": [
    {
-    "note": "Syarat selamat untuk ganjil yang berfungsi untuk positif dan negatif.",
-    "question": "Tulis syarat untuk n ganjil yang betul untuk nombor negatif.",
+    "note": "A safe odd test that works for positive and negative numbers.",
+    "question": "Write a condition for n being odd that works for negative numbers.",
     "type": "exact",
-    "hint": "Bukan sama dengan sifar.",
+    "hint": "Not equal to zero.",
     "answer": [
      "n % 2 != 0",
      "n%2!=0",
@@ -487,11 +487,11 @@
    }
   ],
   "mcq": {
-   "question": "Dengan n = -7, `n % 2 == 1` bernilai…",
+   "question": "With n = -7, `n % 2 == 1` is…",
    "options": [
     "false",
     "true",
-    "ralat",
+    "an error",
     "-1"
    ],
    "correct": 0
@@ -500,10 +500,10 @@
  {
   "id": "xcs11",
   "topic": "ctrl",
-  "section": "Tambahan (Lab 5) · Compound condition: leap year",
+  "section": "Extra (Lab 5) · Compound condition: leap year",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\nTahun lompat: boleh dibahagi 4, kecuali abad (100), melainkan boleh dibahagi 400.\n\n```\nif ((y % 4 == 0 && y % 100 != 0) || y % 400 == 0)\n    cout << y << \" is a leap year\";\n```\n1900 → bukan, 2000 → ya, 2024 → ya, 2100 → bukan.",
-  "question": "Tulis syarat C++ untuk tahun lompat y.",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nLeap year: divisible by 4, except centuries (100), unless divisible by 400.\n\n```\nif ((y % 4 == 0 && y % 100 != 0) || y % 400 == 0)\n    cout << y << \" is a leap year\";\n```\n1900 → no, 2000 → yes, 2024 → yes, 2100 → no.",
+  "question": "Write the C++ condition for y being a leap year.",
   "type": "exact",
   "keywords": [],
   "answer": [
@@ -511,16 +511,16 @@
    "y % 4 == 0 && y % 100 != 0 || y % 400 == 0",
    "y % 400 == 0 || (y % 4 == 0 && y % 100 != 0)"
   ],
-  "hint": "(div 4 DAN bukan div 100) ATAU div 400.",
+  "hint": "(div by 4 AND not div by 100) OR div by 400.",
   "followUps": [
    {
-    "note": "1900: 1900 % 4 == 0 betul, tetapi 1900 % 100 == 0, dan 1900 % 400 = 300.",
-    "question": "Adakah 1900 tahun lompat? (ya / tidak)",
+    "note": "1900: 1900 % 4 == 0 is true, but 1900 % 100 == 0, and 1900 % 400 = 300.",
+    "question": "Is 1900 a leap year? (yes / no)",
     "type": "exact",
-    "hint": "Abad, tidak boleh dibahagi 400.",
+    "hint": "A century not divisible by 400.",
     "answer": [
-     "tidak",
      "no",
+     "tidak",
      "bukan",
      "tak"
     ],
@@ -528,19 +528,19 @@
    },
    {
     "note": "2000 % 400 == 0.",
-    "question": "Adakah 2000 tahun lompat? (ya / tidak)",
+    "question": "Is 2000 a leap year? (yes / no)",
     "type": "exact",
-    "hint": "Bahagian || selepas.",
+    "hint": "The part after ||.",
     "answer": [
-     "ya",
      "yes",
+     "ya",
      "betul"
     ],
     "keywords": []
    }
   ],
   "mcq": {
-   "question": "Tahun manakah BUKAN tahun lompat?",
+   "question": "Which year is NOT a leap year?",
    "options": [
     "2100",
     "2000",
@@ -553,30 +553,30 @@
  {
   "id": "xcs18",
   "topic": "ctrl",
-  "section": "Tambahan (Lab 5) · semicolon after for/while",
+  "section": "Extra (Lab 5) · Semicolon after for/while",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\n**Awas**: `;` selepas `for (...)` menjadikan loop berbadan kosong.\n\n```\nint i;\nfor (i = 0; i < 3; i++);\n    cout << i;\n```\nLoop berjalan 3 kali tanpa buat apa-apa, kemudian `cout` sekali. Output: **`3`**.\n\nUntuk `while (cond);` dengan syarat benar → **infinite loop**.",
-  "question": "Apakah output program di atas?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n**Watch out**: a `;` after `for (...)` gives the loop an empty body.\n\n```\nint i;\nfor (i = 0; i < 3; i++);\n    cout << i;\n```\nThe loop runs 3 times doing nothing, then `cout` runs once. Output: **`3`**.\n\nWith `while (cond);` and a true condition → **infinite loop**.",
+  "question": "What does the program above print?",
   "type": "exact",
   "keywords": [],
   "answer": [
    "3"
   ],
-  "hint": "cout di luar loop; i selepas loop tamat.",
+  "hint": "The cout is outside the loop; i after the loop ends.",
   "followUps": [
    {
     "note": "`int k = 0; while (k < 3); { k++; }`",
-    "question": "Apakah yang berlaku?",
+    "question": "What happens?",
     "type": "explain",
-    "hint": "k tidak pernah berubah.",
+    "hint": "k never changes.",
     "keywords": [
      "infinite|tak berhenti|tidak berhenti|selama-lamanya|forever|tak terhingga|hang|never"
     ],
-    "answer": "Infinite loop: badan while ialah ; sahaja, k tidak pernah bertambah."
+    "answer": "Infinite loop: the while's body is just ;, so k never increases."
    }
   ],
   "mcq": {
-   "question": "`for (int i = 0; i < 5; i++); cout << \"*\";` mencetak berapa bintang?",
+   "question": "`for (int i = 0; i < 5; i++); cout << \"*\";` prints how many stars?",
    "options": [
     "1",
     "5",
@@ -589,10 +589,10 @@
  {
   "id": "xcs19",
   "topic": "ctrl",
-  "section": "Tambahan (Lab 5) · off-by-one (< vs <=)",
+  "section": "Extra (Lab 5) · Off-by-one (< vs <=)",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\n**Awas off-by-one**: salah pilih `<` atau `<=`, atau nilai mula 0 atau 1.\n\n```\nfor (int i = 0; i < 5; i++)    // 5 kali (0..4)\nfor (int i = 0; i <= 5; i++)   // 6 kali (0..5)\nfor (int i = 1; i <= 5; i++)   // 5 kali (1..5)\n```\nSemak ulangan **pertama** dan **terakhir** secara manual.",
-  "question": "Berapa kali `for (int i = 0; i <= 5; i++)` berulang?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n**Watch out off-by-one**: choosing `<` vs `<=` wrongly, or starting at 0 vs 1.\n\n```\nfor (int i = 0; i < 5; i++)    // 5 times (0..4)\nfor (int i = 0; i <= 5; i++)   // 6 times (0..5)\nfor (int i = 1; i <= 5; i++)   // 5 times (1..5)\n```\nCheck the **first** and **last** rounds by hand.",
+  "question": "How many times does `for (int i = 0; i <= 5; i++)` run?",
   "type": "exact",
   "keywords": [],
   "answer": [
@@ -600,13 +600,13 @@
    "enam",
    "6 kali"
   ],
-  "hint": "Kira 0, 1, 2, 3, 4, 5.",
+  "hint": "Count 0, 1, 2, 3, 4, 5.",
   "followUps": [
    {
     "note": "`int c = 0; for (int i = 0; i < 5; i++) c++; cout << c;`",
-    "question": "Apakah output?",
+    "question": "What is the output?",
     "type": "exact",
-    "hint": "0 hingga 4.",
+    "hint": "0 to 4.",
     "answer": [
      "5"
     ],
@@ -614,7 +614,7 @@
    }
   ],
   "mcq": {
-   "question": "Untuk cetak 1 hingga 10, syarat yang betul dengan `int i = 1` ialah…",
+   "question": "To print 1 to 10 with `int i = 1`, the correct condition is…",
    "options": [
     "i <= 10",
     "i < 10",
@@ -627,38 +627,38 @@
  {
   "id": "xcs20",
   "topic": "ctrl",
-  "section": "Tambahan (Lab 5) · infinite loop (missing/wrong update)",
+  "section": "Extra (Lab 5) · Infinite loop (missing/wrong update)",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\n**Awas infinite loop**: syarat tidak pernah menjadi false.\n\n```\nint i = 1;\nwhile (i <= 5)\n    cout << i;        // tiada i++ → infinite\n```\n```\nfor (int i = 10; i > 0; i++)   // update ke arah salah → infinite\n```\nLab 5 A2 menggunakan \"guard\" untuk hentikan loop selepas 12 pusingan semasa debug.",
-  "question": "Namakan dua punca infinite loop.",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n**Watch out infinite loop**: the condition never becomes false.\n\n```\nint i = 1;\nwhile (i <= 5)\n    cout << i;        // no i++ → infinite\n```\n```\nfor (int i = 10; i > 0; i++)   // update goes the wrong way → infinite\n```\nLab 5 A2 uses a \"guard\" to stop a runaway loop after 12 passes while debugging.",
+  "question": "Name two causes of an infinite loop.",
   "type": "explain",
   "keywords": [
    "update|kemas kini|i++|increment|tiada update|lupa",
    "wrong|salah|arah|direction|condition|syarat|never false|tak pernah false|tidak pernah",
    ";|semicolon"
   ],
-  "answer": "Tiada update (lupa i++), update ke arah salah, syarat tidak pernah false, atau ; selepas while.",
-  "hint": "Apa yang membuat syarat menjadi false?",
+  "answer": "No update (forgot i++), an update in the wrong direction, a condition that never becomes false, or a ; after while.",
+  "hint": "What makes the condition become false?",
   "followUps": [
    {
     "note": "`for (int i = 10; i > 0; i++)`",
-    "question": "Apakah kesilapan dalam loop ini?",
+    "question": "What is wrong with this loop?",
     "type": "explain",
-    "hint": "i bermula 10 dan diuji > 0.",
+    "hint": "i starts at 10 and is tested with > 0.",
     "keywords": [
      "i++|increment|tambah|naik",
      "i--|decrement|kurang|turun|arah|direction|salah|wrong"
     ],
-    "answer": "Update i++ menjadikan i makin besar; sepatutnya i-- supaya i > 0 akhirnya false."
+    "answer": "The update i++ makes i bigger; it should be i-- so that i > 0 eventually becomes false."
    }
   ],
   "mcq": {
-   "question": "`int i = 0; while (i < 3) { cout << i; }` akan…",
+   "question": "`int i = 0; while (i < 3) { cout << i; }` will…",
    "options": [
-    "Infinite loop mencetak 0",
-    "Cetak 012",
-    "Cetak 0 sekali",
-    "Ralat compile"
+    "Loop forever printing 0",
+    "Print 012",
+    "Print 0 once",
+    "Fail to compile"
    ],
    "correct": 0
   }
@@ -666,22 +666,22 @@
  {
   "id": "xcs22",
   "topic": "ctrl",
-  "section": "Tambahan (Lab 5) · Loop patterns: counting, totals, sentinel (slides 84–91)",
+  "section": "Extra (Lab 5) · Loop patterns: counting, totals, sentinel (slides 84–91)",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\nCorak loop:\n- **Counter-controlled**: ulang N kali.\n- **Running total (accumulator)**: `sum += n`.\n- **Sentinel-controlled**: baca sehingga nilai khas (contoh `-1`).\n\nLab 5 B6: input `12 -5 0 20 7 4 -1`, langkau nombor < 1 dengan continue:\n```\nwhile (true) {\n    cin >> n;            // baca di ATAS badan loop\n    if (n == -1) break;\n    if (n < 1) { cout << n << \" is not positive, skipped.\"; continue; }\n    sum += n; count++;\n}\n```\n`Count = 4`, `Sum = 43`, `Average = 10.75`.",
-  "question": "Apakah sentinel-controlled loop?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nLoop patterns:\n- **Counter-controlled**: repeat N times.\n- **Running total (accumulator)**: `sum += n`.\n- **Sentinel-controlled**: read until a special value (e.g. `-1` in the lab).\n\nLab 5 B6: input `12 -5 0 20 7 4 -1`, skipping numbers < 1 with continue:\n```\nwhile (true) {\n    cin >> n;            // read at the TOP of the loop body\n    if (n == -1) break;\n    if (n < 1) { cout << n << \" is not positive, skipped.\"; continue; }\n    sum += n; count++;\n}\n```\n`Count = 4`, `Sum = 43`, `Average = 10.75`.",
+  "question": "What is a sentinel-controlled loop?",
   "type": "explain",
   "keywords": [
    "sentinel|nilai khas|special value|-1",
    "stop|berhenti|tamat|end|hentikan|until|sehingga",
    "input|baca|read|unknown|tidak diketahui"
   ],
-  "answer": "Loop yang terus membaca input sehingga pengguna memasukkan nilai khas (sentinel) seperti -1.",
-  "hint": "Bilangan input tidak diketahui.",
+  "answer": "A loop that keeps reading input until the user enters a special (sentinel) value such as -1.",
+  "hint": "The number of inputs is unknown.",
   "followUps": [
    {
-    "note": "Input: 12, -5, 0, 20, 7, 4, -1 (nombor < 1 dilangkau).",
-    "question": "Apakah Count dan Sum? (tulis: count sum)",
+    "note": "Input: 12, -5, 0, 20, 7, 4, -1 (numbers < 1 are skipped).",
+    "question": "What are Count and Sum? (format: count sum)",
     "type": "exact",
     "hint": "12 + 20 + 7 + 4.",
     "answer": [
@@ -691,8 +691,8 @@
     "keywords": []
    },
    {
-    "note": "Purata dikira sebagai `static_cast<double>(sum) / count`.",
-    "question": "Apakah Average yang dicetak?",
+    "note": "The average is computed as `static_cast<double>(sum) / count`.",
+    "question": "What Average is printed?",
     "type": "exact",
     "hint": "43 / 4.",
     "answer": [
@@ -702,10 +702,10 @@
    }
   ],
   "mcq": {
-   "question": "Loop yang sesuai untuk membaca markah sehingga pengguna taip -1 ialah…",
+   "question": "The right loop for reading marks until the user types -1 is a…",
    "options": [
     "Sentinel-controlled loop",
-    "Counter-controlled for loop 10 kali",
+    "Counter-controlled for loop of 10",
     "switch",
     "Nested if"
    ],
@@ -715,24 +715,24 @@
  {
   "id": "xcs25",
   "topic": "ctrl",
-  "section": "Tambahan (Lab 5) · Debugging with breakpoints (Lab 5)",
+  "section": "Extra (Lab 5) · Debugging with breakpoints",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\nDebugger membantu melihat nilai pemboleh ubah semasa program berjalan:\n\n- Compile dengan `-g`: `g++ -g -std=c++17 -Wall -Wextra -pedantic A1.cpp -o A1`\n- **F9** breakpoint, **F5** start/continue, **F10** Step Over, **F11** Step Into.\n- Tambah variable ke **Watch**.\n- GDB: `break 11`, `run`, `next`, `print tickets`, `continue`, `quit`.\n\nContoh: Step Over `if (tickets = 0)` menunjukkan tickets berubah dari 5 ke 0.",
-  "question": "Apakah fungsi breakpoint?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nA debugger lets you watch variable values while the program runs:\n\n- Compile with `-g`: `g++ -g -std=c++17 -Wall -Wextra -pedantic A1.cpp -o A1`\n- **F9** breakpoint, **F5** start/continue, **F10** Step Over, **F11** Step Into.\n- Add variables to **Watch**.\n- GDB: `break 11`, `run`, `next`, `print tickets`, `continue`, `quit`.\n\ne.g. stepping over `if (tickets = 0)` shows tickets changing from 5 to 0.",
+  "question": "What is a breakpoint for?",
   "type": "explain",
   "keywords": [
    "stop|berhenti|pause|hentikan|jeda",
    "line|baris|tempat|point|titik",
    "inspect|lihat|watch|nilai|variable|periksa|check"
   ],
-  "answer": "Menghentikan program pada baris tertentu supaya kita boleh periksa nilai pemboleh ubah dan step baris demi baris.",
-  "hint": "Program berhenti sementara…",
+  "answer": "It stops the program at a chosen line so you can inspect variable values and step through line by line.",
+  "hint": "The program pauses…",
   "followUps": [
    {
-    "note": "Kekunci lalai VS Code: F9, F5, F10, F11.",
-    "question": "Kekunci apakah untuk Step Over?",
+    "note": "Default VS Code keys: F9, F5, F10, F11.",
+    "question": "Which key is Step Over?",
     "type": "exact",
-    "hint": "Bukan F11 (Step Into).",
+    "hint": "Not F11 (Step Into).",
     "answer": [
      "F10",
      "f10"
@@ -741,7 +741,7 @@
    }
   ],
   "mcq": {
-   "question": "Flag compile yang diperlukan untuk maklumat debug ialah…",
+   "question": "The compile flag needed for debug information is…",
    "options": [
     "-g",
     "-o",
@@ -754,31 +754,31 @@
  {
   "id": "xfn03",
   "topic": "func",
-  "section": "Tambahan (Lab 6) · Math functions in <cmath> (slides 8–13)",
+  "section": "Extra (Lab 6) · More <cmath>: fabs, ceil, floor",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\n| Function | Maksud | Contoh |\n|---|---|---|\n| `sqrt(x)` | punca kuasa dua | `sqrt(16)` = 4 |\n| `pow(x, y)` | x kuasa y | `pow(2, 3)` = 8 |\n| `fabs(x)` | nilai mutlak (double) | `fabs(-3.5)` = 3.5 |\n| `ceil(x)` | bundar ke atas | `ceil(2.1)` = 3 |\n| `floor(x)` | bundar ke bawah | `floor(2.9)` = 2 |\n\nSemua memulangkan **double**.\n\n**Awas**: `floor(-2.5)` = **-3** (ke bawah = lebih negatif), bukan -2.",
-  "question": "Apakah nilai floor(-2.5)?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n| Function | Meaning | Example |\n|---|---|---|\n| `sqrt(x)` | square root | `sqrt(16)` = 4 |\n| `pow(x, y)` | x to the power y | `pow(2, 3)` = 8 |\n| `fabs(x)` | absolute value (double) | `fabs(-3.5)` = 3.5 |\n| `ceil(x)` | round up | `ceil(2.1)` = 3 |\n| `floor(x)` | round down | `floor(2.9)` = 2 |\n\nAll return **double**.\n\n**Watch out**: `floor(-2.5)` = **-3** (down = more negative), not -2.",
+  "question": "What is floor(-2.5)?",
   "type": "exact",
   "keywords": [],
   "answer": [
    "-3",
    "-3.0"
   ],
-  "hint": "'Bawah' pada garis nombor.",
+  "hint": "'Down' on the number line.",
   "followUps": [
    {
     "note": "`cout << pow(2, 3) << \" \" << sqrt(16) << \" \" << ceil(2.1);`",
-    "question": "Apakah output?",
+    "question": "What is the output?",
     "type": "exact",
-    "hint": "cout tidak cetak .0 untuk nombor bulat.",
+    "hint": "cout doesn't print .0 for whole numbers.",
     "answer": [
      "8 4 3"
     ],
     "keywords": []
    },
    {
-    "note": "Jarak antara (1, 2) dan (4, 6): `sqrt(pow(4 - 1, 2) + pow(6 - 2, 2))`.",
-    "question": "Apakah jaraknya?",
+    "note": "Distance between (1, 2) and (4, 6): `sqrt(pow(4 - 1, 2) + pow(6 - 2, 2))`.",
+    "question": "What is the distance?",
     "type": "exact",
     "hint": "sqrt(9 + 16).",
     "answer": [
@@ -788,7 +788,7 @@
    }
   ],
   "mcq": {
-   "question": "`ceil(4.01)` memulangkan…",
+   "question": "`ceil(4.01)` returns…",
    "options": [
     "5",
     "4",
@@ -801,23 +801,23 @@
  {
   "id": "xfn04",
   "topic": "func",
-  "section": "Tambahan (Lab 6) · Getting pi with acos(-1.0) (Lab 6 B2)",
+  "section": "Extra (Lab 6) · Getting pi with acos(-1.0) (Lab 6 B2)",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\n`M_PI` **bukan** standard C++, ada compiler yang menolaknya. Cara mudah alih:\n\n```\nconst double PI = acos(-1.0);\ndouble area = PI * r * r;     // r = 3 → 28.2743\n```",
-  "question": "Mengapa kita guna acos(-1.0) dan bukan M_PI?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n`M_PI` is **not** standard C++, and some compilers reject it. A portable way:\n\n```\nconst double PI = acos(-1.0);\ndouble area = PI * r * r;     // r = 3 → 28.2743\n```",
+  "question": "Why use acos(-1.0) instead of M_PI?",
   "type": "explain",
   "keywords": [
    "standard|piawai|not standard|bukan standard",
    "compiler|portable|mudah alih|reject|tolak|semua"
   ],
-  "answer": "M_PI bukan standard C++ dan sesetengah compiler menolaknya; acos(-1.0) standard dan memberi nilai pi.",
-  "hint": "Isu standard dan compiler.",
+  "answer": "M_PI is not standard C++ and some compilers reject it; acos(-1.0) is standard and gives pi.",
+  "hint": "A standards and compiler issue.",
   "followUps": [
    {
-    "note": "Luas bulatan dengan r = 3 menggunakan PI = acos(-1.0).",
-    "question": "Apakah output cout bagi luas?",
+    "note": "Circle area with r = 3 using PI = acos(-1.0).",
+    "question": "What does cout print for the area?",
     "type": "exact",
-    "hint": "π × 9, 6 digit bererti.",
+    "hint": "π × 9, 6 significant digits.",
     "answer": [
      "28.2743"
     ],
@@ -825,7 +825,7 @@
    }
   ],
   "mcq": {
-   "question": "`acos(-1.0)` memulangkan nilai…",
+   "question": "`acos(-1.0)` returns…",
    "options": [
     "π (3.14159…)",
     "-1",
@@ -838,37 +838,37 @@
  {
   "id": "xfn05",
   "topic": "func",
-  "section": "Tambahan (Lab 6) · Random numbers: rand and srand (slide 14)",
+  "section": "Extra (Lab 6) · Random numbers: rand and srand (slide 14)",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\n- `rand()` memulangkan integer pseudo-random 0 hingga `RAND_MAX`.\n- `rand() % 6 + 1` → julat **1 hingga 6** (dadu).\n- `srand(seed)` menetapkan seed. Seed sama → jujukan sama (berguna untuk testing, contoh seed 42).\n- `srand(time(0))` → jujukan berbeza setiap kali (perlu `<ctime>`).\n\n**Awas**: panggil `srand` **sekali sahaja** di awal program, bukan dalam loop.",
-  "question": "Apakah julat nilai `rand() % 6 + 1`?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n- `rand()` returns a pseudo-random integer from 0 to `RAND_MAX`.\n- `rand() % 6 + 1` → range **1 to 6** (a die).\n- `srand(seed)` sets the seed. Same seed → same sequence (useful for testing, e.g. seed 42).\n- `srand(time(0))` → a different sequence each run (needs `<ctime>`).\n\n**Watch out**: call `srand` **only once** at the start of the program, not inside a loop.",
+  "question": "What is the range of `rand() % 6 + 1`?",
   "type": "exact",
   "keywords": [],
   "answer": [
-   "1 hingga 6",
    "1 to 6",
    "1-6",
    "1 - 6",
+   "1 hingga 6",
    "1 sampai 6"
   ],
-  "hint": "% 6 memberi 0..5.",
+  "hint": "% 6 gives 0..5.",
   "followUps": [
    {
-    "note": "`srand(42)` dua kali run → jujukan rand() sama.",
-    "question": "Mengapa seed tetap (contoh 42) berguna?",
+    "note": "Running `srand(42)` twice → the same rand() sequence.",
+    "question": "Why is a fixed seed (e.g. 42) useful?",
     "type": "explain",
     "hint": "Lab 6 B4 mode 1.",
     "keywords": [
      "same|sama|ulang|repeat|reproducible|tetap",
      "test|testing|uji|semak|debug"
     ],
-    "answer": "Jujukan nombor rawak sama setiap kali, jadi mudah untuk testing."
+    "answer": "It gives the same random sequence every run, so testing is easier."
    },
    {
-    "note": "Untuk julat 10 hingga 20: `rand() % 11 + 10`.",
-    "question": "Tulis ungkapan untuk nombor rawak 1 hingga 100.",
+    "note": "For the range 10 to 20: `rand() % 11 + 10`.",
+    "question": "Write an expression for a random number from 1 to 100.",
     "type": "exact",
-    "hint": "% bilangan nilai, + nilai minimum.",
+    "hint": "% count of values, + minimum value.",
     "answer": [
      "rand() % 100 + 1",
      "rand()%100+1",
@@ -878,12 +878,12 @@
    }
   ],
   "mcq": {
-   "question": "Di manakah srand(time(0)) patut dipanggil?",
+   "question": "Where should srand(time(0)) be called?",
    "options": [
-    "Sekali di awal main()",
-    "Dalam setiap ulangan loop",
-    "Sebelum setiap rand()",
-    "Selepas return 0"
+    "Once at the start of main()",
+    "In every loop round",
+    "Before every rand()",
+    "After return 0"
    ],
    "correct": 0
   }
@@ -891,20 +891,20 @@
  {
   "id": "xfn06",
   "topic": "func",
-  "section": "Tambahan (Lab 6) · Character functions in <cctype> (slides 15–23)",
+  "section": "Extra (Lab 6) · toupper returns int",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\nUjian (memulangkan bukan-sifar jika benar, 0 jika palsu):\n`isdigit`, `isalpha`, `isalnum`, `isupper`, `islower`, `ispunct`, `isspace`\n\nPenukaran: `toupper(c)`, `tolower(c)`\n\n**Awas**: `toupper` memulangkan **int**.\n```\ncout << toupper('a');         // 65\ncout << char(toupper('a'));   // A\n```",
-  "question": "Apakah output `cout << toupper('a');`?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nTests (return non-zero if true, 0 if false):\n`isdigit`, `isalpha`, `isalnum`, `isupper`, `islower`, `ispunct`, `isspace`\n\nConversion: `toupper(c)`, `tolower(c)`\n\n**Watch out**: `toupper` returns an **int**.\n```\ncout << toupper('a');         // 65\ncout << char(toupper('a'));   // A\n```",
+  "question": "What is the output of `cout << toupper('a');`?",
   "type": "exact",
   "keywords": [],
   "answer": [
    "65"
   ],
-  "hint": "Jenis pulangan toupper ialah int.",
+  "hint": "toupper's return type is int.",
   "followUps": [
    {
-    "note": "Untuk cetak huruf, cast ke char.",
-    "question": "Apakah output `cout << char(toupper('a'));`?",
+    "note": "To print the letter, cast it to char.",
+    "question": "What is the output of `cout << char(toupper('a'));`?",
     "type": "exact",
     "hint": "Cast.",
     "answer": [
@@ -913,8 +913,8 @@
     "keywords": []
    },
    {
-    "note": "`isdigit('7')` bukan-sifar (true), `isalpha('7')` = 0.",
-    "question": "Function apakah menguji sama ada aksara ialah tanda baca?",
+    "note": "`isdigit('7')` is non-zero (true), `isalpha('7')` = 0.",
+    "question": "Which function tests whether a character is punctuation?",
     "type": "exact",
     "hint": "is + punct.",
     "answer": [
@@ -925,10 +925,10 @@
    }
   ],
   "mcq": {
-   "question": "`isupper('a')` memulangkan…",
+   "question": "`isupper('a')` returns…",
    "options": [
     "0 (false)",
-    "Bukan sifar (true)",
+    "Non-zero (true)",
     "'A'",
     "65"
    ],
@@ -938,22 +938,22 @@
  {
   "id": "xfn08",
   "topic": "func",
-  "section": "Tambahan (Lab 6) · atoi, atol, atof (slides 34–36)",
+  "section": "Extra (Lab 6) · atoi, atol, atof (slides 34–36)",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\nTukar string → nombor (`<cstdlib>`):\n- `atoi` → int, `atol` → long, `atof` → double.\n\n| Input | atoi | atof |\n|---|---|---|\n| \"57\" | 57 | 57 |\n| \"12abc\" | 12 | 12 |\n| \"3.9\" | **3** | 3.9 |\n| \"-8\" | -8 | -8 |\n| \"abc\" | **0** | 0 |\n\n**Awas**: `atoi(\"abc\")` dan `atoi(\"0\")` sama-sama 0, jadi tidak boleh bezakan input tidak sah dengan sifar. Slide 35: hasil undefined untuk teks bukan digit.",
-  "question": "Apakah nilai atoi(\"12abc\")?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nConvert string → number (`<cstdlib>`):\n- `atoi` → int, `atol` → long, `atof` → double.\n\n| Input | atoi | atof |\n|---|---|---|\n| \"57\" | 57 | 57 |\n| \"12abc\" | 12 | 12 |\n| \"3.9\" | **3** | 3.9 |\n| \"-8\" | -8 | -8 |\n| \"abc\" | **0** | 0 |\n\n**Watch out**: `atoi(\"abc\")` and `atoi(\"0\")` both give 0, so you can't tell invalid input from zero. Slide 35: the result is undefined for non-digit text.",
+  "question": "What is atoi(\"12abc\")?",
   "type": "exact",
   "keywords": [],
   "answer": [
    "12"
   ],
-  "hint": "Berhenti pada aksara bukan digit.",
+  "hint": "It stops at the first non-digit.",
   "followUps": [
    {
-    "note": "atoi hanya baca bahagian integer.",
-    "question": "Apakah nilai atoi(\"3.9\")?",
+    "note": "atoi only reads the integer part.",
+    "question": "What is atoi(\"3.9\")?",
     "type": "exact",
-    "hint": "Berhenti pada titik.",
+    "hint": "It stops at the dot.",
     "answer": [
      "3"
     ],
@@ -961,23 +961,23 @@
    },
    {
     "note": "`atoi(\"abc\")` = 0, `atoi(\"0\")` = 0.",
-    "question": "Mengapa atoi tidak boleh membezakan \"abc\" dan \"0\"?",
+    "question": "Why can't atoi tell \"abc\" and \"0\" apart?",
     "type": "explain",
-    "hint": "Bandingkan nilai pulangan.",
+    "hint": "Compare the return values.",
     "keywords": [
      "0|sifar|zero",
      "same|sama|both|kedua-dua|keduanya"
     ],
-    "answer": "Kedua-duanya memulangkan 0, jadi tiada cara tahu input itu tidak sah."
+    "answer": "Both return 0, so there is no way to know the input was invalid."
    }
   ],
   "mcq": {
-   "question": "`atof(\"2.5kg\")` memulangkan…",
+   "question": "`atof(\"2.5kg\")` returns…",
    "options": [
     "2.5",
     "2",
     "0",
-    "Ralat"
+    "An error"
    ],
    "correct": 0
   }
@@ -985,22 +985,22 @@
  {
   "id": "xfn12",
   "topic": "func",
-  "section": "Tambahan (Lab 6) · integer division inside a function",
+  "section": "Extra (Lab 6) · Integer division inside a function",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\n**Awas**: return type double tidak menyelamatkan integer division yang sudah berlaku.\n\n```\ndouble avg(int a, int b) {\n    return (a + b) / 2;     // int / int = 3\n}\ncout << avg(3, 4);          // 3, bukan 3.5\n```\nBetulkan: `return (a + b) / 2.0;`",
-  "question": "Apakah output `cout << avg(3, 4);`?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n**Watch out**: a double return type doesn't undo integer division that already happened.\n\n```\ndouble avg(int a, int b) {\n    return (a + b) / 2;     // int / int = 3\n}\ncout << avg(3, 4);          // 3, not 3.5\n```\nFix: `return (a + b) / 2.0;`",
+  "question": "What is the output of `cout << avg(3, 4);`?",
   "type": "exact",
   "keywords": [],
   "answer": [
    "3"
   ],
-  "hint": "(3 + 4) / 2 dengan int.",
+  "hint": "(3 + 4) / 2 with ints.",
   "followUps": [
    {
-    "note": "Tukar 2 kepada 2.0.",
-    "question": "Tulis return statement yang betul.",
+    "note": "Change 2 to 2.0.",
+    "question": "Write the correct return statement.",
     "type": "exact",
-    "hint": "Salah satu operand mesti double.",
+    "hint": "One operand must be a double.",
     "answer": [
      "return (a + b) / 2.0;",
      "return (a+b)/2.0;",
@@ -1010,12 +1010,12 @@
    }
   ],
   "mcq": {
-   "question": "`double half(int n) { return n / 2; }` → half(5) ialah…",
+   "question": "`double half(int n) { return n / 2; }` → half(5) is…",
    "options": [
     "2",
     "2.5",
     "3",
-    "Ralat"
+    "An error"
    ],
    "correct": 0
   }
@@ -1023,10 +1023,10 @@
  {
   "id": "xfn20",
   "topic": "func",
-  "section": "Tambahan (Lab 6) · Common function call errors",
+  "section": "Extra (Lab 6) · Common function call errors",
   "trap": false,
-  "text": "*Nota tambahan daripada dokumen lab (bukan daripada Study Notes PDF).*\n\nRalat biasa semasa memanggil function:\n\n- Function dipanggil sebelum diisytihar (tiada prototype) → `'f' was not declared in this scope`.\n- Bilangan argument salah → `too few/too many arguments to function`.\n- Panggil dengan jenis pulangan disertakan: `int sq(3);` ✗ → betul `sq(3);`\n- Hasil value-returning function tidak digunakan: `sq(3);` sah tetapi nilai dibuang.\n- Guna void function dalam ungkapan: `int x = printLine();` ✗",
-  "question": "Apakah mesej ralat jika function dipanggil dengan bilangan argument yang kurang?",
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nCommon errors when calling functions:\n\n- Calling a function before it is declared (no prototype) → `'f' was not declared in this scope`.\n- Wrong number of arguments → `too few/too many arguments to function`.\n- Writing the type in the call: `int sq(3);` ✗ → correct `sq(3);`\n- Ignoring a returned value: `sq(3);` is legal but the value is thrown away.\n- Using a void function in an expression: `int x = printLine();` ✗",
+  "question": "What error message do you get when a function is called with too few arguments?",
   "type": "exact",
   "keywords": [],
   "answer": [
@@ -1037,10 +1037,10 @@
   "hint": "too … arguments.",
   "followUps": [
    {
-    "note": "`int sq(int n);` dan panggilan `cout << sq(2, 3);`",
-    "question": "Apakah mesej ralat?",
+    "note": "`int sq(int n);` and the call `cout << sq(2, 3);`",
+    "question": "What is the error message?",
     "type": "exact",
-    "hint": "Terlebih argument.",
+    "hint": "Too many arguments.",
     "answer": [
      "too many arguments to function",
      "too many arguments",
@@ -1049,10 +1049,10 @@
     "keywords": []
    },
    {
-    "note": "Panggilan salah: `int sq(3);` dalam main.",
-    "question": "Tulis panggilan yang betul untuk cetak sq(3).",
+    "note": "Wrong call: `int sq(3);` in main.",
+    "question": "Write the correct call that prints sq(3).",
     "type": "exact",
-    "hint": "Jangan tulis jenis semasa panggil.",
+    "hint": "Don't write the type when calling.",
     "answer": [
      "cout << sq(3);",
      "cout<<sq(3);"
@@ -1061,7 +1061,7 @@
    }
   ],
   "mcq": {
-   "question": "Panggilan manakah BETUL untuk `double area(double r);`?",
+   "question": "Which call is CORRECT for `double area(double r);`?",
    "options": [
     "a = area(2.5);",
     "a = double area(2.5);",

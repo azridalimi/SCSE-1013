@@ -163,7 +163,7 @@ for head, rows in PDF:
     for item, ids in rows:
         L.append("| %s | %s |" % (item.replace("|", "\\|"), ", ".join("`%s`" % i for i in ids.split())))
 L.append("\n## Tambahan (Lab 4–6, not in the PDF)\n")
-L.append("Extra practice from the lab documents. Labelled *Tambahan (Lab)* in the app and never used by Kuiz Trap.\n")
+L.append("Extra practice from the lab documents. Labelled *Extra (Lab)* in the app and never used by Kuiz Trap.\n")
 L.append("| ID | Topic | Section |\n|---|---|---|")
 for s in data["statements"]:
     if s["id"].startswith("x"):
