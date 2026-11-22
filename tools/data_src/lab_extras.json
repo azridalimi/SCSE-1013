@@ -1,0 +1,1056 @@
+[
+ {
+  "id": "xal12",
+  "topic": "alg",
+  "section": "Extra (Lab) · Common flowchart mistakes",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n**Watch out (flowchart)** — mistakes that often lose marks:\n\n- Using a **rectangle** for input/output (it should be a **parallelogram**).\n- A diamond without **Yes/No** labels on its exit arrows.\n- No **Start/End** (oval) symbol.\n- Arrows with no direction, or a flow that branches without a diamond.",
+  "question": "List two common mistakes when drawing a flowchart.",
+  "type": "explain",
+  "keywords": [
+   "rectangle|parallelogram|input|output",
+   "label|yes|no|true|false",
+   "start|end|oval|terminal|arrow"
+  ],
+  "answer": "Using a rectangle for input/output; a diamond without Yes/No labels; no Start/End; arrows with no direction.",
+  "hint": "Think of wrong shapes and missing labels.",
+  "followUps": [
+   {
+    "note": "A student draws `READ marks` in a rectangle. That is wrong.",
+    "question": "What is the correct symbol for READ marks?",
+    "type": "exact",
+    "hint": "Input/Output.",
+    "answer": [
+     "parallelogram"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "What is wrong with this flowchart: 'DISPLAY total' in a rectangle?",
+   "options": [
+    "Output should be a parallelogram",
+    "Output should be a diamond",
+    "Output should be an oval",
+    "Nothing is wrong"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xcp08",
+  "topic": "cpp",
+  "section": "Extra (Lab 4) · cin with char arrays and getline",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n**Watch out**: `cin >>` stops reading at **whitespace** (space, tab, enter).\n\n```\nchar word[21];\nstring name;\ncin >> word;          // type: Hello World\ncin >> name;\n```\n`word` = `Hello`, and `World` stays in the buffer and goes straight into `name` without waiting for the user (Lab 4 C2).\n\nTo read a whole line use `cin.getline(word, 21)` (C-string) or `getline(cin, name)` (string).",
+  "question": "What happens when the user types `Hello World` into `cin >> word;`?",
+  "type": "explain",
+  "keywords": [
+   "hello",
+   "space|whitespace|stop",
+   "world|buffer|remain|next"
+  ],
+  "answer": "Only 'Hello' is read because cin stops at the space; 'World' stays in the buffer for the next input.",
+  "hint": "What does cin do when it meets a space?",
+  "followUps": [
+   {
+    "note": "`cin.getline(arr, size)` reads up to Enter, including spaces.",
+    "question": "Which function reads a whole line into a char array?",
+    "type": "exact",
+    "hint": "cin.get…",
+    "answer": [
+     "cin.getline",
+     "cin.getline()",
+     "getline"
+    ],
+    "keywords": []
+   },
+   {
+    "note": "`char word[21]` holds 20 characters + `'\\0'` (null terminator).",
+    "question": "What is the maximum number of characters `char word[21]` can hold?",
+    "type": "exact",
+    "hint": "One slot is for the null terminator.",
+    "answer": [
+     "20"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "The user types 'Ali Baba' for `cin >> name;` (string). name is…",
+   "options": [
+    "Ali",
+    "Ali Baba",
+    "Baba",
+    "An error"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xcp13",
+  "topic": "cpp",
+  "section": "Extra (Lab 4) · Named constants: const vs #define (slides 63–66)",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nTwo ways to make a constant:\n\n```\nconst double PI = 3.14159;   // has a type, must be given a value, has ;\n#define PI 3.14159           // preprocessor, NO = and NO ;\n```\n\n- `PI = 3;` after `const` → error `assignment of read-only variable 'PI'`.\n- `PI = 3;` with `#define` → becomes `3.14159 = 3;` → error `lvalue required as left operand of assignment`.\n- `#define PI 3.14159;` (with `;`) → the `;` is pasted everywhere PI is used → syntax errors.\n\nRecommended: **const**, because it has a data type (type-checked) and follows scope.",
+  "question": "Why is `const` recommended over `#define`?",
+  "type": "explain",
+  "keywords": [
+   "type|data type|type-checked",
+   "scope|compiler|safe|error|debug"
+  ],
+  "answer": "const has a data type that the compiler checks and follows scope; #define is only text replacement by the preprocessor.",
+  "hint": "Who processes #define? Does it have a type?",
+  "followUps": [
+   {
+    "note": "```\nconst double PI = 3.14159;\nPI = 3;\n```",
+    "question": "What kind of error happens? (assignment of …)",
+    "type": "exact",
+    "hint": "const = read only.",
+    "answer": [
+     "assignment of read-only variable",
+     "assignment of read-only variable 'PI'",
+     "read-only",
+     "read only"
+    ],
+    "keywords": []
+   },
+   {
+    "note": "Find the mistake: `#define PI 3.14159;`",
+    "question": "Which symbol must be removed?",
+    "type": "exact",
+    "hint": "#define is not a statement.",
+    "answer": [
+     ";",
+     "semicolon"
+    ],
+    "keywords": []
+   },
+   {
+    "note": "Lab 4 B2: the tax formula constants are stored as `const`.",
+    "question": "Declare a const for the tax rate 0.25 called TAX_RATE (double).",
+    "type": "exact",
+    "hint": "const + type + name = value;",
+    "answer": [
+     "const double TAX_RATE = 0.25;"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "Which constant declaration is CORRECT?",
+   "options": [
+    "#define RATE 0.25",
+    "#define RATE = 0.25;",
+    "const RATE double = 0.25;",
+    "const double RATE;"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xcp17",
+  "topic": "cpp",
+  "section": "Extra (Lab 4) · Operator precedence",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nPrecedence (high → low):\n\n1. `( )`\n2. Unary `-`, `++`, `--`, `!`\n3. `*  /  %` (left to right)\n4. `+  -` (left to right)\n5. `=  +=  -=  *=  /=  %=` (right to left)\n\n```\nint y = -5;\nint z = 8 - 3 + 9 / 2 + 2 * -y;     // 8 - 3 + 4 + 10 = 19\nz = 8 - (3 + 9 / 2) + 2 * -y;       // 8 - 7 + 10 = 11\n```",
+  "question": "Between * and +, which operator is evaluated first?",
+  "type": "explain",
+  "keywords": [
+   "*|multiply|multiplication"
+  ],
+  "answer": "* (multiplication) is evaluated before +.",
+  "hint": "Same as in maths.",
+  "followUps": [
+   {
+    "note": "```\nint y = -5;\nint z = 8 - 3 + 9 / 2 + 2 * -y;\n```\nSteps: `9 / 2` = 4 (integer), `-y` = 5, `2 * 5` = 10.",
+    "question": "What is z?",
+    "type": "exact",
+    "hint": "8 − 3 + 4 + 10.",
+    "answer": [
+     "19",
+     "z = 19"
+    ],
+    "keywords": []
+   },
+   {
+    "note": "`z = 8 - (3 + 9 / 2) + 2 * -y;` with `y = -5`.",
+    "question": "What is z?",
+    "type": "exact",
+    "hint": "Brackets first: 3 + 4 = 7.",
+    "answer": [
+     "11",
+     "z = 11"
+    ],
+    "keywords": []
+   },
+   {
+    "note": "Lab 4 A2 4b/4c: `46 % 9 + 4 * 4 - 2` and `45 + 43 % 5 * (23 * 3 % 2)`.",
+    "question": "What is `45 + 43 % 5 * (23 * 3 % 2)`?",
+    "type": "exact",
+    "hint": "23*3 = 69, 69 % 2 = 1, 43 % 5 = 3, 3 * 1 = 3.",
+    "answer": [
+     "48"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "The value of `46 % 9 + 4 * 4 - 2` is…",
+   "options": [
+    "15",
+    "5",
+    "18",
+    "40"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xcp21",
+  "topic": "cpp",
+  "section": "Extra (Lab 4) · Increment ++ and decrement -- (slides 103–108)",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n- **Prefix** `++x`: add first, then use the new value.\n- **Postfix** `x++`: use the old value first, then add.\n\n```\nint count = 5, first = 10, second;\nsecond = 5 * count-- + first;   // 5*5+10 = 35, count becomes 4\nsecond = 5 * --count + first;   // count becomes 3, 5*3+10 = 25\n```\n**Watch out**: on the second line count is already 4 (not 5).",
+  "question": "What is the difference between ++x and x++?",
+  "type": "explain",
+  "keywords": [
+   "prefix|++x|before",
+   "postfix|x++|after",
+   "value|use"
+  ],
+  "answer": "++x (prefix) adds first then uses the new value; x++ (postfix) uses the old value first then adds.",
+  "hint": "Think about when the value is USED versus when it is ADDED.",
+  "followUps": [
+   {
+    "note": "```\nint count = 5, first = 10, second;\nsecond = 5 * count-- + first;\n```",
+    "question": "What are second and count? (format: second count)",
+    "type": "exact",
+    "hint": "Postfix uses 5 first.",
+    "answer": [
+     "35 4",
+     "second = 35 count = 4"
+    ],
+    "keywords": []
+   },
+   {
+    "note": "Continuing: `second = 5 * --count + first;` (count is now 4).",
+    "question": "What are second and count? (format: second count)",
+    "type": "exact",
+    "hint": "Prefix: count becomes 3 first.",
+    "answer": [
+     "25 3",
+     "second = 25 count = 3"
+    ],
+    "keywords": []
+   },
+   {
+    "note": "```\nint x = 5;\ncout << x++ << \" \";\ncout << x << \" \";\ncout << ++x;\n```",
+    "question": "What is the output?",
+    "type": "exact",
+    "hint": "Postfix, then the current value, then prefix.",
+    "answer": [
+     "5 6 7"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "`int a = 3; int b = a++ * 2;` What are a and b?",
+   "options": [
+    "a = 4, b = 6",
+    "a = 4, b = 8",
+    "a = 3, b = 6",
+    "a = 3, b = 8"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xcp22",
+  "topic": "cpp",
+  "section": "Extra (Lab 4) · Combined and multiple assignment",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nCombined assignment: `x op= expr` means `x = x op (expr)`. The whole right-hand side is evaluated FIRST.\n\n```\nint i = 10, j = 2;\ni *= j + 3;              // i = 10 * (2 + 3) = 50\n\nint a = 1; double d = 1.0;\nd += 1.5 * 3 + (++a);    // d = 1.0 + (4.5 + 2) = 7.5, a = 2\na = 1; d = 1.0;\nd -= 1.5 * 3 + a++;      // d = 1.0 - (4.5 + 1) = -4.5, a = 2\n\na = 1;\na %= 3 / a + 3;          // a = 1 % 6 = 1\n\nint x, p, q;\nx = p = q = 5;           // right to left, x+p+q = 15\n```",
+  "question": "What does `i *= j + 3;` mean?",
+  "type": "explain",
+  "keywords": [
+   "i = i *|i=i*|i = i*|multiply",
+   "(j + 3)|(j+3)|whole"
+  ],
+  "answer": "i = i * (j + 3): the right-hand side is evaluated first, then multiplied by i.",
+  "hint": "Expand op= into its full form.",
+  "followUps": [
+   {
+    "note": "`int i = 10, j = 2; i *= j + 3;`",
+    "question": "What is i?",
+    "type": "exact",
+    "hint": "10 × 5.",
+    "answer": [
+     "50"
+    ],
+    "keywords": []
+   },
+   {
+    "note": "`int a = 1; double d = 1.0; d += 1.5 * 3 + (++a);`",
+    "question": "What are d and a? (format: d a)",
+    "type": "exact",
+    "hint": "++a = 2, 4.5 + 2 = 6.5, 1.0 + 6.5.",
+    "answer": [
+     "7.5 2",
+     "d = 7.5 a = 2"
+    ],
+    "keywords": []
+   },
+   {
+    "note": "`int a = 1; a %= 3 / a + 3;`",
+    "question": "What is a?",
+    "type": "exact",
+    "hint": "3/1 + 3 = 6, 1 % 6.",
+    "answer": [
+     "1"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "`int x = 4; x -= 2 * 3;` What is x?",
+   "options": [
+    "-2",
+    "6",
+    "2",
+    "-6"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xcp23",
+  "topic": "cpp",
+  "section": "Extra (Lab 4) · Default cout precision",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nBy default `cout` shows **6 significant digits**.\n\n`0.25 * (4250.50 * 11 - 3 * 450)` = 11351.375 but is printed as `11351.4`.\n\n`80.33333…` is printed as `80.3333`. Other formats (setprecision) are taught later (Week 10).",
+  "question": "How many significant digits does cout show by default?",
+  "type": "exact",
+  "keywords": [],
+  "answer": [
+   "6",
+   "six",
+   "6 digits"
+  ],
+  "hint": "How many digits does 80.3333 have?",
+  "followUps": [
+   {
+    "note": "The real value is 11351.375.",
+    "question": "What does cout print?",
+    "type": "exact",
+    "hint": "Round to 6 significant digits.",
+    "answer": [
+     "11351.4"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "`cout << 2.0 / 3;` prints…",
+   "options": [
+    "0.666667",
+    "0.6666666667",
+    "0.67",
+    "0"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xcp24",
+  "topic": "cpp",
+  "section": "Extra (Lab 4) · Reading compiler errors (Lab 4 A1)",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\ng++ message format: `file.cpp:LINE:COLUMN: error: message`.\n\nStrategy:\n1. Fix **only the FIRST error**, then recompile. One mistake can hide or cause other errors.\n2. **Watch out**: the reported line is sometimes **after** the real mistake. e.g. `using namespace std` without `;` is reported as `expected ';' before 'int'` on the next line.\n3. Compile with `-Wall -Wextra` and treat warnings as mistakes.",
+  "question": "Why should you fix only the first error, then recompile?",
+  "type": "explain",
+  "keywords": [
+   "first",
+   "hide|cause|other|cascade|false"
+  ],
+  "answer": "Because one mistake can cause or hide other errors; after fixing the first, the others may disappear.",
+  "hint": "One mistake can produce many messages.",
+  "followUps": [
+   {
+    "note": "```\nusing namespace std\nint main()\n```\nThe compiler reports `expected ';' before 'int'` on the `int main()` line.",
+    "question": "Which line has the real mistake? (the using line / the int main line)",
+    "type": "exact",
+    "hint": "The message says ';' should come BEFORE int.",
+    "answer": [
+     "using",
+     "using namespace std"
+    ],
+    "keywords": []
+   },
+   {
+    "note": "Lab 4 A1: `#include iostream` → `#include expects \"FILENAME\" or <FILENAME>`.",
+    "question": "Write the correct #include line for iostream.",
+    "type": "exact",
+    "hint": "File name inside < >.",
+    "answer": [
+     "#include <iostream>",
+     "#include<iostream>"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "The message `expected ';' before 'cout'` on line 10 usually means…",
+   "options": [
+    "Line 9 is missing ;",
+    "Line 10 is missing ;",
+    "cout is misspelt",
+    "You need #include <cmath>"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xcp25",
+  "topic": "cpp",
+  "section": "Extra (Lab 4) · Using / and % for unit conversion (Lab 4 B3)",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nConvert seconds → hours, minutes, seconds using only `/` and `%`:\n\n```\nint s = 3725;\ncout << s / 3600 << \" h \"\n     << (s % 3600) / 60 << \" min \"\n     << s % 60 << \" s\";\n```\nOutput: `1 h 2 min 5 s`",
+  "question": "How do you get the number of minutes (after the hours) from a total of s seconds?",
+  "type": "exact",
+  "keywords": [],
+  "answer": [
+   "(s % 3600) / 60",
+   "s % 3600 / 60",
+   "(s%3600)/60"
+  ],
+  "hint": "Remove the full hours with % first, then divide by 60.",
+  "followUps": [
+   {
+    "note": "s = 7384. 7384 / 3600 = 2, 7384 % 3600 = 184, 184 / 60 = 3, 7384 % 60 = 4.",
+    "question": "What is the output for s = 7384? (format: X h Y min Z s)",
+    "type": "exact",
+    "hint": "Use the calculation in the note.",
+    "answer": [
+     "2 h 3 min 4 s"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "`int s = 3725; cout << s % 60;` prints…",
+   "options": [
+    "5",
+    "62",
+    "2",
+    "1"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xcs10",
+  "topic": "ctrl",
+  "section": "Extra (Lab 5) · n % 2 == 1 for negative numbers (slide 37)",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n**Watch out**: in C++, the result of `%` takes the sign of the left operand. `-3 % 2` = **-1**, not 1.\n\nSo `if (n % 2 == 1)` FAILS to detect negative odd numbers.\n\nCorrect: `if (n % 2 != 0)` → odd. Or test `n % 2 == 0` for even.",
+  "question": "What is -3 % 2 in C++?",
+  "type": "exact",
+  "keywords": [],
+  "answer": [
+   "-1"
+  ],
+  "hint": "The sign follows the left operand.",
+  "followUps": [
+   {
+    "note": "A safe odd test that works for positive and negative numbers.",
+    "question": "Write a condition for n being odd that works for negative numbers.",
+    "type": "exact",
+    "hint": "Not equal to zero.",
+    "answer": [
+     "n % 2 != 0",
+     "n%2!=0",
+     "(n % 2 != 0)",
+     "n % 2 == -1 || n % 2 == 1"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "With n = -7, `n % 2 == 1` is…",
+   "options": [
+    "false",
+    "true",
+    "an error",
+    "-1"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xcs11",
+  "topic": "ctrl",
+  "section": "Extra (Lab 5) · Compound condition: leap year",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nLeap year: divisible by 4, except centuries (100), unless divisible by 400.\n\n```\nif ((y % 4 == 0 && y % 100 != 0) || y % 400 == 0)\n    cout << y << \" is a leap year\";\n```\n1900 → no, 2000 → yes, 2024 → yes, 2100 → no.",
+  "question": "Write the C++ condition for y being a leap year.",
+  "type": "exact",
+  "keywords": [],
+  "answer": [
+   "(y % 4 == 0 && y % 100 != 0) || y % 400 == 0",
+   "y % 4 == 0 && y % 100 != 0 || y % 400 == 0",
+   "y % 400 == 0 || (y % 4 == 0 && y % 100 != 0)"
+  ],
+  "hint": "(div by 4 AND not div by 100) OR div by 400.",
+  "followUps": [
+   {
+    "note": "1900: 1900 % 4 == 0 is true, but 1900 % 100 == 0, and 1900 % 400 = 300.",
+    "question": "Is 1900 a leap year? (yes / no)",
+    "type": "exact",
+    "hint": "A century not divisible by 400.",
+    "answer": [
+     "no"
+    ],
+    "keywords": []
+   },
+   {
+    "note": "2000 % 400 == 0.",
+    "question": "Is 2000 a leap year? (yes / no)",
+    "type": "exact",
+    "hint": "The part after ||.",
+    "answer": [
+     "yes"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "Which year is NOT a leap year?",
+   "options": [
+    "2100",
+    "2000",
+    "2024",
+    "2400"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xcs18",
+  "topic": "ctrl",
+  "section": "Extra (Lab 5) · Semicolon after for/while",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n**Watch out**: a `;` after `for (...)` gives the loop an empty body.\n\n```\nint i;\nfor (i = 0; i < 3; i++);\n    cout << i;\n```\nThe loop runs 3 times doing nothing, then `cout` runs once. Output: **`3`**.\n\nWith `while (cond);` and a true condition → **infinite loop**.",
+  "question": "What does the program above print?",
+  "type": "exact",
+  "keywords": [],
+  "answer": [
+   "3"
+  ],
+  "hint": "The cout is outside the loop; i after the loop ends.",
+  "followUps": [
+   {
+    "note": "`int k = 0; while (k < 3); { k++; }`",
+    "question": "What happens?",
+    "type": "explain",
+    "hint": "k never changes.",
+    "keywords": [
+     "infinite|forever|hang|never"
+    ],
+    "answer": "Infinite loop: the while's body is just ;, so k never increases."
+   }
+  ],
+  "mcq": {
+   "question": "`for (int i = 0; i < 5; i++); cout << \"*\";` prints how many stars?",
+   "options": [
+    "1",
+    "5",
+    "0",
+    "6"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xcs19",
+  "topic": "ctrl",
+  "section": "Extra (Lab 5) · Off-by-one (< vs <=)",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n**Watch out off-by-one**: choosing `<` vs `<=` wrongly, or starting at 0 vs 1.\n\n```\nfor (int i = 0; i < 5; i++)    // 5 times (0..4)\nfor (int i = 0; i <= 5; i++)   // 6 times (0..5)\nfor (int i = 1; i <= 5; i++)   // 5 times (1..5)\n```\nCheck the **first** and **last** rounds by hand.",
+  "question": "How many times does `for (int i = 0; i <= 5; i++)` run?",
+  "type": "exact",
+  "keywords": [],
+  "answer": [
+   "6"
+  ],
+  "hint": "Count 0, 1, 2, 3, 4, 5.",
+  "followUps": [
+   {
+    "note": "`int c = 0; for (int i = 0; i < 5; i++) c++; cout << c;`",
+    "question": "What is the output?",
+    "type": "exact",
+    "hint": "0 to 4.",
+    "answer": [
+     "5"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "To print 1 to 10 with `int i = 1`, the correct condition is…",
+   "options": [
+    "i <= 10",
+    "i < 10",
+    "i <= 11",
+    "i > 10"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xcs20",
+  "topic": "ctrl",
+  "section": "Extra (Lab 5) · Infinite loop (missing/wrong update)",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n**Watch out infinite loop**: the condition never becomes false.\n\n```\nint i = 1;\nwhile (i <= 5)\n    cout << i;        // no i++ → infinite\n```\n```\nfor (int i = 10; i > 0; i++)   // update goes the wrong way → infinite\n```\nLab 5 A2 uses a \"guard\" to stop a runaway loop after 12 passes while debugging.",
+  "question": "Name two causes of an infinite loop.",
+  "type": "explain",
+  "keywords": [
+   "update|i++|increment",
+   "wrong|direction|condition|never false",
+   ";|semicolon"
+  ],
+  "answer": "No update (forgot i++), an update in the wrong direction, a condition that never becomes false, or a ; after while.",
+  "hint": "What makes the condition become false?",
+  "followUps": [
+   {
+    "note": "`for (int i = 10; i > 0; i++)`",
+    "question": "What is wrong with this loop?",
+    "type": "explain",
+    "hint": "i starts at 10 and is tested with > 0.",
+    "keywords": [
+     "i++|increment",
+     "i--|decrement|direction|wrong"
+    ],
+    "answer": "The update i++ makes i bigger; it should be i-- so that i > 0 eventually becomes false."
+   }
+  ],
+  "mcq": {
+   "question": "`int i = 0; while (i < 3) { cout << i; }` will…",
+   "options": [
+    "Loop forever printing 0",
+    "Print 012",
+    "Print 0 once",
+    "Fail to compile"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xcs22",
+  "topic": "ctrl",
+  "section": "Extra (Lab 5) · Loop patterns: counting, totals, sentinel (slides 84–91)",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nLoop patterns:\n- **Counter-controlled**: repeat N times.\n- **Running total (accumulator)**: `sum += n`.\n- **Sentinel-controlled**: read until a special value (e.g. `-1` in the lab).\n\nLab 5 B6: input `12 -5 0 20 7 4 -1`, skipping numbers < 1 with continue:\n```\nwhile (true) {\n    cin >> n;            // read at the TOP of the loop body\n    if (n == -1) break;\n    if (n < 1) { cout << n << \" is not positive, skipped.\"; continue; }\n    sum += n; count++;\n}\n```\n`Count = 4`, `Sum = 43`, `Average = 10.75`.",
+  "question": "What is a sentinel-controlled loop?",
+  "type": "explain",
+  "keywords": [
+   "sentinel|special value|-1",
+   "stop|end|until",
+   "input|read|unknown"
+  ],
+  "answer": "A loop that keeps reading input until the user enters a special (sentinel) value such as -1.",
+  "hint": "The number of inputs is unknown.",
+  "followUps": [
+   {
+    "note": "Input: 12, -5, 0, 20, 7, 4, -1 (numbers < 1 are skipped).",
+    "question": "What are Count and Sum? (format: count sum)",
+    "type": "exact",
+    "hint": "12 + 20 + 7 + 4.",
+    "answer": [
+     "4 43",
+     "count = 4 sum = 43"
+    ],
+    "keywords": []
+   },
+   {
+    "note": "The average is computed as `static_cast<double>(sum) / count`.",
+    "question": "What Average is printed?",
+    "type": "exact",
+    "hint": "43 / 4.",
+    "answer": [
+     "10.75"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "The right loop for reading marks until the user types -1 is a…",
+   "options": [
+    "Sentinel-controlled loop",
+    "Counter-controlled for loop of 10",
+    "switch",
+    "Nested if"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xcs25",
+  "topic": "ctrl",
+  "section": "Extra (Lab 5) · Debugging with breakpoints",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nA debugger lets you watch variable values while the program runs:\n\n- Compile with `-g`: `g++ -g -std=c++17 -Wall -Wextra -pedantic A1.cpp -o A1`\n- **F9** breakpoint, **F5** start/continue, **F10** Step Over, **F11** Step Into.\n- Add variables to **Watch**.\n- GDB: `break 11`, `run`, `next`, `print tickets`, `continue`, `quit`.\n\ne.g. stepping over `if (tickets = 0)` shows tickets changing from 5 to 0.",
+  "question": "What is a breakpoint for?",
+  "type": "explain",
+  "keywords": [
+   "stop|pause",
+   "line|point",
+   "inspect|watch|variable|check"
+  ],
+  "answer": "It stops the program at a chosen line so you can inspect variable values and step through line by line.",
+  "hint": "The program pauses…",
+  "followUps": [
+   {
+    "note": "Default VS Code keys: F9, F5, F10, F11.",
+    "question": "Which key is Step Over?",
+    "type": "exact",
+    "hint": "Not F11 (Step Into).",
+    "answer": [
+     "F10",
+     "f10"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "The compile flag needed for debug information is…",
+   "options": [
+    "-g",
+    "-o",
+    "-Wall",
+    "-std=c++17"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xfn03",
+  "topic": "func",
+  "section": "Extra (Lab 6) · More <cmath>: fabs, ceil, floor",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n| Function | Meaning | Example |\n|---|---|---|\n| `sqrt(x)` | square root | `sqrt(16)` = 4 |\n| `pow(x, y)` | x to the power y | `pow(2, 3)` = 8 |\n| `fabs(x)` | absolute value (double) | `fabs(-3.5)` = 3.5 |\n| `ceil(x)` | round up | `ceil(2.1)` = 3 |\n| `floor(x)` | round down | `floor(2.9)` = 2 |\n\nAll return **double**.\n\n**Watch out**: `floor(-2.5)` = **-3** (down = more negative), not -2.",
+  "question": "What is floor(-2.5)?",
+  "type": "exact",
+  "keywords": [],
+  "answer": [
+   "-3",
+   "-3.0"
+  ],
+  "hint": "'Down' on the number line.",
+  "followUps": [
+   {
+    "note": "`cout << pow(2, 3) << \" \" << sqrt(16) << \" \" << ceil(2.1);`",
+    "question": "What is the output?",
+    "type": "exact",
+    "hint": "cout doesn't print .0 for whole numbers.",
+    "answer": [
+     "8 4 3"
+    ],
+    "keywords": []
+   },
+   {
+    "note": "Distance between (1, 2) and (4, 6): `sqrt(pow(4 - 1, 2) + pow(6 - 2, 2))`.",
+    "question": "What is the distance?",
+    "type": "exact",
+    "hint": "sqrt(9 + 16).",
+    "answer": [
+     "5"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "`ceil(4.01)` returns…",
+   "options": [
+    "5",
+    "4",
+    "4.01",
+    "4.1"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xfn04",
+  "topic": "func",
+  "section": "Extra (Lab 6) · Getting pi with acos(-1.0) (Lab 6 B2)",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n`M_PI` is **not** standard C++, and some compilers reject it. A portable way:\n\n```\nconst double PI = acos(-1.0);\ndouble area = PI * r * r;     // r = 3 → 28.2743\n```",
+  "question": "Why use acos(-1.0) instead of M_PI?",
+  "type": "explain",
+  "keywords": [
+   "standard|not standard",
+   "compiler|portable|reject"
+  ],
+  "answer": "M_PI is not standard C++ and some compilers reject it; acos(-1.0) is standard and gives pi.",
+  "hint": "A standards and compiler issue.",
+  "followUps": [
+   {
+    "note": "Circle area with r = 3 using PI = acos(-1.0).",
+    "question": "What does cout print for the area?",
+    "type": "exact",
+    "hint": "π × 9, 6 significant digits.",
+    "answer": [
+     "28.2743"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "`acos(-1.0)` returns…",
+   "options": [
+    "π (3.14159…)",
+    "-1",
+    "0",
+    "1"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xfn05",
+  "topic": "func",
+  "section": "Extra (Lab 6) · Random numbers: rand and srand (slide 14)",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n- `rand()` returns a pseudo-random integer from 0 to `RAND_MAX`.\n- `rand() % 6 + 1` → range **1 to 6** (a die).\n- `srand(seed)` sets the seed. Same seed → same sequence (useful for testing, e.g. seed 42).\n- `srand(time(0))` → a different sequence each run (needs `<ctime>`).\n\n**Watch out**: call `srand` **only once** at the start of the program, not inside a loop.",
+  "question": "What is the range of `rand() % 6 + 1`?",
+  "type": "exact",
+  "keywords": [],
+  "answer": [
+   "1 to 6",
+   "1-6",
+   "1 - 6"
+  ],
+  "hint": "% 6 gives 0..5.",
+  "followUps": [
+   {
+    "note": "Running `srand(42)` twice → the same rand() sequence.",
+    "question": "Why is a fixed seed (e.g. 42) useful?",
+    "type": "explain",
+    "hint": "Lab 6 B4 mode 1.",
+    "keywords": [
+     "same|repeat|reproducible",
+     "test|testing|debug"
+    ],
+    "answer": "It gives the same random sequence every run, so testing is easier."
+   },
+   {
+    "note": "For the range 10 to 20: `rand() % 11 + 10`.",
+    "question": "Write an expression for a random number from 1 to 100.",
+    "type": "exact",
+    "hint": "% count of values, + minimum value.",
+    "answer": [
+     "rand() % 100 + 1",
+     "rand()%100+1",
+     "1 + rand() % 100"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "Where should srand(time(0)) be called?",
+   "options": [
+    "Once at the start of main()",
+    "In every loop round",
+    "Before every rand()",
+    "After return 0"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xfn06",
+  "topic": "func",
+  "section": "Extra (Lab 6) · toupper returns int",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nTests (return non-zero if true, 0 if false):\n`isdigit`, `isalpha`, `isalnum`, `isupper`, `islower`, `ispunct`, `isspace`\n\nConversion: `toupper(c)`, `tolower(c)`\n\n**Watch out**: `toupper` returns an **int**.\n```\ncout << toupper('a');         // 65\ncout << char(toupper('a'));   // A\n```",
+  "question": "What is the output of `cout << toupper('a');`?",
+  "type": "exact",
+  "keywords": [],
+  "answer": [
+   "65"
+  ],
+  "hint": "toupper's return type is int.",
+  "followUps": [
+   {
+    "note": "To print the letter, cast it to char.",
+    "question": "What is the output of `cout << char(toupper('a'));`?",
+    "type": "exact",
+    "hint": "Cast.",
+    "answer": [
+     "A"
+    ],
+    "keywords": []
+   },
+   {
+    "note": "`isdigit('7')` is non-zero (true), `isalpha('7')` = 0.",
+    "question": "Which function tests whether a character is punctuation?",
+    "type": "exact",
+    "hint": "is + punct.",
+    "answer": [
+     "ispunct",
+     "ispunct()"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "`isupper('a')` returns…",
+   "options": [
+    "0 (false)",
+    "Non-zero (true)",
+    "'A'",
+    "65"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xfn08",
+  "topic": "func",
+  "section": "Extra (Lab 6) · atoi, atol, atof (slides 34–36)",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nConvert string → number (`<cstdlib>`):\n- `atoi` → int, `atol` → long, `atof` → double.\n\n| Input | atoi | atof |\n|---|---|---|\n| \"57\" | 57 | 57 |\n| \"12abc\" | 12 | 12 |\n| \"3.9\" | **3** | 3.9 |\n| \"-8\" | -8 | -8 |\n| \"abc\" | **0** | 0 |\n\n**Watch out**: `atoi(\"abc\")` and `atoi(\"0\")` both give 0, so you can't tell invalid input from zero. Slide 35: the result is undefined for non-digit text.",
+  "question": "What is atoi(\"12abc\")?",
+  "type": "exact",
+  "keywords": [],
+  "answer": [
+   "12"
+  ],
+  "hint": "It stops at the first non-digit.",
+  "followUps": [
+   {
+    "note": "atoi only reads the integer part.",
+    "question": "What is atoi(\"3.9\")?",
+    "type": "exact",
+    "hint": "It stops at the dot.",
+    "answer": [
+     "3"
+    ],
+    "keywords": []
+   },
+   {
+    "note": "`atoi(\"abc\")` = 0, `atoi(\"0\")` = 0.",
+    "question": "Why can't atoi tell \"abc\" and \"0\" apart?",
+    "type": "explain",
+    "hint": "Compare the return values.",
+    "keywords": [
+     "0|zero",
+     "same|both"
+    ],
+    "answer": "Both return 0, so there is no way to know the input was invalid."
+   }
+  ],
+  "mcq": {
+   "question": "`atof(\"2.5kg\")` returns…",
+   "options": [
+    "2.5",
+    "2",
+    "0",
+    "An error"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xfn12",
+  "topic": "func",
+  "section": "Extra (Lab 6) · Integer division inside a function",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\n**Watch out**: a double return type doesn't undo integer division that already happened.\n\n```\ndouble avg(int a, int b) {\n    return (a + b) / 2;     // int / int = 3\n}\ncout << avg(3, 4);          // 3, not 3.5\n```\nFix: `return (a + b) / 2.0;`",
+  "question": "What is the output of `cout << avg(3, 4);`?",
+  "type": "exact",
+  "keywords": [],
+  "answer": [
+   "3"
+  ],
+  "hint": "(3 + 4) / 2 with ints.",
+  "followUps": [
+   {
+    "note": "Change 2 to 2.0.",
+    "question": "Write the correct return statement.",
+    "type": "exact",
+    "hint": "One operand must be a double.",
+    "answer": [
+     "return (a + b) / 2.0;",
+     "return (a+b)/2.0;",
+     "return static_cast<double>(a + b) / 2;"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "`double half(int n) { return n / 2; }` → half(5) is…",
+   "options": [
+    "2",
+    "2.5",
+    "3",
+    "An error"
+   ],
+   "correct": 0
+  }
+ },
+ {
+  "id": "xfn20",
+  "topic": "func",
+  "section": "Extra (Lab 6) · Common function call errors",
+  "trap": false,
+  "text": "*Extra note from the lab documents (not from the Study Notes PDF).*\n\nCommon errors when calling functions:\n\n- Calling a function before it is declared (no prototype) → `'f' was not declared in this scope`.\n- Wrong number of arguments → `too few/too many arguments to function`.\n- Writing the type in the call: `int sq(3);` ✗ → correct `sq(3);`\n- Ignoring a returned value: `sq(3);` is legal but the value is thrown away.\n- Using a void function in an expression: `int x = printLine();` ✗",
+  "question": "What error message do you get when a function is called with too few arguments?",
+  "type": "exact",
+  "keywords": [],
+  "answer": [
+   "too few arguments to function",
+   "too few arguments",
+   "too few"
+  ],
+  "hint": "too … arguments.",
+  "followUps": [
+   {
+    "note": "`int sq(int n);` and the call `cout << sq(2, 3);`",
+    "question": "What is the error message?",
+    "type": "exact",
+    "hint": "Too many arguments.",
+    "answer": [
+     "too many arguments to function",
+     "too many arguments",
+     "too many"
+    ],
+    "keywords": []
+   },
+   {
+    "note": "Wrong call: `int sq(3);` in main.",
+    "question": "Write the correct call that prints sq(3).",
+    "type": "exact",
+    "hint": "Don't write the type when calling.",
+    "answer": [
+     "cout << sq(3);",
+     "cout<<sq(3);"
+    ],
+    "keywords": []
+   }
+  ],
+  "mcq": {
+   "question": "Which call is CORRECT for `double area(double r);`?",
+   "options": [
+    "a = area(2.5);",
+    "a = double area(2.5);",
+    "a = area(double 2.5);",
+    "area(double r);"
+   ],
+   "correct": 0
+  }
+ }
+]
