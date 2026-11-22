@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>Memorise SCSE1013</title>
+  <meta name="description" content="Web app for memorising and understanding SCSE1013 Fundamental Programming Concepts notes.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232F5BFF'/%3E%3Ccircle cx='16' cy='16' r='6' fill='white'/%3E%3C/svg%3E">
+  <!-- Fonts load when online; offline the CSS falls back to system fonts. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="sr-only" href="#app">Skip to content</a>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="#/"><span class="brand-mark" aria-hidden="true"></span>SCSE1013<span class="long">&nbsp;· Memorise</span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#/" data-nav="home">Home</a>
+        <a href="#/quiz/trap" data-nav="trap"><span class="l">Trap Quiz</span><span class="s">Trap</span></a>
+        <a href="#/manage" data-nav="manage"><span class="l">Manage Notes</span><span class="s">Notes</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span>SCSE1013 Fundamental Programming Concepts · personal revision tool</span>
+      <span>Progress is saved in this browser (localStorage)</span>
+    </div>
+  </footer>
+
+  <div class="wipe" id="wipe" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
