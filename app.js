@@ -30,6 +30,13 @@
   PROG.sessions = PROG.sessions || 0;
   PROG.bestStreak = PROG.bestStreak || 0;
   function saveProg() { lsSet(KEY_PROG, PROG); }
+  // statement IDs can change between data versions: drop per-statement progress from an older version
+  var DATA_VERSION = DEFAULT.version || 1;
+  if (PROG.dataVersion !== DATA_VERSION) {
+    if (PROG.dataVersion !== undefined || Object.keys(PROG.stmts).length) PROG.stmts = {};
+    PROG.dataVersion = DATA_VERSION; saveProg();
+  }
+  var customOutdated = isCustomData() && (DATA.version || 1) < DATA_VERSION;
 
   function topicById(id) { for (var i = 0; i < DATA.topics.length; i++) if (DATA.topics[i].id === id) return DATA.topics[i]; return null; }
   function stmtsOf(topicId) { return DATA.statements.filter(function (s) { return s.topic === topicId; }); }
@@ -77,16 +84,16 @@
     clearTimeout(toast._t); toast._t = setTimeout(function () { t.classList.remove("on"); }, 2200);
   }
 
-  // inline formatting: escape, then `code`, **bold**, *em*
+  // inline formatting: escape, then `code`, **bold**, *em* (bold may contain code)
   function inline(s) {
-    var parts = String(s).split(/(`[^`]+`)/g);
-    return parts.map(function (p) {
-      if (/^`[^`]+`$/.test(p)) return "<code>" + esc(p.slice(1, -1)) + "</code>";
-      var e = esc(p);
-      e = e.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
-      e = e.replace(/(^|[\s(])\*([^*\s][^*]*)\*(?=[\s).,:;!?]|$)/g, "$1<em>$2</em>");
-      return e;
+    var codes = [];
+    var t = String(s).split(/(`[^`]+`)/g).map(function (p) {
+      if (/^`[^`]+`$/.test(p)) { codes.push("<code>" + esc(p.slice(1, -1)) + "</code>"); return "\u0000" + (codes.length - 1) + "\u0000"; }
+      return esc(p);
     }).join("");
+    t = t.replace(/\*\*([^*]+?)\*\*/g, "<strong>$1</strong>");
+    t = t.replace(/(^|[\s(])\*([^*\s][^*]*?)\*(?=[\s).,:;!?]|$)/g, "$1<em>$2</em>");
+    return t.replace(/\u0000(\d+)\u0000/g, function (_, i) { return codes[+i]; });
   }
 
   // tiny markdown: ``` blocks, | tables |, - lists, 1. lists, paragraphs
@@ -169,6 +176,7 @@
   function normText(s) {
     return fixQuotes(s).toLowerCase()
       .replace(/([a-z])\/([a-z])/g, "$1 $2")
+      .replace(/([a-z])-(?=[a-z])/g, "$1 ")
       .replace(/[.,;:?"'()\[\]{}`]/g, " ")
       .replace(/\s+/g, " ").trim();
   }
@@ -494,7 +502,7 @@
       '<div class="progress-line" aria-hidden="true"><span style="width:' + Math.round(doneUnits * 100) + '%"></span></div>' +
       '<div class="row" style="justify-content:space-between;margin-bottom:12px">' +
       '<span class="counter">Nota ' + (S.qi + 1) + ' daripada ' + S.queue.length + (it.kind === "fu" ? ' · <span class="followup-tag">Soalan susulan ' + (it.fuIndex + 1) + '/' + it.fuTotal + '</span>' : '') + '</span>' +
-      '<span class="counter">' + esc(st.id) + (st.trap ? ' · <span style="color:var(--bad)">TRAP</span>' : '') + '</span></div>';
+      '<span class="counter">' + esc(st.id) + (st.trap ? ' · <span style="color:var(--bad)">TRAP</span>' : '') + (/^x/.test(st.id) ? ' · <span style="color:var(--text-2)">TAMBAHAN LAB</span>' : '') + '</span></div>';
   }
 
   function renderStudy() {
@@ -798,6 +806,7 @@
       '<span class="eyebrow rv"><span class="dot"></span>URUS NOTA</span>' +
       '<h1 class="display rv rv-d1" style="font-size:clamp(2.4rem,6vw,4.6rem)">Tambah, edit, padam.</h1>' +
       '<p class="lead rv rv-d2">' + DATA.statements.length + ' statement. ' + (isCustomData() ? 'Anda sedang guna data yang telah diubah (disimpan dalam localStorage).' : 'Anda sedang guna data asal daripada data.js.') + '</p>' +
+      (customOutdated ? '<div class="notice err" style="margin-top:16px">Data dalam pelayar ini lebih lama daripada data.js terkini (nota PDF penuh). Export dahulu jika perlu, kemudian tekan <b>Reset ke data asal</b>.</div>' : '') +
       '<div class="toolbar"><a class="btn btn-primary" href="#/manage/new">+ Tambah statement</a>' +
       '<button class="btn btn-ghost" id="exp">Export JSON</button>' +
       '<label class="btn btn-ghost" for="imp" style="cursor:pointer">Import JSON</label><input type="file" id="imp" accept=".json,application/json" class="sr-only">' +
