@@ -13,6 +13,7 @@ Plain HTML, CSS and JavaScript only: no backend, no framework.
 | `styles.css` | Dark editorial theme (black + blue #2F5BFF), responsive, respects `prefers-reduced-motion` |
 | `data.js` | All statements (`window.SCSE_DEFAULT_DATA`): 6 topics, 151 statements from the PDF + 23 lab extras, 260 follow-up questions |
 | `app.js` | Engine: routing, memorise mode (Note → Answer → Check), MCQ quiz, scoring, Manage Notes |
+| `notes/SCSE1013_Study_Notes.pdf` | The original study notes, opened and downloaded from the **Study Notes** page |
 | `COVERAGE.md` | Maps every heading / table row / TIP / TRAP in `SCSE1013_Study_Notes.pdf` → statement IDs |
 | `tools/data_src/pdf_*.py` | Source of the notes from the PDF, in chapter order (easy to write: code blocks, tables) |
 | `tools/data_src/lab_extras.json` | 23 extra statements from the Lab 4–6 documents (IDs start with `x`) |

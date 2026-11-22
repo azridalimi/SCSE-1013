@@ -373,6 +373,7 @@
     else if (parts[0] === "study" && parts[1]) { setNav(""); startStudy(parts[1], parts[2] === "weak"); }
     else if (parts[0] === "quiz" && parts[1]) { setNav(parts[1] === "trap" && !parts[2] ? "trap" : ""); startQuiz(parts[1], parts[2] === "trap"); }
     else if (parts[0] === "manage") { setNav("manage"); renderManage(parts[1]); }
+    else if (parts[0] === "notes") { setNav("notes"); renderNotes(parts[1]); }
     else { setNav("home"); renderHome(); }
     revealAll(); countUp(app); fillBars(app); setupParallax();
     app.focus({ preventScroll: true });
@@ -446,6 +447,7 @@
       stat(pct, "%", "Topic memorised") + stat(list.length, "", "Statements") + stat(fu, "", "Follow-up questions") + stat(traps, "", "TRAP statements") +
       '</div></div></section>' +
       '<section class="section"><div class="wrap"><div class="grid-2">' +
+      modeCard("#/notes/" + id, "READ", "Chapter notes", "Read this chapter's notes from the PDF, in order, before testing yourself.", "Read notes") +
       modeCard("#/study/" + id, "MEMORISE MODE", "Read → Hide → Write", "Note, answer and check for all " + list.length + " statements and their follow-ups. Anything you fail is repeated at the end of the session.", "Start full session") +
       modeCard("#/quiz/" + id, "QUIZ MODE", "20-second MCQ", "Every statement appears at least once as a multiple-choice question, in random order, with streaks.", "Start quiz") +
       (weak && weak < list.length ? modeCard("#/study/" + id + "/weak", "REVIEW WEAK SPOTS", weak + " statements not mastered yet", "Only statements you have not mastered yet or need to review.", "Review now") : "") +
@@ -546,7 +548,7 @@
     $all("[data-act]", app).forEach(function (b) { b.addEventListener("click", onStudyAction); });
     if (S.phase === "feedback") { var nb = $('[data-act="next"],[data-act="retry"]', app); if (nb) nb.focus({ preventScroll: true }); }
   }
-  function sectionTitle(sec) { return String(sec || "").replace(/^[\d.]+\s*/, ""); }
+  function sectionTitle(sec) { return String(sec || "").replace(/^[\d.]+\s*(·\s*)?/, "").replace(/^Cheat Sheet · /, ""); }
 
   function feedbackHTML(st, it) {
     var r = S.last, final = r.verdict === "ok" || S.attempts >= 3;
@@ -790,6 +792,38 @@
       again: "#/quiz/" + o.scope + (o.trap && o.scope !== "trap" ? "/trap" : "")
     });
     Q = null;
+  }
+
+  // ---------------------------------------------------------------- STUDY NOTES (read the PDF content)
+  var PDF_PATH = "notes/SCSE1013_Study_Notes.pdf";
+  function renderNotes(topicId) {
+    var topics = topicId && topicById(topicId) ? [topicById(topicId)] : DATA.topics;
+    var html = '<section class="hero" style="padding-bottom:20px"><div class="wrap">' +
+      '<span class="eyebrow rv"><span class="dot"></span>STUDY NOTES · SCSE1013_Study_Notes.pdf</span>' +
+      '<h1 class="display rv rv-d1" style="font-size:clamp(2.4rem,6vw,4.6rem)">' + (topics.length === 1 ? 'Chapter ' + esc(topics[0].no) + ' notes.' : 'Read the notes.') + '</h1>' +
+      '<p class="lead rv rv-d2">Simple notes from Chapters 1–5 plus the one-page cheat sheet: what you need to understand and remember.</p>' +
+      '<div class="row rv rv-d3" style="margin-top:24px"><a class="btn btn-primary" href="' + PDF_PATH + '" target="_blank" rel="noopener">Open the PDF <span class="arrow">↗</span></a>' +
+      '<a class="btn btn-ghost" href="' + PDF_PATH + '" download>Download PDF</a>' +
+      (topics.length === 1 ? '<a class="btn btn-ghost" href="#/notes">All chapters</a>' : '') + '</div>' +
+      (topics.length > 1 ? '<div class="row" style="margin-top:22px;gap:8px">' + DATA.topics.map(function (t) {
+        return '<a class="tag" style="--tc:' + t.color + ';text-decoration:none;padding:8px 12px" href="#/notes/' + t.id + '">CH ' + esc(t.no) + ' · ' + esc(t.short) + '</a>';
+      }).join("") + '</div>' : '') +
+      '</div></section>';
+    topics.forEach(function (t) {
+      var list = stmtsOf(t.id).filter(function (s) { return !/^x/.test(s.id); });
+      html += '<section class="section" style="padding-top:28px"><div class="wrap"><div style="max-width:860px">' +
+        '<div class="section-head"><div><span class="eyebrow"><span class="tag" style="--tc:' + t.color + '">CH ' + esc(t.no) + '</span>' + esc(t.short) + '</span>' +
+        '<h2 class="h2" style="margin-top:12px">' + esc(t.title) + '</h2></div>' +
+        '<a class="btn btn-ghost btn-sm" href="#/study/' + t.id + '">Test me on this chapter →</a></div>' +
+        list.map(function (s) {
+          return '<article class="card card-tc" style="--tc:' + t.color + ';margin-bottom:14px">' +
+            '<div class="row" style="justify-content:space-between"><span class="eyebrow">' + esc(sectionTitle(s.section)) + '</span>' +
+            (s.trap ? '<span class="tag trap">TRAP</span>' : '') + '</div>' +
+            '<div class="rich" style="margin-top:12px">' + md(s.text) + '</div></article>';
+        }).join("") +
+        '</div></div></section>';
+    });
+    app.innerHTML = html;
   }
 
   function emptyState(msg, back) {
